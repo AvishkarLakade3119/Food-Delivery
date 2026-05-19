@@ -1,0 +1,82 @@
+# E2E Test Configuration for Food Delivery Platform
+spring:
+  profiles:
+    active: e2e-test
+  
+  datasource:
+    url: jdbc:h2:mem:e2e_testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+    
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+        
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# Service URLs for E2E testing
+services:
+  eureka-server:
+    url: http://localhost:8761
+  api-gateway:
+    url: http://localhost:8080
+  user-service:
+    url: http://localhost:8081
+  restaurant-service:
+    url: http://localhost:8082
+  order-service:
+    url: http://localhost:8083
+  payment-service:
+    url: http://localhost:8084
+  notification-service:
+    url: http://localhost:8085
+
+# Test configuration
+test:
+  timeout:
+    default: 30000  # 30 seconds
+    payment: 60000  # 60 seconds for payment processing
+    notification: 45000  # 45 seconds for notifications
+  
+  retry:
+    max-attempts: 3
+    delay: 1000  # 1 second
+  
+  wiremock:
+    port: 9999
+    
+  testcontainers:
+    postgres:
+      image: postgres:15-alpine
+      database: food_delivery_e2e
+      username: testuser
+      password: testpass
+      
+# Logging configuration for tests
+logging:
+  level:
+    com.fooddelivery: DEBUG
+    org.springframework.web: INFO
+    org.testcontainers: INFO
+    com.github.tomakehurst.wiremock: INFO
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# Management endpoints for health checks
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always

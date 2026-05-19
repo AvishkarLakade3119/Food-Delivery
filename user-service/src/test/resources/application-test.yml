@@ -1,0 +1,44 @@
+# Test configuration for User Service Integration Tests
+spring:
+  datasource:
+    # Use H2 in-memory database for tests
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+    defer-datasource-initialization: true
+  
+  sql:
+    init:
+      mode: never
+  
+  # Disable Eureka for tests
+  cloud:
+    discovery:
+      enabled: false
+  
+  # Test logging configuration
+  logging:
+    level:
+      com.fooddelivery: DEBUG
+      org.springframework.web: DEBUG
+      org.hibernate.SQL: DEBUG
+      org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+# Disable management endpoints for tests
+management:
+  endpoints:
+    enabled-by-default: false
+
+# Test server configuration
+server:
+  port: 0  # Random port for tests

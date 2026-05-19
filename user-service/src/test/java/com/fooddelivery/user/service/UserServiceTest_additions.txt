@@ -1,0 +1,175 @@
+    /**
+     * Test user creation with DataIntegrityViolationException for username constraint.
+     * Should throw UserAlreadyExistsException when username constraint is violated (covers line 51-54).
+     */
+    @Test
+    void createUser_WithUsernameConstraintViolation_ShouldThrowUserAlreadyExistsException() {
+        // Given
+        User userToCreate = new User();
+        userToCreate.setEmail("new.user@example.com");
+        userToCreate.setUsername("johndoe");
+
+        when(userRepository.existsByEmail(userToCreate.getEmail())).thenReturn(false);
+        when(userRepository.findByUsername(userToCreate.getUsername())).thenReturn(Optional.empty());
+        when(userRepository.save(userToCreate))
+                .thenThrow(new DataIntegrityViolationException("Duplicate entry 'johndoe' for key 'username'"));
+
+        // When & Then
+        assertThatThrownBy(() -> userService.createUser(userToCreate))
+                .isInstanceOf(UserAlreadyExistsException.class)
+                .hasMessageContaining("User with this username already exists");
+
+        verify(userRepository, times(1)).save(userToCreate);
+    }
+
+    /**
+     * Test user creation with DataIntegrityViolationException for general constraint.
+     * Should throw UserAlreadyExistsException with general message (covers line 51-54).
+     */
+    @Test
+    void createUser_WithGeneralConstraintViolation_ShouldThrowUserAlreadyExistsException() {
+        // Given
+        User userToCreate = new User();
+        userToCreate.setEmail("new.user@example.com");
+        userToCreate.setUsername("newuser");
+
+        when(userRepository.existsByEmail(userToCreate.getEmail())).thenReturn(false);
+        when(userRepository.findByUsername(userToCreate.getUsername())).thenReturn(Optional.empty());
+        when(userRepository.save(userToCreate))
+                .thenThrow(new DataIntegrityViolationException("Some other constraint violation"));
+
+        // When & Then
+        assertThatThrownBy(() -> userService.createUser(userToCreate))
+                .isInstanceOf(UserAlreadyExistsException.class)
+                .hasMessageContaining("User with the provided information already exists");
+
+        verify(userRepository, times(1)).save(userToCreate);
+    }
+
+    /**
+     * Test updateUser with null username.
+     * Should preserve existing username (covers line 102).
+     */
+    @Test
+    void updateUser_WithNullUsername_ShouldPreserveExistingUsername() {
+        // Given
+        User userDetails = new User();
+        userDetails.setName("John Updated");
+        userDetails.setUsername(null);
+
+        User updatedUser = new User();
+        updatedUser.setId(1L);
+        updatedUser.setName("John Updated");
+        updatedUser.setUsername(testUser.getUsername());
+        updatedUser.setCreatedAt(testUser.getCreatedAt());
+        updatedUser.setUpdatedAt(LocalDateTime.now());
+
+        when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
+        when(userRepository.save(any(User.class))).thenReturn(updatedUser);
+
+        // When
+        User result = userService.updateUser(1L, userDetails);
+
+        // Then
+        assertThat(result).isNotNull();
+        assertThat(result.getUsername()).isEqualTo(testUser.getUsername());
+
+        verify(userRepository, times(1)).findById(1L);
+        verify(userRepository, times(1)).save(any(User.class));
+    }
+
+    /**
+     * Test updateUser with null firstName.
+     * Should preserve existing firstName (covers line 105).
+     */
+    @Test
+    void updateUser_WithNullFirstName_ShouldPreserveExistingFirstName() {
+        // Given
+        User userDetails = new User();
+        userDetails.setName("John Updated");
+        userDetails.setFirstName(null);
+
+        User updatedUser = new User();
+        updatedUser.setId(1L);
+        updatedUser.setName("John Updated");
+        updatedUser.setFirstName(testUser.getFirstName());
+        updatedUser.setCreatedAt(testUser.getCreatedAt());
+        updatedUser.setUpdatedAt(LocalDateTime.now());
+
+        when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
+        when(userRepository.save(any(User.class))).thenReturn(updatedUser);
+
+        // When
+        User result = userService.updateUser(1L, userDetails);
+
+        // Then
+        assertThat(result).isNotNull();
+        assertThat(result.getFirstName()).isEqualTo(testUser.getFirstName());
+
+        verify(userRepository, times(1)).findById(1L);
+        verify(userRepository, times(1)).save(any(User.class));
+    }
+
+    /**
+     * Test updateUser with null lastName.
+     * Should preserve existing lastName (covers line 108).
+     */
+    @Test
+    void updateUser_WithNullLastName_ShouldPreserveExistingLastName() {
+        // Given
+        User userDetails = new User();
+        userDetails.setName("John Updated");
+        userDetails.setLastName(null);
+
+        User updatedUser = new User();
+        updatedUser.setId(1L);
+        updatedUser.setName("John Updated");
+        updatedUser.setLastName(testUser.getLastName());
+        updatedUser.setCreatedAt(testUser.getCreatedAt());
+        updatedUser.setUpdatedAt(LocalDateTime.now());
+
+        when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
+        when(userRepository.save(any(User.class))).thenReturn(updatedUser);
+
+        // When
+        User result = userService.updateUser(1L, userDetails);
+
+        // Then
+        assertThat(result).isNotNull();
+        assertThat(result.getLastName()).isEqualTo(testUser.getLastName());
+
+        verify(userRepository, times(1)).findById(1L);
+        verify(userRepository, times(1)).save(any(User.class));
+    }
+
+    /**
+     * Test updateUser with null dateOfBirth.
+     * Should preserve existing dateOfBirth (covers line 111).
+     */
+    @Test
+    void updateUser_WithNullDateOfBirth_ShouldPreserveExistingDateOfBirth() {
+        // Given
+        User userDetails = new User();
+        userDetails.setName("John Updated");
+        userDetails.setDateOfBirth(null);
+
+        User updatedUser = new User();
+        updatedUser.setId(1L);
+        updatedUser.setName("John Updated");
+        updatedUser.setDateOfBirth(testUser.getDateOfBirth());
+        updatedUser.setCreatedAt(testUser.getCreatedAt());
+        updatedUser.setUpdatedAt(LocalDateTime.now());
+
+        when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
+        when(userRepository.save(any(User.class))).thenReturn(updatedUser);
+
+        // When
+        User result = userService.updateUser(1L, userDetails);
+
+        // Then
+        assertThat(result).isNotNull();
+        assertThat(result.getDateOfBirth()).isEqualTo(testUser.getDateOfBirth());
+
+        verify(userRepository, times(1)).findById(1L);
+        verify(userRepository, times(1)).save(any(User.class));
+    }

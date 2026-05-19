@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  # PostgreSQL for E2E testing
+  e2e-postgres:
+    image: postgres:15-alpine
+    container_name: food-delivery-e2e-postgres
+    environment:
+      POSTGRES_DB: food_delivery_e2e
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: testpass
+    ports:
+      - "5433:5432"
+    volumes:
+      - e2e_postgres_data:/var/lib/postgresql/data
+    networks:
+      - e2e-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U testuser -d food_delivery_e2e"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # WireMock for service mocking
+  wiremock:
+    image: wiremock/wiremock:latest
+    container_name: food-delivery-wiremock
+    ports:
+      - "9999:8080"
+    volumes:
+      - ./wiremock/mappings:/home/wiremock/mappings
+      - ./wiremock/__files:/home/wiremock/__files
+    networks:
+      - e2e-network
+    command: >
+      --port 8080
+      --verbose
+      --enable-browser-proxying
+      --disable-request-logging
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/__admin/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Redis for caching (optional)
+  e2e-redis:
+    image: redis:7-alpine
+    container_name: food-delivery-e2e-redis
+    ports:
+      - "6380:6379"
+    networks:
+      - e2e-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  e2e_postgres_data:
+    driver: local
+
+networks:
+  e2e-network:
+    driver: bridge
+    name: food-delivery-e2e-network
