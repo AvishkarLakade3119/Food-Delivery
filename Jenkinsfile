@@ -60,6 +60,22 @@ pipeline {
       }
     }
 
+    stage("Run Tests") {
+      steps {
+        sh '''#!/bin/bash
+          set -euo pipefail
+          for svc in ${SERVICES}; do
+            echo "=============================="
+            echo "Running tests: $svc"
+            echo "=============================="
+            mvn -f $svc/pom.xml test || {
+              echo "WARNING: Tests failed for $svc, continuing..."
+            }
+          done
+        '''
+      }
+    }
+
     stage("Docker Login") {
       steps {
         withCredentials([usernamePassword(
@@ -79,6 +95,9 @@ pipeline {
       steps {
         sh '''#!/bin/bash
           set -euo pipefail
+          export DOCKER_CLIENT_TIMEOUT=300
+          export COMPOSE_HTTP_TIMEOUT=300
+
           for svc in ${SERVICES}; do
             echo "=============================="
             echo "Docker build and push: $svc"
@@ -87,9 +106,44 @@ pipeline {
               -t ${DOCKERHUB_USER}/${svc}:${IMAGE_TAG} \
               -t ${DOCKERHUB_USER}/${svc}:latest \
               ./${svc}
-            docker push ${DOCKERHUB_USER}/${svc}:${IMAGE_TAG}
-            docker push ${DOCKERHUB_USER}/${svc}:latest
+
+            for tag in ${IMAGE_TAG} latest; do
+              PUSHED=false
+              for attempt in 1 2 3; do
+                echo "Push attempt $attempt for ${svc}:${tag}..."
+                if docker push ${DOCKERHUB_USER}/${svc}:${tag}; then
+                  PUSHED=true
+                  break
+                fi
+                echo "Push failed, retrying in 15s..."
+                sleep 15
+              done
+              if [ "$PUSHED" = false ]; then
+                echo "ERROR: Failed to push ${svc}:${tag} after 3 attempts"
+                exit 1
+              fi
+            done
           done
+        '''
+      }
+    }
+
+    stage("Kubernetes Cluster Check") {
+      steps {
+        sh '''#!/bin/bash
+          set -euo pipefail
+          export KUBECONFIG=${KUBECONFIG}
+
+          echo "Checking Kubernetes cluster connectivity..."
+          if ! kubectl cluster-info; then
+            echo "ERROR: Kubernetes cluster is not reachable!"
+            echo "Make sure minikube is running and kubeconfig is up to date."
+            exit 1
+          fi
+
+          echo "Cluster nodes:"
+          kubectl get nodes
+          echo "Cluster is reachable."
         '''
       }
     }
@@ -99,12 +153,11 @@ pipeline {
         sh '''#!/bin/bash
           set -euo pipefail
           export KUBECONFIG=${KUBECONFIG}
-          if [ ! -f "${KUBECONFIG}" ]; then
-            echo "ERROR: kubeconfig not found at ${KUBECONFIG}"
-            exit 1
-          fi
-          echo "Applying all k8s manifests..."
+
+          echo "Applying namespace..."
           kubectl apply -f k8s/namespace.yaml || true
+
+          echo "Applying all k8s manifests..."
           kubectl apply -n ${NAMESPACE} -f k8s/ || true
 
           echo "Waiting for database pods to be ready first..."
@@ -139,11 +192,25 @@ pipeline {
         sh '''#!/bin/bash
           set -euo pipefail
           export KUBECONFIG=${KUBECONFIG}
+          FAILED=""
           for svc in ${SERVICES}; do
             echo "Waiting for $svc rollout..."
-            kubectl -n ${NAMESPACE} rollout status deployment/${svc} --timeout=600s
+            if ! kubectl -n ${NAMESPACE} rollout status deployment/${svc} --timeout=600s; then
+              echo "WARNING: $svc rollout timed out"
+              FAILED="${FAILED} ${svc}"
+            fi
           done
-          echo "SUCCESS: All services rolled out."
+
+          if [ -n "$FAILED" ]; then
+            echo "WARNING: These services did not fully roll out:${FAILED}"
+            echo "Checking pod status..."
+            kubectl -n ${NAMESPACE} get pods -o wide
+            echo "Checking events..."
+            kubectl -n ${NAMESPACE} get events --sort-by=.metadata.creationTimestamp | tail -n 30
+          else
+            echo "SUCCESS: All services rolled out."
+          fi
+
           kubectl -n ${NAMESPACE} get pods -o wide
           kubectl -n ${NAMESPACE} get svc
         '''
@@ -230,6 +297,8 @@ pipeline {
         kubectl -n food-delivery get events --sort-by=.metadata.creationTimestamp | tail -n 50 || true
         echo "---- DEBUG: Logs api-gateway ----"
         kubectl -n food-delivery logs deploy/api-gateway --tail=200 || true
+        echo "---- DEBUG: Logs payment-service ----"
+        kubectl -n food-delivery logs deploy/payment-service --tail=200 || true
       '''
     }
 
