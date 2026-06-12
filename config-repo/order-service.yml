@@ -1,0 +1,60 @@
+# ========================================
+# Order Service Configuration
+# ========================================
+# Order management and processing service configuration
+
+server:
+  port: 8083
+
+spring:
+  application:
+    name: order-service
+  
+  # PostgreSQL Database Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/orderdb
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 20000
+      idle-timeout: 300000
+      max-lifetime: 1200000
+      pool-name: OrderServiceHikariPool
+  
+  # JPA/Hibernate Configuration
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  
+  # SQL Initialization
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+
+# JWT Configuration (MUST match user-service)
+jwt:
+  secret: a-very-long-secure-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-food-delivery-platform-2026
+  expiration: 86400000
+  header: Authorization
+  prefix: "Bearer "
+
+# Logging Configuration
+logging:
+  level:
+    com.fooddelivery.order: DEBUG
+    org.hibernate.SQL: INFO
