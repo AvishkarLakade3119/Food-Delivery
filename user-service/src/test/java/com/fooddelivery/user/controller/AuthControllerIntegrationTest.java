@@ -62,14 +62,13 @@ class AuthControllerIntegrationTest {
                         .content(objectMapper.writeValueAsString(validRegistrationDto)))
                 .andExpect(status().isCreated())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.success").value(true))
-                .andExpect(jsonPath("$.message").value("User registered successfully"))
+                .andExpect(jsonPath("$.id").exists())
                 .andExpect(jsonPath("$.username").value("john_doe"))
                 .andExpect(jsonPath("$.email").value("john.doe@example.com"))
                 .andExpect(jsonPath("$.firstName").value("John"))
                 .andExpect(jsonPath("$.lastName").value("Doe"))
                 .andExpect(jsonPath("$.role").value("CUSTOMER"))
-                .andExpect(jsonPath("$.userId").exists());
+                .andExpect(jsonPath("$.createdAt").exists());
     }
 
     @Test

@@ -1,0 +1,510 @@
+{
+  "restaurant-service\\src\\main\\java\\com\\fooddelivery\\restaurant\\messaging\\RestaurantEventConsumer.java": {
+    "filename": "RestaurantEventConsumer.java",
+    "path": "restaurant-service\\src\\main\\java\\com\\fooddelivery\\restaurant\\messaging\\RestaurantEventConsumer.java",
+    "version": "1.2",
+    "contextFile": "71fa4a9b-context.json",
+    "chunks": {
+      "165aa1": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781426845,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "02ebc5f2",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:17:25 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      },
+      "a1f647": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427155,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "e0df125c",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:22:35 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "a1f647",
+        "hash": "689bee3e",
+        "encoded": "package%20com.fooddelivery.restaurant.messaging;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "a1f647",
+        "hash": "04f9d6a3",
+        "encoded": "import%20com.fooddelivery.restaurant.config.RabbitMQConfig;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "a1f647",
+        "hash": "cb4c9b82",
+        "encoded": "import%20com.fooddelivery.restaurant.event.OrderConfirmedEvent;",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "a1f647",
+        "hash": "fc7f98d1",
+        "encoded": "import%20org.slf4j.Logger;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "a1f647",
+        "hash": "252cd838",
+        "encoded": "import%20org.slf4j.LoggerFactory;",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "a1f647",
+        "hash": "4c678ee0",
+        "encoded": "import%20org.springframework.amqp.rabbit.annotation.RabbitListener;",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "a1f647",
+        "hash": "657e9889",
+        "encoded": "import%20org.springframework.stereotype.Component;",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "a1f647",
+        "hash": "1d1b7499",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "a1f647",
+        "hash": "33a4e9c1",
+        "encoded": "*%20Consumer%20for%20Order%20Events",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "a1f647",
+        "hash": "a5c7132e",
+        "encoded": "*%20Listens%20to%20order.confirmed.queue%20and%20notifies%20restaurant%20of%20new%20order",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "a1f647",
+        "hash": "caaefa0e",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "a1f647",
+        "hash": "0e9e3bf4",
+        "encoded": "@Component",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "a1f647",
+        "hash": "4387a11e",
+        "encoded": "public%20class%20RestaurantEventConsumer%20%7B",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "a1f647",
+        "hash": "8bcf1448",
+        "encoded": "private%20static%20final%20Logger%20logger%20=%20LoggerFactory.getLogger(RestaurantEventConsumer.class);",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "a1f647",
+        "hash": "9a54798e",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "a1f647",
+        "hash": "4691eb37",
+        "encoded": "*%20Listen%20to%20order.confirmed.queue",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "a1f647",
+        "hash": "68005ac1",
+        "encoded": "*%20Notify%20restaurant%20when%20an%20order%20is%20confirmed%20(after%20payment%20success)",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "a1f647",
+        "hash": "cc674971",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "a1f647",
+        "hash": "662d7f3b",
+        "encoded": "@RabbitListener(queues%20=%20RabbitMQConfig.ORDER_CONFIRMED_QUEUE)",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "a1f647",
+        "hash": "9a0ef926",
+        "encoded": "public%20void%20handleOrderConfirmed(OrderConfirmedEvent%20event)%20%7B",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "a1f647",
+        "hash": "b5182986",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "a1f647",
+        "hash": "0cde5a2f",
+        "encoded": "logger.info(%22Received%20OrderConfirmedEvent%20for%20orderId:%20%7B%7D,%20restaurantId:%20%7B%7D%22,",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "a1f647",
+        "hash": "94b0eb24",
+        "encoded": "event.getOrderId(),%20event.getRestaurantId());",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "a1f647",
+        "hash": "baf9c06f",
+        "encoded": "//%20In%20real%20scenario,%20this%20would:",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "a1f647",
+        "hash": "4a22ffcc",
+        "encoded": "//%201.%20Notify%20restaurant%20dashboard/app",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "a1f647",
+        "hash": "b245870b",
+        "encoded": "//%202.%20Send%20push%20notification%20to%20restaurant",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "a1f647",
+        "hash": "73178bc1",
+        "encoded": "//%203.%20Update%20restaurant%20order%20management%20system",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "a1f647",
+        "hash": "8c133dfb",
+        "encoded": "//%204.%20Trigger%20kitchen%20display%20system",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "a1f647",
+        "hash": "83700329",
+        "encoded": "logger.info(%22Restaurant%20%7B%7D%20notified%20about%20new%20order%20%7B%7D%22,",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "a1f647",
+        "hash": "b3d509d9",
+        "encoded": "event.getRestaurantId(),%20event.getOrderId());",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "a1f647",
+        "hash": "40a05fc5",
+        "encoded": "//%20For%20now,%20just%20log%20the%20event",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "a1f647",
+        "hash": "132a238c",
+        "encoded": "logger.info(%22Order%20details%20-%20Total:%20%7B%7D,%20Estimated%20Delivery:%20%7B%7D%22,",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "a1f647",
+        "hash": "c83a0e04",
+        "encoded": "event.getTotalAmount(),%20event.getEstimatedDeliveryTime());",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "a1f647",
+        "hash": "f4abd56a",
+        "encoded": "%7D%20catch%20(Exception%20e)%20%7B",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "a1f647",
+        "hash": "8bc2886e",
+        "encoded": "logger.error(%22Error%20processing%20OrderConfirmedEvent%20for%20orderId:%20%7B%7D%22,%20event.getOrderId(),%20e);",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "a1f647",
+        "hash": "1e88dfc6",
+        "encoded": "//%20Don't%20re-throw%20-%20restaurant%20notification%20failure%20should%20not%20block%20the%20flow",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "a1f647",
+        "hash": "5046e502",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "a1f647",
+        "hash": "8b687a61",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "a1f647",
+        "hash": "f9b2449c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "165aa1",
+        "hash": "526c37fc",
+        "encoded": "import%20com.fooddelivery.order.event.OrderConfirmedEvent;",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "165aa1",
+        "hash": "6277c3cd",
+        "encoded": "import%20com.fooddelivery.restaurant.config.RabbitMQConfig;",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "165aa1",
+        "hash": "fb94becb",
+        "encoded": "import%20org.slf4j.Logger;",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "165aa1",
+        "hash": "c6652a54",
+        "encoded": "import%20org.slf4j.LoggerFactory;",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "165aa1",
+        "hash": "c53a622d",
+        "encoded": "import%20org.springframework.amqp.rabbit.annotation.RabbitListener;",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "165aa1",
+        "hash": "902ee4f4",
+        "encoded": "import%20org.springframework.stereotype.Component;",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "165aa1",
+        "hash": "6f323754",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "165aa1",
+        "hash": "777a48df",
+        "encoded": "*%20Consumer%20for%20Order%20Events",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "165aa1",
+        "hash": "7f1a45c5",
+        "encoded": "*%20Listens%20to%20order.confirmed.queue%20and%20notifies%20restaurant%20of%20new%20order",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "165aa1",
+        "hash": "1c9b97a2",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "165aa1",
+        "hash": "3030103b",
+        "encoded": "@Component",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "165aa1",
+        "hash": "7531d2f8",
+        "encoded": "public%20class%20RestaurantEventConsumer%20%7B",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "165aa1",
+        "hash": "0c7c017f",
+        "encoded": "private%20static%20final%20Logger%20logger%20=%20LoggerFactory.getLogger(RestaurantEventConsumer.class);",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "165aa1",
+        "hash": "c50c01c3",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "165aa1",
+        "hash": "e29f9573",
+        "encoded": "*%20Listen%20to%20order.confirmed.queue",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "165aa1",
+        "hash": "bc6ebd22",
+        "encoded": "*%20Notify%20restaurant%20when%20an%20order%20is%20confirmed%20(after%20payment%20success)",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "165aa1",
+        "hash": "6665b0da",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "165aa1",
+        "hash": "ad49fb78",
+        "encoded": "@RabbitListener(queues%20=%20RabbitMQConfig.ORDER_CONFIRMED_QUEUE)",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "165aa1",
+        "hash": "30da580a",
+        "encoded": "public%20void%20handleOrderConfirmed(OrderConfirmedEvent%20event)%20%7B",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "165aa1",
+        "hash": "528f0c76",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "165aa1",
+        "hash": "0c7b66ea",
+        "encoded": "logger.info(%22Received%20OrderConfirmedEvent%20for%20orderId:%20%7B%7D,%20restaurantId:%20%7B%7D%22,",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "165aa1",
+        "hash": "83d19a4a",
+        "encoded": "event.getOrderId(),%20event.getRestaurantId());",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "165aa1",
+        "hash": "93b5f3fc",
+        "encoded": "//%20In%20real%20scenario,%20this%20would:",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "165aa1",
+        "hash": "f1e06760",
+        "encoded": "//%201.%20Notify%20restaurant%20dashboard/app",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "165aa1",
+        "hash": "e6ed6091",
+        "encoded": "//%202.%20Send%20push%20notification%20to%20restaurant",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "165aa1",
+        "hash": "b1418165",
+        "encoded": "//%203.%20Update%20restaurant%20order%20management%20system",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "165aa1",
+        "hash": "f63f6889",
+        "encoded": "//%204.%20Trigger%20kitchen%20display%20system",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "165aa1",
+        "hash": "b6785041",
+        "encoded": "logger.info(%22Restaurant%20%7B%7D%20notified%20about%20new%20order%20%7B%7D%22,",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "165aa1",
+        "hash": "a88659b5",
+        "encoded": "event.getRestaurantId(),%20event.getOrderId());",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "165aa1",
+        "hash": "947f9e4d",
+        "encoded": "//%20For%20now,%20just%20log%20the%20event",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "165aa1",
+        "hash": "a5dad8e8",
+        "encoded": "logger.info(%22Order%20details%20-%20Total:%20%7B%7D,%20Estimated%20Delivery:%20%7B%7D%22,",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "165aa1",
+        "hash": "60be5146",
+        "encoded": "event.getTotalAmount(),%20event.getEstimatedDeliveryTime());",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "165aa1",
+        "hash": "1cb27b62",
+        "encoded": "%7D%20catch%20(Exception%20e)%20%7B",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "165aa1",
+        "hash": "7ec7395a",
+        "encoded": "logger.error(%22Error%20processing%20OrderConfirmedEvent%20for%20orderId:%20%7B%7D%22,%20event.getOrderId(),%20e);",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "165aa1",
+        "hash": "6e43a6bb",
+        "encoded": "//%20Don't%20re-throw%20-%20restaurant%20notification%20failure%20should%20not%20block%20the%20flow",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "165aa1",
+        "hash": "70416dc1",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "165aa1",
+        "hash": "06a855c2",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "165aa1",
+        "hash": "94b19f35",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

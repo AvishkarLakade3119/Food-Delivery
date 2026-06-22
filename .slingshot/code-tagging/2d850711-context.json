@@ -1,0 +1,15 @@
+{
+  "filename": "COMPREHENSIVE_API_TESTING_AND_DEBUGGING_REPORT.md",
+  "path": "COMPREHENSIVE_API_TESTING_AND_DEBUGGING_REPORT.md",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "af61b6b0": {
+      "value": "You are a senior Spring Boot microservices API testing and debugging agent. My Food Delivery Microservices Platform is fully built and all 9 modules pass mvn clean install with 0 failures. All services are running and registered with Eureka. Your job is to test EVERY single REST API endpoint with exact Postman-ready requests, identify any runtime errors, and fix them.\nProject: Food Delivery Microservices Platform\nFramework: Spring Boot 3.2.0\nJava: 17\nDatabase: PostgreSQL (Docker containers)\nAuth"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

@@ -1,0 +1,4626 @@
+{
+  "COMPLETE_ENDPOINT_TESTING_GUIDE.md": {
+    "filename": "COMPLETE_ENDPOINT_TESTING_GUIDE.md",
+    "path": "COMPLETE_ENDPOINT_TESTING_GUIDE.md",
+    "version": "1.2",
+    "contextFile": "3c4db736-context.json",
+    "chunks": {
+      "792ac0": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781160267,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "0577c8df"
+        },
+        "hash": "0e8ccef5",
+        "messageId": "system_5ee995d0-6558-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 12:14:27 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "792ac0",
+        "hash": "6b57ea1c",
+        "encoded": "#%20COMPLETE%20ENDPOINT%20TESTING%20GUIDE%20-%20FOOD%20DELIVERY%20MICROSERVICES",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "792ac0",
+        "hash": "e0849dc0",
+        "encoded": "##%20Prerequisites",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "792ac0",
+        "hash": "cb22877e",
+        "encoded": "-%20All%20services%20running%20and%20healthy",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "792ac0",
+        "hash": "7e4d7e70",
+        "encoded": "-%20Database%20sequences%20fixed%20(run%20DATABASE_FIX_SCRIPT.sql)",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "792ac0",
+        "hash": "e5ac0435",
+        "encoded": "-%20Restaurant%20service%20restarted%20(for%20LazyInitializationException%20fix)",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "792ac0",
+        "hash": "69fcae3b",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "792ac0",
+        "hash": "0b339628",
+        "encoded": "##%20PHASE%201:%20USER%20SERVICE%20ENDPOINTS%20(Port%208085)",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "792ac0",
+        "hash": "d683ec94",
+        "encoded": "###%201.1%20Register%20New%20User",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "792ac0",
+        "hash": "98a61434",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "792ac0",
+        "hash": "1df3cf3b",
+        "encoded": "POST%20http://localhost:8085/api/auth/register",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "792ac0",
+        "hash": "a43af1c2",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "792ac0",
+        "hash": "f06cfb55",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "792ac0",
+        "hash": "0a638cf8",
+        "encoded": "%22username%22:%20%22testuser2%22,",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "792ac0",
+        "hash": "500d7e87",
+        "encoded": "%22email%22:%20%22test2@example.com%22,",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "792ac0",
+        "hash": "583a1234",
+        "encoded": "%22password%22:%20%22password123%22,",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "792ac0",
+        "hash": "1538280b",
+        "encoded": "%22firstName%22:%20%22Test%22,",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "792ac0",
+        "hash": "2a42f75b",
+        "encoded": "%22lastName%22:%20%22User%22,",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "792ac0",
+        "hash": "1724a536",
+        "encoded": "%22phone%22:%20%229876543210%22,",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "792ac0",
+        "hash": "924c138b",
+        "encoded": "%22address%22:%20%22123%20Test%20Street,%20Bengaluru%22",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "792ac0",
+        "hash": "71870443",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "792ac0",
+        "hash": "7cae3a01",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "792ac0",
+        "hash": "28d2e7bb",
+        "encoded": "**Expected**:%20201%20Created,%20save%20%60userId%60",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "792ac0",
+        "hash": "10c88591",
+        "encoded": "###%201.2%20Login%20User",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "792ac0",
+        "hash": "db7c789e",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "792ac0",
+        "hash": "a77b334a",
+        "encoded": "POST%20http://localhost:8085/api/auth/login",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "792ac0",
+        "hash": "97deb529",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "792ac0",
+        "hash": "92ca250b",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "792ac0",
+        "hash": "968e3b08",
+        "encoded": "%22email%22:%20%22test2@example.com%22,",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "792ac0",
+        "hash": "5cf0f1b0",
+        "encoded": "%22password%22:%20%22password123%22",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "792ac0",
+        "hash": "b14d68ea",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "792ac0",
+        "hash": "465274ea",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "792ac0",
+        "hash": "536eef59",
+        "encoded": "**Expected**:%20200%20OK,%20returns%20user%20details",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "792ac0",
+        "hash": "4563a289",
+        "encoded": "###%201.3%20Get%20All%20Users",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "792ac0",
+        "hash": "fd71ce6a",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "792ac0",
+        "hash": "8bea35e6",
+        "encoded": "GET%20http://localhost:8085/api/users",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "792ac0",
+        "hash": "bac32708",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "792ac0",
+        "hash": "b768c6a8",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20users",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "792ac0",
+        "hash": "2e2d250d",
+        "encoded": "###%201.4%20Get%20User%20by%20ID",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "792ac0",
+        "hash": "ed86d2f3",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "792ac0",
+        "hash": "dae58782",
+        "encoded": "GET%20http://localhost:8085/api/users/%7BuserId%7D",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "792ac0",
+        "hash": "9aeea603",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "792ac0",
+        "hash": "888c9741",
+        "encoded": "**Expected**:%20200%20OK,%20user%20object",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "792ac0",
+        "hash": "50a52874",
+        "encoded": "###%201.5%20Get%20User%20by%20Email",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "792ac0",
+        "hash": "8ab610c8",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "792ac0",
+        "hash": "c3398180",
+        "encoded": "GET%20http://localhost:8085/api/users/email/test2@example.com",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "792ac0",
+        "hash": "40e23bdf",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "792ac0",
+        "hash": "cb4e3f80",
+        "encoded": "**Expected**:%20200%20OK,%20user%20object",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "792ac0",
+        "hash": "86d88010",
+        "encoded": "###%201.6%20Get%20Users%20by%20Role",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "792ac0",
+        "hash": "5079896d",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "792ac0",
+        "hash": "c9611727",
+        "encoded": "GET%20http://localhost:8085/api/users/role/CUSTOMER",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "792ac0",
+        "hash": "0fba5d61",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "792ac0",
+        "hash": "5b38b171",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20customers",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "792ac0",
+        "hash": "3d2431bc",
+        "encoded": "###%201.7%20Update%20User",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "792ac0",
+        "hash": "ee668e2c",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "792ac0",
+        "hash": "272b5899",
+        "encoded": "PUT%20http://localhost:8085/api/users/%7BuserId%7D",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "792ac0",
+        "hash": "1b89d585",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "792ac0",
+        "hash": "1ce93b74",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "792ac0",
+        "hash": "bb6cdef1",
+        "encoded": "%22username%22:%20%22testuser2%22,",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "792ac0",
+        "hash": "22b79c1e",
+        "encoded": "%22email%22:%20%22test2@example.com%22,",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "792ac0",
+        "hash": "a055dcf3",
+        "encoded": "%22password%22:%20%22password123%22,",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "792ac0",
+        "hash": "0ae4c9c4",
+        "encoded": "%22firstName%22:%20%22Test%20Updated%22,",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "792ac0",
+        "hash": "0fa46d38",
+        "encoded": "%22lastName%22:%20%22User%20Updated%22,",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "792ac0",
+        "hash": "adb41cfd",
+        "encoded": "%22phone%22:%20%229876543210%22,",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "792ac0",
+        "hash": "c3d82497",
+        "encoded": "%22address%22:%20%22456%20Updated%20Street,%20Bengaluru%22,",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "792ac0",
+        "hash": "2c6d47b5",
+        "encoded": "%22role%22:%20%22CUSTOMER%22",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "792ac0",
+        "hash": "c46ffadb",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "792ac0",
+        "hash": "3b0706cd",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "792ac0",
+        "hash": "70631c4e",
+        "encoded": "**Expected**:%20200%20OK,%20updated%20user",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "792ac0",
+        "hash": "04458586",
+        "encoded": "###%201.8%20Search%20Users%20by%20Name",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "792ac0",
+        "hash": "c01c5dbb",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "792ac0",
+        "hash": "24d51045",
+        "encoded": "GET%20http://localhost:8085/api/users/search?name=Test",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "792ac0",
+        "hash": "2e72b4ad",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "792ac0",
+        "hash": "d2044158",
+        "encoded": "**Expected**:%20200%20OK,%20matching%20users",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "792ac0",
+        "hash": "6f6b088e",
+        "encoded": "###%201.9%20Delete%20User",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "792ac0",
+        "hash": "bd417533",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "792ac0",
+        "hash": "ab4344b6",
+        "encoded": "DELETE%20http://localhost:8085/api/users/%7BuserId%7D",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "792ac0",
+        "hash": "88209abd",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "792ac0",
+        "hash": "45ae309e",
+        "encoded": "**Expected**:%20204%20No%20Content",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "792ac0",
+        "hash": "0b9c608f",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "792ac0",
+        "hash": "583ec3b5",
+        "encoded": "##%20PHASE%202:%20RESTAURANT%20SERVICE%20ENDPOINTS%20(Port%208082)",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "792ac0",
+        "hash": "67f2f671",
+        "encoded": "###%202.1%20Create%20Restaurant",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "792ac0",
+        "hash": "21c7413d",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "792ac0",
+        "hash": "13a15e99",
+        "encoded": "POST%20http://localhost:8082/api/restaurants",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "792ac0",
+        "hash": "11a8f3ec",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "792ac0",
+        "hash": "cbb6d305",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "792ac0",
+        "hash": "39efc10e",
+        "encoded": "%22name%22:%20%22Spice%20Garden%22,",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "792ac0",
+        "hash": "0274b922",
+        "encoded": "%22cuisine%22:%20%22INDIAN%22,",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "792ac0",
+        "hash": "ad079f20",
+        "encoded": "%22description%22:%20%22Authentic%20Indian%20cuisine%22,",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "792ac0",
+        "hash": "565e9911",
+        "encoded": "%22address%22:%20%7B",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "792ac0",
+        "hash": "f99cbf26",
+        "encoded": "%22street%22:%20%22123%20MG%20Road%22,",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "792ac0",
+        "hash": "56b7e07a",
+        "encoded": "%22city%22:%20%22Bengaluru%22,",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "792ac0",
+        "hash": "ac2b1772",
+        "encoded": "%22state%22:%20%22Karnataka%22,",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "792ac0",
+        "hash": "b4e78c70",
+        "encoded": "%22zipCode%22:%20%22560001%22,",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "792ac0",
+        "hash": "9459c317",
+        "encoded": "%22country%22:%20%22India%22",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "792ac0",
+        "hash": "b54b7f54",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "792ac0",
+        "hash": "c4ea07db",
+        "encoded": "%22phone%22:%20%22+919876543211%22,",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "792ac0",
+        "hash": "59dd3903",
+        "encoded": "%22email%22:%20%22spicegarden@example.com%22,",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "792ac0",
+        "hash": "4d28e337",
+        "encoded": "%22website%22:%20%22https://spicegarden.com%22,",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "792ac0",
+        "hash": "3e43b264",
+        "encoded": "%22rating%22:%204.5,",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "792ac0",
+        "hash": "4432612f",
+        "encoded": "%22isActive%22:%20true,",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "792ac0",
+        "hash": "c070b3c6",
+        "encoded": "%22deliveryRadius%22:%205.0,",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "792ac0",
+        "hash": "41fd16f0",
+        "encoded": "%22minimumOrderAmount%22:%20100.00,",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "792ac0",
+        "hash": "1bbfa3b9",
+        "encoded": "%22deliveryFee%22:%2050.00",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "792ac0",
+        "hash": "2d0864bf",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "792ac0",
+        "hash": "2a394f84",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "792ac0",
+        "hash": "50967a7e",
+        "encoded": "**Expected**:%20201%20Created,%20save%20%60restaurantId%60",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "792ac0",
+        "hash": "b4d615a1",
+        "encoded": "###%202.2%20Get%20All%20Restaurants",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "792ac0",
+        "hash": "07947241",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "128": {
+        "chunkId": "792ac0",
+        "hash": "7358977e",
+        "encoded": "GET%20http://localhost:8082/api/restaurants",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "792ac0",
+        "hash": "54aeafe1",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "792ac0",
+        "hash": "c9d177de",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20active%20restaurants",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "792ac0",
+        "hash": "29e5a96f",
+        "encoded": "###%202.3%20Get%20Restaurant%20by%20ID",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "792ac0",
+        "hash": "89d5217c",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "134": {
+        "chunkId": "792ac0",
+        "hash": "cd7c8d5a",
+        "encoded": "GET%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "792ac0",
+        "hash": "22f49967",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "792ac0",
+        "hash": "cca11f25",
+        "encoded": "**Expected**:%20200%20OK,%20restaurant%20object",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "792ac0",
+        "hash": "0b89624b",
+        "encoded": "###%202.4%20Get%20Restaurants%20by%20Cuisine",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "792ac0",
+        "hash": "9cae70dd",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "140": {
+        "chunkId": "792ac0",
+        "hash": "02787e4a",
+        "encoded": "GET%20http://localhost:8082/api/restaurants/cuisine/INDIAN",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "792ac0",
+        "hash": "44b70e7b",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "792ac0",
+        "hash": "06c70975",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20Indian%20restaurants",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "792ac0",
+        "hash": "509b09fc",
+        "encoded": "###%202.5%20Search%20Restaurants",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "792ac0",
+        "hash": "24102101",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "146": {
+        "chunkId": "792ac0",
+        "hash": "378e498b",
+        "encoded": "GET%20http://localhost:8082/api/restaurants/search?query=Spice",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "792ac0",
+        "hash": "05a4771b",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "792ac0",
+        "hash": "27cf8014",
+        "encoded": "**Expected**:%20200%20OK,%20matching%20restaurants",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "792ac0",
+        "hash": "e7dc1293",
+        "encoded": "###%202.6%20Update%20Restaurant",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "792ac0",
+        "hash": "bcf387e2",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "792ac0",
+        "hash": "88f73590",
+        "encoded": "PUT%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "792ac0",
+        "hash": "500bfe88",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "792ac0",
+        "hash": "fcd7839d",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "792ac0",
+        "hash": "258a4f53",
+        "encoded": "%22name%22:%20%22Spice%20Garden%20Updated%22,",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "792ac0",
+        "hash": "448352d2",
+        "encoded": "%22cuisine%22:%20%22INDIAN%22,",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "792ac0",
+        "hash": "cef9558a",
+        "encoded": "%22address%22:%20%7B",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "792ac0",
+        "hash": "f41e3695",
+        "encoded": "%22street%22:%20%22123%20MG%20Road%22,",
+        "prevChunkIds": []
+      },
+      "160": {
+        "chunkId": "792ac0",
+        "hash": "02c24c62",
+        "encoded": "%22city%22:%20%22Bengaluru%22,",
+        "prevChunkIds": []
+      },
+      "161": {
+        "chunkId": "792ac0",
+        "hash": "df710124",
+        "encoded": "%22state%22:%20%22Karnataka%22,",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "792ac0",
+        "hash": "69dd7767",
+        "encoded": "%22zipCode%22:%20%22560001%22,",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "792ac0",
+        "hash": "18e178ef",
+        "encoded": "%22country%22:%20%22India%22",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "792ac0",
+        "hash": "8385424e",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "792ac0",
+        "hash": "04463567",
+        "encoded": "%22phone%22:%20%22+919876543211%22,",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "792ac0",
+        "hash": "7ab288fc",
+        "encoded": "%22rating%22:%204.7,",
+        "prevChunkIds": []
+      },
+      "167": {
+        "chunkId": "792ac0",
+        "hash": "af38523a",
+        "encoded": "%22isActive%22:%20true",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "792ac0",
+        "hash": "d5691714",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "169": {
+        "chunkId": "792ac0",
+        "hash": "018e634b",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "792ac0",
+        "hash": "e93adbd0",
+        "encoded": "**Expected**:%20200%20OK,%20updated%20restaurant",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "792ac0",
+        "hash": "7d1ba664",
+        "encoded": "###%202.7%20Activate%20Restaurant",
+        "prevChunkIds": []
+      },
+      "173": {
+        "chunkId": "792ac0",
+        "hash": "2f23cddc",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "792ac0",
+        "hash": "392d463e",
+        "encoded": "PUT%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D/activate",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "792ac0",
+        "hash": "8cf1243a",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "792ac0",
+        "hash": "bddd3a7a",
+        "encoded": "**Expected**:%20200%20OK,%20activated%20restaurant",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "792ac0",
+        "hash": "c51dbbd9",
+        "encoded": "###%202.8%20Deactivate%20Restaurant",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "792ac0",
+        "hash": "7726baa0",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "792ac0",
+        "hash": "9640d0d2",
+        "encoded": "PUT%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D/deactivate",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "792ac0",
+        "hash": "eb6898ef",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "792ac0",
+        "hash": "427e804a",
+        "encoded": "**Expected**:%20200%20OK,%20deactivated%20restaurant",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "792ac0",
+        "hash": "a157ca0b",
+        "encoded": "###%202.9%20Delete%20Restaurant",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "792ac0",
+        "hash": "adc69863",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "792ac0",
+        "hash": "2641ca4f",
+        "encoded": "DELETE%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "792ac0",
+        "hash": "01a8494f",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "792ac0",
+        "hash": "2a311744",
+        "encoded": "**Expected**:%20204%20No%20Content",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "792ac0",
+        "hash": "40d13c3f",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "792ac0",
+        "hash": "740dcacb",
+        "encoded": "##%20PHASE%203:%20MENU%20ITEM%20ENDPOINTS%20(Port%208082)",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "792ac0",
+        "hash": "1598dd7f",
+        "encoded": "###%203.1%20Add%20Menu%20Item%20to%20Restaurant",
+        "prevChunkIds": []
+      },
+      "195": {
+        "chunkId": "792ac0",
+        "hash": "66512831",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "792ac0",
+        "hash": "9b4ac865",
+        "encoded": "POST%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D/menu",
+        "prevChunkIds": []
+      },
+      "197": {
+        "chunkId": "792ac0",
+        "hash": "07c3eae2",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "199": {
+        "chunkId": "792ac0",
+        "hash": "aefe1988",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "792ac0",
+        "hash": "9239fc48",
+        "encoded": "%22name%22:%20%22Butter%20Chicken%22,",
+        "prevChunkIds": []
+      },
+      "201": {
+        "chunkId": "792ac0",
+        "hash": "6f8a7981",
+        "encoded": "%22description%22:%20%22Creamy%20tomato-based%20chicken%20curry%22,",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "792ac0",
+        "hash": "1220e4be",
+        "encoded": "%22price%22:%20350.00,",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "792ac0",
+        "hash": "c5522a3c",
+        "encoded": "%22category%22:%20%22Main%20Course%22,",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "792ac0",
+        "hash": "18b670b3",
+        "encoded": "%22isAvailable%22:%20true",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "792ac0",
+        "hash": "699b62c2",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "792ac0",
+        "hash": "05f95ec7",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "207": {
+        "chunkId": "792ac0",
+        "hash": "8b66f42a",
+        "encoded": "**Expected**:%20201%20Created,%20save%20%60menuItemId%60",
+        "prevChunkIds": []
+      },
+      "209": {
+        "chunkId": "792ac0",
+        "hash": "59229a9b",
+        "encoded": "###%203.2%20Get%20Available%20Menu%20Items%20for%20Restaurant",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "792ac0",
+        "hash": "f92c04cd",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "211": {
+        "chunkId": "792ac0",
+        "hash": "2b5b8958",
+        "encoded": "GET%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D/menu",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "792ac0",
+        "hash": "b76731c7",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "213": {
+        "chunkId": "792ac0",
+        "hash": "9e5a2aaa",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20available%20menu%20items",
+        "prevChunkIds": []
+      },
+      "215": {
+        "chunkId": "792ac0",
+        "hash": "f8afd8a9",
+        "encoded": "###%203.3%20Get%20All%20Menu%20Items%20for%20Restaurant",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "792ac0",
+        "hash": "fbc0a1da",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "217": {
+        "chunkId": "792ac0",
+        "hash": "112a875a",
+        "encoded": "GET%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D/menu/all",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "792ac0",
+        "hash": "918a6196",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "219": {
+        "chunkId": "792ac0",
+        "hash": "ac741c00",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20all%20menu%20items%20(including%20unavailable)",
+        "prevChunkIds": []
+      },
+      "221": {
+        "chunkId": "792ac0",
+        "hash": "ce6ee63a",
+        "encoded": "###%203.4%20Get%20Menu%20Item%20by%20ID",
+        "prevChunkIds": []
+      },
+      "222": {
+        "chunkId": "792ac0",
+        "hash": "9efde808",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "223": {
+        "chunkId": "792ac0",
+        "hash": "f79c4b7d",
+        "encoded": "GET%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D/menu/%7BmenuItemId%7D",
+        "prevChunkIds": []
+      },
+      "224": {
+        "chunkId": "792ac0",
+        "hash": "2e86529a",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "225": {
+        "chunkId": "792ac0",
+        "hash": "426ebcbb",
+        "encoded": "**Expected**:%20200%20OK,%20menu%20item%20object",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "792ac0",
+        "hash": "72b60909",
+        "encoded": "###%203.5%20Update%20Menu%20Item",
+        "prevChunkIds": []
+      },
+      "228": {
+        "chunkId": "792ac0",
+        "hash": "b8903b57",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "229": {
+        "chunkId": "792ac0",
+        "hash": "79ad348d",
+        "encoded": "PUT%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D/menu/%7BmenuItemId%7D",
+        "prevChunkIds": []
+      },
+      "230": {
+        "chunkId": "792ac0",
+        "hash": "4c3f5101",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "232": {
+        "chunkId": "792ac0",
+        "hash": "c85bc077",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "233": {
+        "chunkId": "792ac0",
+        "hash": "be262cf1",
+        "encoded": "%22name%22:%20%22Butter%20Chicken%20Special%22,",
+        "prevChunkIds": []
+      },
+      "234": {
+        "chunkId": "792ac0",
+        "hash": "db08c20b",
+        "encoded": "%22description%22:%20%22Premium%20creamy%20tomato-based%20chicken%20curry%22,",
+        "prevChunkIds": []
+      },
+      "235": {
+        "chunkId": "792ac0",
+        "hash": "eb47b6d3",
+        "encoded": "%22price%22:%20400.00,",
+        "prevChunkIds": []
+      },
+      "236": {
+        "chunkId": "792ac0",
+        "hash": "485983cc",
+        "encoded": "%22category%22:%20%22Main%20Course%22,",
+        "prevChunkIds": []
+      },
+      "237": {
+        "chunkId": "792ac0",
+        "hash": "51902b7a",
+        "encoded": "%22isAvailable%22:%20true",
+        "prevChunkIds": []
+      },
+      "238": {
+        "chunkId": "792ac0",
+        "hash": "eed3c15e",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "239": {
+        "chunkId": "792ac0",
+        "hash": "8ac787af",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "240": {
+        "chunkId": "792ac0",
+        "hash": "1ba1f790",
+        "encoded": "**Expected**:%20200%20OK,%20updated%20menu%20item",
+        "prevChunkIds": []
+      },
+      "242": {
+        "chunkId": "792ac0",
+        "hash": "3ed7ddba",
+        "encoded": "###%203.6%20Toggle%20Menu%20Item%20Availability",
+        "prevChunkIds": []
+      },
+      "243": {
+        "chunkId": "792ac0",
+        "hash": "03a34caa",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "244": {
+        "chunkId": "792ac0",
+        "hash": "07e16e76",
+        "encoded": "PUT%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D/menu/%7BmenuItemId%7D/availability",
+        "prevChunkIds": []
+      },
+      "245": {
+        "chunkId": "792ac0",
+        "hash": "a2a3c0f4",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "246": {
+        "chunkId": "792ac0",
+        "hash": "68eeb3d0",
+        "encoded": "**Expected**:%20200%20OK,%20menu%20item%20with%20toggled%20availability",
+        "prevChunkIds": []
+      },
+      "248": {
+        "chunkId": "792ac0",
+        "hash": "34dcb1c1",
+        "encoded": "###%203.7%20Delete%20Menu%20Item",
+        "prevChunkIds": []
+      },
+      "249": {
+        "chunkId": "792ac0",
+        "hash": "8c2a3b86",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "250": {
+        "chunkId": "792ac0",
+        "hash": "a684e0e4",
+        "encoded": "DELETE%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D/menu/%7BmenuItemId%7D",
+        "prevChunkIds": []
+      },
+      "251": {
+        "chunkId": "792ac0",
+        "hash": "f235f25a",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "252": {
+        "chunkId": "792ac0",
+        "hash": "f08f9e3d",
+        "encoded": "**Expected**:%20204%20No%20Content",
+        "prevChunkIds": []
+      },
+      "254": {
+        "chunkId": "792ac0",
+        "hash": "c5ea3a1e",
+        "encoded": "###%203.8%20Get%20All%20Menu%20Items%20(Direct)",
+        "prevChunkIds": []
+      },
+      "255": {
+        "chunkId": "792ac0",
+        "hash": "b6a3aeea",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "256": {
+        "chunkId": "792ac0",
+        "hash": "e6e74263",
+        "encoded": "GET%20http://localhost:8082/api/menu-items",
+        "prevChunkIds": []
+      },
+      "257": {
+        "chunkId": "792ac0",
+        "hash": "98388c3c",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "258": {
+        "chunkId": "792ac0",
+        "hash": "981d53fa",
+        "encoded": "**Expected**:%20200%20OK,%20all%20menu%20items%20across%20all%20restaurants",
+        "prevChunkIds": []
+      },
+      "260": {
+        "chunkId": "792ac0",
+        "hash": "3e6fb42c",
+        "encoded": "###%203.9%20Get%20Menu%20Item%20by%20ID%20(Direct)",
+        "prevChunkIds": []
+      },
+      "261": {
+        "chunkId": "792ac0",
+        "hash": "ee1da29d",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "262": {
+        "chunkId": "792ac0",
+        "hash": "6247c185",
+        "encoded": "GET%20http://localhost:8082/api/menu-items/%7BmenuItemId%7D",
+        "prevChunkIds": []
+      },
+      "263": {
+        "chunkId": "792ac0",
+        "hash": "0519f252",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "264": {
+        "chunkId": "792ac0",
+        "hash": "a07b7360",
+        "encoded": "**Expected**:%20200%20OK,%20menu%20item%20object",
+        "prevChunkIds": []
+      },
+      "266": {
+        "chunkId": "792ac0",
+        "hash": "2c037337",
+        "encoded": "###%203.10%20Update%20Menu%20Item%20(Direct)",
+        "prevChunkIds": []
+      },
+      "267": {
+        "chunkId": "792ac0",
+        "hash": "0216c87e",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "268": {
+        "chunkId": "792ac0",
+        "hash": "e2d4aaee",
+        "encoded": "PUT%20http://localhost:8082/api/menu-items/%7BmenuItemId%7D",
+        "prevChunkIds": []
+      },
+      "269": {
+        "chunkId": "792ac0",
+        "hash": "aaa92151",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "271": {
+        "chunkId": "792ac0",
+        "hash": "523fedbe",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "272": {
+        "chunkId": "792ac0",
+        "hash": "8d0da143",
+        "encoded": "%22name%22:%20%22Butter%20Chicken%20Deluxe%22,",
+        "prevChunkIds": []
+      },
+      "273": {
+        "chunkId": "792ac0",
+        "hash": "88a87ed1",
+        "encoded": "%22description%22:%20%22Extra%20creamy%20chicken%20curry%22,",
+        "prevChunkIds": []
+      },
+      "274": {
+        "chunkId": "792ac0",
+        "hash": "9c1b8562",
+        "encoded": "%22price%22:%20450.00,",
+        "prevChunkIds": []
+      },
+      "275": {
+        "chunkId": "792ac0",
+        "hash": "78ce1982",
+        "encoded": "%22category%22:%20%22Main%20Course%22,",
+        "prevChunkIds": []
+      },
+      "276": {
+        "chunkId": "792ac0",
+        "hash": "e6689958",
+        "encoded": "%22isAvailable%22:%20true",
+        "prevChunkIds": []
+      },
+      "277": {
+        "chunkId": "792ac0",
+        "hash": "c663f07c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "278": {
+        "chunkId": "792ac0",
+        "hash": "817b1145",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "279": {
+        "chunkId": "792ac0",
+        "hash": "b5429f31",
+        "encoded": "**Expected**:%20200%20OK,%20updated%20menu%20item",
+        "prevChunkIds": []
+      },
+      "281": {
+        "chunkId": "792ac0",
+        "hash": "d8caeb76",
+        "encoded": "###%203.11%20Delete%20Menu%20Item%20(Direct)",
+        "prevChunkIds": []
+      },
+      "282": {
+        "chunkId": "792ac0",
+        "hash": "42f3c5b7",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "283": {
+        "chunkId": "792ac0",
+        "hash": "e4d9e343",
+        "encoded": "DELETE%20http://localhost:8082/api/menu-items/%7BmenuItemId%7D",
+        "prevChunkIds": []
+      },
+      "284": {
+        "chunkId": "792ac0",
+        "hash": "fd2fc266",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "285": {
+        "chunkId": "792ac0",
+        "hash": "ed7988c9",
+        "encoded": "**Expected**:%20204%20No%20Content",
+        "prevChunkIds": []
+      },
+      "287": {
+        "chunkId": "792ac0",
+        "hash": "4517a16c",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "289": {
+        "chunkId": "792ac0",
+        "hash": "e2527ed6",
+        "encoded": "##%20PHASE%204:%20ORDER%20SERVICE%20ENDPOINTS%20(Port%208083)",
+        "prevChunkIds": []
+      },
+      "291": {
+        "chunkId": "792ac0",
+        "hash": "a9deabfc",
+        "encoded": "###%204.1%20Create%20Order",
+        "prevChunkIds": []
+      },
+      "292": {
+        "chunkId": "792ac0",
+        "hash": "b6e3a038",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "293": {
+        "chunkId": "792ac0",
+        "hash": "f2214964",
+        "encoded": "POST%20http://localhost:8083/api/orders",
+        "prevChunkIds": []
+      },
+      "294": {
+        "chunkId": "792ac0",
+        "hash": "a6ce551c",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "296": {
+        "chunkId": "792ac0",
+        "hash": "978e0e68",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "297": {
+        "chunkId": "792ac0",
+        "hash": "21b63ce0",
+        "encoded": "%22userId%22:%20%7BuserId%7D,",
+        "prevChunkIds": []
+      },
+      "298": {
+        "chunkId": "792ac0",
+        "hash": "f93750e9",
+        "encoded": "%22restaurantId%22:%20%7BrestaurantId%7D,",
+        "prevChunkIds": []
+      },
+      "299": {
+        "chunkId": "792ac0",
+        "hash": "4998f53b",
+        "encoded": "%22items%22:%20%5B",
+        "prevChunkIds": []
+      },
+      "300": {
+        "chunkId": "792ac0",
+        "hash": "4f407b6b",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "301": {
+        "chunkId": "792ac0",
+        "hash": "4082efb9",
+        "encoded": "%22menuItemId%22:%20%7BmenuItemId%7D,",
+        "prevChunkIds": []
+      },
+      "302": {
+        "chunkId": "792ac0",
+        "hash": "87636df0",
+        "encoded": "%22quantity%22:%202,",
+        "prevChunkIds": []
+      },
+      "303": {
+        "chunkId": "792ac0",
+        "hash": "c8fca382",
+        "encoded": "%22price%22:%20350.00",
+        "prevChunkIds": []
+      },
+      "304": {
+        "chunkId": "792ac0",
+        "hash": "5caa522d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "305": {
+        "chunkId": "792ac0",
+        "hash": "1145065f",
+        "encoded": "%5D,",
+        "prevChunkIds": []
+      },
+      "306": {
+        "chunkId": "792ac0",
+        "hash": "e0e818e0",
+        "encoded": "%22deliveryAddress%22:%20%22HSR%20Layout,%20Bengaluru,%20Karnataka,%20560102%22",
+        "prevChunkIds": []
+      },
+      "307": {
+        "chunkId": "792ac0",
+        "hash": "a5e1e4c3",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "308": {
+        "chunkId": "792ac0",
+        "hash": "17dd5299",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "309": {
+        "chunkId": "792ac0",
+        "hash": "91a21c7a",
+        "encoded": "**Expected**:%20201%20Created,%20save%20%60orderId%60",
+        "prevChunkIds": []
+      },
+      "311": {
+        "chunkId": "792ac0",
+        "hash": "7983f699",
+        "encoded": "###%204.2%20Create%20Order%20(Legacy)",
+        "prevChunkIds": []
+      },
+      "312": {
+        "chunkId": "792ac0",
+        "hash": "0b6046af",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "313": {
+        "chunkId": "792ac0",
+        "hash": "9a70e90d",
+        "encoded": "POST%20http://localhost:8083/api/orders/legacy",
+        "prevChunkIds": []
+      },
+      "314": {
+        "chunkId": "792ac0",
+        "hash": "c8bb3c69",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "316": {
+        "chunkId": "792ac0",
+        "hash": "a62ce475",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "317": {
+        "chunkId": "792ac0",
+        "hash": "9a1efb72",
+        "encoded": "%22userId%22:%20%7BuserId%7D,",
+        "prevChunkIds": []
+      },
+      "318": {
+        "chunkId": "792ac0",
+        "hash": "9f4064e4",
+        "encoded": "%22restaurantId%22:%20%7BrestaurantId%7D,",
+        "prevChunkIds": []
+      },
+      "319": {
+        "chunkId": "792ac0",
+        "hash": "e527ef72",
+        "encoded": "%22items%22:%20%5B",
+        "prevChunkIds": []
+      },
+      "320": {
+        "chunkId": "792ac0",
+        "hash": "b0dc27d1",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "321": {
+        "chunkId": "792ac0",
+        "hash": "3fd9cfac",
+        "encoded": "%22menuItemId%22:%20%7BmenuItemId%7D,",
+        "prevChunkIds": []
+      },
+      "322": {
+        "chunkId": "792ac0",
+        "hash": "c8345378",
+        "encoded": "%22quantity%22:%201,",
+        "prevChunkIds": []
+      },
+      "323": {
+        "chunkId": "792ac0",
+        "hash": "546b045a",
+        "encoded": "%22price%22:%20350.00",
+        "prevChunkIds": []
+      },
+      "324": {
+        "chunkId": "792ac0",
+        "hash": "97eb50be",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "325": {
+        "chunkId": "792ac0",
+        "hash": "19cc3fa3",
+        "encoded": "%5D,",
+        "prevChunkIds": []
+      },
+      "326": {
+        "chunkId": "792ac0",
+        "hash": "14b151b7",
+        "encoded": "%22deliveryAddress%22:%20%22Koramangala,%20Bengaluru%22,",
+        "prevChunkIds": []
+      },
+      "327": {
+        "chunkId": "792ac0",
+        "hash": "a66417e9",
+        "encoded": "%22paymentMethod%22:%20%22ONLINE%22",
+        "prevChunkIds": []
+      },
+      "328": {
+        "chunkId": "792ac0",
+        "hash": "869f71d8",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "329": {
+        "chunkId": "792ac0",
+        "hash": "630b3f4c",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "330": {
+        "chunkId": "792ac0",
+        "hash": "ce201c3c",
+        "encoded": "**Expected**:%20201%20Created",
+        "prevChunkIds": []
+      },
+      "332": {
+        "chunkId": "792ac0",
+        "hash": "cb191db9",
+        "encoded": "###%204.3%20Get%20All%20Orders",
+        "prevChunkIds": []
+      },
+      "333": {
+        "chunkId": "792ac0",
+        "hash": "7584eb95",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "334": {
+        "chunkId": "792ac0",
+        "hash": "faea3b30",
+        "encoded": "GET%20http://localhost:8083/api/orders",
+        "prevChunkIds": []
+      },
+      "335": {
+        "chunkId": "792ac0",
+        "hash": "855e992f",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "336": {
+        "chunkId": "792ac0",
+        "hash": "3ca815f1",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20all%20orders",
+        "prevChunkIds": []
+      },
+      "338": {
+        "chunkId": "792ac0",
+        "hash": "3cef3139",
+        "encoded": "###%204.4%20Get%20Order%20by%20ID",
+        "prevChunkIds": []
+      },
+      "339": {
+        "chunkId": "792ac0",
+        "hash": "4f585f47",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "340": {
+        "chunkId": "792ac0",
+        "hash": "7c9fa32a",
+        "encoded": "GET%20http://localhost:8083/api/orders/%7BorderId%7D",
+        "prevChunkIds": []
+      },
+      "341": {
+        "chunkId": "792ac0",
+        "hash": "2dcfb628",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "342": {
+        "chunkId": "792ac0",
+        "hash": "ee07f0e3",
+        "encoded": "**Expected**:%20200%20OK,%20order%20object",
+        "prevChunkIds": []
+      },
+      "344": {
+        "chunkId": "792ac0",
+        "hash": "74eb56aa",
+        "encoded": "###%204.5%20Get%20Orders%20by%20User%20ID",
+        "prevChunkIds": []
+      },
+      "345": {
+        "chunkId": "792ac0",
+        "hash": "2cc79c2a",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "346": {
+        "chunkId": "792ac0",
+        "hash": "aa58e3dc",
+        "encoded": "GET%20http://localhost:8083/api/orders/user/%7BuserId%7D",
+        "prevChunkIds": []
+      },
+      "347": {
+        "chunkId": "792ac0",
+        "hash": "ff37eef3",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "348": {
+        "chunkId": "792ac0",
+        "hash": "673a7ea0",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20user's%20orders",
+        "prevChunkIds": []
+      },
+      "350": {
+        "chunkId": "792ac0",
+        "hash": "105b38ff",
+        "encoded": "###%204.6%20Get%20Orders%20by%20Restaurant%20ID",
+        "prevChunkIds": []
+      },
+      "351": {
+        "chunkId": "792ac0",
+        "hash": "9328fae9",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "352": {
+        "chunkId": "792ac0",
+        "hash": "213debe9",
+        "encoded": "GET%20http://localhost:8083/api/orders/restaurant/%7BrestaurantId%7D",
+        "prevChunkIds": []
+      },
+      "353": {
+        "chunkId": "792ac0",
+        "hash": "bc83d4ed",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "354": {
+        "chunkId": "792ac0",
+        "hash": "9e2753b2",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20restaurant's%20orders",
+        "prevChunkIds": []
+      },
+      "356": {
+        "chunkId": "792ac0",
+        "hash": "7bca8d6a",
+        "encoded": "###%204.7%20Get%20Orders%20by%20Status",
+        "prevChunkIds": []
+      },
+      "357": {
+        "chunkId": "792ac0",
+        "hash": "e20a2d02",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "358": {
+        "chunkId": "792ac0",
+        "hash": "8544aec3",
+        "encoded": "GET%20http://localhost:8083/api/orders/status/CREATED",
+        "prevChunkIds": []
+      },
+      "359": {
+        "chunkId": "792ac0",
+        "hash": "86a12399",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "360": {
+        "chunkId": "792ac0",
+        "hash": "913f13d6",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20orders%20with%20CREATED%20status",
+        "prevChunkIds": []
+      },
+      "362": {
+        "chunkId": "792ac0",
+        "hash": "5569909b",
+        "encoded": "**Available%20Statuses**:%20CREATED,%20CONFIRMED,%20PREPARING,%20OUT_FOR_DELIVERY,%20DELIVERED,%20CANCELLED",
+        "prevChunkIds": []
+      },
+      "364": {
+        "chunkId": "792ac0",
+        "hash": "baf65078",
+        "encoded": "###%204.8%20Update%20Order",
+        "prevChunkIds": []
+      },
+      "365": {
+        "chunkId": "792ac0",
+        "hash": "b0944df3",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "366": {
+        "chunkId": "792ac0",
+        "hash": "f8252598",
+        "encoded": "PUT%20http://localhost:8083/api/orders/%7BorderId%7D",
+        "prevChunkIds": []
+      },
+      "367": {
+        "chunkId": "792ac0",
+        "hash": "4c1b323d",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "369": {
+        "chunkId": "792ac0",
+        "hash": "6ce7dcf7",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "370": {
+        "chunkId": "792ac0",
+        "hash": "a1ab27f6",
+        "encoded": "%22userId%22:%20%7BuserId%7D,",
+        "prevChunkIds": []
+      },
+      "371": {
+        "chunkId": "792ac0",
+        "hash": "f57faf98",
+        "encoded": "%22restaurantId%22:%20%7BrestaurantId%7D,",
+        "prevChunkIds": []
+      },
+      "372": {
+        "chunkId": "792ac0",
+        "hash": "7b09812e",
+        "encoded": "%22deliveryAddress%22:%20%22Updated%20Address,%20Bengaluru%22,",
+        "prevChunkIds": []
+      },
+      "373": {
+        "chunkId": "792ac0",
+        "hash": "dea8964c",
+        "encoded": "%22status%22:%20%22CONFIRMED%22,",
+        "prevChunkIds": []
+      },
+      "374": {
+        "chunkId": "792ac0",
+        "hash": "4008664f",
+        "encoded": "%22totalAmount%22:%20700.00",
+        "prevChunkIds": []
+      },
+      "375": {
+        "chunkId": "792ac0",
+        "hash": "62c8ff13",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "376": {
+        "chunkId": "792ac0",
+        "hash": "418039de",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "377": {
+        "chunkId": "792ac0",
+        "hash": "3fcd1595",
+        "encoded": "**Expected**:%20200%20OK,%20updated%20order",
+        "prevChunkIds": []
+      },
+      "379": {
+        "chunkId": "792ac0",
+        "hash": "0fed63b0",
+        "encoded": "###%204.9%20Update%20Order%20Status",
+        "prevChunkIds": []
+      },
+      "380": {
+        "chunkId": "792ac0",
+        "hash": "f0a1ed3a",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "381": {
+        "chunkId": "792ac0",
+        "hash": "8af248f7",
+        "encoded": "PUT%20http://localhost:8083/api/orders/%7BorderId%7D/status",
+        "prevChunkIds": []
+      },
+      "382": {
+        "chunkId": "792ac0",
+        "hash": "de6a2645",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "384": {
+        "chunkId": "792ac0",
+        "hash": "cfbefbcd",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "385": {
+        "chunkId": "792ac0",
+        "hash": "3c725323",
+        "encoded": "%22status%22:%20%22CONFIRMED%22",
+        "prevChunkIds": []
+      },
+      "386": {
+        "chunkId": "792ac0",
+        "hash": "e90535c0",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "387": {
+        "chunkId": "792ac0",
+        "hash": "a4e390b4",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "388": {
+        "chunkId": "792ac0",
+        "hash": "d76c0e71",
+        "encoded": "**Expected**:%20200%20OK,%20order%20with%20updated%20status",
+        "prevChunkIds": []
+      },
+      "390": {
+        "chunkId": "792ac0",
+        "hash": "c0329e98",
+        "encoded": "###%204.10%20Confirm%20Order",
+        "prevChunkIds": []
+      },
+      "391": {
+        "chunkId": "792ac0",
+        "hash": "695d0fb8",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "392": {
+        "chunkId": "792ac0",
+        "hash": "ba9ac088",
+        "encoded": "POST%20http://localhost:8083/api/orders/%7BorderId%7D/confirm",
+        "prevChunkIds": []
+      },
+      "393": {
+        "chunkId": "792ac0",
+        "hash": "65b86e00",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "394": {
+        "chunkId": "792ac0",
+        "hash": "ece5f220",
+        "encoded": "**Expected**:%20200%20OK,%20confirmed%20order",
+        "prevChunkIds": []
+      },
+      "396": {
+        "chunkId": "792ac0",
+        "hash": "3e1bb006",
+        "encoded": "###%204.11%20Cancel%20Order",
+        "prevChunkIds": []
+      },
+      "397": {
+        "chunkId": "792ac0",
+        "hash": "690fbd3b",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "398": {
+        "chunkId": "792ac0",
+        "hash": "839603b4",
+        "encoded": "POST%20http://localhost:8083/api/orders/%7BorderId%7D/cancel",
+        "prevChunkIds": []
+      },
+      "399": {
+        "chunkId": "792ac0",
+        "hash": "a35fbd67",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "400": {
+        "chunkId": "792ac0",
+        "hash": "e72b0ed3",
+        "encoded": "**Expected**:%20200%20OK,%20cancelled%20order",
+        "prevChunkIds": []
+      },
+      "402": {
+        "chunkId": "792ac0",
+        "hash": "c0f32b4c",
+        "encoded": "###%204.12%20Deliver%20Order",
+        "prevChunkIds": []
+      },
+      "403": {
+        "chunkId": "792ac0",
+        "hash": "b645a9a1",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "404": {
+        "chunkId": "792ac0",
+        "hash": "170f3aa7",
+        "encoded": "POST%20http://localhost:8083/api/orders/%7BorderId%7D/deliver",
+        "prevChunkIds": []
+      },
+      "405": {
+        "chunkId": "792ac0",
+        "hash": "7df0f4d2",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "406": {
+        "chunkId": "792ac0",
+        "hash": "9eabf9d7",
+        "encoded": "**Expected**:%20200%20OK,%20delivered%20order",
+        "prevChunkIds": []
+      },
+      "408": {
+        "chunkId": "792ac0",
+        "hash": "45c973cb",
+        "encoded": "###%204.13%20Get%20Order%20Tracking",
+        "prevChunkIds": []
+      },
+      "409": {
+        "chunkId": "792ac0",
+        "hash": "901f3168",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "410": {
+        "chunkId": "792ac0",
+        "hash": "d7153587",
+        "encoded": "GET%20http://localhost:8083/api/orders/%7BorderId%7D/tracking",
+        "prevChunkIds": []
+      },
+      "411": {
+        "chunkId": "792ac0",
+        "hash": "70c08241",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "412": {
+        "chunkId": "792ac0",
+        "hash": "b44a79e5",
+        "encoded": "**Expected**:%20200%20OK,%20order%20tracking%20information",
+        "prevChunkIds": []
+      },
+      "414": {
+        "chunkId": "792ac0",
+        "hash": "d26d330d",
+        "encoded": "###%204.14%20Delete%20Order",
+        "prevChunkIds": []
+      },
+      "415": {
+        "chunkId": "792ac0",
+        "hash": "37492de9",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "416": {
+        "chunkId": "792ac0",
+        "hash": "b7c68e8b",
+        "encoded": "DELETE%20http://localhost:8083/api/orders/%7BorderId%7D",
+        "prevChunkIds": []
+      },
+      "417": {
+        "chunkId": "792ac0",
+        "hash": "8ac13f3f",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "418": {
+        "chunkId": "792ac0",
+        "hash": "b9578d4b",
+        "encoded": "**Expected**:%20204%20No%20Content",
+        "prevChunkIds": []
+      },
+      "420": {
+        "chunkId": "792ac0",
+        "hash": "a750e90c",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "422": {
+        "chunkId": "792ac0",
+        "hash": "6297d5fa",
+        "encoded": "##%20PHASE%205:%20PAYMENT%20SERVICE%20ENDPOINTS%20(Port%208084)",
+        "prevChunkIds": []
+      },
+      "424": {
+        "chunkId": "792ac0",
+        "hash": "5d15d57a",
+        "encoded": "###%205.1%20Create%20Payment",
+        "prevChunkIds": []
+      },
+      "425": {
+        "chunkId": "792ac0",
+        "hash": "b2f1662d",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "426": {
+        "chunkId": "792ac0",
+        "hash": "3e3a105d",
+        "encoded": "POST%20http://localhost:8084/api/payments",
+        "prevChunkIds": []
+      },
+      "427": {
+        "chunkId": "792ac0",
+        "hash": "6aa4b9cb",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "429": {
+        "chunkId": "792ac0",
+        "hash": "3033a8b8",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "430": {
+        "chunkId": "792ac0",
+        "hash": "1a7b7647",
+        "encoded": "%22orderId%22:%20%7BorderId%7D,",
+        "prevChunkIds": []
+      },
+      "431": {
+        "chunkId": "792ac0",
+        "hash": "40d602c4",
+        "encoded": "%22userId%22:%20%7BuserId%7D,",
+        "prevChunkIds": []
+      },
+      "432": {
+        "chunkId": "792ac0",
+        "hash": "c7c9394c",
+        "encoded": "%22amount%22:%20700.00,",
+        "prevChunkIds": []
+      },
+      "433": {
+        "chunkId": "792ac0",
+        "hash": "ac9f5111",
+        "encoded": "%22paymentMethod%22:%20%22ONLINE%22,",
+        "prevChunkIds": []
+      },
+      "434": {
+        "chunkId": "792ac0",
+        "hash": "1c15d989",
+        "encoded": "%22transactionId%22:%20%22TXN%22%20+%20Date.now()",
+        "prevChunkIds": []
+      },
+      "435": {
+        "chunkId": "792ac0",
+        "hash": "cf46aa87",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "436": {
+        "chunkId": "792ac0",
+        "hash": "92152c75",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "437": {
+        "chunkId": "792ac0",
+        "hash": "2e3aabea",
+        "encoded": "**Expected**:%20201%20Created,%20save%20%60paymentId%60",
+        "prevChunkIds": []
+      },
+      "439": {
+        "chunkId": "792ac0",
+        "hash": "96b14d78",
+        "encoded": "**Available%20Payment%20Methods**:%20CASH,%20ONLINE,%20CARD,%20UPI,%20WALLET",
+        "prevChunkIds": []
+      },
+      "441": {
+        "chunkId": "792ac0",
+        "hash": "4c826f5d",
+        "encoded": "###%205.2%20Process%20Payment",
+        "prevChunkIds": []
+      },
+      "442": {
+        "chunkId": "792ac0",
+        "hash": "57a0f499",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "443": {
+        "chunkId": "792ac0",
+        "hash": "83ce73bf",
+        "encoded": "POST%20http://localhost:8084/api/payments/process",
+        "prevChunkIds": []
+      },
+      "444": {
+        "chunkId": "792ac0",
+        "hash": "534cd348",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "446": {
+        "chunkId": "792ac0",
+        "hash": "072a1930",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "447": {
+        "chunkId": "792ac0",
+        "hash": "e715d532",
+        "encoded": "%22orderId%22:%20%7BorderId%7D,",
+        "prevChunkIds": []
+      },
+      "448": {
+        "chunkId": "792ac0",
+        "hash": "379b8a22",
+        "encoded": "%22userId%22:%20%7BuserId%7D,",
+        "prevChunkIds": []
+      },
+      "449": {
+        "chunkId": "792ac0",
+        "hash": "eb640c93",
+        "encoded": "%22amount%22:%20700.00,",
+        "prevChunkIds": []
+      },
+      "450": {
+        "chunkId": "792ac0",
+        "hash": "a98d7f93",
+        "encoded": "%22paymentMethod%22:%20%22ONLINE%22,",
+        "prevChunkIds": []
+      },
+      "451": {
+        "chunkId": "792ac0",
+        "hash": "d062cd05",
+        "encoded": "%22transactionId%22:%20%22TXN%22%20+%20Date.now()",
+        "prevChunkIds": []
+      },
+      "452": {
+        "chunkId": "792ac0",
+        "hash": "f810e22e",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "453": {
+        "chunkId": "792ac0",
+        "hash": "359e5831",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "454": {
+        "chunkId": "792ac0",
+        "hash": "081800f5",
+        "encoded": "**Expected**:%20200%20OK,%20payment%20response",
+        "prevChunkIds": []
+      },
+      "456": {
+        "chunkId": "792ac0",
+        "hash": "d5e5bfac",
+        "encoded": "###%205.3%20Process%20Payment%20by%20ID",
+        "prevChunkIds": []
+      },
+      "457": {
+        "chunkId": "792ac0",
+        "hash": "2903fc09",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "458": {
+        "chunkId": "792ac0",
+        "hash": "b9acea65",
+        "encoded": "POST%20http://localhost:8084/api/payments/%7BpaymentId%7D/process",
+        "prevChunkIds": []
+      },
+      "459": {
+        "chunkId": "792ac0",
+        "hash": "21130ac1",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "460": {
+        "chunkId": "792ac0",
+        "hash": "c4e09c0e",
+        "encoded": "**Expected**:%20200%20OK,%20processed%20payment",
+        "prevChunkIds": []
+      },
+      "462": {
+        "chunkId": "792ac0",
+        "hash": "8848d2da",
+        "encoded": "###%205.4%20Get%20All%20Payments",
+        "prevChunkIds": []
+      },
+      "463": {
+        "chunkId": "792ac0",
+        "hash": "e9d88342",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "464": {
+        "chunkId": "792ac0",
+        "hash": "90d7345e",
+        "encoded": "GET%20http://localhost:8084/api/payments",
+        "prevChunkIds": []
+      },
+      "465": {
+        "chunkId": "792ac0",
+        "hash": "48b39717",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "466": {
+        "chunkId": "792ac0",
+        "hash": "c5e50719",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20all%20payments",
+        "prevChunkIds": []
+      },
+      "468": {
+        "chunkId": "792ac0",
+        "hash": "9236fe22",
+        "encoded": "###%205.5%20Get%20Payment%20by%20ID",
+        "prevChunkIds": []
+      },
+      "469": {
+        "chunkId": "792ac0",
+        "hash": "db931a9b",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "470": {
+        "chunkId": "792ac0",
+        "hash": "5d9d32e7",
+        "encoded": "GET%20http://localhost:8084/api/payments/%7BpaymentId%7D",
+        "prevChunkIds": []
+      },
+      "471": {
+        "chunkId": "792ac0",
+        "hash": "646fff74",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "472": {
+        "chunkId": "792ac0",
+        "hash": "2bf99dcb",
+        "encoded": "**Expected**:%20200%20OK,%20payment%20object",
+        "prevChunkIds": []
+      },
+      "474": {
+        "chunkId": "792ac0",
+        "hash": "f0896fe3",
+        "encoded": "###%205.6%20Get%20Payments%20by%20Order%20ID",
+        "prevChunkIds": []
+      },
+      "475": {
+        "chunkId": "792ac0",
+        "hash": "08d1709e",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "476": {
+        "chunkId": "792ac0",
+        "hash": "4bf6421c",
+        "encoded": "GET%20http://localhost:8084/api/payments/order/%7BorderId%7D",
+        "prevChunkIds": []
+      },
+      "477": {
+        "chunkId": "792ac0",
+        "hash": "c59a9f00",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "478": {
+        "chunkId": "792ac0",
+        "hash": "414321a0",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20payments%20for%20the%20order",
+        "prevChunkIds": []
+      },
+      "480": {
+        "chunkId": "792ac0",
+        "hash": "050e6710",
+        "encoded": "###%205.7%20Get%20Payments%20by%20Status",
+        "prevChunkIds": []
+      },
+      "481": {
+        "chunkId": "792ac0",
+        "hash": "c90eb1fb",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "482": {
+        "chunkId": "792ac0",
+        "hash": "686fb83a",
+        "encoded": "GET%20http://localhost:8084/api/payments/status/PENDING",
+        "prevChunkIds": []
+      },
+      "483": {
+        "chunkId": "792ac0",
+        "hash": "5fe0e18f",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "484": {
+        "chunkId": "792ac0",
+        "hash": "08df96a7",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20payments%20with%20PENDING%20status",
+        "prevChunkIds": []
+      },
+      "486": {
+        "chunkId": "792ac0",
+        "hash": "27d1d29e",
+        "encoded": "**Available%20Statuses**:%20PENDING,%20SUCCESS,%20FAILED,%20REFUNDED",
+        "prevChunkIds": []
+      },
+      "488": {
+        "chunkId": "792ac0",
+        "hash": "8e998272",
+        "encoded": "###%205.8%20Update%20Payment",
+        "prevChunkIds": []
+      },
+      "489": {
+        "chunkId": "792ac0",
+        "hash": "d2f6d3e1",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "490": {
+        "chunkId": "792ac0",
+        "hash": "d98ea759",
+        "encoded": "PUT%20http://localhost:8084/api/payments/%7BpaymentId%7D",
+        "prevChunkIds": []
+      },
+      "491": {
+        "chunkId": "792ac0",
+        "hash": "181cb538",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "493": {
+        "chunkId": "792ac0",
+        "hash": "d49f8ae3",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "494": {
+        "chunkId": "792ac0",
+        "hash": "d7f4b6b2",
+        "encoded": "%22orderId%22:%20%7BorderId%7D,",
+        "prevChunkIds": []
+      },
+      "495": {
+        "chunkId": "792ac0",
+        "hash": "3d54bda8",
+        "encoded": "%22userId%22:%20%7BuserId%7D,",
+        "prevChunkIds": []
+      },
+      "496": {
+        "chunkId": "792ac0",
+        "hash": "3232e86b",
+        "encoded": "%22amount%22:%20750.00,",
+        "prevChunkIds": []
+      },
+      "497": {
+        "chunkId": "792ac0",
+        "hash": "d3a7a1ca",
+        "encoded": "%22paymentMethod%22:%20%22CARD%22,",
+        "prevChunkIds": []
+      },
+      "498": {
+        "chunkId": "792ac0",
+        "hash": "69abbb63",
+        "encoded": "%22transactionId%22:%20%22TXN_UPDATED%22,",
+        "prevChunkIds": []
+      },
+      "499": {
+        "chunkId": "792ac0",
+        "hash": "1c807c79",
+        "encoded": "%22status%22:%20%22SUCCESS%22",
+        "prevChunkIds": []
+      },
+      "500": {
+        "chunkId": "792ac0",
+        "hash": "a4c4e83f",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "501": {
+        "chunkId": "792ac0",
+        "hash": "c351956f",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "502": {
+        "chunkId": "792ac0",
+        "hash": "fd104c2a",
+        "encoded": "**Expected**:%20200%20OK,%20updated%20payment",
+        "prevChunkIds": []
+      },
+      "504": {
+        "chunkId": "792ac0",
+        "hash": "b19a0008",
+        "encoded": "###%205.9%20Refund%20Payment",
+        "prevChunkIds": []
+      },
+      "505": {
+        "chunkId": "792ac0",
+        "hash": "13525e77",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "506": {
+        "chunkId": "792ac0",
+        "hash": "a4e05e25",
+        "encoded": "POST%20http://localhost:8084/api/payments/%7BpaymentId%7D/refund",
+        "prevChunkIds": []
+      },
+      "507": {
+        "chunkId": "792ac0",
+        "hash": "befa74f9",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "508": {
+        "chunkId": "792ac0",
+        "hash": "0ba228ed",
+        "encoded": "**Expected**:%20200%20OK,%20refunded%20payment",
+        "prevChunkIds": []
+      },
+      "510": {
+        "chunkId": "792ac0",
+        "hash": "66b58caa",
+        "encoded": "**Note**:%20Can%20only%20refund%20payments%20with%20SUCCESS%20or%20COMPLETED%20status",
+        "prevChunkIds": []
+      },
+      "512": {
+        "chunkId": "792ac0",
+        "hash": "0984713e",
+        "encoded": "###%205.10%20Delete%20Payment",
+        "prevChunkIds": []
+      },
+      "513": {
+        "chunkId": "792ac0",
+        "hash": "d8c89527",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "514": {
+        "chunkId": "792ac0",
+        "hash": "ecd13e7a",
+        "encoded": "DELETE%20http://localhost:8084/api/payments/%7BpaymentId%7D",
+        "prevChunkIds": []
+      },
+      "515": {
+        "chunkId": "792ac0",
+        "hash": "bf8240c0",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "516": {
+        "chunkId": "792ac0",
+        "hash": "edb6acff",
+        "encoded": "**Expected**:%20204%20No%20Content",
+        "prevChunkIds": []
+      },
+      "518": {
+        "chunkId": "792ac0",
+        "hash": "0869b04c",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "520": {
+        "chunkId": "792ac0",
+        "hash": "677a4b90",
+        "encoded": "##%20PHASE%206:%20NOTIFICATION%20SERVICE%20ENDPOINTS%20(Port%208081)",
+        "prevChunkIds": []
+      },
+      "522": {
+        "chunkId": "792ac0",
+        "hash": "01dfd495",
+        "encoded": "###%206.1%20Create%20Notification",
+        "prevChunkIds": []
+      },
+      "523": {
+        "chunkId": "792ac0",
+        "hash": "7d7f335b",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "524": {
+        "chunkId": "792ac0",
+        "hash": "75afa2d9",
+        "encoded": "POST%20http://localhost:8081/api/notifications",
+        "prevChunkIds": []
+      },
+      "525": {
+        "chunkId": "792ac0",
+        "hash": "93dba4ca",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "527": {
+        "chunkId": "792ac0",
+        "hash": "565fcb5d",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "528": {
+        "chunkId": "792ac0",
+        "hash": "a260e395",
+        "encoded": "%22userId%22:%20%7BuserId%7D,",
+        "prevChunkIds": []
+      },
+      "529": {
+        "chunkId": "792ac0",
+        "hash": "53c0e56a",
+        "encoded": "%22title%22:%20%22Order%20Placed%22,",
+        "prevChunkIds": []
+      },
+      "530": {
+        "chunkId": "792ac0",
+        "hash": "45941c2f",
+        "encoded": "%22message%22:%20%22Your%20order%20has%20been%20placed%20successfully%22,",
+        "prevChunkIds": []
+      },
+      "531": {
+        "chunkId": "792ac0",
+        "hash": "947b476d",
+        "encoded": "%22type%22:%20%22ORDER_UPDATE%22",
+        "prevChunkIds": []
+      },
+      "532": {
+        "chunkId": "792ac0",
+        "hash": "89201d7c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "533": {
+        "chunkId": "792ac0",
+        "hash": "fd98c074",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "534": {
+        "chunkId": "792ac0",
+        "hash": "e22e1b9e",
+        "encoded": "**Expected**:%20201%20Created,%20save%20%60notificationId%60",
+        "prevChunkIds": []
+      },
+      "536": {
+        "chunkId": "792ac0",
+        "hash": "8a1ebd37",
+        "encoded": "**Available%20Types**:%20ORDER_UPDATE,%20PAYMENT_UPDATE,%20DELIVERY_UPDATE,%20PROMOTION,%20SYSTEM",
+        "prevChunkIds": []
+      },
+      "538": {
+        "chunkId": "792ac0",
+        "hash": "60440ded",
+        "encoded": "###%206.2%20Send%20Notification",
+        "prevChunkIds": []
+      },
+      "539": {
+        "chunkId": "792ac0",
+        "hash": "7728d985",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "540": {
+        "chunkId": "792ac0",
+        "hash": "7a7686cd",
+        "encoded": "POST%20http://localhost:8081/api/notifications/send",
+        "prevChunkIds": []
+      },
+      "541": {
+        "chunkId": "792ac0",
+        "hash": "74270c74",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "543": {
+        "chunkId": "792ac0",
+        "hash": "fbd419d7",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "544": {
+        "chunkId": "792ac0",
+        "hash": "fca15396",
+        "encoded": "%22userId%22:%20%7BuserId%7D,",
+        "prevChunkIds": []
+      },
+      "545": {
+        "chunkId": "792ac0",
+        "hash": "d54183c3",
+        "encoded": "%22title%22:%20%22Order%20Confirmed%22,",
+        "prevChunkIds": []
+      },
+      "546": {
+        "chunkId": "792ac0",
+        "hash": "edec897c",
+        "encoded": "%22message%22:%20%22Your%20order%20is%20being%20prepared%22,",
+        "prevChunkIds": []
+      },
+      "547": {
+        "chunkId": "792ac0",
+        "hash": "cdf1e2ea",
+        "encoded": "%22type%22:%20%22ORDER_UPDATE%22",
+        "prevChunkIds": []
+      },
+      "548": {
+        "chunkId": "792ac0",
+        "hash": "3f3f939b",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "549": {
+        "chunkId": "792ac0",
+        "hash": "331ac11e",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "550": {
+        "chunkId": "792ac0",
+        "hash": "d50d94d4",
+        "encoded": "**Expected**:%20200%20OK,%20sent%20notification",
+        "prevChunkIds": []
+      },
+      "552": {
+        "chunkId": "792ac0",
+        "hash": "a2c49037",
+        "encoded": "###%206.3%20Send%20Email%20Notification",
+        "prevChunkIds": []
+      },
+      "553": {
+        "chunkId": "792ac0",
+        "hash": "f8aeccae",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "554": {
+        "chunkId": "792ac0",
+        "hash": "492ee99a",
+        "encoded": "POST%20http://localhost:8081/api/notifications/email",
+        "prevChunkIds": []
+      },
+      "555": {
+        "chunkId": "792ac0",
+        "hash": "997c5dfe",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "557": {
+        "chunkId": "792ac0",
+        "hash": "7903d326",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "558": {
+        "chunkId": "792ac0",
+        "hash": "9fa718ec",
+        "encoded": "%22userId%22:%20%7BuserId%7D,",
+        "prevChunkIds": []
+      },
+      "559": {
+        "chunkId": "792ac0",
+        "hash": "4e4051d8",
+        "encoded": "%22title%22:%20%22Order%20Receipt%22,",
+        "prevChunkIds": []
+      },
+      "560": {
+        "chunkId": "792ac0",
+        "hash": "da3f4900",
+        "encoded": "%22message%22:%20%22Thank%20you%20for%20your%20order.%20Receipt%20attached.%22,",
+        "prevChunkIds": []
+      },
+      "561": {
+        "chunkId": "792ac0",
+        "hash": "cbea587a",
+        "encoded": "%22type%22:%20%22ORDER_UPDATE%22",
+        "prevChunkIds": []
+      },
+      "562": {
+        "chunkId": "792ac0",
+        "hash": "5f7738c3",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "563": {
+        "chunkId": "792ac0",
+        "hash": "6d4dfc0c",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "564": {
+        "chunkId": "792ac0",
+        "hash": "e84f166d",
+        "encoded": "**Expected**:%20200%20OK,%20%22Email%20notification%20sent%20successfully%22",
+        "prevChunkIds": []
+      },
+      "566": {
+        "chunkId": "792ac0",
+        "hash": "a6c044cd",
+        "encoded": "###%206.4%20Send%20SMS%20Notification",
+        "prevChunkIds": []
+      },
+      "567": {
+        "chunkId": "792ac0",
+        "hash": "c1f27c08",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "568": {
+        "chunkId": "792ac0",
+        "hash": "964fdf32",
+        "encoded": "POST%20http://localhost:8081/api/notifications/sms",
+        "prevChunkIds": []
+      },
+      "569": {
+        "chunkId": "792ac0",
+        "hash": "41f2e4f3",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "571": {
+        "chunkId": "792ac0",
+        "hash": "a9ed7fdd",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "572": {
+        "chunkId": "792ac0",
+        "hash": "8ec4f149",
+        "encoded": "%22userId%22:%20%7BuserId%7D,",
+        "prevChunkIds": []
+      },
+      "573": {
+        "chunkId": "792ac0",
+        "hash": "bdb1ed59",
+        "encoded": "%22title%22:%20%22Order%20Status%22,",
+        "prevChunkIds": []
+      },
+      "574": {
+        "chunkId": "792ac0",
+        "hash": "1c2b7a14",
+        "encoded": "%22message%22:%20%22Your%20order%20is%20out%20for%20delivery%22,",
+        "prevChunkIds": []
+      },
+      "575": {
+        "chunkId": "792ac0",
+        "hash": "53e42f73",
+        "encoded": "%22type%22:%20%22DELIVERY_UPDATE%22",
+        "prevChunkIds": []
+      },
+      "576": {
+        "chunkId": "792ac0",
+        "hash": "0b642ff2",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "577": {
+        "chunkId": "792ac0",
+        "hash": "cd2add98",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "578": {
+        "chunkId": "792ac0",
+        "hash": "c9a1b08c",
+        "encoded": "**Expected**:%20200%20OK,%20%22SMS%20notification%20sent%20successfully%22",
+        "prevChunkIds": []
+      },
+      "580": {
+        "chunkId": "792ac0",
+        "hash": "8b35349c",
+        "encoded": "###%206.5%20Get%20All%20Notifications",
+        "prevChunkIds": []
+      },
+      "581": {
+        "chunkId": "792ac0",
+        "hash": "798f935a",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "582": {
+        "chunkId": "792ac0",
+        "hash": "7ee83011",
+        "encoded": "GET%20http://localhost:8081/api/notifications",
+        "prevChunkIds": []
+      },
+      "583": {
+        "chunkId": "792ac0",
+        "hash": "febd573a",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "584": {
+        "chunkId": "792ac0",
+        "hash": "f0e22c57",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20all%20notifications",
+        "prevChunkIds": []
+      },
+      "586": {
+        "chunkId": "792ac0",
+        "hash": "0b1af0a5",
+        "encoded": "###%206.6%20Get%20Notification%20by%20ID",
+        "prevChunkIds": []
+      },
+      "587": {
+        "chunkId": "792ac0",
+        "hash": "5bf1df14",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "588": {
+        "chunkId": "792ac0",
+        "hash": "4f297b1c",
+        "encoded": "GET%20http://localhost:8081/api/notifications/%7BnotificationId%7D",
+        "prevChunkIds": []
+      },
+      "589": {
+        "chunkId": "792ac0",
+        "hash": "a28e9ca3",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "590": {
+        "chunkId": "792ac0",
+        "hash": "a1432ded",
+        "encoded": "**Expected**:%20200%20OK,%20notification%20object",
+        "prevChunkIds": []
+      },
+      "592": {
+        "chunkId": "792ac0",
+        "hash": "339858cd",
+        "encoded": "###%206.7%20Get%20Notifications%20by%20User%20ID",
+        "prevChunkIds": []
+      },
+      "593": {
+        "chunkId": "792ac0",
+        "hash": "586f4a12",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "594": {
+        "chunkId": "792ac0",
+        "hash": "e9da0384",
+        "encoded": "GET%20http://localhost:8081/api/notifications/user/%7BuserId%7D",
+        "prevChunkIds": []
+      },
+      "595": {
+        "chunkId": "792ac0",
+        "hash": "8ceb4b48",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "596": {
+        "chunkId": "792ac0",
+        "hash": "d2a42e39",
+        "encoded": "**Expected**:%20200%20OK,%20array%20of%20user's%20notifications",
+        "prevChunkIds": []
+      },
+      "598": {
+        "chunkId": "792ac0",
+        "hash": "84436264",
+        "encoded": "###%206.8%20Update%20Notification",
+        "prevChunkIds": []
+      },
+      "599": {
+        "chunkId": "792ac0",
+        "hash": "5c419f4f",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "600": {
+        "chunkId": "792ac0",
+        "hash": "4c447c86",
+        "encoded": "PUT%20http://localhost:8081/api/notifications/%7BnotificationId%7D",
+        "prevChunkIds": []
+      },
+      "601": {
+        "chunkId": "792ac0",
+        "hash": "2721367d",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "603": {
+        "chunkId": "792ac0",
+        "hash": "3b3f22f4",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "604": {
+        "chunkId": "792ac0",
+        "hash": "a23b2586",
+        "encoded": "%22userId%22:%20%7BuserId%7D,",
+        "prevChunkIds": []
+      },
+      "605": {
+        "chunkId": "792ac0",
+        "hash": "2979d8f7",
+        "encoded": "%22title%22:%20%22Order%20Delivered%22,",
+        "prevChunkIds": []
+      },
+      "606": {
+        "chunkId": "792ac0",
+        "hash": "dfa843d1",
+        "encoded": "%22message%22:%20%22Your%20order%20has%20been%20delivered%20successfully%22,",
+        "prevChunkIds": []
+      },
+      "607": {
+        "chunkId": "792ac0",
+        "hash": "d0169fdd",
+        "encoded": "%22type%22:%20%22DELIVERY_UPDATE%22",
+        "prevChunkIds": []
+      },
+      "608": {
+        "chunkId": "792ac0",
+        "hash": "095bc2f6",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "609": {
+        "chunkId": "792ac0",
+        "hash": "5abc0d3b",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "610": {
+        "chunkId": "792ac0",
+        "hash": "5e6623ee",
+        "encoded": "**Expected**:%20200%20OK,%20updated%20notification",
+        "prevChunkIds": []
+      },
+      "612": {
+        "chunkId": "792ac0",
+        "hash": "cab243e1",
+        "encoded": "###%206.9%20Mark%20Notification%20as%20Read",
+        "prevChunkIds": []
+      },
+      "613": {
+        "chunkId": "792ac0",
+        "hash": "465528fa",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "614": {
+        "chunkId": "792ac0",
+        "hash": "ff8b9afe",
+        "encoded": "PUT%20http://localhost:8081/api/notifications/%7BnotificationId%7D/read",
+        "prevChunkIds": []
+      },
+      "615": {
+        "chunkId": "792ac0",
+        "hash": "447a1637",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "616": {
+        "chunkId": "792ac0",
+        "hash": "4ac1416c",
+        "encoded": "**Expected**:%20200%20OK,%20notification%20marked%20as%20read",
+        "prevChunkIds": []
+      },
+      "618": {
+        "chunkId": "792ac0",
+        "hash": "b81cc27f",
+        "encoded": "###%206.10%20Delete%20Notification",
+        "prevChunkIds": []
+      },
+      "619": {
+        "chunkId": "792ac0",
+        "hash": "fbf9cae4",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "620": {
+        "chunkId": "792ac0",
+        "hash": "4fcec33a",
+        "encoded": "DELETE%20http://localhost:8081/api/notifications/%7BnotificationId%7D",
+        "prevChunkIds": []
+      },
+      "621": {
+        "chunkId": "792ac0",
+        "hash": "02cde915",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "622": {
+        "chunkId": "792ac0",
+        "hash": "6fb3256a",
+        "encoded": "**Expected**:%20204%20No%20Content",
+        "prevChunkIds": []
+      },
+      "624": {
+        "chunkId": "792ac0",
+        "hash": "c96abded",
+        "encoded": "###%206.11%20Health%20Check",
+        "prevChunkIds": []
+      },
+      "625": {
+        "chunkId": "792ac0",
+        "hash": "978fcf41",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "626": {
+        "chunkId": "792ac0",
+        "hash": "d154033d",
+        "encoded": "GET%20http://localhost:8081/api/notifications/health",
+        "prevChunkIds": []
+      },
+      "627": {
+        "chunkId": "792ac0",
+        "hash": "5dbf6c2b",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "628": {
+        "chunkId": "792ac0",
+        "hash": "f9f879f3",
+        "encoded": "**Expected**:%20200%20OK,%20%22Notification%20Service%20is%20running%22",
+        "prevChunkIds": []
+      },
+      "630": {
+        "chunkId": "792ac0",
+        "hash": "d1838434",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "632": {
+        "chunkId": "792ac0",
+        "hash": "0d7f29ca",
+        "encoded": "##%20PHASE%207:%20API%20GATEWAY%20TESTING%20(Port%208080)",
+        "prevChunkIds": []
+      },
+      "634": {
+        "chunkId": "792ac0",
+        "hash": "242e0190",
+        "encoded": "Test%20all%20endpoints%20through%20API%20Gateway%20by%20replacing%20service%20ports%20with%208080:",
+        "prevChunkIds": []
+      },
+      "636": {
+        "chunkId": "792ac0",
+        "hash": "ea36508f",
+        "encoded": "###%20Example%20Gateway%20URLs:",
+        "prevChunkIds": []
+      },
+      "637": {
+        "chunkId": "792ac0",
+        "hash": "ceb46ace",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "638": {
+        "chunkId": "792ac0",
+        "hash": "8251ba92",
+        "encoded": "#%20User%20Service",
+        "prevChunkIds": []
+      },
+      "639": {
+        "chunkId": "792ac0",
+        "hash": "d9349563",
+        "encoded": "http://localhost:8080/api/auth/register",
+        "prevChunkIds": []
+      },
+      "640": {
+        "chunkId": "792ac0",
+        "hash": "da68a016",
+        "encoded": "http://localhost:8080/api/users",
+        "prevChunkIds": []
+      },
+      "642": {
+        "chunkId": "792ac0",
+        "hash": "7cc9baf5",
+        "encoded": "#%20Restaurant%20Service",
+        "prevChunkIds": []
+      },
+      "643": {
+        "chunkId": "792ac0",
+        "hash": "5e09b3ed",
+        "encoded": "http://localhost:8080/api/restaurants",
+        "prevChunkIds": []
+      },
+      "644": {
+        "chunkId": "792ac0",
+        "hash": "d3b93abb",
+        "encoded": "http://localhost:8080/api/restaurants/%7Bid%7D/menu",
+        "prevChunkIds": []
+      },
+      "646": {
+        "chunkId": "792ac0",
+        "hash": "9b98892c",
+        "encoded": "#%20Order%20Service",
+        "prevChunkIds": []
+      },
+      "647": {
+        "chunkId": "792ac0",
+        "hash": "d7dc0e9e",
+        "encoded": "http://localhost:8080/api/orders",
+        "prevChunkIds": []
+      },
+      "649": {
+        "chunkId": "792ac0",
+        "hash": "246a6c21",
+        "encoded": "#%20Payment%20Service",
+        "prevChunkIds": []
+      },
+      "650": {
+        "chunkId": "792ac0",
+        "hash": "695763a8",
+        "encoded": "http://localhost:8080/api/payments",
+        "prevChunkIds": []
+      },
+      "652": {
+        "chunkId": "792ac0",
+        "hash": "de32f472",
+        "encoded": "#%20Notification%20Service",
+        "prevChunkIds": []
+      },
+      "653": {
+        "chunkId": "792ac0",
+        "hash": "c26089b7",
+        "encoded": "http://localhost:8080/api/notifications",
+        "prevChunkIds": []
+      },
+      "654": {
+        "chunkId": "792ac0",
+        "hash": "0bfe98e5",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "656": {
+        "chunkId": "792ac0",
+        "hash": "f0bce89b",
+        "encoded": "**Expected**:%20All%20endpoints%20should%20work%20identically%20through%20gateway",
+        "prevChunkIds": []
+      },
+      "658": {
+        "chunkId": "792ac0",
+        "hash": "b1775605",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "660": {
+        "chunkId": "792ac0",
+        "hash": "b56af726",
+        "encoded": "##%20COMPLETE%20E2E%20WORKFLOW%20TEST",
+        "prevChunkIds": []
+      },
+      "662": {
+        "chunkId": "792ac0",
+        "hash": "7abc4fe1",
+        "encoded": "###%20Step%201:%20Register%20User",
+        "prevChunkIds": []
+      },
+      "663": {
+        "chunkId": "792ac0",
+        "hash": "5dbbe6a7",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "664": {
+        "chunkId": "792ac0",
+        "hash": "0f06e0c5",
+        "encoded": "POST%20http://localhost:8085/api/auth/register",
+        "prevChunkIds": []
+      },
+      "665": {
+        "chunkId": "792ac0",
+        "hash": "1148ec31",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "666": {
+        "chunkId": "792ac0",
+        "hash": "82ae29ed",
+        "encoded": "Save%20%60userId%60",
+        "prevChunkIds": []
+      },
+      "668": {
+        "chunkId": "792ac0",
+        "hash": "57dc95b6",
+        "encoded": "###%20Step%202:%20Login%20User",
+        "prevChunkIds": []
+      },
+      "669": {
+        "chunkId": "792ac0",
+        "hash": "0859e7e4",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "670": {
+        "chunkId": "792ac0",
+        "hash": "56cfd2a8",
+        "encoded": "POST%20http://localhost:8085/api/auth/login",
+        "prevChunkIds": []
+      },
+      "671": {
+        "chunkId": "792ac0",
+        "hash": "080dced5",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "672": {
+        "chunkId": "792ac0",
+        "hash": "72e9fbfd",
+        "encoded": "Verify%20login%20successful",
+        "prevChunkIds": []
+      },
+      "674": {
+        "chunkId": "792ac0",
+        "hash": "d07b3753",
+        "encoded": "###%20Step%203:%20Create%20Restaurant",
+        "prevChunkIds": []
+      },
+      "675": {
+        "chunkId": "792ac0",
+        "hash": "8206356a",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "676": {
+        "chunkId": "792ac0",
+        "hash": "1db3f341",
+        "encoded": "POST%20http://localhost:8082/api/restaurants",
+        "prevChunkIds": []
+      },
+      "677": {
+        "chunkId": "792ac0",
+        "hash": "45426426",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "678": {
+        "chunkId": "792ac0",
+        "hash": "6cc3454f",
+        "encoded": "Save%20%60restaurantId%60",
+        "prevChunkIds": []
+      },
+      "680": {
+        "chunkId": "792ac0",
+        "hash": "760ac897",
+        "encoded": "###%20Step%204:%20Add%20Menu%20Items",
+        "prevChunkIds": []
+      },
+      "681": {
+        "chunkId": "792ac0",
+        "hash": "4dff5d4f",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "682": {
+        "chunkId": "792ac0",
+        "hash": "d5bd51f3",
+        "encoded": "POST%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D/menu",
+        "prevChunkIds": []
+      },
+      "683": {
+        "chunkId": "792ac0",
+        "hash": "34e005ce",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "684": {
+        "chunkId": "792ac0",
+        "hash": "063b5173",
+        "encoded": "Save%20%60menuItemId%60",
+        "prevChunkIds": []
+      },
+      "686": {
+        "chunkId": "792ac0",
+        "hash": "3b9ff881",
+        "encoded": "###%20Step%205:%20Browse%20Restaurants",
+        "prevChunkIds": []
+      },
+      "687": {
+        "chunkId": "792ac0",
+        "hash": "14ed5d4f",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "688": {
+        "chunkId": "792ac0",
+        "hash": "edda9267",
+        "encoded": "GET%20http://localhost:8082/api/restaurants",
+        "prevChunkIds": []
+      },
+      "689": {
+        "chunkId": "792ac0",
+        "hash": "e0598903",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "690": {
+        "chunkId": "792ac0",
+        "hash": "4e9eb628",
+        "encoded": "Verify%20restaurant%20appears",
+        "prevChunkIds": []
+      },
+      "692": {
+        "chunkId": "792ac0",
+        "hash": "c966ab5e",
+        "encoded": "###%20Step%206:%20View%20Menu",
+        "prevChunkIds": []
+      },
+      "693": {
+        "chunkId": "792ac0",
+        "hash": "6b9759dc",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "694": {
+        "chunkId": "792ac0",
+        "hash": "852887ed",
+        "encoded": "GET%20http://localhost:8082/api/restaurants/%7BrestaurantId%7D/menu",
+        "prevChunkIds": []
+      },
+      "695": {
+        "chunkId": "792ac0",
+        "hash": "0e705000",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "696": {
+        "chunkId": "792ac0",
+        "hash": "2479b35c",
+        "encoded": "Verify%20menu%20items%20appear",
+        "prevChunkIds": []
+      },
+      "698": {
+        "chunkId": "792ac0",
+        "hash": "f463614a",
+        "encoded": "###%20Step%207:%20Place%20Order",
+        "prevChunkIds": []
+      },
+      "699": {
+        "chunkId": "792ac0",
+        "hash": "c3927c71",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "700": {
+        "chunkId": "792ac0",
+        "hash": "a5baea9d",
+        "encoded": "POST%20http://localhost:8083/api/orders",
+        "prevChunkIds": []
+      },
+      "701": {
+        "chunkId": "792ac0",
+        "hash": "b165d0c3",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "702": {
+        "chunkId": "792ac0",
+        "hash": "417af5f2",
+        "encoded": "Save%20%60orderId%60",
+        "prevChunkIds": []
+      },
+      "704": {
+        "chunkId": "792ac0",
+        "hash": "df7680e1",
+        "encoded": "###%20Step%208:%20Create%20Payment",
+        "prevChunkIds": []
+      },
+      "705": {
+        "chunkId": "792ac0",
+        "hash": "839e74e8",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "706": {
+        "chunkId": "792ac0",
+        "hash": "86492026",
+        "encoded": "POST%20http://localhost:8084/api/payments",
+        "prevChunkIds": []
+      },
+      "707": {
+        "chunkId": "792ac0",
+        "hash": "406d1704",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "708": {
+        "chunkId": "792ac0",
+        "hash": "6a5e2197",
+        "encoded": "Save%20%60paymentId%60",
+        "prevChunkIds": []
+      },
+      "710": {
+        "chunkId": "792ac0",
+        "hash": "f80b9453",
+        "encoded": "###%20Step%209:%20Process%20Payment",
+        "prevChunkIds": []
+      },
+      "711": {
+        "chunkId": "792ac0",
+        "hash": "4af53682",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "712": {
+        "chunkId": "792ac0",
+        "hash": "3d242b49",
+        "encoded": "POST%20http://localhost:8084/api/payments/%7BpaymentId%7D/process",
+        "prevChunkIds": []
+      },
+      "713": {
+        "chunkId": "792ac0",
+        "hash": "e316e2b0",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "714": {
+        "chunkId": "792ac0",
+        "hash": "25921237",
+        "encoded": "Verify%20payment%20successful",
+        "prevChunkIds": []
+      },
+      "716": {
+        "chunkId": "792ac0",
+        "hash": "f237d538",
+        "encoded": "###%20Step%2010:%20Confirm%20Order",
+        "prevChunkIds": []
+      },
+      "717": {
+        "chunkId": "792ac0",
+        "hash": "39d9bcdd",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "718": {
+        "chunkId": "792ac0",
+        "hash": "a3160717",
+        "encoded": "POST%20http://localhost:8083/api/orders/%7BorderId%7D/confirm",
+        "prevChunkIds": []
+      },
+      "719": {
+        "chunkId": "792ac0",
+        "hash": "62dce49d",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "720": {
+        "chunkId": "792ac0",
+        "hash": "e5562295",
+        "encoded": "Verify%20order%20confirmed",
+        "prevChunkIds": []
+      },
+      "722": {
+        "chunkId": "792ac0",
+        "hash": "bcf31353",
+        "encoded": "###%20Step%2011:%20Send%20Notification",
+        "prevChunkIds": []
+      },
+      "723": {
+        "chunkId": "792ac0",
+        "hash": "be260c3b",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "724": {
+        "chunkId": "792ac0",
+        "hash": "5b5b2960",
+        "encoded": "POST%20http://localhost:8081/api/notifications/send",
+        "prevChunkIds": []
+      },
+      "725": {
+        "chunkId": "792ac0",
+        "hash": "e153cd7f",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "726": {
+        "chunkId": "792ac0",
+        "hash": "4e5cefc9",
+        "encoded": "Verify%20notification%20created",
+        "prevChunkIds": []
+      },
+      "728": {
+        "chunkId": "792ac0",
+        "hash": "f269564d",
+        "encoded": "###%20Step%2012:%20Check%20User%20Notifications",
+        "prevChunkIds": []
+      },
+      "729": {
+        "chunkId": "792ac0",
+        "hash": "e71b1d63",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "730": {
+        "chunkId": "792ac0",
+        "hash": "b27d4eea",
+        "encoded": "GET%20http://localhost:8081/api/notifications/user/%7BuserId%7D",
+        "prevChunkIds": []
+      },
+      "731": {
+        "chunkId": "792ac0",
+        "hash": "a174b882",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "732": {
+        "chunkId": "792ac0",
+        "hash": "b539460f",
+        "encoded": "Verify%20notification%20appears",
+        "prevChunkIds": []
+      },
+      "734": {
+        "chunkId": "792ac0",
+        "hash": "1d08565b",
+        "encoded": "###%20Step%2013:%20Track%20Order",
+        "prevChunkIds": []
+      },
+      "735": {
+        "chunkId": "792ac0",
+        "hash": "3f77fb1d",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "736": {
+        "chunkId": "792ac0",
+        "hash": "d99e23e6",
+        "encoded": "GET%20http://localhost:8083/api/orders/%7BorderId%7D/tracking",
+        "prevChunkIds": []
+      },
+      "737": {
+        "chunkId": "792ac0",
+        "hash": "7c55b77d",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "738": {
+        "chunkId": "792ac0",
+        "hash": "28b90954",
+        "encoded": "Verify%20order%20status",
+        "prevChunkIds": []
+      },
+      "740": {
+        "chunkId": "792ac0",
+        "hash": "341be65a",
+        "encoded": "###%20Step%2014:%20Deliver%20Order",
+        "prevChunkIds": []
+      },
+      "741": {
+        "chunkId": "792ac0",
+        "hash": "6fd7e95c",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "742": {
+        "chunkId": "792ac0",
+        "hash": "64abcfe9",
+        "encoded": "POST%20http://localhost:8083/api/orders/%7BorderId%7D/deliver",
+        "prevChunkIds": []
+      },
+      "743": {
+        "chunkId": "792ac0",
+        "hash": "b977fbe1",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "744": {
+        "chunkId": "792ac0",
+        "hash": "492085c3",
+        "encoded": "Verify%20order%20delivered",
+        "prevChunkIds": []
+      },
+      "746": {
+        "chunkId": "792ac0",
+        "hash": "ba6f7343",
+        "encoded": "###%20Step%2015:%20View%20Order%20History",
+        "prevChunkIds": []
+      },
+      "747": {
+        "chunkId": "792ac0",
+        "hash": "6cb3cf9c",
+        "encoded": "%60%60%60http",
+        "prevChunkIds": []
+      },
+      "748": {
+        "chunkId": "792ac0",
+        "hash": "32438f9b",
+        "encoded": "GET%20http://localhost:8083/api/orders/user/%7BuserId%7D",
+        "prevChunkIds": []
+      },
+      "749": {
+        "chunkId": "792ac0",
+        "hash": "ac983114",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "750": {
+        "chunkId": "792ac0",
+        "hash": "dcd66eb0",
+        "encoded": "Verify%20order%20appears%20in%20history",
+        "prevChunkIds": []
+      },
+      "752": {
+        "chunkId": "792ac0",
+        "hash": "687fdd0a",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "754": {
+        "chunkId": "792ac0",
+        "hash": "e27e6738",
+        "encoded": "##%20POWERSHELL%20TESTING%20SCRIPT",
+        "prevChunkIds": []
+      },
+      "756": {
+        "chunkId": "792ac0",
+        "hash": "a435b1fe",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "757": {
+        "chunkId": "792ac0",
+        "hash": "f57b33e5",
+        "encoded": "#%20Set%20base%20URLs",
+        "prevChunkIds": []
+      },
+      "758": {
+        "chunkId": "792ac0",
+        "hash": "f6f7e4ce",
+        "encoded": "$userServiceUrl%20=%20%22http://localhost:8085%22",
+        "prevChunkIds": []
+      },
+      "759": {
+        "chunkId": "792ac0",
+        "hash": "677f4655",
+        "encoded": "$restaurantServiceUrl%20=%20%22http://localhost:8082%22",
+        "prevChunkIds": []
+      },
+      "760": {
+        "chunkId": "792ac0",
+        "hash": "e6f6abac",
+        "encoded": "$orderServiceUrl%20=%20%22http://localhost:8083%22",
+        "prevChunkIds": []
+      },
+      "761": {
+        "chunkId": "792ac0",
+        "hash": "92e157ab",
+        "encoded": "$paymentServiceUrl%20=%20%22http://localhost:8084%22",
+        "prevChunkIds": []
+      },
+      "762": {
+        "chunkId": "792ac0",
+        "hash": "9ac07632",
+        "encoded": "$notificationServiceUrl%20=%20%22http://localhost:8081%22",
+        "prevChunkIds": []
+      },
+      "764": {
+        "chunkId": "792ac0",
+        "hash": "6e17a537",
+        "encoded": "#%20Step%201:%20Register%20User",
+        "prevChunkIds": []
+      },
+      "765": {
+        "chunkId": "792ac0",
+        "hash": "22a37e38",
+        "encoded": "$registerBody%20=%20@'",
+        "prevChunkIds": []
+      },
+      "766": {
+        "chunkId": "792ac0",
+        "hash": "a34727bc",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "767": {
+        "chunkId": "792ac0",
+        "hash": "3f122a0e",
+        "encoded": "%22username%22:%20%22e2etest%22,",
+        "prevChunkIds": []
+      },
+      "768": {
+        "chunkId": "792ac0",
+        "hash": "f9880fe9",
+        "encoded": "%22email%22:%20%22e2e@example.com%22,",
+        "prevChunkIds": []
+      },
+      "769": {
+        "chunkId": "792ac0",
+        "hash": "de46e216",
+        "encoded": "%22password%22:%20%22password123%22,",
+        "prevChunkIds": []
+      },
+      "770": {
+        "chunkId": "792ac0",
+        "hash": "bd17f5d1",
+        "encoded": "%22firstName%22:%20%22E2E%22,",
+        "prevChunkIds": []
+      },
+      "771": {
+        "chunkId": "792ac0",
+        "hash": "ae424b14",
+        "encoded": "%22lastName%22:%20%22Test%22,",
+        "prevChunkIds": []
+      },
+      "772": {
+        "chunkId": "792ac0",
+        "hash": "64ec133c",
+        "encoded": "%22phone%22:%20%229876543210%22,",
+        "prevChunkIds": []
+      },
+      "773": {
+        "chunkId": "792ac0",
+        "hash": "90aa6911",
+        "encoded": "%22address%22:%20%22Test%20Address%22",
+        "prevChunkIds": []
+      },
+      "774": {
+        "chunkId": "792ac0",
+        "hash": "65188599",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "775": {
+        "chunkId": "792ac0",
+        "hash": "0a206c56",
+        "encoded": "'@",
+        "prevChunkIds": []
+      },
+      "777": {
+        "chunkId": "792ac0",
+        "hash": "1bd18791",
+        "encoded": "$headers%20=%20@%7B'Content-Type'='application/json'%7D",
+        "prevChunkIds": []
+      },
+      "778": {
+        "chunkId": "792ac0",
+        "hash": "4111a8e5",
+        "encoded": "$registerResponse%20=%20Invoke-RestMethod%20-Uri%20%22$userServiceUrl/api/auth/register%22%20-Method%20POST%20-Headers%20$headers%20-Body%20$registerBody",
+        "prevChunkIds": []
+      },
+      "779": {
+        "chunkId": "792ac0",
+        "hash": "932eb70c",
+        "encoded": "$userId%20=%20$registerResponse.userId",
+        "prevChunkIds": []
+      },
+      "780": {
+        "chunkId": "792ac0",
+        "hash": "3b274998",
+        "encoded": "Write-Host%20%22User%20registered%20with%20ID:%20$userId%22",
+        "prevChunkIds": []
+      },
+      "782": {
+        "chunkId": "792ac0",
+        "hash": "81aa053a",
+        "encoded": "#%20Step%202:%20Create%20Restaurant",
+        "prevChunkIds": []
+      },
+      "783": {
+        "chunkId": "792ac0",
+        "hash": "de7d4763",
+        "encoded": "$restaurantBody%20=%20@%22",
+        "prevChunkIds": []
+      },
+      "784": {
+        "chunkId": "792ac0",
+        "hash": "315aea91",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "785": {
+        "chunkId": "792ac0",
+        "hash": "ed3ec019",
+        "encoded": "%22name%22:%20%22E2E%20Test%20Restaurant%22,",
+        "prevChunkIds": []
+      },
+      "786": {
+        "chunkId": "792ac0",
+        "hash": "3a382d2e",
+        "encoded": "%22cuisine%22:%20%22INDIAN%22,",
+        "prevChunkIds": []
+      },
+      "787": {
+        "chunkId": "792ac0",
+        "hash": "9d176497",
+        "encoded": "%22address%22:%20%7B",
+        "prevChunkIds": []
+      },
+      "788": {
+        "chunkId": "792ac0",
+        "hash": "379d155c",
+        "encoded": "%22street%22:%20%22Test%20Street%22,",
+        "prevChunkIds": []
+      },
+      "789": {
+        "chunkId": "792ac0",
+        "hash": "8b257a94",
+        "encoded": "%22city%22:%20%22Bengaluru%22,",
+        "prevChunkIds": []
+      },
+      "790": {
+        "chunkId": "792ac0",
+        "hash": "f8f20267",
+        "encoded": "%22state%22:%20%22Karnataka%22,",
+        "prevChunkIds": []
+      },
+      "791": {
+        "chunkId": "792ac0",
+        "hash": "ecddd87f",
+        "encoded": "%22zipCode%22:%20%22560001%22,",
+        "prevChunkIds": []
+      },
+      "792": {
+        "chunkId": "792ac0",
+        "hash": "7e3f9a13",
+        "encoded": "%22country%22:%20%22India%22",
+        "prevChunkIds": []
+      },
+      "793": {
+        "chunkId": "792ac0",
+        "hash": "eebb1949",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "794": {
+        "chunkId": "792ac0",
+        "hash": "f6316736",
+        "encoded": "%22phone%22:%20%22+919876543211%22,",
+        "prevChunkIds": []
+      },
+      "795": {
+        "chunkId": "792ac0",
+        "hash": "870bcbe6",
+        "encoded": "%22email%22:%20%22test@restaurant.com%22,",
+        "prevChunkIds": []
+      },
+      "796": {
+        "chunkId": "792ac0",
+        "hash": "93a7a657",
+        "encoded": "%22rating%22:%204.5,",
+        "prevChunkIds": []
+      },
+      "797": {
+        "chunkId": "792ac0",
+        "hash": "f89fd7f8",
+        "encoded": "%22isActive%22:%20true",
+        "prevChunkIds": []
+      },
+      "798": {
+        "chunkId": "792ac0",
+        "hash": "a264363e",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "799": {
+        "chunkId": "792ac0",
+        "hash": "d6a6fd2d",
+        "encoded": "%22@",
+        "prevChunkIds": []
+      },
+      "801": {
+        "chunkId": "792ac0",
+        "hash": "3bb066d3",
+        "encoded": "$restaurantResponse%20=%20Invoke-RestMethod%20-Uri%20%22$restaurantServiceUrl/api/restaurants%22%20-Method%20POST%20-Headers%20$headers%20-Body%20$restaurantBody",
+        "prevChunkIds": []
+      },
+      "802": {
+        "chunkId": "792ac0",
+        "hash": "135a1d23",
+        "encoded": "$restaurantId%20=%20$restaurantResponse.id",
+        "prevChunkIds": []
+      },
+      "803": {
+        "chunkId": "792ac0",
+        "hash": "6f6beba5",
+        "encoded": "Write-Host%20%22Restaurant%20created%20with%20ID:%20$restaurantId%22",
+        "prevChunkIds": []
+      },
+      "805": {
+        "chunkId": "792ac0",
+        "hash": "07ba60de",
+        "encoded": "#%20Step%203:%20Add%20Menu%20Item",
+        "prevChunkIds": []
+      },
+      "806": {
+        "chunkId": "792ac0",
+        "hash": "420b1b70",
+        "encoded": "$menuItemBody%20=%20@%22",
+        "prevChunkIds": []
+      },
+      "807": {
+        "chunkId": "792ac0",
+        "hash": "4e0c7adf",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "808": {
+        "chunkId": "792ac0",
+        "hash": "93f66046",
+        "encoded": "%22name%22:%20%22Test%20Dish%22,",
+        "prevChunkIds": []
+      },
+      "809": {
+        "chunkId": "792ac0",
+        "hash": "625b227a",
+        "encoded": "%22description%22:%20%22Test%20Description%22,",
+        "prevChunkIds": []
+      },
+      "810": {
+        "chunkId": "792ac0",
+        "hash": "c892bdd5",
+        "encoded": "%22price%22:%20100.00,",
+        "prevChunkIds": []
+      },
+      "811": {
+        "chunkId": "792ac0",
+        "hash": "8b34f62b",
+        "encoded": "%22category%22:%20%22Main%20Course%22,",
+        "prevChunkIds": []
+      },
+      "812": {
+        "chunkId": "792ac0",
+        "hash": "5e9f383d",
+        "encoded": "%22isAvailable%22:%20true",
+        "prevChunkIds": []
+      },
+      "813": {
+        "chunkId": "792ac0",
+        "hash": "465b054e",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "814": {
+        "chunkId": "792ac0",
+        "hash": "4998aaef",
+        "encoded": "%22@",
+        "prevChunkIds": []
+      },
+      "816": {
+        "chunkId": "792ac0",
+        "hash": "11ffa359",
+        "encoded": "$menuItemResponse%20=%20Invoke-RestMethod%20-Uri%20%22$restaurantServiceUrl/api/restaurants/$restaurantId/menu%22%20-Method%20POST%20-Headers%20$headers%20-Body%20$menuItemBody",
+        "prevChunkIds": []
+      },
+      "817": {
+        "chunkId": "792ac0",
+        "hash": "4e59b364",
+        "encoded": "$menuItemId%20=%20$menuItemResponse.id",
+        "prevChunkIds": []
+      },
+      "818": {
+        "chunkId": "792ac0",
+        "hash": "1d1f30e4",
+        "encoded": "Write-Host%20%22Menu%20item%20created%20with%20ID:%20$menuItemId%22",
+        "prevChunkIds": []
+      },
+      "820": {
+        "chunkId": "792ac0",
+        "hash": "ec5bc96d",
+        "encoded": "#%20Step%204:%20Place%20Order",
+        "prevChunkIds": []
+      },
+      "821": {
+        "chunkId": "792ac0",
+        "hash": "86292ab4",
+        "encoded": "$orderBody%20=%20@%22",
+        "prevChunkIds": []
+      },
+      "822": {
+        "chunkId": "792ac0",
+        "hash": "6e860d9e",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "823": {
+        "chunkId": "792ac0",
+        "hash": "01fd16ed",
+        "encoded": "%22userId%22:%20$userId,",
+        "prevChunkIds": []
+      },
+      "824": {
+        "chunkId": "792ac0",
+        "hash": "f5e1f200",
+        "encoded": "%22restaurantId%22:%20$restaurantId,",
+        "prevChunkIds": []
+      },
+      "825": {
+        "chunkId": "792ac0",
+        "hash": "0ef0f13a",
+        "encoded": "%22items%22:%20%5B",
+        "prevChunkIds": []
+      },
+      "826": {
+        "chunkId": "792ac0",
+        "hash": "42f00477",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "827": {
+        "chunkId": "792ac0",
+        "hash": "fd7d196d",
+        "encoded": "%22menuItemId%22:%20$menuItemId,",
+        "prevChunkIds": []
+      },
+      "828": {
+        "chunkId": "792ac0",
+        "hash": "92c30e7a",
+        "encoded": "%22quantity%22:%202,",
+        "prevChunkIds": []
+      },
+      "829": {
+        "chunkId": "792ac0",
+        "hash": "0dfe0889",
+        "encoded": "%22price%22:%20100.00",
+        "prevChunkIds": []
+      },
+      "830": {
+        "chunkId": "792ac0",
+        "hash": "a621df3d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "831": {
+        "chunkId": "792ac0",
+        "hash": "c3933881",
+        "encoded": "%5D,",
+        "prevChunkIds": []
+      },
+      "832": {
+        "chunkId": "792ac0",
+        "hash": "7415637a",
+        "encoded": "%22deliveryAddress%22:%20%22Test%20Delivery%20Address%22",
+        "prevChunkIds": []
+      },
+      "833": {
+        "chunkId": "792ac0",
+        "hash": "450fd927",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "834": {
+        "chunkId": "792ac0",
+        "hash": "953f9a98",
+        "encoded": "%22@",
+        "prevChunkIds": []
+      },
+      "836": {
+        "chunkId": "792ac0",
+        "hash": "ec97cec1",
+        "encoded": "$orderResponse%20=%20Invoke-RestMethod%20-Uri%20%22$orderServiceUrl/api/orders%22%20-Method%20POST%20-Headers%20$headers%20-Body%20$orderBody",
+        "prevChunkIds": []
+      },
+      "837": {
+        "chunkId": "792ac0",
+        "hash": "7b41f33c",
+        "encoded": "$orderId%20=%20$orderResponse.id",
+        "prevChunkIds": []
+      },
+      "838": {
+        "chunkId": "792ac0",
+        "hash": "5d44ee5a",
+        "encoded": "Write-Host%20%22Order%20placed%20with%20ID:%20$orderId%22",
+        "prevChunkIds": []
+      },
+      "840": {
+        "chunkId": "792ac0",
+        "hash": "d806415f",
+        "encoded": "#%20Step%205:%20Create%20Payment",
+        "prevChunkIds": []
+      },
+      "841": {
+        "chunkId": "792ac0",
+        "hash": "ce144995",
+        "encoded": "$paymentBody%20=%20@%22",
+        "prevChunkIds": []
+      },
+      "842": {
+        "chunkId": "792ac0",
+        "hash": "b841ca72",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "843": {
+        "chunkId": "792ac0",
+        "hash": "e1465aaa",
+        "encoded": "%22orderId%22:%20$orderId,",
+        "prevChunkIds": []
+      },
+      "844": {
+        "chunkId": "792ac0",
+        "hash": "5fe0a735",
+        "encoded": "%22userId%22:%20$userId,",
+        "prevChunkIds": []
+      },
+      "845": {
+        "chunkId": "792ac0",
+        "hash": "f7d91541",
+        "encoded": "%22amount%22:%20200.00,",
+        "prevChunkIds": []
+      },
+      "846": {
+        "chunkId": "792ac0",
+        "hash": "73589b2d",
+        "encoded": "%22paymentMethod%22:%20%22ONLINE%22,",
+        "prevChunkIds": []
+      },
+      "847": {
+        "chunkId": "792ac0",
+        "hash": "1459d835",
+        "encoded": "%22transactionId%22:%20%22TXN_E2E_TEST%22",
+        "prevChunkIds": []
+      },
+      "848": {
+        "chunkId": "792ac0",
+        "hash": "8db48e4e",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "849": {
+        "chunkId": "792ac0",
+        "hash": "f91d0772",
+        "encoded": "%22@",
+        "prevChunkIds": []
+      },
+      "851": {
+        "chunkId": "792ac0",
+        "hash": "45468802",
+        "encoded": "$paymentResponse%20=%20Invoke-RestMethod%20-Uri%20%22$paymentServiceUrl/api/payments%22%20-Method%20POST%20-Headers%20$headers%20-Body%20$paymentBody",
+        "prevChunkIds": []
+      },
+      "852": {
+        "chunkId": "792ac0",
+        "hash": "373b9a85",
+        "encoded": "$paymentId%20=%20$paymentResponse.id",
+        "prevChunkIds": []
+      },
+      "853": {
+        "chunkId": "792ac0",
+        "hash": "a700f1b9",
+        "encoded": "Write-Host%20%22Payment%20created%20with%20ID:%20$paymentId%22",
+        "prevChunkIds": []
+      },
+      "855": {
+        "chunkId": "792ac0",
+        "hash": "bd91638e",
+        "encoded": "#%20Step%206:%20Create%20Notification",
+        "prevChunkIds": []
+      },
+      "856": {
+        "chunkId": "792ac0",
+        "hash": "2428f6ad",
+        "encoded": "$notificationBody%20=%20@%22",
+        "prevChunkIds": []
+      },
+      "857": {
+        "chunkId": "792ac0",
+        "hash": "cc4023d2",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "858": {
+        "chunkId": "792ac0",
+        "hash": "6369dd04",
+        "encoded": "%22userId%22:%20$userId,",
+        "prevChunkIds": []
+      },
+      "859": {
+        "chunkId": "792ac0",
+        "hash": "ab29b352",
+        "encoded": "%22title%22:%20%22E2E%20Test%20Notification%22,",
+        "prevChunkIds": []
+      },
+      "860": {
+        "chunkId": "792ac0",
+        "hash": "51abf1e1",
+        "encoded": "%22message%22:%20%22Your%20order%20is%20being%20processed%22,",
+        "prevChunkIds": []
+      },
+      "861": {
+        "chunkId": "792ac0",
+        "hash": "1e56eefe",
+        "encoded": "%22type%22:%20%22ORDER_UPDATE%22",
+        "prevChunkIds": []
+      },
+      "862": {
+        "chunkId": "792ac0",
+        "hash": "49cf12c4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "863": {
+        "chunkId": "792ac0",
+        "hash": "097e8b0d",
+        "encoded": "%22@",
+        "prevChunkIds": []
+      },
+      "865": {
+        "chunkId": "792ac0",
+        "hash": "70fc0918",
+        "encoded": "$notificationResponse%20=%20Invoke-RestMethod%20-Uri%20%22$notificationServiceUrl/api/notifications%22%20-Method%20POST%20-Headers%20$headers%20-Body%20$notificationBody",
+        "prevChunkIds": []
+      },
+      "866": {
+        "chunkId": "792ac0",
+        "hash": "d3b97037",
+        "encoded": "$notificationId%20=%20$notificationResponse.id",
+        "prevChunkIds": []
+      },
+      "867": {
+        "chunkId": "792ac0",
+        "hash": "968b33ef",
+        "encoded": "Write-Host%20%22Notification%20created%20with%20ID:%20$notificationId%22",
+        "prevChunkIds": []
+      },
+      "869": {
+        "chunkId": "792ac0",
+        "hash": "f58eff15",
+        "encoded": "Write-Host%20%22%60nE2E%20Test%20Completed%20Successfully!%22",
+        "prevChunkIds": []
+      },
+      "870": {
+        "chunkId": "792ac0",
+        "hash": "f7638b21",
+        "encoded": "Write-Host%20%22User%20ID:%20$userId%22",
+        "prevChunkIds": []
+      },
+      "871": {
+        "chunkId": "792ac0",
+        "hash": "a2c99fbf",
+        "encoded": "Write-Host%20%22Restaurant%20ID:%20$restaurantId%22",
+        "prevChunkIds": []
+      },
+      "872": {
+        "chunkId": "792ac0",
+        "hash": "2584ae50",
+        "encoded": "Write-Host%20%22Menu%20Item%20ID:%20$menuItemId%22",
+        "prevChunkIds": []
+      },
+      "873": {
+        "chunkId": "792ac0",
+        "hash": "e267b529",
+        "encoded": "Write-Host%20%22Order%20ID:%20$orderId%22",
+        "prevChunkIds": []
+      },
+      "874": {
+        "chunkId": "792ac0",
+        "hash": "58b0172c",
+        "encoded": "Write-Host%20%22Payment%20ID:%20$paymentId%22",
+        "prevChunkIds": []
+      },
+      "875": {
+        "chunkId": "792ac0",
+        "hash": "63a4656e",
+        "encoded": "Write-Host%20%22Notification%20ID:%20$notificationId%22",
+        "prevChunkIds": []
+      },
+      "876": {
+        "chunkId": "792ac0",
+        "hash": "e5e5fb10",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "878": {
+        "chunkId": "792ac0",
+        "hash": "6230888f",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "880": {
+        "chunkId": "792ac0",
+        "hash": "fc0f824f",
+        "encoded": "##%20TROUBLESHOOTING",
+        "prevChunkIds": []
+      },
+      "882": {
+        "chunkId": "792ac0",
+        "hash": "221c6cee",
+        "encoded": "###%20Issue:%20409%20Conflict%20-%20Duplicate%20Key",
+        "prevChunkIds": []
+      },
+      "883": {
+        "chunkId": "792ac0",
+        "hash": "85066ceb",
+        "encoded": "**Solution**:%20Run%20DATABASE_FIX_SCRIPT.sql",
+        "prevChunkIds": []
+      },
+      "885": {
+        "chunkId": "792ac0",
+        "hash": "2b86de96",
+        "encoded": "###%20Issue:%20500%20Internal%20Server%20Error%20-%20LazyInitializationException",
+        "prevChunkIds": []
+      },
+      "886": {
+        "chunkId": "792ac0",
+        "hash": "14b928d9",
+        "encoded": "**Solution**:%20Restart%20restaurant-service%20after%20applying%20the%20EAGER%20fetch%20fix",
+        "prevChunkIds": []
+      },
+      "888": {
+        "chunkId": "792ac0",
+        "hash": "81f2dc78",
+        "encoded": "###%20Issue:%20400%20Validation%20Error",
+        "prevChunkIds": []
+      },
+      "889": {
+        "chunkId": "792ac0",
+        "hash": "d6d046e4",
+        "encoded": "**Solution**:%20Check%20request%20body%20matches%20DTO%20structure%20exactly",
+        "prevChunkIds": []
+      },
+      "891": {
+        "chunkId": "792ac0",
+        "hash": "53d756d9",
+        "encoded": "###%20Issue:%20404%20Not%20Found",
+        "prevChunkIds": []
+      },
+      "892": {
+        "chunkId": "792ac0",
+        "hash": "605be917",
+        "encoded": "**Solution**:%20Verify%20service%20is%20running%20and%20endpoint%20path%20is%20correct",
+        "prevChunkIds": []
+      },
+      "894": {
+        "chunkId": "792ac0",
+        "hash": "68c52562",
+        "encoded": "###%20Issue:%20Connection%20Refused",
+        "prevChunkIds": []
+      },
+      "895": {
+        "chunkId": "792ac0",
+        "hash": "6f834e7f",
+        "encoded": "**Solution**:%20Check%20if%20service%20is%20running%20on%20the%20expected%20port",
+        "prevChunkIds": []
+      },
+      "897": {
+        "chunkId": "792ac0",
+        "hash": "bb1de39d",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "899": {
+        "chunkId": "792ac0",
+        "hash": "5451ca4d",
+        "encoded": "##%20VERIFICATION%20CHECKLIST",
+        "prevChunkIds": []
+      },
+      "901": {
+        "chunkId": "792ac0",
+        "hash": "7c370959",
+        "encoded": "-%20%5B%20%5D%20All%208%20services%20health%20checks%20pass",
+        "prevChunkIds": []
+      },
+      "902": {
+        "chunkId": "792ac0",
+        "hash": "9ca7c450",
+        "encoded": "-%20%5B%20%5D%20Database%20sequences%20reset%20successfully",
+        "prevChunkIds": []
+      },
+      "903": {
+        "chunkId": "792ac0",
+        "hash": "6394fe92",
+        "encoded": "-%20%5B%20%5D%20Restaurant%20service%20restarted",
+        "prevChunkIds": []
+      },
+      "904": {
+        "chunkId": "792ac0",
+        "hash": "755778b5",
+        "encoded": "-%20%5B%20%5D%20User%20registration%20works",
+        "prevChunkIds": []
+      },
+      "905": {
+        "chunkId": "792ac0",
+        "hash": "a656d576",
+        "encoded": "-%20%5B%20%5D%20User%20login%20works",
+        "prevChunkIds": []
+      },
+      "906": {
+        "chunkId": "792ac0",
+        "hash": "3917f83f",
+        "encoded": "-%20%5B%20%5D%20Restaurant%20creation%20works",
+        "prevChunkIds": []
+      },
+      "907": {
+        "chunkId": "792ac0",
+        "hash": "5284c890",
+        "encoded": "-%20%5B%20%5D%20Menu%20item%20creation%20works",
+        "prevChunkIds": []
+      },
+      "908": {
+        "chunkId": "792ac0",
+        "hash": "7032179a",
+        "encoded": "-%20%5B%20%5D%20Order%20placement%20works",
+        "prevChunkIds": []
+      },
+      "909": {
+        "chunkId": "792ac0",
+        "hash": "83a6893d",
+        "encoded": "-%20%5B%20%5D%20Payment%20creation%20works",
+        "prevChunkIds": []
+      },
+      "910": {
+        "chunkId": "792ac0",
+        "hash": "588943bd",
+        "encoded": "-%20%5B%20%5D%20Notification%20creation%20works",
+        "prevChunkIds": []
+      },
+      "911": {
+        "chunkId": "792ac0",
+        "hash": "5e4dec09",
+        "encoded": "-%20%5B%20%5D%20All%20GET%20endpoints%20return%20data",
+        "prevChunkIds": []
+      },
+      "912": {
+        "chunkId": "792ac0",
+        "hash": "bb1dee3d",
+        "encoded": "-%20%5B%20%5D%20All%20PUT%20endpoints%20update%20data",
+        "prevChunkIds": []
+      },
+      "913": {
+        "chunkId": "792ac0",
+        "hash": "d02a8234",
+        "encoded": "-%20%5B%20%5D%20All%20DELETE%20endpoints%20remove%20data",
+        "prevChunkIds": []
+      },
+      "914": {
+        "chunkId": "792ac0",
+        "hash": "a53eac33",
+        "encoded": "-%20%5B%20%5D%20All%20endpoints%20work%20through%20API%20Gateway",
+        "prevChunkIds": []
+      },
+      "915": {
+        "chunkId": "792ac0",
+        "hash": "c2451998",
+        "encoded": "-%20%5B%20%5D%20Complete%20E2E%20workflow%20succeeds",
+        "prevChunkIds": []
+      },
+      "917": {
+        "chunkId": "792ac0",
+        "hash": "4f5ab664",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "919": {
+        "chunkId": "792ac0",
+        "hash": "f6928dd2",
+        "encoded": "**Total%20Endpoints%20to%20Test**:%2070+",
+        "prevChunkIds": []
+      },
+      "920": {
+        "chunkId": "792ac0",
+        "hash": "7646900a",
+        "encoded": "**Estimated%20Testing%20Time**:%202-3%20hours%20for%20complete%20manual%20testing",
+        "prevChunkIds": []
+      },
+      "921": {
+        "chunkId": "792ac0",
+        "hash": "b3ea16c2",
+        "encoded": "**Recommended**:%20Use%20Postman%20Collection%20for%20automated%20testing",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

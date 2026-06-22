@@ -5,10 +5,16 @@ import com.fooddelivery.payment.dto.PaymentRequest;
 import com.fooddelivery.payment.dto.PaymentResponse;
 import com.fooddelivery.payment.entity.Payment;
 import com.fooddelivery.payment.entity.PaymentStatus;
+import com.fooddelivery.payment.messaging.PaymentEventConsumer;
+import com.fooddelivery.payment.messaging.PaymentEventPublisher;
+import com.fooddelivery.payment.security.JwtAuthenticationFilter;
+import com.fooddelivery.payment.security.JwtTokenProvider;
 import com.fooddelivery.payment.service.PaymentService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -27,6 +33,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @WebMvcTest(PaymentController.class)
+@AutoConfigureMockMvc(addFilters = false)
 class PaymentControllerTest {
 
     @Autowired
@@ -34,6 +41,21 @@ class PaymentControllerTest {
 
     @MockBean
     private PaymentService paymentService;
+
+    @MockBean
+    private JwtTokenProvider jwtTokenProvider;
+
+    @MockBean
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
+    
+    @MockBean
+    private RabbitTemplate rabbitTemplate;
+    
+    @MockBean
+    private PaymentEventPublisher paymentEventPublisher;
+    
+    @MockBean
+    private PaymentEventConsumer paymentEventConsumer;
 
     @Autowired
     private ObjectMapper objectMapper;

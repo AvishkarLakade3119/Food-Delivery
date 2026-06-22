@@ -1,30 +1,46 @@
+# Test configuration for Notification Service
+
+# JWT Configuration for tests
+jwt:
+  secret: test-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-testing-purpose-only
+  expiration: 86400000
+  header: Authorization
+  prefix: "Bearer "
+
 spring:
+  application:
+    name: notification-service
+  config:
+    import: ""
   datasource:
-    url: jdbc:tc:postgresql:13:///testdb
-    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    url: jdbc:h2:mem:notifmain;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
   jpa:
     hibernate:
       ddl-auto: create-drop
-    show-sql: true
+    show-sql: false
+    defer-datasource-initialization: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-  eureka:
-    client:
-      enabled: false
+        dialect: org.hibernate.dialect.H2Dialect
+  sql:
+    init:
+      mode: never
   cloud:
     discovery:
       enabled: false
+    config:
+      enabled: false
 
-logging:
-  level:
-    com.fooddelivery: DEBUG
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+eureka:
+  client:
+    enabled: false
 
 management:
   endpoints:
-    web:
-      exposure:
-        include: health,info
+    enabled-by-default: false
+
+server:
+  port: 0

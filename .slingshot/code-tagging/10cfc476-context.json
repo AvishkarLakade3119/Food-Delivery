@@ -1,0 +1,15 @@
+{
+  "filename": "DATABASE_FIX_SCRIPT.sql",
+  "path": "DATABASE_FIX_SCRIPT.sql",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "0577c8df": {
+      "value": "You are a senior Spring Boot microservices full-stack API testing and debugging agent. All 7 services of my Food Delivery Microservices Platform are running and registered with Eureka. Your job is to test EVERY single endpoint, find ALL errors, and fix them.\nProject: Food Delivery Microservices Platform\nFramework: Spring Boot 3.2.0\nJava: 17\nAll services are UP and registered with Eureka.\nRunning services:\n\neureka-server - port 8761\nconfig-server - port 8888\napi-gateway - port 8080\nuser-service -"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

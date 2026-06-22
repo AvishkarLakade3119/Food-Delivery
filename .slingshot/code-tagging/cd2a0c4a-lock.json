@@ -1,0 +1,409 @@
+{
+  "restaurant-service\\src\\test\\java\\com\\fooddelivery\\restaurant\\controller\\RestaurantControllerTest.java": {
+    "filename": "RestaurantControllerTest.java",
+    "path": "restaurant-service\\src\\test\\java\\com\\fooddelivery\\restaurant\\controller\\RestaurantControllerTest.java",
+    "version": "1.2",
+    "contextFile": "cd2a0c4a-context.json",
+    "chunks": {
+      "04d972": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781196339,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "df2ea822"
+        },
+        "hash": "f3911ea1",
+        "messageId": "system_79e8b040-65b3-11f1-8360-b9f58a4ec7ec",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:15:39 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "09db7c": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781196339,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "df2ea822"
+        },
+        "hash": "651c6cd9",
+        "messageId": "system_79e8b040-65b3-11f1-8360-b9f58a4ec7ec",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:15:39 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "963adb": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427644,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "5ba0503e",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:30:44 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "a4a326": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427644,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "201e5636",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:30:44 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "09db7c",
+        "hash": "83ff971e",
+        "encoded": "package%20com.fooddelivery.restaurant.controller;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "09db7c",
+        "hash": "88d9f65a",
+        "encoded": "import%20com.fasterxml.jackson.databind.ObjectMapper;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "a4a326",
+        "hash": "a934430a",
+        "encoded": "import%20com.fooddelivery.restaurant.dto.AddressDto;",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "a4a326",
+        "hash": "12163cdd",
+        "encoded": "import%20com.fooddelivery.restaurant.dto.RestaurantRequest;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "a4a326",
+        "hash": "bbacd87d",
+        "encoded": "import%20com.fooddelivery.restaurant.entity.Restaurant;",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "a4a326",
+        "hash": "aa1799b3",
+        "encoded": "import%20com.fooddelivery.restaurant.messaging.RestaurantEventConsumer;",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "a4a326",
+        "hash": "b6a96d33",
+        "encoded": "import%20com.fooddelivery.restaurant.messaging.RestaurantEventPublisher;",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "a4a326",
+        "hash": "7998a95f",
+        "encoded": "import%20com.fooddelivery.restaurant.security.JwtAuthenticationFilter;",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "a4a326",
+        "hash": "5ff24080",
+        "encoded": "import%20com.fooddelivery.restaurant.security.JwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "a4a326",
+        "hash": "d2f7bd98",
+        "encoded": "import%20com.fooddelivery.restaurant.service.RestaurantService;",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "a4a326",
+        "hash": "56dcc1f6",
+        "encoded": "import%20org.junit.jupiter.api.BeforeEach;",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "a4a326",
+        "hash": "f44680f4",
+        "encoded": "import%20org.junit.jupiter.api.Test;",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "a4a326",
+        "hash": "01421705",
+        "encoded": "import%20org.springframework.amqp.rabbit.core.RabbitTemplate;",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "a4a326",
+        "hash": "a6c63a4e",
+        "encoded": "import%20org.springframework.beans.factory.annotation.Autowired;",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "a4a326",
+        "hash": "91f6a8d2",
+        "encoded": "import%20org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "a4a326",
+        "hash": "45238a28",
+        "encoded": "import%20org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "a4a326",
+        "hash": "eb7c6880",
+        "encoded": "import%20org.springframework.boot.test.mock.mockito.MockBean;",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "a4a326",
+        "hash": "4f51e845",
+        "encoded": "import%20org.springframework.http.MediaType;",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "a4a326",
+        "hash": "e61b0632",
+        "encoded": "import%20org.springframework.test.web.servlet.MockMvc;",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "09db7c",
+        "hash": "9a70d698",
+        "encoded": "import%20com.fooddelivery.restaurant.dto.RestaurantRequest;",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "09db7c",
+        "hash": "4cd89529",
+        "encoded": "import%20com.fooddelivery.restaurant.entity.Restaurant;",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "09db7c",
+        "hash": "776e4123",
+        "encoded": "import%20com.fooddelivery.restaurant.security.JwtAuthenticationFilter;",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "09db7c",
+        "hash": "2496675c",
+        "encoded": "import%20com.fooddelivery.restaurant.security.JwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "09db7c",
+        "hash": "2613441a",
+        "encoded": "import%20com.fooddelivery.restaurant.service.RestaurantService;",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "09db7c",
+        "hash": "4b7007c4",
+        "encoded": "import%20org.junit.jupiter.api.BeforeEach;",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "09db7c",
+        "hash": "d97a2266",
+        "encoded": "import%20org.junit.jupiter.api.Test;",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "09db7c",
+        "hash": "aec0c428",
+        "encoded": "import%20org.springframework.beans.factory.annotation.Autowired;",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "09db7c",
+        "hash": "5b08bfaf",
+        "encoded": "import%20org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "09db7c",
+        "hash": "1618093e",
+        "encoded": "import%20org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "09db7c",
+        "hash": "9ef77c61",
+        "encoded": "import%20org.springframework.boot.test.mock.mockito.MockBean;",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "09db7c",
+        "hash": "3a239d79",
+        "encoded": "import%20org.springframework.http.MediaType;",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "09db7c",
+        "hash": "a4f9e5dc",
+        "encoded": "import%20org.springframework.test.web.servlet.MockMvc;",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "963adb",
+        "hash": "8243dc36",
+        "encoded": "@MockBean",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "963adb",
+        "hash": "ef67e71e",
+        "encoded": "private%20JwtAuthenticationFilter%20jwtAuthenticationFilter;",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "963adb",
+        "hash": "9089dbb1",
+        "encoded": "@MockBean",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "963adb",
+        "hash": "79fa040b",
+        "encoded": "private%20RabbitTemplate%20rabbitTemplate;",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "963adb",
+        "hash": "f5446140",
+        "encoded": "@MockBean",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "963adb",
+        "hash": "bcb3cc31",
+        "encoded": "private%20RestaurantEventPublisher%20restaurantEventPublisher;",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "963adb",
+        "hash": "8bb038b9",
+        "encoded": "@MockBean",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "963adb",
+        "hash": "ed02955d",
+        "encoded": "private%20RestaurantEventConsumer%20restaurantEventConsumer;",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "963adb",
+        "hash": "ec2cf795",
+        "encoded": "@Autowired",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "963adb",
+        "hash": "afd912f2",
+        "encoded": "private%20ObjectMapper%20objectMapper;",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "963adb",
+        "hash": "d4f47fdb",
+        "encoded": "private%20Restaurant%20restaurant;",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "963adb",
+        "hash": "aec3b4cb",
+        "encoded": "private%20RestaurantRequest%20restaurantRequest;",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "04d972",
+        "hash": "e9cc2d59",
+        "encoded": "@AutoConfigureMockMvc(addFilters%20=%20false)",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "04d972",
+        "hash": "63bf7c89",
+        "encoded": "class%20RestaurantControllerTest%20%7B",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "04d972",
+        "hash": "0058b20c",
+        "encoded": "@Autowired",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "04d972",
+        "hash": "a1e999cd",
+        "encoded": "private%20MockMvc%20mockMvc;",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "04d972",
+        "hash": "ede2c030",
+        "encoded": "@MockBean",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "04d972",
+        "hash": "99c7a8de",
+        "encoded": "private%20RestaurantService%20restaurantService;",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "04d972",
+        "hash": "786c06a4",
+        "encoded": "@MockBean",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "04d972",
+        "hash": "51837667",
+        "encoded": "private%20JwtTokenProvider%20jwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "04d972",
+        "hash": "4c4d5cdc",
+        "encoded": "@MockBean",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "04d972",
+        "hash": "1ebc814e",
+        "encoded": "private%20JwtAuthenticationFilter%20jwtAuthenticationFilter;",
+        "prevChunkIds": []
+      }
+    },
+    "_prevLineCount": 201
+  }
+}

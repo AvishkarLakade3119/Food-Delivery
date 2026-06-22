@@ -1,0 +1,581 @@
+{
+  "order-service\\src\\main\\resources\\application.yml": {
+    "filename": "application.yml",
+    "path": "order-service\\src\\main\\resources\\application.yml",
+    "version": "1.2",
+    "contextFile": "094e9a4c-context.json",
+    "chunks": {
+      "914956": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075687,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "83a90f64",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:44:47 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "060434": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781153565,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "141ea5f0"
+        },
+        "hash": "f6cac183",
+        "messageId": "system_56f6cd00-6550-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:22:45 AM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "af4d8f": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781196338,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "df2ea822"
+        },
+        "hash": "ebb9e833",
+        "messageId": "system_79e8b040-65b3-11f1-8360-b9f58a4ec7ec",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:15:38 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "e6b9bb": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781253764,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "chat",
+        "type": "copyCode",
+        "extraContext": {
+          "promptMessage": "af721d1c"
+        },
+        "hash": "b3aa0008",
+        "messageId": "system_91d50870-663a-11f1-895d-cd57985b5050",
+        "codeBlockId": "system_91d50870-663a-11f1-895d-cd57985b5050-Codeblock-1",
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/12/2026, 2:12:44 PM\n- **source**: chat\n- **type**: copyCode\n"
+      },
+      "39a083": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781277230,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "2c8de540"
+        },
+        "hash": "b469f796",
+        "messageId": "system_c5e1dcc0-6670-11f1-895d-cd57985b5050",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/12/2026, 8:43:50 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "ed5f61": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427580,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "e7e9f8c5",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:29:40 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "060434",
+        "hash": "d1aad523",
+        "encoded": "#%20========================================",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "1": {
+        "chunkId": "060434",
+        "hash": "cb6298f2",
+        "encoded": "#%20Order%20Service%20-%20Bootstrap%20Configuration",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "3": {
+        "chunkId": "060434",
+        "hash": "6b94f34f",
+        "encoded": "#%20Minimal%20configuration%20to%20connect%20to%20Config%20Server",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "4": {
+        "chunkId": "060434",
+        "hash": "638a8061",
+        "encoded": "#%20All%20other%20properties%20are%20fetched%20from%20config-server",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "6": {
+        "chunkId": "060434",
+        "hash": "8e5ec212",
+        "encoded": "server:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "7": {
+        "chunkId": "060434",
+        "hash": "e4cfd610",
+        "encoded": "port:%208083",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "9": {
+        "chunkId": "060434",
+        "hash": "f19d3673",
+        "encoded": "spring:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "10": {
+        "chunkId": "060434",
+        "hash": "e02d1c5c",
+        "encoded": "application:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "11": {
+        "chunkId": "060434",
+        "hash": "a9d10856",
+        "encoded": "name:%20order-service",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "12": {
+        "chunkId": "060434",
+        "hash": "f5a3bc6a",
+        "encoded": "config:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "13": {
+        "chunkId": "060434",
+        "hash": "8061768f",
+        "encoded": "import:%20optional:configserver:http://localhost:8888",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "14": {
+        "chunkId": "060434",
+        "hash": "2d10db39",
+        "encoded": "cloud:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "15": {
+        "chunkId": "060434",
+        "hash": "9033fb87",
+        "encoded": "config:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "16": {
+        "chunkId": "060434",
+        "hash": "c2e99ac3",
+        "encoded": "fail-fast:%20false",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "17": {
+        "chunkId": "060434",
+        "hash": "7c5f1b86",
+        "encoded": "override-none:%20true",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "18": {
+        "chunkId": "060434",
+        "hash": "f43585af",
+        "encoded": "allow-override:%20true",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "19": {
+        "chunkId": "060434",
+        "hash": "df0d8f85",
+        "encoded": "override-system-properties:%20false",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "20": {
+        "chunkId": "060434",
+        "hash": "552490da",
+        "encoded": "retry:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "21": {
+        "chunkId": "060434",
+        "hash": "1d676416",
+        "encoded": "max-attempts:%206",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "22": {
+        "chunkId": "060434",
+        "hash": "323fa2b8",
+        "encoded": "initial-interval:%201000",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "23": {
+        "chunkId": "060434",
+        "hash": "392c24d2",
+        "encoded": "multiplier:%201.1",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "24": {
+        "chunkId": "060434",
+        "hash": "aab53345",
+        "encoded": "max-interval:%202000",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "26": {
+        "chunkId": "060434",
+        "hash": "c46efb26",
+        "encoded": "#%20Fallback%20PostgreSQL%20Database%20Configuration",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "27": {
+        "chunkId": "060434",
+        "hash": "aea787d1",
+        "encoded": "datasource:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "28": {
+        "chunkId": "060434",
+        "hash": "1f854cfe",
+        "encoded": "url:%20jdbc:postgresql://localhost:5434/orderdb",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "29": {
+        "chunkId": "060434",
+        "hash": "2bb17950",
+        "encoded": "username:%20postgres",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "30": {
+        "chunkId": "060434",
+        "hash": "fffffa0b",
+        "encoded": "password:%20password",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "31": {
+        "chunkId": "060434",
+        "hash": "0c02cf9f",
+        "encoded": "driver-class-name:%20org.postgresql.Driver",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "33": {
+        "chunkId": "060434",
+        "hash": "9fef51c4",
+        "encoded": "#%20Fallback%20JPA%20Configuration",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "34": {
+        "chunkId": "060434",
+        "hash": "305936f8",
+        "encoded": "jpa:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "35": {
+        "chunkId": "060434",
+        "hash": "c436e5c8",
+        "encoded": "hibernate:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "36": {
+        "chunkId": "060434",
+        "hash": "4b586772",
+        "encoded": "ddl-auto:%20update",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "37": {
+        "chunkId": "060434",
+        "hash": "0e441197",
+        "encoded": "defer-datasource-initialization:%20true",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "38": {
+        "chunkId": "060434",
+        "hash": "69858405",
+        "encoded": "show-sql:%20true",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "40": {
+        "chunkId": "ed5f61",
+        "hash": "f6995797",
+        "encoded": "#%20SQL%20Initialization",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "ed5f61",
+        "hash": "4642c1e0",
+        "encoded": "sql:",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "ed5f61",
+        "hash": "cc3d7a8b",
+        "encoded": "init:",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "ed5f61",
+        "hash": "25bec6ec",
+        "encoded": "mode:%20never",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "ed5f61",
+        "hash": "9ffb1f78",
+        "encoded": "#%20RabbitMQ%20Configuration",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "ed5f61",
+        "hash": "03482ed8",
+        "encoded": "rabbitmq:",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "ed5f61",
+        "hash": "80db54ea",
+        "encoded": "host:%20localhost",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "ed5f61",
+        "hash": "3698f599",
+        "encoded": "port:%205672",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "ed5f61",
+        "hash": "1a94d5b0",
+        "encoded": "username:%20guest",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "ed5f61",
+        "hash": "8d3a1e05",
+        "encoded": "password:%20guest",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "ed5f61",
+        "hash": "77c26379",
+        "encoded": "connection-timeout:%205000",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "ed5f61",
+        "hash": "1b192977",
+        "encoded": "#%20JWT%20Configuration%20(MUST%20match%20user-service)",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "af4d8f",
+        "hash": "537280d5",
+        "encoded": "sql:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "55": {
+        "chunkId": "af4d8f",
+        "hash": "d9306677",
+        "encoded": "init:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "56": {
+        "chunkId": "af4d8f",
+        "hash": "041067ef",
+        "encoded": "mode:%20never",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "58": {
+        "chunkId": "39a083",
+        "hash": "0d519759",
+        "encoded": "#%20JWT%20Configuration%20(MUST%20match%20user-service)",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "39a083",
+        "hash": "c88dc5f6",
+        "encoded": "jwt:",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "39a083",
+        "hash": "d5c49ed3",
+        "encoded": "secret:%20a-very-long-secure-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-food-delivery-platform-2026",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "39a083",
+        "hash": "81d50b10",
+        "encoded": "expiration:%2086400000",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "39a083",
+        "hash": "3ad7a01d",
+        "encoded": "header:%20Authorization",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "39a083",
+        "hash": "aa6cb3cb",
+        "encoded": "prefix:%20%22Bearer%20%22",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "af4d8f",
+        "hash": "112fca7a",
+        "encoded": "#%20Eureka%20Client%20Configuration",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "66": {
+        "chunkId": "af4d8f",
+        "hash": "6f06a0eb",
+        "encoded": "eureka:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "67": {
+        "chunkId": "af4d8f",
+        "hash": "6307e216",
+        "encoded": "client:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "68": {
+        "chunkId": "af4d8f",
+        "hash": "1ac1b7cd",
+        "encoded": "service-url:",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "69": {
+        "chunkId": "af4d8f",
+        "hash": "8c4b2554",
+        "encoded": "defaultZone:%20http://localhost:8761/eureka/",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "70": {
+        "chunkId": "af4d8f",
+        "hash": "f12bd871",
+        "encoded": "register-with-eureka:%20true",
+        "prevChunkIds": [
+          "060434"
+        ]
+      },
+      "71": {
+        "chunkId": "af4d8f",
+        "hash": "670c9620",
+        "encoded": "fetch-registry:%20true",
+        "prevChunkIds": [
+          "060434"
+        ]
+      }
+    },
+    "_prevLineCount": 60
+  }
+}

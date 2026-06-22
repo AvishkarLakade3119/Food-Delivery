@@ -1,0 +1,432 @@
+{
+  "restaurant-service\\src\\main\\java\\com\\fooddelivery\\restaurant\\event\\RestaurantOrderReceivedEvent.java": {
+    "filename": "RestaurantOrderReceivedEvent.java",
+    "path": "restaurant-service\\src\\main\\java\\com\\fooddelivery\\restaurant\\event\\RestaurantOrderReceivedEvent.java",
+    "version": "1.2",
+    "contextFile": "25a178f4-context.json",
+    "chunks": {
+      "48a68a": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781423529,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "b7fe811e"
+        },
+        "hash": "3754ecb2",
+        "messageId": "system_3657ad90-67c5-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 1:22:09 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "48a68a",
+        "hash": "3cda6796",
+        "encoded": "package%20com.fooddelivery.restaurant.event;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "48a68a",
+        "hash": "26207173",
+        "encoded": "import%20com.fooddelivery.restaurant.event.dto.OrderItemDTO;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "48a68a",
+        "hash": "2bc3bee8",
+        "encoded": "import%20java.io.Serializable;",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "48a68a",
+        "hash": "7992683c",
+        "encoded": "import%20java.time.LocalDateTime;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "48a68a",
+        "hash": "781e5b9c",
+        "encoded": "import%20java.util.List;",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "48a68a",
+        "hash": "6aab29d8",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "48a68a",
+        "hash": "2321d628",
+        "encoded": "*%20Event%20published%20when%20restaurant%20receives%20an%20order",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "48a68a",
+        "hash": "7c8b9e0c",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "48a68a",
+        "hash": "d00637ef",
+        "encoded": "public%20class%20RestaurantOrderReceivedEvent%20implements%20Serializable%20%7B",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "48a68a",
+        "hash": "fdf70181",
+        "encoded": "private%20static%20final%20long%20serialVersionUID%20=%201L;",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "48a68a",
+        "hash": "d7604d55",
+        "encoded": "private%20Long%20orderId;",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "48a68a",
+        "hash": "d0efdddd",
+        "encoded": "private%20Long%20restaurantId;",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "48a68a",
+        "hash": "df66995b",
+        "encoded": "private%20List%3COrderItemDTO%3E%20items;",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "48a68a",
+        "hash": "248096fa",
+        "encoded": "private%20Double%20totalAmount;",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "48a68a",
+        "hash": "474e2084",
+        "encoded": "private%20LocalDateTime%20timestamp;",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "48a68a",
+        "hash": "82f457cb",
+        "encoded": "public%20RestaurantOrderReceivedEvent()%20%7B",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "48a68a",
+        "hash": "e4454a62",
+        "encoded": "this.timestamp%20=%20LocalDateTime.now();",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "48a68a",
+        "hash": "4b5cc20d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "48a68a",
+        "hash": "1fc1173e",
+        "encoded": "public%20RestaurantOrderReceivedEvent(Long%20orderId,%20Long%20restaurantId,",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "48a68a",
+        "hash": "c8e379d9",
+        "encoded": "List%3COrderItemDTO%3E%20items,%20Double%20totalAmount,",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "48a68a",
+        "hash": "d3ecdde3",
+        "encoded": "LocalDateTime%20timestamp)%20%7B",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "48a68a",
+        "hash": "cb9d53df",
+        "encoded": "this.orderId%20=%20orderId;",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "48a68a",
+        "hash": "f1242318",
+        "encoded": "this.restaurantId%20=%20restaurantId;",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "48a68a",
+        "hash": "927a0d83",
+        "encoded": "this.items%20=%20items;",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "48a68a",
+        "hash": "54cb7c07",
+        "encoded": "this.totalAmount%20=%20totalAmount;",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "48a68a",
+        "hash": "876e9fab",
+        "encoded": "this.timestamp%20=%20timestamp%20!=%20null%20?%20timestamp%20:%20LocalDateTime.now();",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "48a68a",
+        "hash": "43353d17",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "48a68a",
+        "hash": "57cdba76",
+        "encoded": "public%20Long%20getOrderId()%20%7B",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "48a68a",
+        "hash": "330238a3",
+        "encoded": "return%20orderId;",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "48a68a",
+        "hash": "dfad4947",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "48a68a",
+        "hash": "21524cba",
+        "encoded": "public%20void%20setOrderId(Long%20orderId)%20%7B",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "48a68a",
+        "hash": "2a4c18c9",
+        "encoded": "this.orderId%20=%20orderId;",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "48a68a",
+        "hash": "4771cdac",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "48a68a",
+        "hash": "05d5d23e",
+        "encoded": "public%20Long%20getRestaurantId()%20%7B",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "48a68a",
+        "hash": "f86811d0",
+        "encoded": "return%20restaurantId;",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "48a68a",
+        "hash": "d6071ac7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "48a68a",
+        "hash": "8c2e1e83",
+        "encoded": "public%20void%20setRestaurantId(Long%20restaurantId)%20%7B",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "48a68a",
+        "hash": "21239aa7",
+        "encoded": "this.restaurantId%20=%20restaurantId;",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "48a68a",
+        "hash": "57c5213d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "48a68a",
+        "hash": "eaea73b7",
+        "encoded": "public%20List%3COrderItemDTO%3E%20getItems()%20%7B",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "48a68a",
+        "hash": "7016344f",
+        "encoded": "return%20items;",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "48a68a",
+        "hash": "38b604dc",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "48a68a",
+        "hash": "6c834913",
+        "encoded": "public%20void%20setItems(List%3COrderItemDTO%3E%20items)%20%7B",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "48a68a",
+        "hash": "8a63551b",
+        "encoded": "this.items%20=%20items;",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "48a68a",
+        "hash": "2ef1d392",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "48a68a",
+        "hash": "ec495460",
+        "encoded": "public%20Double%20getTotalAmount()%20%7B",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "48a68a",
+        "hash": "666a6f56",
+        "encoded": "return%20totalAmount;",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "48a68a",
+        "hash": "309dd352",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "48a68a",
+        "hash": "c20a60df",
+        "encoded": "public%20void%20setTotalAmount(Double%20totalAmount)%20%7B",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "48a68a",
+        "hash": "ec89b46f",
+        "encoded": "this.totalAmount%20=%20totalAmount;",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "48a68a",
+        "hash": "78db855a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "48a68a",
+        "hash": "4530ae92",
+        "encoded": "public%20LocalDateTime%20getTimestamp()%20%7B",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "48a68a",
+        "hash": "f805f838",
+        "encoded": "return%20timestamp;",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "48a68a",
+        "hash": "bf862585",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "48a68a",
+        "hash": "cb29c39e",
+        "encoded": "public%20void%20setTimestamp(LocalDateTime%20timestamp)%20%7B",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "48a68a",
+        "hash": "39a6e45d",
+        "encoded": "this.timestamp%20=%20timestamp;",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "48a68a",
+        "hash": "f064f9d6",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "48a68a",
+        "hash": "2811661d",
+        "encoded": "@Override",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "48a68a",
+        "hash": "7a1d43f0",
+        "encoded": "public%20String%20toString()%20%7B",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "48a68a",
+        "hash": "f6386217",
+        "encoded": "return%20%22RestaurantOrderReceivedEvent%7B%22%20+",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "48a68a",
+        "hash": "37b56fea",
+        "encoded": "%22orderId=%22%20+%20orderId%20+",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "48a68a",
+        "hash": "f5c87353",
+        "encoded": "%22,%20restaurantId=%22%20+%20restaurantId%20+",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "48a68a",
+        "hash": "12df3d9c",
+        "encoded": "%22,%20totalAmount=%22%20+%20totalAmount%20+",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "48a68a",
+        "hash": "bc41b1be",
+        "encoded": "%22,%20timestamp=%22%20+%20timestamp%20+",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "48a68a",
+        "hash": "e9d5d9e6",
+        "encoded": "'%7D';",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "48a68a",
+        "hash": "d6938858",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "48a68a",
+        "hash": "74977a35",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

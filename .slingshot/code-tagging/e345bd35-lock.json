@@ -1,0 +1,162 @@
+{
+  "config-server\\src\\test\\resources\\application-test.yml": {
+    "filename": "application-test.yml",
+    "path": "config-server\\src\\test\\resources\\application-test.yml",
+    "version": "1.2",
+    "contextFile": "e345bd35-context.json",
+    "chunks": {
+      "f0121f": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075074,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "2270fe5d",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:34:34 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "f0121f",
+        "hash": "0f2b6ac4",
+        "encoded": "#%20Test%20Configuration%20for%20Config%20Server",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "f0121f",
+        "hash": "fae93750",
+        "encoded": "#%20Disables%20Eureka%20and%20Git%20repository%20for%20unit%20tests",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "f0121f",
+        "hash": "2c7ab152",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "f0121f",
+        "hash": "217c8048",
+        "encoded": "application:",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "f0121f",
+        "hash": "48fb0b77",
+        "encoded": "name:%20config-server",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "f0121f",
+        "hash": "1fadcd64",
+        "encoded": "cloud:",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "f0121f",
+        "hash": "3f748e04",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "f0121f",
+        "hash": "1be00bae",
+        "encoded": "server:",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "f0121f",
+        "hash": "e767bcb7",
+        "encoded": "git:",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "f0121f",
+        "hash": "184e40ba",
+        "encoded": "uri:%20file://$%7Bjava.io.tmpdir%7D/config-repo-test",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "f0121f",
+        "hash": "eaf8274b",
+        "encoded": "health:",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "f0121f",
+        "hash": "4bec089f",
+        "encoded": "enabled:%20false",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "f0121f",
+        "hash": "1f7082d0",
+        "encoded": "eureka:",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "f0121f",
+        "hash": "a52c8e03",
+        "encoded": "client:",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "f0121f",
+        "hash": "a097730f",
+        "encoded": "enabled:%20false",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "f0121f",
+        "hash": "4256732c",
+        "encoded": "register-with-eureka:%20false",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "f0121f",
+        "hash": "ec2c71f0",
+        "encoded": "fetch-registry:%20false",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "f0121f",
+        "hash": "06b06e76",
+        "encoded": "management:",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "f0121f",
+        "hash": "ca943e75",
+        "encoded": "endpoints:",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "f0121f",
+        "hash": "3936488b",
+        "encoded": "web:",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "f0121f",
+        "hash": "6308056b",
+        "encoded": "exposure:",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "f0121f",
+        "hash": "2c7fdeb8",
+        "encoded": "include:%20health,info",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

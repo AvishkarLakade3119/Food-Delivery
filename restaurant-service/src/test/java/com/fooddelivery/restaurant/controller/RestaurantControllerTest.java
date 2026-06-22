@@ -4,10 +4,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fooddelivery.restaurant.dto.AddressDto;
 import com.fooddelivery.restaurant.dto.RestaurantRequest;
 import com.fooddelivery.restaurant.entity.Restaurant;
+import com.fooddelivery.restaurant.messaging.RestaurantEventConsumer;
+import com.fooddelivery.restaurant.messaging.RestaurantEventPublisher;
+import com.fooddelivery.restaurant.security.JwtAuthenticationFilter;
+import com.fooddelivery.restaurant.security.JwtTokenProvider;
 import com.fooddelivery.restaurant.service.RestaurantService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -22,6 +28,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(RestaurantController.class)
+@AutoConfigureMockMvc(addFilters = false)
 class RestaurantControllerTest {
 
     @Autowired
@@ -29,6 +36,21 @@ class RestaurantControllerTest {
 
     @MockBean
     private RestaurantService restaurantService;
+
+    @MockBean
+    private JwtTokenProvider jwtTokenProvider;
+
+    @MockBean
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
+    
+    @MockBean
+    private RabbitTemplate rabbitTemplate;
+    
+    @MockBean
+    private RestaurantEventPublisher restaurantEventPublisher;
+    
+    @MockBean
+    private RestaurantEventConsumer restaurantEventConsumer;
 
     @Autowired
     private ObjectMapper objectMapper;

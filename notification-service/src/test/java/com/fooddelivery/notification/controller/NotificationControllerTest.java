@@ -3,10 +3,15 @@ package com.fooddelivery.notification.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fooddelivery.notification.dto.NotificationRequest;
 import com.fooddelivery.notification.entity.Notification;
+import com.fooddelivery.notification.messaging.NotificationEventConsumer;
+import com.fooddelivery.notification.security.JwtAuthenticationFilter;
+import com.fooddelivery.notification.security.JwtTokenProvider;
 import com.fooddelivery.notification.service.NotificationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -23,6 +28,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(NotificationController.class)
+@AutoConfigureMockMvc(addFilters = false)
 class NotificationControllerTest {
 
     @Autowired
@@ -30,6 +36,18 @@ class NotificationControllerTest {
 
     @MockBean
     private NotificationService notificationService;
+
+    @MockBean
+    private JwtTokenProvider jwtTokenProvider;
+
+    @MockBean
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
+    
+    @MockBean
+    private RabbitTemplate rabbitTemplate;
+    
+    @MockBean
+    private NotificationEventConsumer notificationEventConsumer;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -42,6 +60,7 @@ class NotificationControllerTest {
         notification = new Notification();
         notification.setId(1L);
         notification.setUserId(1L);
+        notification.setTitle("Test Title");
         notification.setMessage("Test notification message");
         notification.setType("ORDER_CREATED");
         notification.setStatus("SENT");
@@ -51,6 +70,7 @@ class NotificationControllerTest {
 
         notificationRequest = new NotificationRequest();
         notificationRequest.setUserId(1L);
+        notificationRequest.setTitle("Test Title");
         notificationRequest.setMessage("Test notification message");
         notificationRequest.setType("ORDER_CREATED");
     }
@@ -164,12 +184,14 @@ class NotificationControllerTest {
     void updateNotification_ShouldReturnUpdated() throws Exception {
         Notification updatedNotification = new Notification();
         updatedNotification.setId(1L);
+        updatedNotification.setTitle("Updated Title");
         updatedNotification.setMessage("Updated message");
         updatedNotification.setType("ORDER_UPDATED");
 
         when(notificationService.updateNotification(eq(1L), any(NotificationRequest.class)))
                 .thenReturn(Optional.of(updatedNotification));
 
+        notificationRequest.setTitle("Updated Title");
         notificationRequest.setMessage("Updated message");
         notificationRequest.setType("ORDER_UPDATED");
 
@@ -199,6 +221,7 @@ class NotificationControllerTest {
         verify(notificationService).getNotificationById(1L);
         verify(notificationService).save(any(Notification.class));
     }
+
     @Test
     void deleteNotification_ShouldReturnNoContent() throws Exception {
         when(notificationService.deleteNotification(1L)).thenReturn(true);

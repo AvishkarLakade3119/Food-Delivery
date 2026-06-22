@@ -1,0 +1,2136 @@
+{
+  "start-all-services.ps1": {
+    "filename": "start-all-services.ps1",
+    "path": "start-all-services.ps1",
+    "version": "1.2",
+    "contextFile": "cce1250a-context.json",
+    "chunks": {
+      "5e0724": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781254110,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "1b1194f4"
+        },
+        "hash": "02b17786",
+        "messageId": "system_b7e54bb0-663a-11f1-895d-cd57985b5050",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/12/2026, 2:18:30 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "5e0724",
+        "hash": "728e40ac",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "5e0724",
+        "hash": "f781f241",
+        "encoded": "#%20Food%20Delivery%20Microservices%20-%20Complete%20Startup%20Script",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "5e0724",
+        "hash": "74045fda",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "5e0724",
+        "hash": "c1911674",
+        "encoded": "#%20Purpose:%20Start%20all%20services%20in%20correct%20order%20with%20health%20checks",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "5e0724",
+        "hash": "cbe0423f",
+        "encoded": "#%20Author:%20Slingshot%20AI%20Agent",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "5e0724",
+        "hash": "df2c8b6d",
+        "encoded": "#%20Date:%202026-06-12",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "5e0724",
+        "hash": "835be0c6",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "5e0724",
+        "hash": "69656b67",
+        "encoded": "param(",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "5e0724",
+        "hash": "b86b9ae8",
+        "encoded": "%5Bswitch%5D$SkipBuild,",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "5e0724",
+        "hash": "11b3f7f5",
+        "encoded": "%5Bswitch%5D$Verbose",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "5e0724",
+        "hash": "395c59e2",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "5e0724",
+        "hash": "fcd1381f",
+        "encoded": "#%20Color%20output%20functions",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "5e0724",
+        "hash": "75ed5da1",
+        "encoded": "function%20Write-Success%20%7B%20param($msg)%20Write-Host%20%22%E2%9C%93%20$msg%22%20-ForegroundColor%20Green%20%7D",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "5e0724",
+        "hash": "9445d73e",
+        "encoded": "function%20Write-Error-Custom%20%7B%20param($msg)%20Write-Host%20%22%E2%9C%97%20$msg%22%20-ForegroundColor%20Red%20%7D",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "5e0724",
+        "hash": "9843497c",
+        "encoded": "function%20Write-Warning-Custom%20%7B%20param($msg)%20Write-Host%20%22%E2%9A%A0%20$msg%22%20-ForegroundColor%20Yellow%20%7D",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "5e0724",
+        "hash": "d154af9a",
+        "encoded": "function%20Write-Info%20%7B%20param($msg)%20Write-Host%20%22%E2%84%B9%20$msg%22%20-ForegroundColor%20Cyan%20%7D",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "5e0724",
+        "hash": "482bc0d3",
+        "encoded": "function%20Write-Section%20%7B%20param($msg)%20Write-Host%20%22%60n==========%20$msg%20==========%22%20-ForegroundColor%20Magenta%20%7D",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "5e0724",
+        "hash": "633af727",
+        "encoded": "#%20Global%20variables%20for%20process%20tracking",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "5e0724",
+        "hash": "611a6071",
+        "encoded": "$global:serviceProcesses%20=%20@%7B%7D",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "5e0724",
+        "hash": "d6725397",
+        "encoded": "$global:failedServices%20=%20@()",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "5e0724",
+        "hash": "8a75cddf",
+        "encoded": "Write-Host%20%22%60n%22%20-NoNewline",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "5e0724",
+        "hash": "56745977",
+        "encoded": "Write-Host%20%22%E2%95%94%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%97%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "5e0724",
+        "hash": "26a03db8",
+        "encoded": "Write-Host%20%22%E2%95%91%20%20Food%20Delivery%20Microservices%20-%20Startup%20Orchestrator%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%95%91%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "5e0724",
+        "hash": "5f86d595",
+        "encoded": "Write-Host%20%22%E2%95%91%20%20Version%201.0%20%7C%20Date:%202026-06-12%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%95%91%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "5e0724",
+        "hash": "d97c6c8b",
+        "encoded": "Write-Host%20%22%E2%95%9A%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%9D%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "5e0724",
+        "hash": "7bf68684",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "5e0724",
+        "hash": "ca758126",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "5e0724",
+        "hash": "69d372bc",
+        "encoded": "#%20Helper%20Functions",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "5e0724",
+        "hash": "e4152118",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "5e0724",
+        "hash": "99d2edfd",
+        "encoded": "function%20Test-ServiceHealth%20%7B",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "5e0724",
+        "hash": "05546d2c",
+        "encoded": "param(",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "5e0724",
+        "hash": "f2affc8e",
+        "encoded": "%5Bstring%5D$ServiceName,",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "5e0724",
+        "hash": "71a04627",
+        "encoded": "%5Bstring%5D$HealthUrl,",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "5e0724",
+        "hash": "3b451a51",
+        "encoded": "%5Bint%5D$TimeoutSeconds%20=%20120,",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "5e0724",
+        "hash": "0eec92cb",
+        "encoded": "%5Bint%5D$RetryIntervalSeconds%20=%205",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "5e0724",
+        "hash": "fce7b66c",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "5e0724",
+        "hash": "b58aa657",
+        "encoded": "$elapsed%20=%200",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "5e0724",
+        "hash": "b07c0e68",
+        "encoded": "$healthy%20=%20$false",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "5e0724",
+        "hash": "916c2241",
+        "encoded": "Write-Info%20%22Waiting%20for%20$ServiceName%20to%20become%20healthy...%22",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "5e0724",
+        "hash": "eafa2535",
+        "encoded": "while%20($elapsed%20-lt%20$TimeoutSeconds%20-and%20-not%20$healthy)%20%7B",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "5e0724",
+        "hash": "a7c59153",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "5e0724",
+        "hash": "5fb643b2",
+        "encoded": "$response%20=%20Invoke-WebRequest%20-Uri%20$HealthUrl%20-TimeoutSec%203%20-ErrorAction%20Stop",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "5e0724",
+        "hash": "74f6bdd6",
+        "encoded": "if%20($response.StatusCode%20-eq%20200)%20%7B",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "5e0724",
+        "hash": "4ff99011",
+        "encoded": "$healthy%20=%20$true",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "5e0724",
+        "hash": "e2aba291",
+        "encoded": "Write-Success%20%22$ServiceName%20is%20UP%20and%20healthy%22",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "5e0724",
+        "hash": "3d130d50",
+        "encoded": "return%20$true",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "5e0724",
+        "hash": "2ef1d392",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "5e0724",
+        "hash": "1a26168d",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "5e0724",
+        "hash": "53c13c4d",
+        "encoded": "Write-Host%20%22.%22%20-NoNewline%20-ForegroundColor%20Gray",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "5e0724",
+        "hash": "0613489a",
+        "encoded": "Start-Sleep%20-Seconds%20$RetryIntervalSeconds",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "5e0724",
+        "hash": "351f879a",
+        "encoded": "$elapsed%20+=%20$RetryIntervalSeconds",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "5e0724",
+        "hash": "42f7c135",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "5e0724",
+        "hash": "92368879",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "5e0724",
+        "hash": "531c5d30",
+        "encoded": "if%20(-not%20$healthy)%20%7B",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "5e0724",
+        "hash": "c166d559",
+        "encoded": "Write-Error-Custom%20%22$ServiceName%20failed%20to%20become%20healthy%20within%20$TimeoutSeconds%20seconds%22",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "5e0724",
+        "hash": "69d7eb46",
+        "encoded": "return%20$false",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "5e0724",
+        "hash": "f706ff69",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "5e0724",
+        "hash": "bf862585",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "5e0724",
+        "hash": "90323594",
+        "encoded": "function%20Test-EurekaRegistration%20%7B",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "5e0724",
+        "hash": "5ce3cded",
+        "encoded": "param(",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "5e0724",
+        "hash": "5d7afac9",
+        "encoded": "%5Bstring%5D$ServiceName,",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "5e0724",
+        "hash": "63c330da",
+        "encoded": "%5Bint%5D$TimeoutSeconds%20=%2060",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "5e0724",
+        "hash": "11fc1d2b",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "5e0724",
+        "hash": "b7096a52",
+        "encoded": "$elapsed%20=%200",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "5e0724",
+        "hash": "fd5da77b",
+        "encoded": "$registered%20=%20$false",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "5e0724",
+        "hash": "b0f7953a",
+        "encoded": "$eurekaUrl%20=%20%22http://localhost:8761/eureka/apps%22",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "5e0724",
+        "hash": "be7250fc",
+        "encoded": "Write-Info%20%22Checking%20Eureka%20registration%20for%20$ServiceName...%22",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "5e0724",
+        "hash": "9104a68c",
+        "encoded": "while%20($elapsed%20-lt%20$TimeoutSeconds%20-and%20-not%20$registered)%20%7B",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "5e0724",
+        "hash": "2465de3f",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "5e0724",
+        "hash": "e6faefc3",
+        "encoded": "$response%20=%20Invoke-WebRequest%20-Uri%20$eurekaUrl%20-TimeoutSec%203%20-ErrorAction%20Stop",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "5e0724",
+        "hash": "d8ca18bf",
+        "encoded": "if%20($response.Content%20-match%20$ServiceName.ToUpper())%20%7B",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "5e0724",
+        "hash": "94018f1d",
+        "encoded": "$registered%20=%20$true",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "5e0724",
+        "hash": "ca2c2fc4",
+        "encoded": "Write-Success%20%22$ServiceName%20registered%20with%20Eureka%22",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "5e0724",
+        "hash": "b028df81",
+        "encoded": "return%20$true",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "5e0724",
+        "hash": "726efa75",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "5e0724",
+        "hash": "77ed8d20",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "5e0724",
+        "hash": "77d8325b",
+        "encoded": "#%20Eureka%20might%20not%20be%20ready%20yet",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "5e0724",
+        "hash": "70416dc1",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "5e0724",
+        "hash": "53449c05",
+        "encoded": "Write-Host%20%22.%22%20-NoNewline%20-ForegroundColor%20Gray",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "5e0724",
+        "hash": "ecac8a69",
+        "encoded": "Start-Sleep%20-Seconds%205",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "5e0724",
+        "hash": "418b5563",
+        "encoded": "$elapsed%20+=%205",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "5e0724",
+        "hash": "eb084e75",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "5e0724",
+        "hash": "055a5956",
+        "encoded": "if%20(-not%20$registered)%20%7B",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "5e0724",
+        "hash": "6fee3498",
+        "encoded": "Write-Warning-Custom%20%22$ServiceName%20not%20registered%20with%20Eureka%20(may%20register%20later)%22",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "5e0724",
+        "hash": "53d0aeee",
+        "encoded": "return%20$false",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "5e0724",
+        "hash": "6bf91891",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "5e0724",
+        "hash": "79409de0",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "5e0724",
+        "hash": "782060e1",
+        "encoded": "function%20Start-ServiceInNewWindow%20%7B",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "5e0724",
+        "hash": "c9c94829",
+        "encoded": "param(",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "5e0724",
+        "hash": "abd0c5f5",
+        "encoded": "%5Bstring%5D$ServiceName,",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "5e0724",
+        "hash": "39026f7a",
+        "encoded": "%5Bstring%5D$ServicePath,",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "5e0724",
+        "hash": "6a4dcfbf",
+        "encoded": "%5Bstring%5D$MavenCommand%20=%20%22mvn%20spring-boot:run%22",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "5e0724",
+        "hash": "0a33c13c",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "5e0724",
+        "hash": "63089b2e",
+        "encoded": "Write-Info%20%22Starting%20$ServiceName...%22",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "5e0724",
+        "hash": "e5bb4bfe",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "5e0724",
+        "hash": "43bc1a6e",
+        "encoded": "$process%20=%20Start-Process%20powershell%20-ArgumentList%20%22-NoExit%22,%20%22-Command%22,%20%22cd%20$ServicePath;%20Write-Host%20'Starting%20$ServiceName...'%20-ForegroundColor%20Cyan;%20$MavenCommand%22%20-PassThru",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "5e0724",
+        "hash": "894f5279",
+        "encoded": "$global:serviceProcesses%5B$ServiceName%5D%20=%20$process",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "5e0724",
+        "hash": "a1e0d4f9",
+        "encoded": "Write-Success%20%22$ServiceName%20process%20started%20(PID:%20$($process.Id))%22",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "5e0724",
+        "hash": "446ac489",
+        "encoded": "return%20$true",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "5e0724",
+        "hash": "79dfbd57",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "5e0724",
+        "hash": "0f7f0380",
+        "encoded": "Write-Error-Custom%20%22Failed%20to%20start%20$ServiceName:%20$_%22",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "5e0724",
+        "hash": "1d2dd3f0",
+        "encoded": "$global:failedServices%20+=%20$ServiceName",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "5e0724",
+        "hash": "7a184ce2",
+        "encoded": "return%20$false",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "5e0724",
+        "hash": "2d0864bf",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "5e0724",
+        "hash": "2bf02615",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "125": {
+        "chunkId": "5e0724",
+        "hash": "6e970c3e",
+        "encoded": "function%20Stop-AllServices%20%7B",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "5e0724",
+        "hash": "0963efba",
+        "encoded": "Write-Section%20%22STOPPING%20ALL%20SERVICES%22",
+        "prevChunkIds": []
+      },
+      "128": {
+        "chunkId": "5e0724",
+        "hash": "1d5df187",
+        "encoded": "foreach%20($serviceName%20in%20$global:serviceProcesses.Keys)%20%7B",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "5e0724",
+        "hash": "4d72980f",
+        "encoded": "$process%20=%20$global:serviceProcesses%5B$serviceName%5D",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "5e0724",
+        "hash": "0d9038f2",
+        "encoded": "if%20($process%20-and%20-not%20$process.HasExited)%20%7B",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "5e0724",
+        "hash": "817c49cd",
+        "encoded": "Write-Info%20%22Stopping%20$serviceName%20(PID:%20$($process.Id))...%22",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "5e0724",
+        "hash": "47faa365",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "5e0724",
+        "hash": "aba99a8a",
+        "encoded": "Stop-Process%20-Id%20$process.Id%20-Force%20-ErrorAction%20SilentlyContinue",
+        "prevChunkIds": []
+      },
+      "134": {
+        "chunkId": "5e0724",
+        "hash": "38f4f887",
+        "encoded": "Write-Success%20%22$serviceName%20stopped%22",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "5e0724",
+        "hash": "2123ea2f",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "5e0724",
+        "hash": "7b4a9ae9",
+        "encoded": "Write-Warning-Custom%20%22Failed%20to%20stop%20$serviceName:%20$_%22",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "5e0724",
+        "hash": "1dc2599e",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "5e0724",
+        "hash": "a91910dd",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "5e0724",
+        "hash": "8e724f24",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "140": {
+        "chunkId": "5e0724",
+        "hash": "be05556d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "5e0724",
+        "hash": "6ab25762",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "143": {
+        "chunkId": "5e0724",
+        "hash": "ada30821",
+        "encoded": "#%20PRE-FLIGHT%20CHECKS",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "5e0724",
+        "hash": "5a0893a0",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "5e0724",
+        "hash": "8532cbb3",
+        "encoded": "Write-Section%20%22PRE-FLIGHT%20CHECKS%22",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "5e0724",
+        "hash": "26d01234",
+        "encoded": "#%20Check%20Java",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "5e0724",
+        "hash": "c139ca31",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "5e0724",
+        "hash": "c5e97502",
+        "encoded": "$javaVersion%20=%20java%20-version%202%3E&1%20%7C%20Select-Object%20-First%201",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "5e0724",
+        "hash": "d059ff29",
+        "encoded": "Write-Success%20%22Java%20detected:%20$javaVersion%22",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "5e0724",
+        "hash": "3716d1f9",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "5e0724",
+        "hash": "cb48c4b1",
+        "encoded": "Write-Error-Custom%20%22Java%20not%20found%20-%20please%20install%20Java%2017%20or%20higher%22",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "5e0724",
+        "hash": "89e61a46",
+        "encoded": "exit%201",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "5e0724",
+        "hash": "dbb55d46",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "5e0724",
+        "hash": "deb84c7e",
+        "encoded": "#%20Check%20Maven",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "5e0724",
+        "hash": "34a20f2f",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "5e0724",
+        "hash": "11979b6e",
+        "encoded": "$mavenVersion%20=%20mvn%20-version%202%3E&1%20%7C%20Select-Object%20-First%201",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "5e0724",
+        "hash": "6c222347",
+        "encoded": "Write-Success%20%22Maven%20detected:%20$mavenVersion%22",
+        "prevChunkIds": []
+      },
+      "160": {
+        "chunkId": "5e0724",
+        "hash": "5b44b7df",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "161": {
+        "chunkId": "5e0724",
+        "hash": "a05c6752",
+        "encoded": "Write-Error-Custom%20%22Maven%20not%20found%20-%20please%20install%20Maven%22",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "5e0724",
+        "hash": "991c8e3b",
+        "encoded": "exit%201",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "5e0724",
+        "hash": "b205e858",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "5e0724",
+        "hash": "c36867cf",
+        "encoded": "#%20Check%20if%20ports%20are%20free",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "5e0724",
+        "hash": "9711ff78",
+        "encoded": "$requiredPorts%20=%20@%7B",
+        "prevChunkIds": []
+      },
+      "167": {
+        "chunkId": "5e0724",
+        "hash": "01c6543e",
+        "encoded": "8888%20=%20%22Config%20Server%22",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "5e0724",
+        "hash": "cc4a52eb",
+        "encoded": "8761%20=%20%22Eureka%20Server%22",
+        "prevChunkIds": []
+      },
+      "169": {
+        "chunkId": "5e0724",
+        "hash": "e9ed2e06",
+        "encoded": "8080%20=%20%22API%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "5e0724",
+        "hash": "2ec69243",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "5e0724",
+        "hash": "95c47301",
+        "encoded": "$portsInUse%20=%20@()",
+        "prevChunkIds": []
+      },
+      "173": {
+        "chunkId": "5e0724",
+        "hash": "3f3de498",
+        "encoded": "foreach%20($port%20in%20$requiredPorts.Keys)%20%7B",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "5e0724",
+        "hash": "3265228f",
+        "encoded": "$connection%20=%20Get-NetTCPConnection%20-LocalPort%20$port%20-ErrorAction%20SilentlyContinue",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "5e0724",
+        "hash": "24d971f9",
+        "encoded": "if%20($connection)%20%7B",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "5e0724",
+        "hash": "99e4ea0d",
+        "encoded": "$portsInUse%20+=%20$port",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "5e0724",
+        "hash": "55ba3f2f",
+        "encoded": "Write-Warning-Custom%20%22Port%20$port%20($($requiredPorts%5B$port%5D))%20is%20already%20in%20use%22",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "5e0724",
+        "hash": "e0563286",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "5e0724",
+        "hash": "dee02b44",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "5e0724",
+        "hash": "0468ae5a",
+        "encoded": "if%20($portsInUse.Count%20-gt%200)%20%7B",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "5e0724",
+        "hash": "864e080e",
+        "encoded": "Write-Warning-Custom%20%22Some%20required%20ports%20are%20in%20use.%20Run%20.%5Cfix-all.ps1%20to%20free%20them.%22",
+        "prevChunkIds": []
+      },
+      "183": {
+        "chunkId": "5e0724",
+        "hash": "02b6e46e",
+        "encoded": "$continue%20=%20Read-Host%20%22Continue%20anyway?%20(Y/N)%22",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "5e0724",
+        "hash": "1ce743d4",
+        "encoded": "if%20($continue%20-ne%20'Y'%20-and%20$continue%20-ne%20'y')%20%7B",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "5e0724",
+        "hash": "dfeacac1",
+        "encoded": "Write-Info%20%22Startup%20cancelled%22",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "5e0724",
+        "hash": "39eac165",
+        "encoded": "exit%200",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "5e0724",
+        "hash": "aab5eeb9",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "5e0724",
+        "hash": "acd7fbb9",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "5e0724",
+        "hash": "89cd246c",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "191": {
+        "chunkId": "5e0724",
+        "hash": "58241ad3",
+        "encoded": "#%20BUILD%20PHASE%20(Optional)",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "5e0724",
+        "hash": "1973f8c9",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "5e0724",
+        "hash": "8a51a8a4",
+        "encoded": "if%20(-not%20$SkipBuild)%20%7B",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "5e0724",
+        "hash": "715f93fc",
+        "encoded": "Write-Section%20%22BUILD%20PHASE%22",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "5e0724",
+        "hash": "da3a2ada",
+        "encoded": "Write-Info%20%22Building%20all%20services%20(this%20may%20take%205-10%20minutes)...%22",
+        "prevChunkIds": []
+      },
+      "197": {
+        "chunkId": "5e0724",
+        "hash": "88614879",
+        "encoded": "Write-Info%20%22To%20skip%20build%20in%20future,%20use%20-SkipBuild%20flag%22",
+        "prevChunkIds": []
+      },
+      "199": {
+        "chunkId": "5e0724",
+        "hash": "b69c58ca",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "5e0724",
+        "hash": "62e1d055",
+        "encoded": "$buildOutput%20=%20mvn%20clean%20install%20-DskipTests%202%3E&1",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "5e0724",
+        "hash": "df8f87ea",
+        "encoded": "if%20($LASTEXITCODE%20-eq%200)%20%7B",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "5e0724",
+        "hash": "6e7c9375",
+        "encoded": "Write-Success%20%22All%20services%20built%20successfully%22",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "5e0724",
+        "hash": "0fc1683f",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "5e0724",
+        "hash": "5fe1f0da",
+        "encoded": "Write-Error-Custom%20%22Build%20failed%20-%20check%20output%20for%20errors%22",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "5e0724",
+        "hash": "bb9437db",
+        "encoded": "if%20($Verbose)%20%7B",
+        "prevChunkIds": []
+      },
+      "207": {
+        "chunkId": "5e0724",
+        "hash": "b9254233",
+        "encoded": "Write-Host%20$buildOutput",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "5e0724",
+        "hash": "5b361ecf",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "209": {
+        "chunkId": "5e0724",
+        "hash": "f394b8f1",
+        "encoded": "$continue%20=%20Read-Host%20%22Continue%20with%20startup%20anyway?%20(Y/N)%22",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "5e0724",
+        "hash": "165516cd",
+        "encoded": "if%20($continue%20-ne%20'Y'%20-and%20$continue%20-ne%20'y')%20%7B",
+        "prevChunkIds": []
+      },
+      "211": {
+        "chunkId": "5e0724",
+        "hash": "f1eb653f",
+        "encoded": "exit%201",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "5e0724",
+        "hash": "8e01390a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "213": {
+        "chunkId": "5e0724",
+        "hash": "5328d41a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "214": {
+        "chunkId": "5e0724",
+        "hash": "bffbb76c",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "215": {
+        "chunkId": "5e0724",
+        "hash": "190a12b4",
+        "encoded": "Write-Error-Custom%20%22Build%20command%20failed:%20$_%22",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "5e0724",
+        "hash": "536552e3",
+        "encoded": "exit%201",
+        "prevChunkIds": []
+      },
+      "217": {
+        "chunkId": "5e0724",
+        "hash": "ce884ff8",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "5e0724",
+        "hash": "8e140805",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "219": {
+        "chunkId": "5e0724",
+        "hash": "cd2c4076",
+        "encoded": "Write-Info%20%22Skipping%20build%20phase%20(using%20existing%20JARs)%22",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "5e0724",
+        "hash": "290931bd",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "222": {
+        "chunkId": "5e0724",
+        "hash": "f28126d0",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "223": {
+        "chunkId": "5e0724",
+        "hash": "cf65a9af",
+        "encoded": "#%20STARTUP%20PHASE%201:%20Config%20Server",
+        "prevChunkIds": []
+      },
+      "224": {
+        "chunkId": "5e0724",
+        "hash": "0b31bba2",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "225": {
+        "chunkId": "5e0724",
+        "hash": "02d2be3f",
+        "encoded": "Write-Section%20%22PHASE%201:%20Starting%20Config%20Server%22",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "5e0724",
+        "hash": "d6c317e5",
+        "encoded": "if%20(Start-ServiceInNewWindow%20-ServiceName%20%22Config%20Server%22%20-ServicePath%20%22config-server%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "228": {
+        "chunkId": "5e0724",
+        "hash": "85c28fef",
+        "encoded": "Start-Sleep%20-Seconds%2010",
+        "prevChunkIds": []
+      },
+      "230": {
+        "chunkId": "5e0724",
+        "hash": "c370de0f",
+        "encoded": "if%20(Test-ServiceHealth%20-ServiceName%20%22Config%20Server%22%20-HealthUrl%20%22http://localhost:8888/actuator/health%22%20-TimeoutSeconds%2060)%20%7B",
+        "prevChunkIds": []
+      },
+      "231": {
+        "chunkId": "5e0724",
+        "hash": "52bb4d9d",
+        "encoded": "Write-Success%20%22Config%20Server%20is%20ready%22",
+        "prevChunkIds": []
+      },
+      "232": {
+        "chunkId": "5e0724",
+        "hash": "075bbd18",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "233": {
+        "chunkId": "5e0724",
+        "hash": "fb338b95",
+        "encoded": "Write-Error-Custom%20%22Config%20Server%20failed%20to%20start%22",
+        "prevChunkIds": []
+      },
+      "234": {
+        "chunkId": "5e0724",
+        "hash": "0f90aaeb",
+        "encoded": "Write-Warning-Custom%20%22Check%20config-server%20window%20for%20errors%22",
+        "prevChunkIds": []
+      },
+      "235": {
+        "chunkId": "5e0724",
+        "hash": "958aa946",
+        "encoded": "$continue%20=%20Read-Host%20%22Continue%20anyway?%20(Y/N)%22",
+        "prevChunkIds": []
+      },
+      "236": {
+        "chunkId": "5e0724",
+        "hash": "f4ca2c2a",
+        "encoded": "if%20($continue%20-ne%20'Y'%20-and%20$continue%20-ne%20'y')%20%7B",
+        "prevChunkIds": []
+      },
+      "237": {
+        "chunkId": "5e0724",
+        "hash": "f37bd7a5",
+        "encoded": "Stop-AllServices",
+        "prevChunkIds": []
+      },
+      "238": {
+        "chunkId": "5e0724",
+        "hash": "98d95b0c",
+        "encoded": "exit%201",
+        "prevChunkIds": []
+      },
+      "239": {
+        "chunkId": "5e0724",
+        "hash": "f6a01e4c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "240": {
+        "chunkId": "5e0724",
+        "hash": "b7fe04d4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "241": {
+        "chunkId": "5e0724",
+        "hash": "a561b4a6",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "242": {
+        "chunkId": "5e0724",
+        "hash": "b20d3a99",
+        "encoded": "Write-Error-Custom%20%22Failed%20to%20start%20Config%20Server%22",
+        "prevChunkIds": []
+      },
+      "243": {
+        "chunkId": "5e0724",
+        "hash": "d2cf999d",
+        "encoded": "exit%201",
+        "prevChunkIds": []
+      },
+      "244": {
+        "chunkId": "5e0724",
+        "hash": "1f1b2746",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "246": {
+        "chunkId": "5e0724",
+        "hash": "3aa0ac19",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "247": {
+        "chunkId": "5e0724",
+        "hash": "ad839dd0",
+        "encoded": "#%20STARTUP%20PHASE%202:%20Eureka%20Server",
+        "prevChunkIds": []
+      },
+      "248": {
+        "chunkId": "5e0724",
+        "hash": "7d278594",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "249": {
+        "chunkId": "5e0724",
+        "hash": "f755c65a",
+        "encoded": "Write-Section%20%22PHASE%202:%20Starting%20Eureka%20Server%22",
+        "prevChunkIds": []
+      },
+      "251": {
+        "chunkId": "5e0724",
+        "hash": "507d6920",
+        "encoded": "if%20(Start-ServiceInNewWindow%20-ServiceName%20%22Eureka%20Server%22%20-ServicePath%20%22eureka-server%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "252": {
+        "chunkId": "5e0724",
+        "hash": "1f880ba9",
+        "encoded": "Start-Sleep%20-Seconds%2015",
+        "prevChunkIds": []
+      },
+      "254": {
+        "chunkId": "5e0724",
+        "hash": "f32f394e",
+        "encoded": "if%20(Test-ServiceHealth%20-ServiceName%20%22Eureka%20Server%22%20-HealthUrl%20%22http://localhost:8761/actuator/health%22%20-TimeoutSeconds%2090)%20%7B",
+        "prevChunkIds": []
+      },
+      "255": {
+        "chunkId": "5e0724",
+        "hash": "7771a4c5",
+        "encoded": "Write-Success%20%22Eureka%20Server%20is%20ready%22",
+        "prevChunkIds": []
+      },
+      "257": {
+        "chunkId": "5e0724",
+        "hash": "1074a0fb",
+        "encoded": "#%20Open%20Eureka%20Dashboard",
+        "prevChunkIds": []
+      },
+      "258": {
+        "chunkId": "5e0724",
+        "hash": "36fb85b7",
+        "encoded": "Write-Info%20%22Opening%20Eureka%20Dashboard...%22",
+        "prevChunkIds": []
+      },
+      "259": {
+        "chunkId": "5e0724",
+        "hash": "aa99bc07",
+        "encoded": "Start-Process%20%22http://localhost:8761%22",
+        "prevChunkIds": []
+      },
+      "260": {
+        "chunkId": "5e0724",
+        "hash": "089f294e",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "261": {
+        "chunkId": "5e0724",
+        "hash": "421be11e",
+        "encoded": "Write-Error-Custom%20%22Eureka%20Server%20failed%20to%20start%22",
+        "prevChunkIds": []
+      },
+      "262": {
+        "chunkId": "5e0724",
+        "hash": "5fab1bdf",
+        "encoded": "Write-Warning-Custom%20%22Check%20eureka-server%20window%20for%20errors%22",
+        "prevChunkIds": []
+      },
+      "263": {
+        "chunkId": "5e0724",
+        "hash": "61055ac2",
+        "encoded": "$continue%20=%20Read-Host%20%22Continue%20anyway?%20(Y/N)%22",
+        "prevChunkIds": []
+      },
+      "264": {
+        "chunkId": "5e0724",
+        "hash": "698aab22",
+        "encoded": "if%20($continue%20-ne%20'Y'%20-and%20$continue%20-ne%20'y')%20%7B",
+        "prevChunkIds": []
+      },
+      "265": {
+        "chunkId": "5e0724",
+        "hash": "03928f58",
+        "encoded": "Stop-AllServices",
+        "prevChunkIds": []
+      },
+      "266": {
+        "chunkId": "5e0724",
+        "hash": "d5edc5e0",
+        "encoded": "exit%201",
+        "prevChunkIds": []
+      },
+      "267": {
+        "chunkId": "5e0724",
+        "hash": "8df6af8a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "268": {
+        "chunkId": "5e0724",
+        "hash": "5c85fe45",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "269": {
+        "chunkId": "5e0724",
+        "hash": "a5f2182b",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "270": {
+        "chunkId": "5e0724",
+        "hash": "f3115930",
+        "encoded": "Write-Error-Custom%20%22Failed%20to%20start%20Eureka%20Server%22",
+        "prevChunkIds": []
+      },
+      "271": {
+        "chunkId": "5e0724",
+        "hash": "69d08f13",
+        "encoded": "Stop-AllServices",
+        "prevChunkIds": []
+      },
+      "272": {
+        "chunkId": "5e0724",
+        "hash": "1138c36c",
+        "encoded": "exit%201",
+        "prevChunkIds": []
+      },
+      "273": {
+        "chunkId": "5e0724",
+        "hash": "3222a662",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "275": {
+        "chunkId": "5e0724",
+        "hash": "0b0cc6fe",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "276": {
+        "chunkId": "5e0724",
+        "hash": "41c01a5f",
+        "encoded": "#%20STARTUP%20PHASE%203:%20Business%20Services%20(Parallel)",
+        "prevChunkIds": []
+      },
+      "277": {
+        "chunkId": "5e0724",
+        "hash": "b2d84b2d",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "278": {
+        "chunkId": "5e0724",
+        "hash": "ec2867d6",
+        "encoded": "Write-Section%20%22PHASE%203:%20Starting%20Business%20Services%22",
+        "prevChunkIds": []
+      },
+      "280": {
+        "chunkId": "5e0724",
+        "hash": "575deefd",
+        "encoded": "$businessServices%20=%20@(",
+        "prevChunkIds": []
+      },
+      "281": {
+        "chunkId": "5e0724",
+        "hash": "000ce49d",
+        "encoded": "@%7BName=%22User%20Service%22;%20Path=%22user-service%22;%20Port=8085%7D,",
+        "prevChunkIds": []
+      },
+      "282": {
+        "chunkId": "5e0724",
+        "hash": "6459fa1d",
+        "encoded": "@%7BName=%22Restaurant%20Service%22;%20Path=%22restaurant-service%22;%20Port=8082%7D,",
+        "prevChunkIds": []
+      },
+      "283": {
+        "chunkId": "5e0724",
+        "hash": "b5928076",
+        "encoded": "@%7BName=%22Order%20Service%22;%20Path=%22order-service%22;%20Port=8083%7D,",
+        "prevChunkIds": []
+      },
+      "284": {
+        "chunkId": "5e0724",
+        "hash": "489ec619",
+        "encoded": "@%7BName=%22Payment%20Service%22;%20Path=%22payment-service%22;%20Port=8084%7D,",
+        "prevChunkIds": []
+      },
+      "285": {
+        "chunkId": "5e0724",
+        "hash": "6f942379",
+        "encoded": "@%7BName=%22Notification%20Service%22;%20Path=%22notification-service%22;%20Port=8081%7D",
+        "prevChunkIds": []
+      },
+      "286": {
+        "chunkId": "5e0724",
+        "hash": "3c6a418d",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "288": {
+        "chunkId": "5e0724",
+        "hash": "5bc5e4d2",
+        "encoded": "Write-Info%20%22Starting%20all%20business%20services%20in%20parallel...%22",
+        "prevChunkIds": []
+      },
+      "290": {
+        "chunkId": "5e0724",
+        "hash": "4577d696",
+        "encoded": "foreach%20($service%20in%20$businessServices)%20%7B",
+        "prevChunkIds": []
+      },
+      "291": {
+        "chunkId": "5e0724",
+        "hash": "29f3a4b6",
+        "encoded": "Start-ServiceInNewWindow%20-ServiceName%20$service.Name%20-ServicePath%20$service.Path",
+        "prevChunkIds": []
+      },
+      "292": {
+        "chunkId": "5e0724",
+        "hash": "58d1fcdc",
+        "encoded": "Start-Sleep%20-Seconds%202%20%20#%20Stagger%20startup%20slightly",
+        "prevChunkIds": []
+      },
+      "293": {
+        "chunkId": "5e0724",
+        "hash": "70d6c9f9",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "295": {
+        "chunkId": "5e0724",
+        "hash": "a984da91",
+        "encoded": "Write-Info%20%22Waiting%20for%20business%20services%20to%20initialize%20(30%20seconds)...%22",
+        "prevChunkIds": []
+      },
+      "296": {
+        "chunkId": "5e0724",
+        "hash": "af770efb",
+        "encoded": "Start-Sleep%20-Seconds%2030",
+        "prevChunkIds": []
+      },
+      "298": {
+        "chunkId": "5e0724",
+        "hash": "0834b1bd",
+        "encoded": "#%20Check%20health%20of%20each%20business%20service",
+        "prevChunkIds": []
+      },
+      "299": {
+        "chunkId": "5e0724",
+        "hash": "e4a66f22",
+        "encoded": "$healthyServices%20=%200",
+        "prevChunkIds": []
+      },
+      "300": {
+        "chunkId": "5e0724",
+        "hash": "be1dc7e5",
+        "encoded": "foreach%20($service%20in%20$businessServices)%20%7B",
+        "prevChunkIds": []
+      },
+      "301": {
+        "chunkId": "5e0724",
+        "hash": "fd08ee24",
+        "encoded": "$healthUrl%20=%20%22http://localhost:$($service.Port)/actuator/health%22",
+        "prevChunkIds": []
+      },
+      "302": {
+        "chunkId": "5e0724",
+        "hash": "5f2f8aa8",
+        "encoded": "if%20(Test-ServiceHealth%20-ServiceName%20$service.Name%20-HealthUrl%20$healthUrl%20-TimeoutSeconds%2060)%20%7B",
+        "prevChunkIds": []
+      },
+      "303": {
+        "chunkId": "5e0724",
+        "hash": "0aba00a6",
+        "encoded": "$healthyServices++",
+        "prevChunkIds": []
+      },
+      "304": {
+        "chunkId": "5e0724",
+        "hash": "349fbe8d",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "305": {
+        "chunkId": "5e0724",
+        "hash": "fa6b00b0",
+        "encoded": "Write-Warning-Custom%20%22$($service.Name)%20may%20not%20be%20fully%20started%20yet%22",
+        "prevChunkIds": []
+      },
+      "306": {
+        "chunkId": "5e0724",
+        "hash": "cc15c81d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "307": {
+        "chunkId": "5e0724",
+        "hash": "a5e1e4c3",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "309": {
+        "chunkId": "5e0724",
+        "hash": "d4d35e11",
+        "encoded": "Write-Info%20%22$healthyServices%20out%20of%20$($businessServices.Count)%20business%20services%20are%20healthy%22",
+        "prevChunkIds": []
+      },
+      "311": {
+        "chunkId": "5e0724",
+        "hash": "b806c341",
+        "encoded": "#%20Check%20Eureka%20registration",
+        "prevChunkIds": []
+      },
+      "312": {
+        "chunkId": "5e0724",
+        "hash": "b3ba7f0f",
+        "encoded": "Write-Info%20%22Checking%20Eureka%20registration%20for%20business%20services...%22",
+        "prevChunkIds": []
+      },
+      "313": {
+        "chunkId": "5e0724",
+        "hash": "971df493",
+        "encoded": "Start-Sleep%20-Seconds%2010",
+        "prevChunkIds": []
+      },
+      "315": {
+        "chunkId": "5e0724",
+        "hash": "d2ad7522",
+        "encoded": "$registeredServices%20=%200",
+        "prevChunkIds": []
+      },
+      "316": {
+        "chunkId": "5e0724",
+        "hash": "6ad7e5b2",
+        "encoded": "foreach%20($service%20in%20$businessServices)%20%7B",
+        "prevChunkIds": []
+      },
+      "317": {
+        "chunkId": "5e0724",
+        "hash": "f4a808b8",
+        "encoded": "$serviceName%20=%20$service.Path.ToUpper()",
+        "prevChunkIds": []
+      },
+      "318": {
+        "chunkId": "5e0724",
+        "hash": "f92b8cf7",
+        "encoded": "if%20(Test-EurekaRegistration%20-ServiceName%20$serviceName%20-TimeoutSeconds%2030)%20%7B",
+        "prevChunkIds": []
+      },
+      "319": {
+        "chunkId": "5e0724",
+        "hash": "2d98b5df",
+        "encoded": "$registeredServices++",
+        "prevChunkIds": []
+      },
+      "320": {
+        "chunkId": "5e0724",
+        "hash": "9f89f89e",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "321": {
+        "chunkId": "5e0724",
+        "hash": "e509ad84",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "323": {
+        "chunkId": "5e0724",
+        "hash": "a467f966",
+        "encoded": "Write-Info%20%22$registeredServices%20out%20of%20$($businessServices.Count)%20services%20registered%20with%20Eureka%22",
+        "prevChunkIds": []
+      },
+      "325": {
+        "chunkId": "5e0724",
+        "hash": "9679959c",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "326": {
+        "chunkId": "5e0724",
+        "hash": "f354d22d",
+        "encoded": "#%20STARTUP%20PHASE%204:%20API%20Gateway",
+        "prevChunkIds": []
+      },
+      "327": {
+        "chunkId": "5e0724",
+        "hash": "65dbfde7",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "328": {
+        "chunkId": "5e0724",
+        "hash": "892a746b",
+        "encoded": "Write-Section%20%22PHASE%204:%20Starting%20API%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "330": {
+        "chunkId": "5e0724",
+        "hash": "c96bd42b",
+        "encoded": "if%20(Start-ServiceInNewWindow%20-ServiceName%20%22API%20Gateway%22%20-ServicePath%20%22api-gateway%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "331": {
+        "chunkId": "5e0724",
+        "hash": "0513f4f2",
+        "encoded": "Start-Sleep%20-Seconds%2015",
+        "prevChunkIds": []
+      },
+      "333": {
+        "chunkId": "5e0724",
+        "hash": "60320b6f",
+        "encoded": "if%20(Test-ServiceHealth%20-ServiceName%20%22API%20Gateway%22%20-HealthUrl%20%22http://localhost:8080/actuator/health%22%20-TimeoutSeconds%2060)%20%7B",
+        "prevChunkIds": []
+      },
+      "334": {
+        "chunkId": "5e0724",
+        "hash": "2d4d6948",
+        "encoded": "Write-Success%20%22API%20Gateway%20is%20ready%22",
+        "prevChunkIds": []
+      },
+      "336": {
+        "chunkId": "5e0724",
+        "hash": "b384b248",
+        "encoded": "#%20Check%20if%20routes%20are%20configured",
+        "prevChunkIds": []
+      },
+      "337": {
+        "chunkId": "5e0724",
+        "hash": "91ec643a",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "338": {
+        "chunkId": "5e0724",
+        "hash": "c10f808e",
+        "encoded": "$routesResponse%20=%20Invoke-WebRequest%20-Uri%20%22http://localhost:8080/actuator/gateway/routes%22%20-TimeoutSec%205%20-ErrorAction%20Stop",
+        "prevChunkIds": []
+      },
+      "339": {
+        "chunkId": "5e0724",
+        "hash": "6d591488",
+        "encoded": "Write-Success%20%22API%20Gateway%20routes%20configured%20successfully%22",
+        "prevChunkIds": []
+      },
+      "340": {
+        "chunkId": "5e0724",
+        "hash": "40649dfe",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "341": {
+        "chunkId": "5e0724",
+        "hash": "0849e09c",
+        "encoded": "Write-Warning-Custom%20%22Could%20not%20verify%20API%20Gateway%20routes%22",
+        "prevChunkIds": []
+      },
+      "342": {
+        "chunkId": "5e0724",
+        "hash": "8929312f",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "343": {
+        "chunkId": "5e0724",
+        "hash": "52bfabf3",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "344": {
+        "chunkId": "5e0724",
+        "hash": "83676817",
+        "encoded": "Write-Error-Custom%20%22API%20Gateway%20failed%20to%20start%22",
+        "prevChunkIds": []
+      },
+      "345": {
+        "chunkId": "5e0724",
+        "hash": "ec6444b1",
+        "encoded": "Write-Warning-Custom%20%22Check%20api-gateway%20window%20for%20errors%22",
+        "prevChunkIds": []
+      },
+      "346": {
+        "chunkId": "5e0724",
+        "hash": "b0d56384",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "347": {
+        "chunkId": "5e0724",
+        "hash": "b95d3ed5",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "348": {
+        "chunkId": "5e0724",
+        "hash": "73114949",
+        "encoded": "Write-Error-Custom%20%22Failed%20to%20start%20API%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "349": {
+        "chunkId": "5e0724",
+        "hash": "e9514133",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "351": {
+        "chunkId": "5e0724",
+        "hash": "e7d74ab5",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "352": {
+        "chunkId": "5e0724",
+        "hash": "02b84796",
+        "encoded": "#%20STARTUP%20COMPLETE",
+        "prevChunkIds": []
+      },
+      "353": {
+        "chunkId": "5e0724",
+        "hash": "6dd92bac",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "354": {
+        "chunkId": "5e0724",
+        "hash": "a94bc40c",
+        "encoded": "Write-Section%20%22STARTUP%20COMPLETE%22",
+        "prevChunkIds": []
+      },
+      "356": {
+        "chunkId": "5e0724",
+        "hash": "fbfd13ab",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "357": {
+        "chunkId": "5e0724",
+        "hash": "cd8c0f47",
+        "encoded": "Write-Host%20%22Service%20Status%20Summary:%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "358": {
+        "chunkId": "5e0724",
+        "hash": "ad8cdc30",
+        "encoded": "Write-Host%20%22======================%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "360": {
+        "chunkId": "5e0724",
+        "hash": "08ceed8e",
+        "encoded": "$allServices%20=%20@(",
+        "prevChunkIds": []
+      },
+      "361": {
+        "chunkId": "5e0724",
+        "hash": "3f569ef2",
+        "encoded": "@%7BName=%22Config%20Server%22;%20Url=%22http://localhost:8888/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "362": {
+        "chunkId": "5e0724",
+        "hash": "7f8d566a",
+        "encoded": "@%7BName=%22Eureka%20Server%22;%20Url=%22http://localhost:8761/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "363": {
+        "chunkId": "5e0724",
+        "hash": "33a705fd",
+        "encoded": "@%7BName=%22User%20Service%22;%20Url=%22http://localhost:8085/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "364": {
+        "chunkId": "5e0724",
+        "hash": "bf4a6139",
+        "encoded": "@%7BName=%22Restaurant%20Service%22;%20Url=%22http://localhost:8082/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "365": {
+        "chunkId": "5e0724",
+        "hash": "12bc3310",
+        "encoded": "@%7BName=%22Order%20Service%22;%20Url=%22http://localhost:8083/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "366": {
+        "chunkId": "5e0724",
+        "hash": "92af6215",
+        "encoded": "@%7BName=%22Payment%20Service%22;%20Url=%22http://localhost:8084/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "367": {
+        "chunkId": "5e0724",
+        "hash": "d685a3a3",
+        "encoded": "@%7BName=%22Notification%20Service%22;%20Url=%22http://localhost:8081/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "368": {
+        "chunkId": "5e0724",
+        "hash": "166ecddc",
+        "encoded": "@%7BName=%22API%20Gateway%22;%20Url=%22http://localhost:8080/actuator/health%22%7D",
+        "prevChunkIds": []
+      },
+      "369": {
+        "chunkId": "5e0724",
+        "hash": "f1c0803d",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "371": {
+        "chunkId": "5e0724",
+        "hash": "09b318dd",
+        "encoded": "$runningCount%20=%200",
+        "prevChunkIds": []
+      },
+      "372": {
+        "chunkId": "5e0724",
+        "hash": "f3bc7d7b",
+        "encoded": "foreach%20($service%20in%20$allServices)%20%7B",
+        "prevChunkIds": []
+      },
+      "373": {
+        "chunkId": "5e0724",
+        "hash": "0c75fc39",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "374": {
+        "chunkId": "5e0724",
+        "hash": "7f65aef5",
+        "encoded": "$response%20=%20Invoke-WebRequest%20-Uri%20$service.Url%20-TimeoutSec%202%20-ErrorAction%20Stop",
+        "prevChunkIds": []
+      },
+      "375": {
+        "chunkId": "5e0724",
+        "hash": "86860ffd",
+        "encoded": "if%20($response.StatusCode%20-eq%20200)%20%7B",
+        "prevChunkIds": []
+      },
+      "376": {
+        "chunkId": "5e0724",
+        "hash": "bafede88",
+        "encoded": "Write-Success%20%22$($service.Name)%20-%20RUNNING%22",
+        "prevChunkIds": []
+      },
+      "377": {
+        "chunkId": "5e0724",
+        "hash": "5bf67bea",
+        "encoded": "$runningCount++",
+        "prevChunkIds": []
+      },
+      "378": {
+        "chunkId": "5e0724",
+        "hash": "749a6433",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "379": {
+        "chunkId": "5e0724",
+        "hash": "06a47d06",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "380": {
+        "chunkId": "5e0724",
+        "hash": "4050a9ac",
+        "encoded": "Write-Error-Custom%20%22$($service.Name)%20-%20NOT%20RESPONDING%22",
+        "prevChunkIds": []
+      },
+      "381": {
+        "chunkId": "5e0724",
+        "hash": "90600561",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "382": {
+        "chunkId": "5e0724",
+        "hash": "ecce4d1d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "384": {
+        "chunkId": "5e0724",
+        "hash": "b202a741",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "385": {
+        "chunkId": "5e0724",
+        "hash": "c7dfa60f",
+        "encoded": "Write-Host%20%22$runningCount%20out%20of%20$($allServices.Count)%20services%20are%20running%22%20-ForegroundColor%20$(if%20($runningCount%20-eq%20$allServices.Count)%20%7B%20'Green'%20%7D%20else%20%7B%20'Yellow'%20%7D)",
+        "prevChunkIds": []
+      },
+      "386": {
+        "chunkId": "5e0724",
+        "hash": "8d6b5c79",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "388": {
+        "chunkId": "5e0724",
+        "hash": "3c133eaf",
+        "encoded": "if%20($global:failedServices.Count%20-gt%200)%20%7B",
+        "prevChunkIds": []
+      },
+      "389": {
+        "chunkId": "5e0724",
+        "hash": "06dcc755",
+        "encoded": "Write-Warning-Custom%20%22Failed%20services:%20$($global:failedServices%20-join%20',%20')%22",
+        "prevChunkIds": []
+      },
+      "390": {
+        "chunkId": "5e0724",
+        "hash": "f917a819",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "391": {
+        "chunkId": "5e0724",
+        "hash": "2bacc7fd",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "393": {
+        "chunkId": "5e0724",
+        "hash": "e049bbe2",
+        "encoded": "Write-Host%20%22%E2%95%94%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%97%22%20-ForegroundColor%20Green",
+        "prevChunkIds": []
+      },
+      "394": {
+        "chunkId": "5e0724",
+        "hash": "647b6137",
+        "encoded": "Write-Host%20%22%E2%95%91%20%20%E2%9C%93%20STARTUP%20COMPLETE%20-%20ALL%20SERVICES%20LAUNCHED%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%95%91%22%20-ForegroundColor%20Green",
+        "prevChunkIds": []
+      },
+      "395": {
+        "chunkId": "5e0724",
+        "hash": "0eeaa93c",
+        "encoded": "Write-Host%20%22%E2%95%9A%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%9D%22%20-ForegroundColor%20Green",
+        "prevChunkIds": []
+      },
+      "396": {
+        "chunkId": "5e0724",
+        "hash": "49dbeb07",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "398": {
+        "chunkId": "5e0724",
+        "hash": "56878a97",
+        "encoded": "Write-Host%20%22Important%20URLs:%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "399": {
+        "chunkId": "5e0724",
+        "hash": "71b4fe0b",
+        "encoded": "Write-Host%20%22%20%20Eureka%20Dashboard:%20%20http://localhost:8761%22%20-ForegroundColor%20White",
+        "prevChunkIds": []
+      },
+      "400": {
+        "chunkId": "5e0724",
+        "hash": "8d7280e4",
+        "encoded": "Write-Host%20%22%20%20API%20Gateway:%20%20%20%20%20%20%20http://localhost:8080%22%20-ForegroundColor%20White",
+        "prevChunkIds": []
+      },
+      "401": {
+        "chunkId": "5e0724",
+        "hash": "3e35698b",
+        "encoded": "Write-Host%20%22%20%20Config%20Server:%20%20%20%20%20http://localhost:8888%22%20-ForegroundColor%20White",
+        "prevChunkIds": []
+      },
+      "402": {
+        "chunkId": "5e0724",
+        "hash": "77ea1073",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "404": {
+        "chunkId": "5e0724",
+        "hash": "d2f8a965",
+        "encoded": "Write-Host%20%22Next%20Steps:%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "405": {
+        "chunkId": "5e0724",
+        "hash": "cf95e753",
+        "encoded": "Write-Host%20%22%20%201.%20Check%20Eureka%20Dashboard%20to%20verify%20all%20services%20are%20registered%22%20-ForegroundColor%20White",
+        "prevChunkIds": []
+      },
+      "406": {
+        "chunkId": "5e0724",
+        "hash": "af5b353d",
+        "encoded": "Write-Host%20%22%20%202.%20Run%20.%5Cverify-system.ps1%20to%20perform%20health%20checks%22%20-ForegroundColor%20White",
+        "prevChunkIds": []
+      },
+      "407": {
+        "chunkId": "5e0724",
+        "hash": "431f2f14",
+        "encoded": "Write-Host%20%22%20%203.%20Run%20.%5Crun-e2e-tests.ps1%20to%20execute%20E2E%20tests%22%20-ForegroundColor%20White",
+        "prevChunkIds": []
+      },
+      "408": {
+        "chunkId": "5e0724",
+        "hash": "067892c0",
+        "encoded": "Write-Host%20%22%20%204.%20Check%20individual%20service%20windows%20for%20any%20errors%22%20-ForegroundColor%20White",
+        "prevChunkIds": []
+      },
+      "409": {
+        "chunkId": "5e0724",
+        "hash": "45776b9d",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "411": {
+        "chunkId": "5e0724",
+        "hash": "1dfca9df",
+        "encoded": "Write-Host%20%22To%20stop%20all%20services:%20Close%20all%20PowerShell%20windows%20or%20run%20Stop-AllServices%20function%22%20-ForegroundColor%20Yellow",
+        "prevChunkIds": []
+      },
+      "412": {
+        "chunkId": "5e0724",
+        "hash": "454361c5",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

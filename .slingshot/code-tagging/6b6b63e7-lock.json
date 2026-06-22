@@ -1,0 +1,205 @@
+{
+  "notification-service\\src\\main\\resources\\application-local.yml": {
+    "filename": "application-local.yml",
+    "path": "notification-service\\src\\main\\resources\\application-local.yml",
+    "version": "1.2",
+    "contextFile": "6b6b63e7-context.json",
+    "chunks": {
+      "a080c2": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781100583,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "f425ba80"
+        },
+        "hash": "6930fced",
+        "messageId": "system_7ffd89d0-64d5-11f1-80e8-659659a77bc1",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 7:39:43 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "a080c2",
+        "hash": "d1aad523",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "a080c2",
+        "hash": "ebf5d35f",
+        "encoded": "#%20Notification%20Service%20-%20Local%20Development%20Configuration",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "a080c2",
+        "hash": "6325830d",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "a080c2",
+        "hash": "16efa479",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "a080c2",
+        "hash": "19750c83",
+        "encoded": "datasource:",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "a080c2",
+        "hash": "7736810f",
+        "encoded": "url:%20jdbc:h2:mem:notificationdb",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "a080c2",
+        "hash": "b0500d0e",
+        "encoded": "driver-class-name:%20org.h2.Driver",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "a080c2",
+        "hash": "1e667dee",
+        "encoded": "username:%20sa",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "a080c2",
+        "hash": "e8e4f31a",
+        "encoded": "password:",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "a080c2",
+        "hash": "82782623",
+        "encoded": "h2:",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "a080c2",
+        "hash": "8262dd62",
+        "encoded": "console:",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "a080c2",
+        "hash": "34fdf58b",
+        "encoded": "enabled:%20true",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "a080c2",
+        "hash": "e4babd95",
+        "encoded": "path:%20/h2-console",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "a080c2",
+        "hash": "4e7474f0",
+        "encoded": "jpa:",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "a080c2",
+        "hash": "91a4c26b",
+        "encoded": "hibernate:",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "a080c2",
+        "hash": "6b1cea35",
+        "encoded": "ddl-auto:%20create-drop",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "a080c2",
+        "hash": "cd72a285",
+        "encoded": "defer-datasource-initialization:%20true",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "a080c2",
+        "hash": "c0c5e82c",
+        "encoded": "show-sql:%20true",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "a080c2",
+        "hash": "f09498bf",
+        "encoded": "properties:",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "a080c2",
+        "hash": "b0662093",
+        "encoded": "hibernate:",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "a080c2",
+        "hash": "9da8d733",
+        "encoded": "dialect:%20org.hibernate.dialect.H2Dialect",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "a080c2",
+        "hash": "45d4692a",
+        "encoded": "format_sql:%20true",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "a080c2",
+        "hash": "39af0dc5",
+        "encoded": "sql:",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "a080c2",
+        "hash": "8e66ab78",
+        "encoded": "init:",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "a080c2",
+        "hash": "e2f47eac",
+        "encoded": "mode:%20always",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "a080c2",
+        "hash": "031938a1",
+        "encoded": "logging:",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "a080c2",
+        "hash": "8a77d242",
+        "encoded": "level:",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "a080c2",
+        "hash": "b48c6b86",
+        "encoded": "com.fooddelivery.notification:%20DEBUG",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "a080c2",
+        "hash": "c4813305",
+        "encoded": "org.hibernate.SQL:%20DEBUG",
+        "prevChunkIds": []
+      }
+    },
+    "_prevLineCount": 39
+  }
+}

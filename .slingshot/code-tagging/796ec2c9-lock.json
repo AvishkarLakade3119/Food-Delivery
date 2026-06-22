@@ -1,0 +1,72 @@
+{
+  "order-service\\src\\test\\resources\\application-test.properties": {
+    "filename": "application-test.properties",
+    "path": "order-service\\src\\test\\resources\\application-test.properties",
+    "version": "1.2",
+    "contextFile": "796ec2c9-context.json",
+    "chunks": {
+      "ec6a0b": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781166666,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "936e87ee"
+        },
+        "hash": "22606162",
+        "messageId": "system_dbaceda0-656d-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 2:01:06 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "ec6a0b",
+        "hash": "a366767a",
+        "encoded": "#%20JWT%20Configuration%20for%20tests",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "ec6a0b",
+        "hash": "3ec95a62",
+        "encoded": "jwt.secret=test-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-testing-purpose-only",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "ec6a0b",
+        "hash": "de9f508c",
+        "encoded": "jwt.expiration=86400000",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "ec6a0b",
+        "hash": "a8a5116d",
+        "encoded": "jwt.header=Authorization",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "ec6a0b",
+        "hash": "0d2abc0d",
+        "encoded": "jwt.prefix=Bearer",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "ec6a0b",
+        "hash": "ec1d0aa9",
+        "encoded": "#%20Disable%20Spring%20Security%20for%20tests",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "ec6a0b",
+        "hash": "e5739f06",
+        "encoded": "spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

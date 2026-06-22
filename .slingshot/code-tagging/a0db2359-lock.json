@@ -1,0 +1,930 @@
+{
+  "config-server\\README.md": {
+    "filename": "README.md",
+    "path": "config-server\\README.md",
+    "version": "1.2",
+    "contextFile": "a0db2359-context.json",
+    "chunks": {
+      "4127a0": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781076002,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "c78172ec",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:50:02 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "4127a0",
+        "hash": "401fd21f",
+        "encoded": "#%20Config%20Server%20-%20Centralized%20Configuration%20Management",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "4127a0",
+        "hash": "5ac33061",
+        "encoded": "##%20Overview",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "4127a0",
+        "hash": "c4d83c35",
+        "encoded": "The%20Config%20Server%20provides%20centralized%20configuration%20management%20for%20all%20microservices%20in%20the%20Food%20Delivery%20platform.%20It%20serves%20configuration%20files%20from%20a%20Git%20repository%20and%20integrates%20with%20Eureka%20for%20service%20discovery.",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "4127a0",
+        "hash": "5f3cce1e",
+        "encoded": "##%20Features",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "4127a0",
+        "hash": "50a7c2ae",
+        "encoded": "-%20%E2%9C%85%20Git-backed%20configuration%20storage",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "4127a0",
+        "hash": "30eeb57d",
+        "encoded": "-%20%E2%9C%85%20Centralized%20configuration%20for%20all%20microservices",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "4127a0",
+        "hash": "972d370f",
+        "encoded": "-%20%E2%9C%85%20Environment-specific%20profiles%20(dev,%20prod)",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "4127a0",
+        "hash": "a767319e",
+        "encoded": "-%20%E2%9C%85%20Dynamic%20configuration%20refresh%20without%20restart",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "4127a0",
+        "hash": "4db3d034",
+        "encoded": "-%20%E2%9C%85%20Integration%20with%20Eureka%20Service%20Discovery",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "4127a0",
+        "hash": "0a4149ac",
+        "encoded": "-%20%E2%9C%85%20Health%20checks%20and%20monitoring%20via%20Actuator",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "4127a0",
+        "hash": "04ccc0b7",
+        "encoded": "-%20%E2%9C%85%20Docker%20and%20Kubernetes%20ready",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "4127a0",
+        "hash": "2fb23cee",
+        "encoded": "##%20Technology%20Stack",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "4127a0",
+        "hash": "1df4c3cf",
+        "encoded": "-%20**Spring%20Boot:**%203.2.5",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "4127a0",
+        "hash": "6f2f73a6",
+        "encoded": "-%20**Spring%20Cloud:**%202023.0.1",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "4127a0",
+        "hash": "633d1591",
+        "encoded": "-%20**Spring%20Cloud%20Config%20Server:**%20Centralized%20configuration",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "4127a0",
+        "hash": "b06f337c",
+        "encoded": "-%20**Eureka%20Client:**%20Service%20registration%20and%20discovery",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "4127a0",
+        "hash": "580bcfcb",
+        "encoded": "-%20**Java:**%2017+",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "4127a0",
+        "hash": "08414692",
+        "encoded": "-%20**Maven:**%20Build%20tool",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "4127a0",
+        "hash": "42a2bed0",
+        "encoded": "##%20Configuration",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "4127a0",
+        "hash": "27606fc3",
+        "encoded": "###%20Application%20Properties",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "4127a0",
+        "hash": "23f52994",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "4127a0",
+        "hash": "49e20601",
+        "encoded": "server:",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "4127a0",
+        "hash": "e4cf4f09",
+        "encoded": "port:%208888",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "4127a0",
+        "hash": "920e5c58",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "4127a0",
+        "hash": "dbaf6845",
+        "encoded": "application:",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "4127a0",
+        "hash": "1b912d5e",
+        "encoded": "name:%20config-server",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "4127a0",
+        "hash": "2e0e3c7a",
+        "encoded": "cloud:",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "4127a0",
+        "hash": "9a024cfe",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "4127a0",
+        "hash": "08019d3e",
+        "encoded": "server:",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "4127a0",
+        "hash": "6fe38498",
+        "encoded": "git:",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "4127a0",
+        "hash": "1b4fb2e0",
+        "encoded": "uri:%20file://$%7Buser.home%7D/config-repo",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "4127a0",
+        "hash": "4ade9313",
+        "encoded": "default-label:%20main",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "4127a0",
+        "hash": "831edd2f",
+        "encoded": "clone-on-start:%20true",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "4127a0",
+        "hash": "bac32708",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "4127a0",
+        "hash": "e9468713",
+        "encoded": "###%20Git%20Repository%20Structure",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "4127a0",
+        "hash": "e21a737b",
+        "encoded": "The%20config%20repository%20(%60~/config-repo%60)%20contains:",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "4127a0",
+        "hash": "9aeea603",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "4127a0",
+        "hash": "e67ff433",
+        "encoded": "config-repo/",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "4127a0",
+        "hash": "c7cd77ff",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20application.yml%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20Common%20properties%20for%20all%20services",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "4127a0",
+        "hash": "3c56d5bf",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20application-dev.yml%20%20%20%20%20%20%20%20%20%20#%20Development%20profile",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "4127a0",
+        "hash": "0cdff43c",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20application-prod.yml%20%20%20%20%20%20%20%20%20#%20Production%20profile",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "4127a0",
+        "hash": "96a35d1f",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20eureka-server.yml%20%20%20%20%20%20%20%20%20%20%20%20#%20Eureka%20Server%20config",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "4127a0",
+        "hash": "4737d508",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20api-gateway.yml%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20API%20Gateway%20config",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "4127a0",
+        "hash": "184145c2",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20user-service.yml%20%20%20%20%20%20%20%20%20%20%20%20%20#%20User%20Service%20config",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "4127a0",
+        "hash": "e3a4aae4",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20restaurant-service.yml%20%20%20%20%20%20%20#%20Restaurant%20Service%20config",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "4127a0",
+        "hash": "04b473c5",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20order-service.yml%20%20%20%20%20%20%20%20%20%20%20%20#%20Order%20Service%20config",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "4127a0",
+        "hash": "41b1c042",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20payment-service.yml%20%20%20%20%20%20%20%20%20%20#%20Payment%20Service%20config",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "4127a0",
+        "hash": "71b9745c",
+        "encoded": "%E2%94%94%E2%94%80%E2%94%80%20notification-service.yml%20%20%20%20%20#%20Notification%20Service%20config",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "4127a0",
+        "hash": "0fba5d61",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "4127a0",
+        "hash": "9faef86e",
+        "encoded": "##%20Building%20and%20Running",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "4127a0",
+        "hash": "0634c858",
+        "encoded": "###%20Local%20Development",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "4127a0",
+        "hash": "931cfa67",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "4127a0",
+        "hash": "f6cecda9",
+        "encoded": "#%20Build%20the%20project",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "4127a0",
+        "hash": "3d3329db",
+        "encoded": "mvn%20clean%20install",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "4127a0",
+        "hash": "b54f4cd4",
+        "encoded": "#%20Run%20the%20application",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "4127a0",
+        "hash": "72d770e7",
+        "encoded": "mvn%20spring-boot:run",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "4127a0",
+        "hash": "120dd33f",
+        "encoded": "#%20Or%20run%20the%20JAR",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "4127a0",
+        "hash": "68a3e5cb",
+        "encoded": "java%20-jar%20target/config-server-1.0.0.jar",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "4127a0",
+        "hash": "930da210",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "4127a0",
+        "hash": "d7a6685f",
+        "encoded": "###%20Docker",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "4127a0",
+        "hash": "e3d6d61e",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "4127a0",
+        "hash": "89f79b48",
+        "encoded": "#%20Build%20Docker%20image",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "4127a0",
+        "hash": "61a2e228",
+        "encoded": "docker%20build%20-t%20config-server:latest%20.",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "4127a0",
+        "hash": "3bc9ad90",
+        "encoded": "#%20Run%20container",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "4127a0",
+        "hash": "4cd937ea",
+        "encoded": "docker%20run%20-p%208888:8888%20%5C",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "4127a0",
+        "hash": "387f19d1",
+        "encoded": "-v%20~/config-repo:/root/config-repo%20%5C",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "4127a0",
+        "hash": "61a442b3",
+        "encoded": "config-server:latest",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "4127a0",
+        "hash": "1888d09b",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "4127a0",
+        "hash": "afffb458",
+        "encoded": "###%20Kubernetes",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "4127a0",
+        "hash": "90355be9",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "4127a0",
+        "hash": "5c37cb96",
+        "encoded": "#%20Apply%20deployment",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "4127a0",
+        "hash": "f74a81ad",
+        "encoded": "kubectl%20apply%20-f%20k8s/config-server-deployment.yaml",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "4127a0",
+        "hash": "6ee0dbba",
+        "encoded": "#%20Check%20status",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "4127a0",
+        "hash": "0c62cab6",
+        "encoded": "kubectl%20get%20pods%20-l%20app=config-server%20-n%20food-delivery",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "4127a0",
+        "hash": "0b932502",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "4127a0",
+        "hash": "685cda80",
+        "encoded": "##%20Endpoints",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "4127a0",
+        "hash": "d709aee7",
+        "encoded": "###%20Health%20Check",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "4127a0",
+        "hash": "d273f303",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "4127a0",
+        "hash": "4da3463f",
+        "encoded": "GET%20http://localhost:8888/actuator/health",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "4127a0",
+        "hash": "5d561670",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "4127a0",
+        "hash": "85244a71",
+        "encoded": "###%20Fetch%20Configuration",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "4127a0",
+        "hash": "e52b4fee",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "4127a0",
+        "hash": "9f3e01ab",
+        "encoded": "GET%20http://localhost:8888/%7Bapplication%7D/%7Bprofile%7D",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "4127a0",
+        "hash": "d786dd0e",
+        "encoded": "GET%20http://localhost:8888/%7Bapplication%7D/default",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "4127a0",
+        "hash": "f4a2dff2",
+        "encoded": "Examples:",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "4127a0",
+        "hash": "48c67178",
+        "encoded": "GET%20http://localhost:8888/user-service/default",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "4127a0",
+        "hash": "0101de31",
+        "encoded": "GET%20http://localhost:8888/user-service/dev",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "4127a0",
+        "hash": "28f6db55",
+        "encoded": "GET%20http://localhost:8888/api-gateway/prod",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "4127a0",
+        "hash": "0b0aae24",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "4127a0",
+        "hash": "dcb247dd",
+        "encoded": "###%20Configuration%20Properties",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "4127a0",
+        "hash": "7f8c4a36",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "4127a0",
+        "hash": "d781e0d9",
+        "encoded": "GET%20http://localhost:8888/actuator/configprops",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "4127a0",
+        "hash": "15266480",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "4127a0",
+        "hash": "ccab6787",
+        "encoded": "##%20Testing",
+        "prevChunkIds": []
+      },
+      "125": {
+        "chunkId": "4127a0",
+        "hash": "d41c4dfd",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "4127a0",
+        "hash": "e033d2cb",
+        "encoded": "#%20Run%20tests",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "4127a0",
+        "hash": "4579b567",
+        "encoded": "mvn%20test",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "4127a0",
+        "hash": "0e6e2e7a",
+        "encoded": "#%20Run%20with%20coverage",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "4127a0",
+        "hash": "7e5324a8",
+        "encoded": "mvn%20verify",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "4127a0",
+        "hash": "0debf7d6",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "4127a0",
+        "hash": "5755befc",
+        "encoded": "##%20Monitoring",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "4127a0",
+        "hash": "4ffffb60",
+        "encoded": "Config%20Server%20exposes%20the%20following%20actuator%20endpoints:",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "4127a0",
+        "hash": "ae6785d0",
+        "encoded": "-%20%60/actuator/health%60%20-%20Health%20status",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "4127a0",
+        "hash": "a4751204",
+        "encoded": "-%20%60/actuator/info%60%20-%20Application%20info",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "4127a0",
+        "hash": "2bddc04b",
+        "encoded": "-%20%60/actuator/env%60%20-%20Environment%20properties",
+        "prevChunkIds": []
+      },
+      "140": {
+        "chunkId": "4127a0",
+        "hash": "49b62688",
+        "encoded": "-%20%60/actuator/configprops%60%20-%20Configuration%20properties",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "4127a0",
+        "hash": "1d8b5152",
+        "encoded": "##%20Dependencies",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "4127a0",
+        "hash": "354b792d",
+        "encoded": "%60%60%60xml",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "4127a0",
+        "hash": "c6576309",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "146": {
+        "chunkId": "4127a0",
+        "hash": "54a9602b",
+        "encoded": "%3CgroupId%3Eorg.springframework.cloud%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "4127a0",
+        "hash": "1df2772b",
+        "encoded": "%3CartifactId%3Espring-cloud-config-server%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "4127a0",
+        "hash": "e97d2b25",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "4127a0",
+        "hash": "2d288063",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "4127a0",
+        "hash": "9e15d588",
+        "encoded": "%3CgroupId%3Eorg.springframework.cloud%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "4127a0",
+        "hash": "578728f8",
+        "encoded": "%3CartifactId%3Espring-cloud-starter-netflix-eureka-client%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "4127a0",
+        "hash": "c300d467",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "4127a0",
+        "hash": "5b82dce4",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "4127a0",
+        "hash": "efa74d25",
+        "encoded": "%3CgroupId%3Eorg.springframework.boot%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "4127a0",
+        "hash": "a022cedf",
+        "encoded": "%3CartifactId%3Espring-boot-starter-actuator%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "4127a0",
+        "hash": "5e1eca98",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "4127a0",
+        "hash": "3400feea",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "4127a0",
+        "hash": "4498366f",
+        "encoded": "##%20Environment%20Variables",
+        "prevChunkIds": []
+      },
+      "161": {
+        "chunkId": "4127a0",
+        "hash": "ca1230ae",
+        "encoded": "%7C%20Variable%20%7C%20Description%20%7C%20Default%20%7C",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "4127a0",
+        "hash": "5a40f8fa",
+        "encoded": "%7C----------%7C-------------%7C----------%7C",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "4127a0",
+        "hash": "63b9df82",
+        "encoded": "%7C%20%60SERVER_PORT%60%20%7C%20Server%20port%20%7C%208888%20%7C",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "4127a0",
+        "hash": "6a21ea1d",
+        "encoded": "%7C%20%60EUREKA_SERVER_URL%60%20%7C%20Eureka%20server%20URL%20%7C%20http://localhost:8761/eureka/%20%7C",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "4127a0",
+        "hash": "ccea0aed",
+        "encoded": "%7C%20%60CONFIG_GIT_URI%60%20%7C%20Git%20repository%20URI%20%7C%20file://$%7Buser.home%7D/config-repo%20%7C",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "4127a0",
+        "hash": "5ae77339",
+        "encoded": "%7C%20%60SPRING_PROFILES_ACTIVE%60%20%7C%20Active%20profile%20%7C%20default%20%7C",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "4127a0",
+        "hash": "0e2f2917",
+        "encoded": "##%20Troubleshooting",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "4127a0",
+        "hash": "235eb16c",
+        "encoded": "###%20Config%20Server%20Cannot%20Find%20Git%20Repository",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "4127a0",
+        "hash": "6eca00ab",
+        "encoded": "Ensure%20the%20Git%20repository%20is%20initialized:",
+        "prevChunkIds": []
+      },
+      "173": {
+        "chunkId": "4127a0",
+        "hash": "33deb6aa",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "4127a0",
+        "hash": "7e4ce0c9",
+        "encoded": "cd%20~/config-repo",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "4127a0",
+        "hash": "55e2446d",
+        "encoded": "git%20init",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "4127a0",
+        "hash": "e0224152",
+        "encoded": "git%20add%20.",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "4127a0",
+        "hash": "25989b6b",
+        "encoded": "git%20commit%20-m%20%22Initial%20commit%22",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "4127a0",
+        "hash": "823cbf55",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "4127a0",
+        "hash": "ef9238b6",
+        "encoded": "###%20Services%20Cannot%20Connect%20to%20Config%20Server",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "4127a0",
+        "hash": "ad3e2c02",
+        "encoded": "Verify%20Config%20Server%20is%20running:",
+        "prevChunkIds": []
+      },
+      "183": {
+        "chunkId": "4127a0",
+        "hash": "ef6a213c",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "4127a0",
+        "hash": "f4ad78b9",
+        "encoded": "curl%20http://localhost:8888/actuator/health",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "4127a0",
+        "hash": "0f0f3b21",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "4127a0",
+        "hash": "9ef5d3a3",
+        "encoded": "Check%20service%20configuration:",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "4127a0",
+        "hash": "abefb89d",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "189": {
+        "chunkId": "4127a0",
+        "hash": "907ea148",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "4127a0",
+        "hash": "68bad355",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "191": {
+        "chunkId": "4127a0",
+        "hash": "b41c0655",
+        "encoded": "import:%20optional:configserver:http://localhost:8888",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "4127a0",
+        "hash": "82aa2141",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "4127a0",
+        "hash": "d1985b1f",
+        "encoded": "##%20License",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "4127a0",
+        "hash": "e3aa3049",
+        "encoded": "This%20project%20is%20part%20of%20the%20Food%20Delivery%20Microservices%20Platform.",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

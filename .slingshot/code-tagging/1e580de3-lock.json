@@ -1,0 +1,613 @@
+{
+  "restaurant-service\\src\\main\\resources\\application.yml": {
+    "filename": "application.yml",
+    "path": "restaurant-service\\src\\main\\resources\\application.yml",
+    "version": "1.2",
+    "contextFile": "1e580de3-context.json",
+    "chunks": {
+      "724338": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781153565,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "141ea5f0"
+        },
+        "hash": "5ff45b09",
+        "messageId": "system_56f6cd00-6550-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:22:45 AM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "c82736": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075686,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "222a2e7c",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:44:46 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "a83e3d": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781196337,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "df2ea822"
+        },
+        "hash": "ebb9e833",
+        "messageId": "system_79e8b040-65b3-11f1-8360-b9f58a4ec7ec",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:15:37 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "e303b7": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427581,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "e7e9f8c5",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:29:41 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "724338",
+        "hash": "d1aad523",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "724338",
+        "hash": "41c416b2",
+        "encoded": "#%20Restaurant%20Service%20-%20Bootstrap%20Configuration",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "724338",
+        "hash": "6325830d",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "724338",
+        "hash": "6b94f34f",
+        "encoded": "#%20Minimal%20configuration%20to%20connect%20to%20Config%20Server",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "724338",
+        "hash": "638a8061",
+        "encoded": "#%20All%20other%20properties%20are%20fetched%20from%20config-server",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "724338",
+        "hash": "8e5ec212",
+        "encoded": "server:",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "724338",
+        "hash": "764089fd",
+        "encoded": "port:%208082",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "724338",
+        "hash": "f19d3673",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "724338",
+        "hash": "e02d1c5c",
+        "encoded": "application:",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "724338",
+        "hash": "d6c5f20b",
+        "encoded": "name:%20restaurant-service",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "724338",
+        "hash": "f5a3bc6a",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "724338",
+        "hash": "8061768f",
+        "encoded": "import:%20optional:configserver:http://localhost:8888",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "724338",
+        "hash": "2d10db39",
+        "encoded": "cloud:",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "724338",
+        "hash": "9033fb87",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "724338",
+        "hash": "c2e99ac3",
+        "encoded": "fail-fast:%20false",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "724338",
+        "hash": "7c5f1b86",
+        "encoded": "override-none:%20true",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "724338",
+        "hash": "f43585af",
+        "encoded": "allow-override:%20true",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "724338",
+        "hash": "df0d8f85",
+        "encoded": "override-system-properties:%20false",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "724338",
+        "hash": "552490da",
+        "encoded": "retry:",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "724338",
+        "hash": "1d676416",
+        "encoded": "max-attempts:%206",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "724338",
+        "hash": "323fa2b8",
+        "encoded": "initial-interval:%201000",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "724338",
+        "hash": "392c24d2",
+        "encoded": "multiplier:%201.1",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "724338",
+        "hash": "aab53345",
+        "encoded": "max-interval:%202000",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "724338",
+        "hash": "c46efb26",
+        "encoded": "#%20Fallback%20PostgreSQL%20Database%20Configuration",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "724338",
+        "hash": "aea787d1",
+        "encoded": "datasource:",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "724338",
+        "hash": "4f57ccd1",
+        "encoded": "url:%20jdbc:postgresql://localhost:5433/restaurantdb",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "724338",
+        "hash": "2bb17950",
+        "encoded": "username:%20postgres",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "724338",
+        "hash": "fffffa0b",
+        "encoded": "password:%20password",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "724338",
+        "hash": "0c02cf9f",
+        "encoded": "driver-class-name:%20org.postgresql.Driver",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "724338",
+        "hash": "9fef51c4",
+        "encoded": "#%20Fallback%20JPA%20Configuration",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "724338",
+        "hash": "305936f8",
+        "encoded": "jpa:",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "724338",
+        "hash": "c436e5c8",
+        "encoded": "hibernate:",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "724338",
+        "hash": "4b586772",
+        "encoded": "ddl-auto:%20update",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "724338",
+        "hash": "0e441197",
+        "encoded": "defer-datasource-initialization:%20true",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "724338",
+        "hash": "69858405",
+        "encoded": "show-sql:%20true",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "e303b7",
+        "hash": "f6995797",
+        "encoded": "#%20SQL%20Initialization",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "e303b7",
+        "hash": "4642c1e0",
+        "encoded": "sql:",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "e303b7",
+        "hash": "cc3d7a8b",
+        "encoded": "init:",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "e303b7",
+        "hash": "25bec6ec",
+        "encoded": "mode:%20never",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "e303b7",
+        "hash": "9ffb1f78",
+        "encoded": "#%20RabbitMQ%20Configuration",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "e303b7",
+        "hash": "03482ed8",
+        "encoded": "rabbitmq:",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "e303b7",
+        "hash": "80db54ea",
+        "encoded": "host:%20localhost",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "e303b7",
+        "hash": "3698f599",
+        "encoded": "port:%205672",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "e303b7",
+        "hash": "1a94d5b0",
+        "encoded": "username:%20guest",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "e303b7",
+        "hash": "8d3a1e05",
+        "encoded": "password:%20guest",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "e303b7",
+        "hash": "77c26379",
+        "encoded": "connection-timeout:%205000",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "e303b7",
+        "hash": "1b192977",
+        "encoded": "#%20JWT%20Configuration%20(MUST%20match%20user-service)",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "a83e3d",
+        "hash": "537280d5",
+        "encoded": "sql:",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "a83e3d",
+        "hash": "d9306677",
+        "encoded": "init:",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "a83e3d",
+        "hash": "041067ef",
+        "encoded": "mode:%20never",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "a83e3d",
+        "hash": "1585092b",
+        "encoded": "#%20JWT%20Configuration",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "a83e3d",
+        "hash": "c88dc5f6",
+        "encoded": "jwt:",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "a83e3d",
+        "hash": "b43b290f",
+        "encoded": "secret:%20food-delivery-platform-jwt-secret-key-2026-must-be-at-least-256-bits-long-for-hmac-sha256",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "a83e3d",
+        "hash": "81d50b10",
+        "encoded": "expiration:%2086400000",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "a83e3d",
+        "hash": "585e625e",
+        "encoded": "#%20Eureka%20Client%20Configuration",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "a83e3d",
+        "hash": "2a6c4a9e",
+        "encoded": "eureka:",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "a83e3d",
+        "hash": "ded6aa86",
+        "encoded": "client:",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "a83e3d",
+        "hash": "d6e98644",
+        "encoded": "service-url:",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "a83e3d",
+        "hash": "f57d8cf7",
+        "encoded": "defaultZone:%20http://localhost:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "a83e3d",
+        "hash": "176ad389",
+        "encoded": "register-with-eureka:%20true",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "a83e3d",
+        "hash": "dba13a24",
+        "encoded": "fetch-registry:%20true",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "724338",
+        "hash": "7b6f2ab1",
+        "encoded": "sql:",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "724338",
+        "hash": "d23f7687",
+        "encoded": "init:",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "724338",
+        "hash": "5f33fea1",
+        "encoded": "mode:%20never",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "724338",
+        "hash": "53f91345",
+        "encoded": "#%20Eureka%20Client%20Configuration",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "724338",
+        "hash": "712d7787",
+        "encoded": "eureka:",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "724338",
+        "hash": "6c6c52ab",
+        "encoded": "client:",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "724338",
+        "hash": "e8878d87",
+        "encoded": "service-url:",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "724338",
+        "hash": "1e3f99a5",
+        "encoded": "defaultZone:%20http://localhost:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "724338",
+        "hash": "e18a9bc3",
+        "encoded": "register-with-eureka:%20true",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "724338",
+        "hash": "6268729d",
+        "encoded": "fetch-registry:%20true",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "c82736",
+        "hash": "83c6a3da",
+        "encoded": "#%20Restaurant%20Service%20-%20Bootstrap%20Configuration",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "c82736",
+        "hash": "0fd9737e",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "c82736",
+        "hash": "4a396838",
+        "encoded": "#%20Minimal%20configuration%20to%20connect%20to%20Config%20Server",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "c82736",
+        "hash": "b7947e19",
+        "encoded": "#%20All%20other%20properties%20are%20fetched%20from%20config-server",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "c82736",
+        "hash": "098a36c6",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "c82736",
+        "hash": "8b19a4b2",
+        "encoded": "application:",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "c82736",
+        "hash": "f3a22f69",
+        "encoded": "name:%20restaurant-service",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "c82736",
+        "hash": "aa24cf96",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "c82736",
+        "hash": "7916e7d4",
+        "encoded": "import:%20optional:configserver:http://localhost:8888",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "c82736",
+        "hash": "fccb9aba",
+        "encoded": "cloud:",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "c82736",
+        "hash": "45444864",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "c82736",
+        "hash": "52b8637b",
+        "encoded": "fail-fast:%20false",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "c82736",
+        "hash": "e9e016f7",
+        "encoded": "retry:",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "c82736",
+        "hash": "9de2c675",
+        "encoded": "max-attempts:%206",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "c82736",
+        "hash": "b6c00762",
+        "encoded": "initial-interval:%201000",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "c82736",
+        "hash": "a08ef649",
+        "encoded": "multiplier:%201.1",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "c82736",
+        "hash": "3f306df2",
+        "encoded": "max-interval:%202000",
+        "prevChunkIds": []
+      }
+    },
+    "_prevLineCount": 68
+  }
+}

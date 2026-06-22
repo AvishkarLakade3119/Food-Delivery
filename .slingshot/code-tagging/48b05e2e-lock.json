@@ -1,0 +1,132 @@
+{
+  "config-server\\src\\test\\java\\com\\fooddelivery\\configserver\\ConfigServerApplicationTest.java": {
+    "filename": "ConfigServerApplicationTest.java",
+    "path": "config-server\\src\\test\\java\\com\\fooddelivery\\configserver\\ConfigServerApplicationTest.java",
+    "version": "1.2",
+    "contextFile": "48b05e2e-context.json",
+    "chunks": {
+      "aa4dd5": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075074,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "f67d6eb1",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:34:34 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "aa4dd5",
+        "hash": "c7cb184b",
+        "encoded": "package%20com.fooddelivery.configserver;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "aa4dd5",
+        "hash": "fc4ba8db",
+        "encoded": "import%20org.junit.jupiter.api.Test;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "aa4dd5",
+        "hash": "fd71cabf",
+        "encoded": "import%20org.springframework.boot.test.context.SpringBootTest;",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "aa4dd5",
+        "hash": "976902d8",
+        "encoded": "import%20org.springframework.test.context.ActiveProfiles;",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "aa4dd5",
+        "hash": "692dab65",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "aa4dd5",
+        "hash": "f62d781f",
+        "encoded": "*%20Integration%20test%20for%20Config%20Server%20Application",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "aa4dd5",
+        "hash": "817862db",
+        "encoded": "*%20Verifies%20that%20the%20Spring%20context%20loads%20successfully",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "aa4dd5",
+        "hash": "7c8b9e0c",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "aa4dd5",
+        "hash": "7488ec4e",
+        "encoded": "@SpringBootTest",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "aa4dd5",
+        "hash": "0f77c1b0",
+        "encoded": "@ActiveProfiles(%22test%22)",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "aa4dd5",
+        "hash": "67e88cce",
+        "encoded": "class%20ConfigServerApplicationTest%20%7B",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "aa4dd5",
+        "hash": "c239446c",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "aa4dd5",
+        "hash": "1f063af0",
+        "encoded": "void%20contextLoads()%20%7B",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "aa4dd5",
+        "hash": "19c79f0c",
+        "encoded": "//%20This%20test%20ensures%20that%20the%20Spring%20application%20context%20loads%20successfully",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "aa4dd5",
+        "hash": "14cb2a83",
+        "encoded": "//%20with%20all%20required%20beans%20and%20configurations",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "aa4dd5",
+        "hash": "ee20bc2a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "aa4dd5",
+        "hash": "ee39c532",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

@@ -11,17 +11,20 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Entity
 @Table(name = "notifications")
 public class Notification {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(name = "user_id", nullable = false)
     private Long userId;
-    
+
+    @Column(name = "title", nullable = false, length = 255)
+    private String title;
+
     @Column(name = "message", nullable = false, length = 1000)
     private String message;
-    
+
     @Column(name = "type", nullable = false, length = 50)
     private String type;
 
@@ -39,14 +42,15 @@ public class Notification {
     @Column(name = "updated_at")
     @UpdateTimestamp
     private LocalDateTime updatedAt;
-    
+
     // Constructors
     public Notification() {
         this.createdAt = LocalDateTime.now();
     }
-    
-    public Notification(Long userId, String message, String type) {
+
+    public Notification(Long userId, String title, String message, String type) {
         this.userId = userId;
+        this.title = title;
         this.message = message;
         this.type = type;
         this.status = "SENT";
@@ -65,15 +69,23 @@ public class Notification {
     public Long getUserId() {
         return userId;
     }
-    
+
     public void setUserId(Long userId) {
         this.userId = userId;
     }
-    
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getMessage() {
         return message;
     }
-    
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -122,12 +134,13 @@ public class Notification {
     public void preUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
-    
+
     @Override
     public String toString() {
         return "Notification{" +
                 "id=" + id +
                 ", userId=" + userId +
+                ", title='" + title + '\'' +
                 ", message='" + message + '\'' +
                 ", type='" + type + '\'' +
                 ", status='" + status + '\'' +

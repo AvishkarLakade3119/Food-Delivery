@@ -1,0 +1,15 @@
+{
+  "filename": "CustomUserDetailsService.java",
+  "path": "user-service\\src\\main\\java\\com\\fooddelivery\\user\\security\\CustomUserDetailsService.java",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "936e87ee": {
+      "value": "You are a senior Spring Boot + Spring Security + JWT authentication expert. Implement complete JWT token generation, validation, and authentication in my Food Delivery Microservices Platform. The implementation must be production-grade, secure, and work across all services.\nProject: Food Delivery Microservices Platform\nFramework: Spring Boot 3.2.0\nJava: 17\nSpring Security: 6.2.0\nBuild Tool: Maven\nDatabase: PostgreSQL\nServices:\n\nuser-service - port 8085 (handles authentication, user registration,"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

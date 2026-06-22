@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AuthenticationTokenPreferenceState">
+    <option name="authTokenMap">
+      <map>
+        <entry key="Food-Delivery-main" value="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpFbHVmOHRtTWplZEY5ZWlHZDJzaC9XKy8xST0ifQ.eyJ0eXBlIjoiYXQiLCJjbGllbnRJZCI6ImI5N2ZiZWY3LWNhZDktNGU1Ni05ODUwLTM5ZTg2YzhmZGY2MSIsInJlcXVlc3RlZENsaWVudElkIjoiYjk3ZmJlZjctY2FkOS00ZTU2LTk4NTAtMzllODZjOGZkZjYxIiwiaWRwIjoibXNmdCIsImlzcyI6Imh0dHBzOi8vc2FwaWVudGFpcHJvZHVjdHMuY29tIiwicm9sZXMiOlsic3VwZXJfdXNlciJdLCJqdGkiOiJRTThTZ3pHM0NVIiwiaW5kdXN0cnkiOiI0NTNkOWZhZS1mNjNjLTRlOTQtODIxZS0wNzJkNDc0MDg5NmEiLCJVc2VySW5mbyI6eyJpZCI6IjcwM2Q2YjBlLWY4MTQtNGNiZS1hNTUwLTU3YTNhYmE4ZDU2NSIsImVtYWlsIjoiYXZpbGFrYWRAcHVibGljaXNncm91cGUubmV0IiwiZGlzcGxheU5hbWUiOiJBdmlzaGthciBMYWthZGUifSwiYXBwS2V5Ijoic2tfNzU3MzUzMjEyNGJhZiIsImFwcElkIjoiMWUwYWM3ZjItNDY2Mi00MjNkLTg2OGYtZDc5Yjk5NDVlOGNkIiwic2VydmljZXMiOlsibGxtIiwic3RhdGUiXSwiYXBwTmFtZSI6IlBTU2xpbmdzaG90IiwiaWF0IjoxNzgwNTY2NjkyLCJleHAiOjE3ODA1Nzc0OTJ9.HWHcXzIlYX3vuMHd1cVCKi4Q5eJkKh2IXhO2Xphyxto0MVZ7w2PnvOz3bjkaKAykjMNEH8u0rXVhlyqx5-c1210cf4pxKgQen-4KVZJVl37ynTUMTDH7AHbNuLv6vB1qYxtXUUayqfAE9_8xGRb2R1T4Bo6_OS2FUtHfeKHPJLjEEECwMGr6U846Dcw_kCheWBQUbSyd2_ytOmxR3XNVsjBFD4NNiU5prLSFA-GnXNFnTFMAbsvB3STdq62CVcqxWeoIjl3pzErqJ1q7tEz_SAhXZDUcQYusMpFGMioDpGHko6FMC_itm6mBfbJYT3xT79I9FvWQlwrhmXoUthFi2A" />
+      </map>
+    </option>
+    <option name="refreshTokenMap">
+      <map>
+        <entry key="Food-Delivery-main" value="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpFbHVmOHRtTWplZEY5ZWlHZDJzaC9XKy8xST0ifQ.eyJ0eXBlIjoicnQiLCJjbGllbnRJZCI6ImI5N2ZiZWY3LWNhZDktNGU1Ni05ODUwLTM5ZTg2YzhmZGY2MSIsInJlcXVlc3RlZENsaWVudElkIjoiYjk3ZmJlZjctY2FkOS00ZTU2LTk4NTAtMzllODZjOGZkZjYxIiwiaWRwIjoibXNmdCIsImlzcyI6Imh0dHBzOi8vc2FwaWVudGFpcHJvZHVjdHMuY29tIiwicm9sZXMiOlsic3VwZXJfdXNlciJdLCJqdGkiOiJhSFdFOERHT05sIiwiaW5kdXN0cnkiOiI0NTNkOWZhZS1mNjNjLTRlOTQtODIxZS0wNzJkNDc0MDg5NmEiLCJVc2VySW5mbyI6eyJpZCI6IjcwM2Q2YjBlLWY4MTQtNGNiZS1hNTUwLTU3YTNhYmE4ZDU2NSIsImVtYWlsIjoiYXZpbGFrYWRAcHVibGljaXNncm91cGUubmV0IiwiZGlzcGxheU5hbWUiOiJBdmlzaGthciBMYWthZGUifSwiYXBwS2V5Ijoic2tfNzU3MzUzMjEyNGJhZiIsImFwcElkIjoiMWUwYWM3ZjItNDY2Mi00MjNkLTg2OGYtZDc5Yjk5NDVlOGNkIiwic2VydmljZXMiOlsibGxtIiwic3RhdGUiXSwiYXBwTmFtZSI6IlBTU2xpbmdzaG90IiwiaWF0IjoxNzgwNTY2NjkyLCJleHAiOjE3ODA3Mzk0OTJ9.rZUrzC8iCgHFVZ1AMx6T-MbkSuAZCHq2Ayad_1QphaeqP_9hylfAAC3r2U_P_sU27Hd2oAQPfSRDXyv_58hhHjNjHfziXC-Z98SwbiWw0pIatRkPdlw29r4WycUGRCxQdb_BUTXzDtQzJmPdxgHKSho6To46nzjOq2_T5DKzkxMwZI-N9z-Mw8Nea623csiQ5zjTQnDjt_BN_DLPOPWCw3wM5MmVlyzmYk8dGMtoEUbt92MZvvZHIsvVqYsPehv9ieyUo_kMHoMjd_Aow31oDUMC9raOT2GjGzjTfMxkAoruyrxiCy-8I__7Wk-TNxMvPkfQBTKgx53Xm4lK66ubiQ" />
+      </map>
+    </option>
+    <option name="timeWhenAuthTokenWasLastUpdated">
+      <map>
+        <entry key="Food-Delivery-main" value="1780566693515" />
+      </map>
+    </option>
+    <option name="workSpaceIdMap">
+      <map>
+        <entry key="Food-Delivery-main" value="6e5756eb-d7e2-4d80-ad07-9d7a51600d85" />
+      </map>
+    </option>
+    <option name="projectIdMap">
+      <map>
+        <entry key="Food-Delivery-main" value="fa8121c4-e2fc-48f1-9478-8949c04e13cc" />
+      </map>
+    </option>
+    <option name="clientIdMap">
+      <map>
+        <entry key="Food-Delivery-main" value="b97fbef7-cad9-4e56-9850-39e86c8fdf61" />
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,577 @@
+{
+  "user-service\\src\\main\\resources\\application.yml": {
+    "filename": "application.yml",
+    "path": "user-service\\src\\main\\resources\\application.yml",
+    "version": "1.2",
+    "contextFile": "76c14ecc-context.json",
+    "chunks": {
+      "04470a": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075686,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "9691291d",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:44:46 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "3cbcfc": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781153509,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "141ea5f0"
+        },
+        "hash": "0dd394ad",
+        "messageId": "system_56f6cd00-6550-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:21:49 AM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "46e1dc": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781196153,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "df2ea822"
+        },
+        "hash": "ebb9e833",
+        "messageId": "system_79e8b040-65b3-11f1-8360-b9f58a4ec7ec",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:12:33 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "2a2f49": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781277276,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "2c8de540"
+        },
+        "hash": "b28adba3",
+        "messageId": "system_c5e1dcc0-6670-11f1-895d-cd57985b5050",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/12/2026, 8:44:36 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "3cbcfc",
+        "hash": "d1aad523",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "3cbcfc",
+        "hash": "e3c2c125",
+        "encoded": "#%20User%20Service%20-%20Bootstrap%20Configuration",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "3cbcfc",
+        "hash": "6325830d",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "3cbcfc",
+        "hash": "6b94f34f",
+        "encoded": "#%20Minimal%20configuration%20to%20connect%20to%20Config%20Server",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "3cbcfc",
+        "hash": "638a8061",
+        "encoded": "#%20All%20other%20properties%20are%20fetched%20from%20config-server",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "3cbcfc",
+        "hash": "8e5ec212",
+        "encoded": "server:",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "3cbcfc",
+        "hash": "b6b9a905",
+        "encoded": "port:%208085",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "3cbcfc",
+        "hash": "f19d3673",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "3cbcfc",
+        "hash": "e02d1c5c",
+        "encoded": "application:",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "3cbcfc",
+        "hash": "164e9a9e",
+        "encoded": "name:%20user-service",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "3cbcfc",
+        "hash": "f5a3bc6a",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "3cbcfc",
+        "hash": "8061768f",
+        "encoded": "import:%20optional:configserver:http://localhost:8888",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "3cbcfc",
+        "hash": "2d10db39",
+        "encoded": "cloud:",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "3cbcfc",
+        "hash": "9033fb87",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "3cbcfc",
+        "hash": "c2e99ac3",
+        "encoded": "fail-fast:%20false",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "3cbcfc",
+        "hash": "7c5f1b86",
+        "encoded": "override-none:%20true",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "3cbcfc",
+        "hash": "f43585af",
+        "encoded": "allow-override:%20true",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "3cbcfc",
+        "hash": "df0d8f85",
+        "encoded": "override-system-properties:%20false",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "3cbcfc",
+        "hash": "552490da",
+        "encoded": "retry:",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "3cbcfc",
+        "hash": "1d676416",
+        "encoded": "max-attempts:%206",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "3cbcfc",
+        "hash": "323fa2b8",
+        "encoded": "initial-interval:%201000",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "3cbcfc",
+        "hash": "392c24d2",
+        "encoded": "multiplier:%201.1",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "3cbcfc",
+        "hash": "aab53345",
+        "encoded": "max-interval:%202000",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "3cbcfc",
+        "hash": "c46efb26",
+        "encoded": "#%20Fallback%20PostgreSQL%20Database%20Configuration",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "3cbcfc",
+        "hash": "aea787d1",
+        "encoded": "datasource:",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "3cbcfc",
+        "hash": "65957d46",
+        "encoded": "url:%20jdbc:postgresql://localhost:5432/userdb",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "3cbcfc",
+        "hash": "2bb17950",
+        "encoded": "username:%20postgres",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "3cbcfc",
+        "hash": "fffffa0b",
+        "encoded": "password:%20password",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "3cbcfc",
+        "hash": "0c02cf9f",
+        "encoded": "driver-class-name:%20org.postgresql.Driver",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "3cbcfc",
+        "hash": "9fef51c4",
+        "encoded": "#%20Fallback%20JPA%20Configuration",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "3cbcfc",
+        "hash": "305936f8",
+        "encoded": "jpa:",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "3cbcfc",
+        "hash": "c436e5c8",
+        "encoded": "hibernate:",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "3cbcfc",
+        "hash": "4b586772",
+        "encoded": "ddl-auto:%20update",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "3cbcfc",
+        "hash": "0e441197",
+        "encoded": "defer-datasource-initialization:%20true",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "3cbcfc",
+        "hash": "69858405",
+        "encoded": "show-sql:%20true",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "46e1dc",
+        "hash": "f6995797",
+        "encoded": "#%20SQL%20Initialization",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "46e1dc",
+        "hash": "4642c1e0",
+        "encoded": "sql:",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "46e1dc",
+        "hash": "cc3d7a8b",
+        "encoded": "init:",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "46e1dc",
+        "hash": "25bec6ec",
+        "encoded": "mode:%20never",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "2a2f49",
+        "hash": "134cafec",
+        "encoded": "#%20JWT%20Configuration%20(Source%20of%20truth%20-%20DO%20NOT%20CHANGE)",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "2a2f49",
+        "hash": "8e5be5a2",
+        "encoded": "jwt:",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "2a2f49",
+        "hash": "29342b25",
+        "encoded": "secret:%20a-very-long-secure-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-food-delivery-platform-2026",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "2a2f49",
+        "hash": "477efd4a",
+        "encoded": "expiration:%2086400000",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "2a2f49",
+        "hash": "ca5fee3d",
+        "encoded": "header:%20Authorization",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "2a2f49",
+        "hash": "f40f1c13",
+        "encoded": "prefix:%20%22Bearer%20%22",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "46e1dc",
+        "hash": "476c8379",
+        "encoded": "jwt:",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "46e1dc",
+        "hash": "cea3fa2b",
+        "encoded": "secret:%20food-delivery-platform-jwt-secret-key-2026-must-be-at-least-256-bits-long-for-hmac-sha256",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "46e1dc",
+        "hash": "b618a317",
+        "encoded": "expiration:%2086400000",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "46e1dc",
+        "hash": "d265cace",
+        "encoded": "#%20Eureka%20Client%20Configuration",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "46e1dc",
+        "hash": "3582f876",
+        "encoded": "eureka:",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "46e1dc",
+        "hash": "8a7e397a",
+        "encoded": "client:",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "46e1dc",
+        "hash": "2def531f",
+        "encoded": "service-url:",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "46e1dc",
+        "hash": "6fe9ae6a",
+        "encoded": "defaultZone:%20http://localhost:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "46e1dc",
+        "hash": "70088099",
+        "encoded": "register-with-eureka:%20true",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "46e1dc",
+        "hash": "adc4a1b2",
+        "encoded": "fetch-registry:%20true",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "3cbcfc",
+        "hash": "cbcce5d9",
+        "encoded": "sql:",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "3cbcfc",
+        "hash": "e5abcdf4",
+        "encoded": "init:",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "3cbcfc",
+        "hash": "350b058c",
+        "encoded": "mode:%20never",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "3cbcfc",
+        "hash": "a74dde69",
+        "encoded": "#%20Eureka%20Client%20Configuration",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "3cbcfc",
+        "hash": "48233bce",
+        "encoded": "eureka:",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "3cbcfc",
+        "hash": "e896d9ba",
+        "encoded": "client:",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "3cbcfc",
+        "hash": "a46c4502",
+        "encoded": "service-url:",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "3cbcfc",
+        "hash": "a265ba21",
+        "encoded": "defaultZone:%20http://localhost:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "3cbcfc",
+        "hash": "2cd74a19",
+        "encoded": "register-with-eureka:%20true",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "3cbcfc",
+        "hash": "255ab52a",
+        "encoded": "fetch-registry:%20true",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "04470a",
+        "hash": "feb13b57",
+        "encoded": "#%20User%20Service%20-%20Bootstrap%20Configuration",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "04470a",
+        "hash": "ae3cb993",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "04470a",
+        "hash": "6de1afd1",
+        "encoded": "#%20Minimal%20configuration%20to%20connect%20to%20Config%20Server",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "04470a",
+        "hash": "b8582718",
+        "encoded": "#%20All%20other%20properties%20are%20fetched%20from%20config-server",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "04470a",
+        "hash": "ef8464db",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "04470a",
+        "hash": "a3c0d8a0",
+        "encoded": "application:",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "04470a",
+        "hash": "e203a4d9",
+        "encoded": "name:%20user-service",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "04470a",
+        "hash": "24f2ae96",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "04470a",
+        "hash": "2d1b1443",
+        "encoded": "import:%20optional:configserver:http://localhost:8888",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "04470a",
+        "hash": "1f33a8f7",
+        "encoded": "cloud:",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "04470a",
+        "hash": "aa24cf96",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "04470a",
+        "hash": "e9d6fc09",
+        "encoded": "fail-fast:%20false",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "04470a",
+        "hash": "c08a2ad2",
+        "encoded": "retry:",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "04470a",
+        "hash": "7ffb8dd4",
+        "encoded": "max-attempts:%206",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "04470a",
+        "hash": "967f265d",
+        "encoded": "initial-interval:%201000",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "04470a",
+        "hash": "fda1e520",
+        "encoded": "multiplier:%201.1",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "04470a",
+        "hash": "8430ab1a",
+        "encoded": "max-interval:%202000",
+        "prevChunkIds": []
+      }
+    },
+    "_prevLineCount": 58
+  }
+}

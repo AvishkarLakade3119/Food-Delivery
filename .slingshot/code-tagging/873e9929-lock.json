@@ -1,0 +1,84 @@
+{
+  "order-service\\src\\main\\java\\com\\fooddelivery\\order\\service\\OrderService.java": {
+    "filename": "OrderService.java",
+    "path": "order-service\\src\\main\\java\\com\\fooddelivery\\order\\service\\OrderService.java",
+    "version": "1.2",
+    "contextFile": "873e9929-context.json",
+    "chunks": {
+      "f6fbf0": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427395,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "edf5e6b0",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:26:35 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "d1cb57": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427395,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "a172ed50",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:26:35 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "6a33ec": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427395,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "9d8e37a9",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:26:35 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "bbf4c4": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427395,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "255cddbc",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:26:35 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {},
+    "_prevLineCount": 314
+  }
+}

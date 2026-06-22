@@ -1,0 +1,1248 @@
+{
+  "docker-compose.yml": {
+    "filename": "docker-compose.yml",
+    "path": "docker-compose.yml",
+    "version": "1.2",
+    "contextFile": "15e2d02c-context.json",
+    "chunks": {
+      "abcd62": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075792,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "69fe5df5",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:46:32 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "abcd62",
+        "hash": "f089e2bc",
+        "encoded": "version:%20'3.8'",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "abcd62",
+        "hash": "751b5859",
+        "encoded": "services:",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "abcd62",
+        "hash": "5626588b",
+        "encoded": "#%20PostgreSQL%20Database%20for%20all%20services",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "abcd62",
+        "hash": "3f9a29d2",
+        "encoded": "postgres:",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "abcd62",
+        "hash": "4261737d",
+        "encoded": "image:%20postgres:15-alpine",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "abcd62",
+        "hash": "61fad1ad",
+        "encoded": "container_name:%20postgres",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "abcd62",
+        "hash": "1a67aac5",
+        "encoded": "environment:",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "abcd62",
+        "hash": "f3f6b4d2",
+        "encoded": "POSTGRES_USER:%20postgres",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "abcd62",
+        "hash": "45ffc912",
+        "encoded": "POSTGRES_PASSWORD:%20postgres",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "abcd62",
+        "hash": "1b0b0e7c",
+        "encoded": "ports:",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "abcd62",
+        "hash": "e1766b98",
+        "encoded": "-%20%225432:5432%22",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "abcd62",
+        "hash": "5bdbafe4",
+        "encoded": "volumes:",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "abcd62",
+        "hash": "49fecf34",
+        "encoded": "-%20postgres-data:/var/lib/postgresql/data",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "abcd62",
+        "hash": "6f36bfaa",
+        "encoded": "-%20./init-databases.sql:/docker-entrypoint-initdb.d/init-databases.sql",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "abcd62",
+        "hash": "7c2f6c19",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "abcd62",
+        "hash": "c926de3e",
+        "encoded": "-%20food-delivery-network",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "abcd62",
+        "hash": "c67c8432",
+        "encoded": "healthcheck:",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "abcd62",
+        "hash": "09d1dba2",
+        "encoded": "test:%20%5B%22CMD-SHELL%22,%20%22pg_isready%20-U%20postgres%22%5D",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "abcd62",
+        "hash": "684f8e58",
+        "encoded": "interval:%2010s",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "abcd62",
+        "hash": "a003074f",
+        "encoded": "timeout:%205s",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "abcd62",
+        "hash": "5d9ed965",
+        "encoded": "retries:%205",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "abcd62",
+        "hash": "019f05d1",
+        "encoded": "#%20Config%20Server%20-%20Must%20start%20first",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "abcd62",
+        "hash": "ed2c2fb7",
+        "encoded": "config-server:",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "abcd62",
+        "hash": "ad28c4ac",
+        "encoded": "build:",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "abcd62",
+        "hash": "7d677937",
+        "encoded": "context:%20./config-server",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "abcd62",
+        "hash": "ba68d854",
+        "encoded": "dockerfile:%20Dockerfile",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "abcd62",
+        "hash": "2c526d5b",
+        "encoded": "container_name:%20config-server",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "abcd62",
+        "hash": "f334e38e",
+        "encoded": "ports:",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "abcd62",
+        "hash": "450ed6c3",
+        "encoded": "-%20%228888:8888%22",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "abcd62",
+        "hash": "5cc6deae",
+        "encoded": "environment:",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "abcd62",
+        "hash": "9f18a74b",
+        "encoded": "-%20SPRING_PROFILES_ACTIVE=docker",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "abcd62",
+        "hash": "5be7852e",
+        "encoded": "volumes:",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "abcd62",
+        "hash": "b78e37c3",
+        "encoded": "-%20$%7BHOME%7D/config-repo:/root/config-repo",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "abcd62",
+        "hash": "3843a2f3",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "abcd62",
+        "hash": "fafe01d2",
+        "encoded": "-%20food-delivery-network",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "abcd62",
+        "hash": "44ef0617",
+        "encoded": "healthcheck:",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "abcd62",
+        "hash": "e813ac50",
+        "encoded": "test:%20%5B%22CMD%22,%20%22wget%22,%20%22--no-verbose%22,%20%22--tries=1%22,%20%22--spider%22,%20%22http://localhost:8888/actuator/health%22%5D",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "abcd62",
+        "hash": "707b522f",
+        "encoded": "interval:%2010s",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "abcd62",
+        "hash": "9129a96b",
+        "encoded": "timeout:%205s",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "abcd62",
+        "hash": "daac0287",
+        "encoded": "retries:%2010",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "abcd62",
+        "hash": "facffb1b",
+        "encoded": "start_period:%2040s",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "abcd62",
+        "hash": "ff62d4d0",
+        "encoded": "#%20Eureka%20Server%20-%20Starts%20after%20Config%20Server",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "abcd62",
+        "hash": "5c60769b",
+        "encoded": "eureka-server:",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "abcd62",
+        "hash": "05afe0ca",
+        "encoded": "build:",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "abcd62",
+        "hash": "63bdd13e",
+        "encoded": "context:%20./eureka-server",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "abcd62",
+        "hash": "c84727fd",
+        "encoded": "dockerfile:%20Dockerfile",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "abcd62",
+        "hash": "466b6629",
+        "encoded": "container_name:%20eureka-server",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "abcd62",
+        "hash": "eed37b84",
+        "encoded": "ports:",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "abcd62",
+        "hash": "fb360978",
+        "encoded": "-%20%228761:8761%22",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "abcd62",
+        "hash": "7f7775d3",
+        "encoded": "environment:",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "abcd62",
+        "hash": "8b4b242e",
+        "encoded": "-%20SPRING_PROFILES_ACTIVE=docker",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "abcd62",
+        "hash": "6052a4e9",
+        "encoded": "-%20SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "abcd62",
+        "hash": "8e2ce887",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "abcd62",
+        "hash": "c76f7b56",
+        "encoded": "-%20food-delivery-network",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "abcd62",
+        "hash": "80902dfc",
+        "encoded": "depends_on:",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "abcd62",
+        "hash": "5cead33b",
+        "encoded": "config-server:",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "abcd62",
+        "hash": "5cfb4cfb",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "abcd62",
+        "hash": "2413ac1f",
+        "encoded": "healthcheck:",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "abcd62",
+        "hash": "a828f2e6",
+        "encoded": "test:%20%5B%22CMD%22,%20%22wget%22,%20%22--no-verbose%22,%20%22--tries=1%22,%20%22--spider%22,%20%22http://localhost:8761/actuator/health%22%5D",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "abcd62",
+        "hash": "cadcb52a",
+        "encoded": "interval:%2010s",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "abcd62",
+        "hash": "42ed083b",
+        "encoded": "timeout:%205s",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "abcd62",
+        "hash": "06ae96df",
+        "encoded": "retries:%2010",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "abcd62",
+        "hash": "15945bca",
+        "encoded": "start_period:%2040s",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "abcd62",
+        "hash": "a95a49f6",
+        "encoded": "#%20API%20Gateway%20-%20Starts%20after%20Eureka",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "abcd62",
+        "hash": "0747c9da",
+        "encoded": "api-gateway:",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "abcd62",
+        "hash": "c0c6fa18",
+        "encoded": "build:",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "abcd62",
+        "hash": "5c3d53e3",
+        "encoded": "context:%20./api-gateway",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "abcd62",
+        "hash": "8f1fdd31",
+        "encoded": "dockerfile:%20Dockerfile",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "abcd62",
+        "hash": "f4028b79",
+        "encoded": "container_name:%20api-gateway",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "abcd62",
+        "hash": "ac43e412",
+        "encoded": "ports:",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "abcd62",
+        "hash": "df2a57a5",
+        "encoded": "-%20%228080:8080%22",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "abcd62",
+        "hash": "2f76b313",
+        "encoded": "environment:",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "abcd62",
+        "hash": "54f2958d",
+        "encoded": "-%20SPRING_PROFILES_ACTIVE=docker",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "abcd62",
+        "hash": "45437b32",
+        "encoded": "-%20SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "abcd62",
+        "hash": "2421012e",
+        "encoded": "-%20EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "abcd62",
+        "hash": "e9bd2968",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "abcd62",
+        "hash": "463d6b63",
+        "encoded": "-%20food-delivery-network",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "abcd62",
+        "hash": "fb662175",
+        "encoded": "depends_on:",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "abcd62",
+        "hash": "d94fd47c",
+        "encoded": "eureka-server:",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "abcd62",
+        "hash": "0cbd9f52",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "abcd62",
+        "hash": "701d2eff",
+        "encoded": "config-server:",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "abcd62",
+        "hash": "a94483ed",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "abcd62",
+        "hash": "7084df02",
+        "encoded": "#%20User%20Service",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "abcd62",
+        "hash": "47ae1f2f",
+        "encoded": "user-service:",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "abcd62",
+        "hash": "5ef67522",
+        "encoded": "build:",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "abcd62",
+        "hash": "e91d8edd",
+        "encoded": "context:%20./user-service",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "abcd62",
+        "hash": "285aa867",
+        "encoded": "dockerfile:%20Dockerfile",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "abcd62",
+        "hash": "1f38d042",
+        "encoded": "container_name:%20user-service",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "abcd62",
+        "hash": "1a1d16b1",
+        "encoded": "ports:",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "abcd62",
+        "hash": "9cf45cd2",
+        "encoded": "-%20%228081:8081%22",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "abcd62",
+        "hash": "c191d09b",
+        "encoded": "environment:",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "abcd62",
+        "hash": "4284814f",
+        "encoded": "-%20SPRING_PROFILES_ACTIVE=docker",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "abcd62",
+        "hash": "1fbf85d6",
+        "encoded": "-%20SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "abcd62",
+        "hash": "30b406a2",
+        "encoded": "-%20SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/userdb",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "abcd62",
+        "hash": "8a740fbc",
+        "encoded": "-%20SPRING_DATASOURCE_USERNAME=postgres",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "abcd62",
+        "hash": "4e07a9d4",
+        "encoded": "-%20SPRING_DATASOURCE_PASSWORD=postgres",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "abcd62",
+        "hash": "cb1dcab9",
+        "encoded": "-%20EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "abcd62",
+        "hash": "96474265",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "abcd62",
+        "hash": "1cfba602",
+        "encoded": "-%20food-delivery-network",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "abcd62",
+        "hash": "e1b1d342",
+        "encoded": "depends_on:",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "abcd62",
+        "hash": "2975ae14",
+        "encoded": "postgres:",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "abcd62",
+        "hash": "0b029180",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "abcd62",
+        "hash": "4dff19a6",
+        "encoded": "eureka-server:",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "abcd62",
+        "hash": "79538494",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "abcd62",
+        "hash": "b39f00d3",
+        "encoded": "config-server:",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "abcd62",
+        "hash": "c71c4cb4",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "abcd62",
+        "hash": "6b992b8f",
+        "encoded": "#%20Restaurant%20Service",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "abcd62",
+        "hash": "e10e1b11",
+        "encoded": "restaurant-service:",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "abcd62",
+        "hash": "3b1a7a9a",
+        "encoded": "build:",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "abcd62",
+        "hash": "1384ded3",
+        "encoded": "context:%20./restaurant-service",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "abcd62",
+        "hash": "8db0ceb7",
+        "encoded": "dockerfile:%20Dockerfile",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "abcd62",
+        "hash": "15086443",
+        "encoded": "container_name:%20restaurant-service",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "abcd62",
+        "hash": "f6b6ae50",
+        "encoded": "ports:",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "abcd62",
+        "hash": "ad1fb4cb",
+        "encoded": "-%20%228082:8082%22",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "abcd62",
+        "hash": "bf5f7c75",
+        "encoded": "environment:",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "abcd62",
+        "hash": "f0e3b440",
+        "encoded": "-%20SPRING_PROFILES_ACTIVE=docker",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "abcd62",
+        "hash": "b9375517",
+        "encoded": "-%20SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "abcd62",
+        "hash": "50b1db67",
+        "encoded": "-%20SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/restaurantdb",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "abcd62",
+        "hash": "99afe7e4",
+        "encoded": "-%20SPRING_DATASOURCE_USERNAME=postgres",
+        "prevChunkIds": []
+      },
+      "125": {
+        "chunkId": "abcd62",
+        "hash": "39b416b7",
+        "encoded": "-%20SPRING_DATASOURCE_PASSWORD=postgres",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "abcd62",
+        "hash": "c98ab1f8",
+        "encoded": "-%20EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "abcd62",
+        "hash": "22bbd6ac",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "128": {
+        "chunkId": "abcd62",
+        "hash": "17864ee0",
+        "encoded": "-%20food-delivery-network",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "abcd62",
+        "hash": "d1e86d91",
+        "encoded": "depends_on:",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "abcd62",
+        "hash": "b9321cec",
+        "encoded": "postgres:",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "abcd62",
+        "hash": "24ff48c4",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "abcd62",
+        "hash": "2ff5171a",
+        "encoded": "eureka-server:",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "abcd62",
+        "hash": "0d283cdc",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "134": {
+        "chunkId": "abcd62",
+        "hash": "a281ea01",
+        "encoded": "config-server:",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "abcd62",
+        "hash": "4a79ea88",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "abcd62",
+        "hash": "dd55a0a4",
+        "encoded": "#%20Order%20Service",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "abcd62",
+        "hash": "391d7d4f",
+        "encoded": "order-service:",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "abcd62",
+        "hash": "2d5909db",
+        "encoded": "build:",
+        "prevChunkIds": []
+      },
+      "140": {
+        "chunkId": "abcd62",
+        "hash": "11e3e454",
+        "encoded": "context:%20./order-service",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "abcd62",
+        "hash": "ec658eb1",
+        "encoded": "dockerfile:%20Dockerfile",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "abcd62",
+        "hash": "6d1192e5",
+        "encoded": "container_name:%20order-service",
+        "prevChunkIds": []
+      },
+      "143": {
+        "chunkId": "abcd62",
+        "hash": "ed99ec66",
+        "encoded": "ports:",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "abcd62",
+        "hash": "d1a5171c",
+        "encoded": "-%20%228083:8083%22",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "abcd62",
+        "hash": "90ceb467",
+        "encoded": "environment:",
+        "prevChunkIds": []
+      },
+      "146": {
+        "chunkId": "abcd62",
+        "hash": "0ffee772",
+        "encoded": "-%20SPRING_PROFILES_ACTIVE=docker",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "abcd62",
+        "hash": "863f9258",
+        "encoded": "-%20SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "abcd62",
+        "hash": "c66a9114",
+        "encoded": "-%20SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/orderdb",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "abcd62",
+        "hash": "a16e5828",
+        "encoded": "-%20SPRING_DATASOURCE_USERNAME=postgres",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "abcd62",
+        "hash": "cddaf005",
+        "encoded": "-%20SPRING_DATASOURCE_PASSWORD=postgres",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "abcd62",
+        "hash": "2665c4bc",
+        "encoded": "-%20EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "abcd62",
+        "hash": "cc72102d",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "abcd62",
+        "hash": "32296361",
+        "encoded": "-%20food-delivery-network",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "abcd62",
+        "hash": "9e235eb5",
+        "encoded": "depends_on:",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "abcd62",
+        "hash": "cda3d4da",
+        "encoded": "postgres:",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "abcd62",
+        "hash": "82f33550",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "abcd62",
+        "hash": "168f3d13",
+        "encoded": "eureka-server:",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "abcd62",
+        "hash": "d6f7bee2",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "abcd62",
+        "hash": "df52ff7d",
+        "encoded": "config-server:",
+        "prevChunkIds": []
+      },
+      "160": {
+        "chunkId": "abcd62",
+        "hash": "f1ed1c03",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "abcd62",
+        "hash": "c7e88665",
+        "encoded": "#%20Payment%20Service",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "abcd62",
+        "hash": "4d5ff2e7",
+        "encoded": "payment-service:",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "abcd62",
+        "hash": "d87f6e03",
+        "encoded": "build:",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "abcd62",
+        "hash": "7bdbaf4d",
+        "encoded": "context:%20./payment-service",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "abcd62",
+        "hash": "37839701",
+        "encoded": "dockerfile:%20Dockerfile",
+        "prevChunkIds": []
+      },
+      "167": {
+        "chunkId": "abcd62",
+        "hash": "219de8f8",
+        "encoded": "container_name:%20payment-service",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "abcd62",
+        "hash": "90de6583",
+        "encoded": "ports:",
+        "prevChunkIds": []
+      },
+      "169": {
+        "chunkId": "abcd62",
+        "hash": "b39cf09a",
+        "encoded": "-%20%228084:8084%22",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "abcd62",
+        "hash": "ef774e36",
+        "encoded": "environment:",
+        "prevChunkIds": []
+      },
+      "171": {
+        "chunkId": "abcd62",
+        "hash": "69a57d80",
+        "encoded": "-%20SPRING_PROFILES_ACTIVE=docker",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "abcd62",
+        "hash": "bcfb5108",
+        "encoded": "-%20SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888",
+        "prevChunkIds": []
+      },
+      "173": {
+        "chunkId": "abcd62",
+        "hash": "b245d1a7",
+        "encoded": "-%20SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/paymentdb",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "abcd62",
+        "hash": "eadf9ac3",
+        "encoded": "-%20SPRING_DATASOURCE_USERNAME=postgres",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "abcd62",
+        "hash": "c2eaeb28",
+        "encoded": "-%20SPRING_DATASOURCE_PASSWORD=postgres",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "abcd62",
+        "hash": "7f913852",
+        "encoded": "-%20EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "abcd62",
+        "hash": "1b50ded7",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "abcd62",
+        "hash": "be671ed2",
+        "encoded": "-%20food-delivery-network",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "abcd62",
+        "hash": "77a5b4dd",
+        "encoded": "depends_on:",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "abcd62",
+        "hash": "15699a19",
+        "encoded": "postgres:",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "abcd62",
+        "hash": "cb3110a4",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "abcd62",
+        "hash": "c0751162",
+        "encoded": "eureka-server:",
+        "prevChunkIds": []
+      },
+      "183": {
+        "chunkId": "abcd62",
+        "hash": "9bf87614",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "abcd62",
+        "hash": "ca81a3fe",
+        "encoded": "config-server:",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "abcd62",
+        "hash": "47f97f92",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "abcd62",
+        "hash": "70d637e9",
+        "encoded": "#%20Notification%20Service",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "abcd62",
+        "hash": "dc7b9128",
+        "encoded": "notification-service:",
+        "prevChunkIds": []
+      },
+      "189": {
+        "chunkId": "abcd62",
+        "hash": "93dd0de9",
+        "encoded": "build:",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "abcd62",
+        "hash": "4731af6e",
+        "encoded": "context:%20./notification-service",
+        "prevChunkIds": []
+      },
+      "191": {
+        "chunkId": "abcd62",
+        "hash": "278a5911",
+        "encoded": "dockerfile:%20Dockerfile",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "abcd62",
+        "hash": "c07035df",
+        "encoded": "container_name:%20notification-service",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "abcd62",
+        "hash": "6e87ff95",
+        "encoded": "ports:",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "abcd62",
+        "hash": "98e14656",
+        "encoded": "-%20%228085:8085%22",
+        "prevChunkIds": []
+      },
+      "195": {
+        "chunkId": "abcd62",
+        "hash": "0795a999",
+        "encoded": "environment:",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "abcd62",
+        "hash": "f96b532b",
+        "encoded": "-%20SPRING_PROFILES_ACTIVE=docker",
+        "prevChunkIds": []
+      },
+      "197": {
+        "chunkId": "abcd62",
+        "hash": "f2387d36",
+        "encoded": "-%20SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "abcd62",
+        "hash": "df595712",
+        "encoded": "-%20MONGODB_URI=$%7BMONGODB_URI%7D",
+        "prevChunkIds": []
+      },
+      "199": {
+        "chunkId": "abcd62",
+        "hash": "e04101a1",
+        "encoded": "-%20EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "abcd62",
+        "hash": "81067b3c",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "201": {
+        "chunkId": "abcd62",
+        "hash": "7cdfe182",
+        "encoded": "-%20food-delivery-network",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "abcd62",
+        "hash": "2c39d39e",
+        "encoded": "depends_on:",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "abcd62",
+        "hash": "5fc2b82f",
+        "encoded": "eureka-server:",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "abcd62",
+        "hash": "186adb64",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "abcd62",
+        "hash": "18747a22",
+        "encoded": "config-server:",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "abcd62",
+        "hash": "40f610c1",
+        "encoded": "condition:%20service_healthy",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "abcd62",
+        "hash": "9e202a40",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "209": {
+        "chunkId": "abcd62",
+        "hash": "d9ce5427",
+        "encoded": "food-delivery-network:",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "abcd62",
+        "hash": "b005177c",
+        "encoded": "driver:%20bridge",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "abcd62",
+        "hash": "0740618e",
+        "encoded": "volumes:",
+        "prevChunkIds": []
+      },
+      "213": {
+        "chunkId": "abcd62",
+        "hash": "532116f6",
+        "encoded": "postgres-data:",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

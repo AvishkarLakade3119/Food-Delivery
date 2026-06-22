@@ -1,0 +1,276 @@
+{
+  "user-service\\src\\main\\java\\com\\fooddelivery\\user\\controller\\ProfileController.java": {
+    "filename": "ProfileController.java",
+    "path": "user-service\\src\\main\\java\\com\\fooddelivery\\user\\controller\\ProfileController.java",
+    "version": "1.2",
+    "contextFile": "adfa5db7-context.json",
+    "chunks": {
+      "ed1e1a": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781166449,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "936e87ee"
+        },
+        "hash": "7277ba07",
+        "messageId": "system_dbaceda0-656d-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 1:57:29 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "ed1e1a",
+        "hash": "2cce53cb",
+        "encoded": "package%20com.fooddelivery.user.controller;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "ed1e1a",
+        "hash": "c9582670",
+        "encoded": "import%20com.fooddelivery.user.dto.UserResponse;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "ed1e1a",
+        "hash": "12a224f1",
+        "encoded": "import%20com.fooddelivery.user.entity.User;",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "ed1e1a",
+        "hash": "7ed4b0fb",
+        "encoded": "import%20com.fooddelivery.user.service.UserService;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "ed1e1a",
+        "hash": "b2c0a8ea",
+        "encoded": "import%20org.slf4j.Logger;",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "ed1e1a",
+        "hash": "7ea108b7",
+        "encoded": "import%20org.slf4j.LoggerFactory;",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "ed1e1a",
+        "hash": "180ea47a",
+        "encoded": "import%20org.springframework.beans.factory.annotation.Autowired;",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "ed1e1a",
+        "hash": "57988acc",
+        "encoded": "import%20org.springframework.http.ResponseEntity;",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "ed1e1a",
+        "hash": "3ef0a804",
+        "encoded": "import%20org.springframework.security.core.Authentication;",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "ed1e1a",
+        "hash": "ba5c8adb",
+        "encoded": "import%20org.springframework.security.core.context.SecurityContextHolder;",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "ed1e1a",
+        "hash": "3e9409fc",
+        "encoded": "import%20org.springframework.web.bind.annotation.GetMapping;",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "ed1e1a",
+        "hash": "a742954d",
+        "encoded": "import%20org.springframework.web.bind.annotation.RequestMapping;",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "ed1e1a",
+        "hash": "54e8fa48",
+        "encoded": "import%20org.springframework.web.bind.annotation.RestController;",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "ed1e1a",
+        "hash": "e83745c3",
+        "encoded": "@RestController",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "ed1e1a",
+        "hash": "fb867f65",
+        "encoded": "@RequestMapping(%22/api/users%22)",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "ed1e1a",
+        "hash": "f0061484",
+        "encoded": "public%20class%20ProfileController%20%7B",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "ed1e1a",
+        "hash": "07f06243",
+        "encoded": "private%20static%20final%20Logger%20logger%20=%20LoggerFactory.getLogger(ProfileController.class);",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "ed1e1a",
+        "hash": "aa355ced",
+        "encoded": "@Autowired",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "ed1e1a",
+        "hash": "445b4041",
+        "encoded": "private%20UserService%20userService;",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "ed1e1a",
+        "hash": "29b316cc",
+        "encoded": "@GetMapping(%22/profile%22)",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "ed1e1a",
+        "hash": "a9599ab3",
+        "encoded": "public%20ResponseEntity%3CUserResponse%3E%20getUserProfile()%20%7B",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "ed1e1a",
+        "hash": "d6f57e3d",
+        "encoded": "Authentication%20authentication%20=%20SecurityContextHolder.getContext().getAuthentication();",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "ed1e1a",
+        "hash": "17634e4f",
+        "encoded": "String%20email%20=%20authentication.getName();",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "ed1e1a",
+        "hash": "a1510642",
+        "encoded": "logger.info(%22Profile%20request%20for%20user:%20%7B%7D%22,%20email);",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "ed1e1a",
+        "hash": "19e54266",
+        "encoded": "User%20user%20=%20userService.getUserByEmail(email);",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "ed1e1a",
+        "hash": "d27dcb20",
+        "encoded": "UserResponse%20response%20=%20new%20UserResponse(",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "ed1e1a",
+        "hash": "2d6c7ff5",
+        "encoded": "user.getId(),",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "ed1e1a",
+        "hash": "dc3a28d6",
+        "encoded": "user.getUsername(),",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "ed1e1a",
+        "hash": "fbd6fe7f",
+        "encoded": "user.getEmail(),",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "ed1e1a",
+        "hash": "adc443fd",
+        "encoded": "user.getFirstName(),",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "ed1e1a",
+        "hash": "8aaa4d55",
+        "encoded": "user.getLastName(),",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "ed1e1a",
+        "hash": "85c9972c",
+        "encoded": "user.getName(),",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "ed1e1a",
+        "hash": "e7f81765",
+        "encoded": "user.getPhone(),",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "ed1e1a",
+        "hash": "48b3e5c6",
+        "encoded": "user.getAddress(),",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "ed1e1a",
+        "hash": "0bbb5518",
+        "encoded": "user.getRole(),",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "ed1e1a",
+        "hash": "b7f079a1",
+        "encoded": "user.getCreatedAt(),",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "ed1e1a",
+        "hash": "1556f212",
+        "encoded": "user.getUpdatedAt()",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "ed1e1a",
+        "hash": "433d5806",
+        "encoded": ");",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "ed1e1a",
+        "hash": "81a1ce23",
+        "encoded": "return%20ResponseEntity.ok(response);",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "ed1e1a",
+        "hash": "d90811a0",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "ed1e1a",
+        "hash": "0b4804f7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

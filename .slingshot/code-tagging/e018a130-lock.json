@@ -1,0 +1,180 @@
+{
+  "config-server\\Dockerfile": {
+    "filename": "Dockerfile",
+    "path": "config-server\\Dockerfile",
+    "version": "1.2",
+    "contextFile": "e018a130-context.json",
+    "chunks": {
+      "38a861": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075073,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "e88c9d19",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:34:33 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "38a861",
+        "hash": "0cf7a965",
+        "encoded": "#%20Multi-stage%20Dockerfile%20for%20Spring%20Cloud%20Config%20Server",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "38a861",
+        "hash": "e7ee3e3e",
+        "encoded": "#%20Stage%201:%20Build%20stage",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "38a861",
+        "hash": "1cd23aa1",
+        "encoded": "FROM%20maven:3.9.6-eclipse-temurin-17%20AS%20build",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "38a861",
+        "hash": "951285e0",
+        "encoded": "WORKDIR%20/app",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "38a861",
+        "hash": "2165ca2a",
+        "encoded": "#%20Copy%20pom.xml%20and%20download%20dependencies%20(for%20better%20layer%20caching)",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "38a861",
+        "hash": "afc65b2b",
+        "encoded": "COPY%20pom.xml%20.",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "38a861",
+        "hash": "ed802575",
+        "encoded": "RUN%20mvn%20dependency:go-offline%20-B",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "38a861",
+        "hash": "8e29b892",
+        "encoded": "#%20Copy%20source%20code%20and%20build%20the%20application",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "38a861",
+        "hash": "dc842938",
+        "encoded": "COPY%20src%20./src",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "38a861",
+        "hash": "8a514a76",
+        "encoded": "RUN%20mvn%20clean%20package%20-DskipTests",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "38a861",
+        "hash": "76707c1c",
+        "encoded": "#%20Stage%202:%20Runtime%20stage",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "38a861",
+        "hash": "8b679a5f",
+        "encoded": "FROM%20eclipse-temurin:17-jre-alpine",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "38a861",
+        "hash": "773f041b",
+        "encoded": "WORKDIR%20/app",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "38a861",
+        "hash": "567ef43d",
+        "encoded": "#%20Create%20non-root%20user%20for%20security",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "38a861",
+        "hash": "073a6bab",
+        "encoded": "RUN%20addgroup%20-S%20spring%20&&%20adduser%20-S%20spring%20-G%20spring",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "38a861",
+        "hash": "ff693324",
+        "encoded": "USER%20spring:spring",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "38a861",
+        "hash": "4e4bdd5e",
+        "encoded": "#%20Copy%20the%20built%20jar%20from%20build%20stage",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "38a861",
+        "hash": "6f802b89",
+        "encoded": "COPY%20--from=build%20/app/target/*.jar%20app.jar",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "38a861",
+        "hash": "c4b2ca32",
+        "encoded": "#%20Expose%20config%20server%20port",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "38a861",
+        "hash": "7ce8b62f",
+        "encoded": "EXPOSE%208888",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "38a861",
+        "hash": "a4d888f4",
+        "encoded": "#%20Health%20check",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "38a861",
+        "hash": "7b255d60",
+        "encoded": "HEALTHCHECK%20--interval=30s%20--timeout=3s%20--start-period=60s%20--retries=3%20%5C",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "38a861",
+        "hash": "7c3f2e12",
+        "encoded": "CMD%20wget%20--no-verbose%20--tries=1%20--spider%20http://localhost:8888/actuator/health%20%7C%7C%20exit%201",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "38a861",
+        "hash": "5cece53b",
+        "encoded": "#%20Run%20the%20application",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "38a861",
+        "hash": "bd59253e",
+        "encoded": "ENTRYPOINT%20%5B%22java%22,%20%22-jar%22,%20%22/app/app.jar%22%5D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

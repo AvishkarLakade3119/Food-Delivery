@@ -15,7 +15,9 @@ class PaymentServiceMainTest {
             "--spring.jpa.hibernate.ddl-auto=create-drop",
             "--eureka.client.enabled=false",
             "--spring.cloud.discovery.enabled=false",
-            "--server.port=0"
+            "--server.port=0",
+            "--jwt.secret=test-secret-key-for-unit-testing-must-be-long-enough-for-hs256-algorithm-food-delivery",
+            "--jwt.expiration=86400000"
         });
     }
 }

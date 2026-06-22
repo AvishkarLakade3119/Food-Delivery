@@ -1,0 +1,15 @@
+{
+  "filename": "api-gateway.yml",
+  "path": "config-repo\\api-gateway.yml",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "313d9cd4": {
+      "value": "You are an expert Java Spring Boot microservices architect. I have an existing Food Delivery Microservices Platform and I need you to implement Phase 1 — Spring Cloud Config Server setup with centralized configuration management.\n\n## My Existing Project Structure\n\nI have the following microservices already running:\n\n1. eureka-server (Service Discovery - port 8761)\n2. api-gateway (Spring Cloud Gateway - port 8080)\n3. user-service (port 8081, PostgreSQL database)\n4. restaurant-service (port 8082, "
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

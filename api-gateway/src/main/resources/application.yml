@@ -1,99 +1,82 @@
 server:
-  port: 8081
+  port: 8080
 
 spring:
   application:
     name: api-gateway
+  config:
+    import: optional:configserver:http://localhost:8888
   cloud:
+    config:
+      fail-fast: false
+      override-none: true
+      allow-override: true
+      override-system-properties: false
+      retry:
+        max-attempts: 6
+        initial-interval: 1000
+        multiplier: 1.1
+        max-interval: 2000
     gateway:
       discovery:
         locator:
-          enabled: true
+          enabled: false
           lower-case-service-id: true
       routes:
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/api/users/**
-        - id: user-auth-service
-          uri: lb://user-service
-          predicates:
-            - Path=/api/auth/**
+            - Path=/api/users/**,/api/auth/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /${segment}
+            - name: CircuitBreaker
+              args:
+                name: userServiceCB
+                fallbackUri: forward:/fallback/users
+
         - id: restaurant-service
           uri: lb://restaurant-service
           predicates:
-            - Path=/api/restaurants/**
+            - Path=/api/restaurants/**,/api/menu/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /${segment}
+            - name: CircuitBreaker
+              args:
+                name: restaurantServiceCB
+                fallbackUri: forward:/fallback/restaurants
+
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/api/orders/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /${segment}
+            - name: CircuitBreaker
+              args:
+                name: orderServiceCB
+                fallbackUri: forward:/fallback/orders
+
         - id: payment-service
           uri: lb://payment-service
           predicates:
             - Path=/api/payments/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /${segment}
+            - name: CircuitBreaker
+              args:
+                name: paymentServiceCB
+                fallbackUri: forward:/fallback/payments
+
         - id: notification-service
           uri: lb://notification-service
           predicates:
             - Path=/api/notifications/**
-        - id: menu-items-service
-          uri: lb://restaurant-service
-          predicates:
-            - Path=/api/menu-items/**
-        # Direct service health endpoints
-        - id: user-service-actuator
-          uri: lb://user-service
-          predicates:
-            - Path=/user-service/actuator/**
           filters:
-            - StripPrefix=1
-        - id: restaurant-service-actuator
-          uri: lb://restaurant-service
-          predicates:
-            - Path=/restaurant-service/actuator/**
-          filters:
-            - StripPrefix=1
-        - id: order-service-actuator
-          uri: lb://order-service
-          predicates:
-            - Path=/order-service/actuator/**
-          filters:
-            - StripPrefix=1
-        - id: payment-service-actuator
-          uri: lb://payment-service
-          predicates:
-            - Path=/payment-service/actuator/**
-          filters:
-            - StripPrefix=1
-        - id: notification-service-actuator
-          uri: lb://notification-service
-          predicates:
-            - Path=/notification-service/actuator/**
-          filters:
-            - StripPrefix=1
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins:
-              - "http://localhost:3000"
-              - "http://localhost:4200"
-              - "http://localhost:8080"
-              - "http://localhost:8081"
-              - "http://localhost:8082"
-              - "http://localhost:8083"
-              - "http://localhost:8084"
-              - "http://localhost:8085"
-              - "http://localhost:8086"
-            allowedMethods:
-              - "GET"
-              - "POST"
-              - "PUT"
-              - "DELETE"
-              - "OPTIONS"
-              - "HEAD"
-              - "PATCH"
-            allowedHeaders: "*"
-            allowCredentials: true
-            maxAge: 3600
+            - RewritePath=/api/(?<segment>.*), /${segment}
+            - name: CircuitBreaker
+              args:
+                name: notificationServiceCB
+                fallbackUri: forward:/fallback/notifications
 
 eureka:
   client:
@@ -101,25 +84,54 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
-    registry-fetch-interval-seconds: 30
-  instance:
-    prefer-ip-address: true
-    hostname: localhost
-    lease-renewal-interval-in-seconds: 30
-    lease-expiration-duration-in-seconds: 90
-    instance-id: ${spring.application.name}:${server.port}
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+    instances:
+      userServiceCB:
+        baseConfig: default
+      orderServiceCB:
+        baseConfig: default
+      paymentServiceCB:
+        baseConfig: default
+      restaurantServiceCB:
+        baseConfig: default
+      notificationServiceCB:
+        baseConfig: default
+
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 3s
+        cancelRunningFuture: true
+    instances:
+      userServiceCB:
+        baseConfig: default
+      orderServiceCB:
+        baseConfig: default
+      paymentServiceCB:
+        baseConfig: default
+      restaurantServiceCB:
+        baseConfig: default
+      notificationServiceCB:
+        baseConfig: default
 
 management:
   endpoints:
     web:
       exposure:
-        include: health,info,gateway
+        include: health,info,metrics,gateway,circuitbreakers
   endpoint:
     health:
       show-details: always
-      validate-group-membership: false
-      group:
-        readiness:
-          include: ping
-        liveness:
-          include: ping
+  health:
+    circuitbreakers:
+      enabled: true

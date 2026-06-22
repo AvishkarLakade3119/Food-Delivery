@@ -1,0 +1,294 @@
+{
+  "notification-service\\pom.xml": {
+    "filename": "pom.xml",
+    "path": "notification-service\\pom.xml",
+    "version": "1.2",
+    "contextFile": "f7629d7f-context.json",
+    "chunks": {
+      "17ae93": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075549,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "1b6bb9ba",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:42:29 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "d95530": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781166512,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "936e87ee"
+        },
+        "hash": "72743052",
+        "messageId": "system_dbaceda0-656d-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 1:58:32 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "29": {
+        "chunkId": "17ae93",
+        "hash": "e84d79b0",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "17ae93",
+        "hash": "f21c97af",
+        "encoded": "%3CgroupId%3Eorg.springframework.boot%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "17ae93",
+        "hash": "0a497b2a",
+        "encoded": "%3CartifactId%3Espring-boot-starter-actuator%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "17ae93",
+        "hash": "f228b390",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "17ae93",
+        "hash": "4453b3b7",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "17ae93",
+        "hash": "b71b2c5f",
+        "encoded": "%3CgroupId%3Eorg.springframework.cloud%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "17ae93",
+        "hash": "94d37d02",
+        "encoded": "%3CartifactId%3Espring-cloud-starter-config%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "17ae93",
+        "hash": "96226f55",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "17ae93",
+        "hash": "dea8d298",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "17ae93",
+        "hash": "9240dd33",
+        "encoded": "%3CgroupId%3Eorg.springframework.boot%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "17ae93",
+        "hash": "88a74f34",
+        "encoded": "%3CartifactId%3Espring-boot-starter-data-jpa%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "17ae93",
+        "hash": "65bbc884",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "d95530",
+        "hash": "f5e6c4a0",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "d95530",
+        "hash": "f042a697",
+        "encoded": "%3CgroupId%3Ecom.h2database%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "d95530",
+        "hash": "8f7062c9",
+        "encoded": "%3CartifactId%3Eh2%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "d95530",
+        "hash": "53e183eb",
+        "encoded": "%3Cscope%3Etest%3C/scope%3E",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "d95530",
+        "hash": "0d10a928",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "d95530",
+        "hash": "e3078345",
+        "encoded": "%3C!--%20Spring%20Security%20--%3E",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "d95530",
+        "hash": "f770451f",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "d95530",
+        "hash": "7639bfe2",
+        "encoded": "%3CgroupId%3Eorg.springframework.boot%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "d95530",
+        "hash": "cf06abb3",
+        "encoded": "%3CartifactId%3Espring-boot-starter-security%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "d95530",
+        "hash": "53859bd0",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "d95530",
+        "hash": "03c65d5f",
+        "encoded": "%3C!--%20JWT%20Dependencies%20--%3E",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "d95530",
+        "hash": "f759b81b",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "d95530",
+        "hash": "8f556b8e",
+        "encoded": "%3CgroupId%3Eio.jsonwebtoken%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "d95530",
+        "hash": "4207597a",
+        "encoded": "%3CartifactId%3Ejjwt-api%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "d95530",
+        "hash": "f07cafec",
+        "encoded": "%3Cversion%3E0.12.3%3C/version%3E",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "d95530",
+        "hash": "9705a8ad",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "d95530",
+        "hash": "624ab26c",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "d95530",
+        "hash": "adc343a4",
+        "encoded": "%3CgroupId%3Eio.jsonwebtoken%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "d95530",
+        "hash": "0d36f5ae",
+        "encoded": "%3CartifactId%3Ejjwt-impl%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "d95530",
+        "hash": "944059c7",
+        "encoded": "%3Cversion%3E0.12.3%3C/version%3E",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "d95530",
+        "hash": "2c3cfe01",
+        "encoded": "%3Cscope%3Eruntime%3C/scope%3E",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "d95530",
+        "hash": "be1a2b38",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "d95530",
+        "hash": "cd7ecc8c",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "d95530",
+        "hash": "04ffd37e",
+        "encoded": "%3CgroupId%3Eio.jsonwebtoken%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "d95530",
+        "hash": "abdd749c",
+        "encoded": "%3CartifactId%3Ejjwt-jackson%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "d95530",
+        "hash": "379dcb57",
+        "encoded": "%3Cversion%3E0.12.3%3C/version%3E",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "d95530",
+        "hash": "832da818",
+        "encoded": "%3Cscope%3Eruntime%3C/scope%3E",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "d95530",
+        "hash": "4d30fecc",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "d95530",
+        "hash": "ce7fbb4e",
+        "encoded": "%3C!--%20Test%20Dependencies%20--%3E",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

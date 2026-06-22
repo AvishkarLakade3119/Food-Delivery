@@ -1,0 +1,193 @@
+{
+  "order-service\\src\\main\\java\\com\\fooddelivery\\order\\event\\RestaurantAcceptedEvent.java": {
+    "filename": "RestaurantAcceptedEvent.java",
+    "path": "order-service\\src\\main\\java\\com\\fooddelivery\\order\\event\\RestaurantAcceptedEvent.java",
+    "version": "1.2",
+    "contextFile": "bbd5c3b1-context.json",
+    "chunks": {
+      "c194bd": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427055,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "5659811a",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:20:55 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "c194bd",
+        "hash": "d733c3d8",
+        "encoded": "package%20com.fooddelivery.order.event;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "c194bd",
+        "hash": "7193abca",
+        "encoded": "import%20java.io.Serializable;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "c194bd",
+        "hash": "7b12a033",
+        "encoded": "import%20java.time.LocalDateTime;",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "c194bd",
+        "hash": "57e5d82b",
+        "encoded": "public%20class%20RestaurantAcceptedEvent%20implements%20Serializable%20%7B",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "c194bd",
+        "hash": "b92e4407",
+        "encoded": "private%20static%20final%20long%20serialVersionUID%20=%201L;",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "c194bd",
+        "hash": "ce29ea3b",
+        "encoded": "private%20Long%20orderId;",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "c194bd",
+        "hash": "4902b458",
+        "encoded": "private%20Long%20restaurantId;",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "c194bd",
+        "hash": "b28cadb3",
+        "encoded": "private%20Integer%20estimatedPrepTime;",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "c194bd",
+        "hash": "e9775ee3",
+        "encoded": "private%20LocalDateTime%20timestamp;",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "c194bd",
+        "hash": "ad3f433e",
+        "encoded": "public%20RestaurantAcceptedEvent()%20%7B",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "c194bd",
+        "hash": "76477189",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "c194bd",
+        "hash": "acecdf56",
+        "encoded": "public%20RestaurantAcceptedEvent(Long%20orderId,%20Long%20restaurantId,",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "c194bd",
+        "hash": "45854353",
+        "encoded": "Integer%20estimatedPrepTime,%20LocalDateTime%20timestamp)%20%7B",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "c194bd",
+        "hash": "f13d6975",
+        "encoded": "this.orderId%20=%20orderId;",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "c194bd",
+        "hash": "ce4bafb4",
+        "encoded": "this.restaurantId%20=%20restaurantId;",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "c194bd",
+        "hash": "b02a3a87",
+        "encoded": "this.estimatedPrepTime%20=%20estimatedPrepTime;",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "c194bd",
+        "hash": "913da08c",
+        "encoded": "this.timestamp%20=%20timestamp%20!=%20null%20?%20timestamp%20:%20LocalDateTime.now();",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "c194bd",
+        "hash": "e256b81a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "c194bd",
+        "hash": "71f54ba3",
+        "encoded": "@Override",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "c194bd",
+        "hash": "eb1a6a6a",
+        "encoded": "public%20String%20toString()%20%7B",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "c194bd",
+        "hash": "c644e6fe",
+        "encoded": "return%20%22RestaurantAcceptedEvent%7B%22%20+",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "c194bd",
+        "hash": "2214859b",
+        "encoded": "%22,%20restaurantId=%22%20+%20restaurantId%20+",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "c194bd",
+        "hash": "5e544dbf",
+        "encoded": "%22,%20estimatedPrepTime=%22%20+%20estimatedPrepTime%20+",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "c194bd",
+        "hash": "0e7ce861",
+        "encoded": "%22,%20timestamp=%22%20+%20timestamp%20+",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "c194bd",
+        "hash": "61785152",
+        "encoded": "'%7D';",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "c194bd",
+        "hash": "d90811a0",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "c194bd",
+        "hash": "0b4804f7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    },
+    "_prevLineCount": 50
+  }
+}

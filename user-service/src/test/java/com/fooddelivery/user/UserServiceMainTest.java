@@ -25,7 +25,9 @@ import static org.assertj.core.api.Assertions.assertThat;
         "spring.cloud.discovery.enabled=false",
         "management.endpoints.web.exposure.include=health,info",
         "management.endpoint.health.show-details=always",
-        "logging.level.com.fooddelivery.user=DEBUG"
+        "logging.level.com.fooddelivery.user=DEBUG",
+        "jwt.secret=test-secret-key-for-unit-testing-must-be-long-enough-for-hs256-algorithm-food-delivery",
+        "jwt.expiration=86400000"
 })
 class UserServiceMainTest {
 
@@ -46,7 +48,9 @@ class UserServiceMainTest {
                 "--spring.jpa.hibernate.ddl-auto=create-drop",
                 "--eureka.client.enabled=false",
                 "--spring.cloud.discovery.enabled=false",
-                "--server.port=0"
+                "--server.port=0",
+                "--jwt.secret=test-secret-key-for-unit-testing-must-be-long-enough-for-hs256-algorithm-food-delivery",
+                "--jwt.expiration=86400000"
         };
 
         // When - ACTUALLY call main() to cover lines 11-12

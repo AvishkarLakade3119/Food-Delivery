@@ -1,0 +1,24 @@
+{
+  "filename": "application.yml",
+  "path": "payment-service\\src\\main\\resources\\application.yml",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "313d9cd4": {
+      "value": "You are an expert Java Spring Boot microservices architect. I have an existing Food Delivery Microservices Platform and I need you to implement Phase 1 — Spring Cloud Config Server setup with centralized configuration management.\n\n## My Existing Project Structure\n\nI have the following microservices already running:\n\n1. eureka-server (Service Discovery - port 8761)\n2. api-gateway (Spring Cloud Gateway - port 8080)\n3. user-service (port 8081, PostgreSQL database)\n4. restaurant-service (port 8082, "
+    },
+    "141ea5f0": {
+      "value": "You are a senior Spring Boot + Spring Cloud Config Server expert. I need you to completely rebuild my Config Server setup from scratch. Remove all existing broken config server files and recreate everything correctly and error-free.\nIMPORTANT: Before making ANY changes, first analyze my ENTIRE Food Delivery Microservices project structure, read every service's application.yml, application-local.yml, application-docker.yml, pom.xml, entity classes, and database configurations. Understand what eac"
+    },
+    "df2ea822": {
+      "value": "You are a senior Spring Boot + JWT + test fixing agent. After implementing JWT security across my Food Delivery Microservices Platform, multiple services have failing controller tests because the ApplicationContext cannot load due to missing JWT security beans in @WebMvcTest slice.\nThe same error pattern occurs in ALL services that have JWT security: OrderControllerTest, PaymentControllerTest, RestaurantControllerTest, NotificationControllerTest, UserControllerTest.\nError: ApplicationContext fai"
+    },
+    "abe2834d": {
+      "value": "You are a senior Spring Boot + RabbitMQ integration expert agent. My Food Delivery Microservices Platform has RabbitMQ container running and healthy on ports 5672 and 15672. Phase 2 RabbitMQ setup was started but only 30% is complete. The RabbitMQ Management UI shows 0 connections because services are not connecting to RabbitMQ yet.\nWhat is already done:\n\nRabbitMQ Docker container running (rabbitmq:3-management)\nConfig-repo application.yml has RabbitMQ common config\nEvent DTO classes created in "
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

@@ -1,46 +1,175 @@
+# ========================================
+# Order Service - Bootstrap Configuration
+# ========================================
+# Minimal configuration to connect to Config Server
+# All other properties are fetched from config-server
+
 server:
-  port: 8084
+  port: 8083
 
 spring:
   application:
     name: order-service
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    config:
+      fail-fast: false
+      override-none: true
+      allow-override: true
+      override-system-properties: false
+      retry:
+        max-attempts: 6
+        initial-interval: 1000
+        multiplier: 1.1
+        max-interval: 2000
+  
+  # Fallback PostgreSQL Database Configuration
   datasource:
     url: jdbc:postgresql://localhost:5434/orderdb
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
+  
+  # Fallback JPA Configuration
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
     defer-datasource-initialization: true
+    show-sql: true
+  
+  # SQL Initialization
   sql:
     init:
-      mode: always
-      continue-on-error: true
+      mode: never
+  
+  # RabbitMQ Configuration
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 5000
 
+# JWT Configuration (MUST match user-service)
+jwt:
+  secret: a-very-long-secure-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-food-delivery-platform-2026
+  expiration: 86400000
+  header: Authorization
+  prefix: "Bearer "
+
+# Eureka Client Configuration
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
-  instance:
-    prefer-ip-address: true
-    hostname: localhost
-    lease-renewal-interval-in-seconds: 30
-    lease-expiration-duration-in-seconds: 90
-    instance-id: ${spring.application.name}:${server.port}
 
+# ====================== RESILIENCE4J ======================
+resilience4j:
+  # ----- Circuit Breaker -----
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 10s
+        failureRateThreshold: 50
+        slowCallRateThreshold: 50
+        slowCallDurationThreshold: 2s
+        recordExceptions:
+          - org.springframework.web.client.HttpServerErrorException
+          - java.io.IOException
+          - java.util.concurrent.TimeoutException
+          - feign.FeignException.InternalServerError
+          - feign.FeignException.ServiceUnavailable
+        ignoreExceptions:
+          - feign.FeignException.BadRequest
+          - feign.FeignException.NotFound
+    instances:
+      restaurantService:
+        baseConfig: default
+      paymentService:
+        baseConfig: default
+        failureRateThreshold: 60
+        waitDurationInOpenState: 15s
+      notificationService:
+        baseConfig: default
+        failureRateThreshold: 70
+
+  # ----- Retry -----
+  retry:
+    configs:
+      default:
+        maxAttempts: 3
+        waitDuration: 500ms
+        enableExponentialBackoff: true
+        exponentialBackoffMultiplier: 2
+        retryExceptions:
+          - org.springframework.web.client.HttpServerErrorException
+          - java.io.IOException
+          - java.util.concurrent.TimeoutException
+        ignoreExceptions:
+          - feign.FeignException.BadRequest
+          - feign.FeignException.NotFound
+          - java.lang.IllegalArgumentException
+    instances:
+      restaurantService:
+        baseConfig: default
+      paymentService:
+        baseConfig: default
+        maxAttempts: 2
+      notificationService:
+        baseConfig: default
+        maxAttempts: 2
+
+  # ----- Time Limiter -----
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 2s
+        cancelRunningFuture: true
+    instances:
+      restaurantService:
+        baseConfig: default
+      paymentService:
+        baseConfig: default
+        timeoutDuration: 3s
+      notificationService:
+        baseConfig: default
+        timeoutDuration: 1s
+
+  # ----- Bulkhead -----
+  bulkhead:
+    configs:
+      default:
+        maxConcurrentCalls: 10
+        maxWaitDuration: 100ms
+    instances:
+      restaurantService:
+        baseConfig: default
+      paymentService:
+        baseConfig: default
+        maxConcurrentCalls: 20
+      notificationService:
+        baseConfig: default
+        maxConcurrentCalls: 5
+
+# ====================== ACTUATOR ======================
 management:
   endpoints:
     web:
       exposure:
-        include: health,info
+        include: health,info,metrics,prometheus,circuitbreakers,retries,bulkheads,ratelimiters,timelimiters
   endpoint:
     health:
       show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
+    ratelimiters:
+      enabled: true

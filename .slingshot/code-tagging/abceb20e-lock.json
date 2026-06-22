@@ -1,0 +1,2507 @@
+{
+  "user-service\\src\\test\\java\\com\\fooddelivery\\user\\controller\\AuthControllerDirectTest.java": {
+    "filename": "AuthControllerDirectTest.java",
+    "path": "user-service\\src\\test\\java\\com\\fooddelivery\\user\\controller\\AuthControllerDirectTest.java",
+    "version": "1.2",
+    "contextFile": "abceb20e-context.json",
+    "chunks": {
+      "8c4cb4": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781168565,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "chat",
+        "type": "copyCode",
+        "extraContext": {
+          "promptMessage": "cc9c3c53"
+        },
+        "hash": "ec54cf3b",
+        "messageId": "system_eb94f140-6572-11f1-8beb-77e30c2c3758",
+        "codeBlockId": "system_eb94f140-6572-11f1-8beb-77e30c2c3758-Codeblock-2",
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 2:32:45 PM\n- **source**: chat\n- **type**: copyCode\n"
+      },
+      "34f47e": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781169063,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "c4953595"
+        },
+        "hash": "429c9e0f",
+        "messageId": "system_ee740a70-6574-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 2:41:03 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "85e76a": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781169063,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "c4953595"
+        },
+        "hash": "9caaf9d8",
+        "messageId": "system_ee740a70-6574-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 2:41:03 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "ded922": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781169063,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "c4953595"
+        },
+        "hash": "9430d30e",
+        "messageId": "system_ee740a70-6574-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 2:41:03 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "bad129": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781169063,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "c4953595"
+        },
+        "hash": "f5d641e3",
+        "messageId": "system_ee740a70-6574-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 2:41:03 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "41781c": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781169063,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "c4953595"
+        },
+        "hash": "4ebf18bf",
+        "messageId": "system_ee740a70-6574-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 2:41:03 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "f89c16": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781169086,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "c4953595"
+        },
+        "hash": "291d2525",
+        "messageId": "system_ee740a70-6574-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 2:41:26 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "f89c16",
+        "hash": "2cce53cb",
+        "encoded": "package%20com.fooddelivery.user.controller;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "f89c16",
+        "hash": "bab1875c",
+        "encoded": "import%20com.fooddelivery.user.dto.LoginRequest;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "f89c16",
+        "hash": "af0392d8",
+        "encoded": "import%20com.fooddelivery.user.dto.UserRegistrationDto;",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "f89c16",
+        "hash": "f3d6366d",
+        "encoded": "import%20com.fooddelivery.user.dto.UserResponse;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "f89c16",
+        "hash": "19353760",
+        "encoded": "import%20com.fooddelivery.user.entity.User;",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "f89c16",
+        "hash": "3b861fec",
+        "encoded": "import%20com.fooddelivery.user.entity.UserRole;",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "f89c16",
+        "hash": "ce38dba0",
+        "encoded": "import%20com.fooddelivery.user.security.JwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "f89c16",
+        "hash": "aec75667",
+        "encoded": "import%20com.fooddelivery.user.service.UserService;",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "f89c16",
+        "hash": "46cffb4e",
+        "encoded": "import%20org.junit.jupiter.api.BeforeEach;",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "f89c16",
+        "hash": "3447a515",
+        "encoded": "import%20org.junit.jupiter.api.Test;",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "f89c16",
+        "hash": "98d007ea",
+        "encoded": "import%20org.junit.jupiter.api.extension.ExtendWith;",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "f89c16",
+        "hash": "6816f16c",
+        "encoded": "import%20org.mockito.Mock;",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "f89c16",
+        "hash": "0a556627",
+        "encoded": "import%20org.mockito.junit.jupiter.MockitoExtension;",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "f89c16",
+        "hash": "4dedf87b",
+        "encoded": "import%20org.springframework.http.HttpStatus;",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "f89c16",
+        "hash": "1c244121",
+        "encoded": "import%20org.springframework.http.ResponseEntity;",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "f89c16",
+        "hash": "aa03441f",
+        "encoded": "import%20org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "f89c16",
+        "hash": "8f838078",
+        "encoded": "import%20org.springframework.security.crypto.password.PasswordEncoder;",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "f89c16",
+        "hash": "c488284f",
+        "encoded": "import%20org.springframework.test.util.ReflectionTestUtils;",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "f89c16",
+        "hash": "2cdcca70",
+        "encoded": "import%20java.time.LocalDate;",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "f89c16",
+        "hash": "165f14f8",
+        "encoded": "import%20java.time.LocalDateTime;",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "f89c16",
+        "hash": "9d74e410",
+        "encoded": "import%20static%20org.junit.jupiter.api.Assertions.*;",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "f89c16",
+        "hash": "17f40c66",
+        "encoded": "import%20static%20org.mockito.ArgumentMatchers.*;",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "f89c16",
+        "hash": "9d9bc7a8",
+        "encoded": "import%20static%20org.mockito.Mockito.*;",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "f89c16",
+        "hash": "e502b067",
+        "encoded": "@ExtendWith(MockitoExtension.class)",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "f89c16",
+        "hash": "de1b15fc",
+        "encoded": "class%20AuthControllerDirectTest%20%7B",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "f89c16",
+        "hash": "f5c37d8a",
+        "encoded": "@Mock",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "f89c16",
+        "hash": "deb34107",
+        "encoded": "private%20UserService%20userService;",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "f89c16",
+        "hash": "20e5d402",
+        "encoded": "@Mock",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "f89c16",
+        "hash": "eb7b82e1",
+        "encoded": "private%20JwtTokenProvider%20jwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "f89c16",
+        "hash": "9cf44115",
+        "encoded": "private%20PasswordEncoder%20passwordEncoder;",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "f89c16",
+        "hash": "62c86a99",
+        "encoded": "private%20AuthController%20controller;",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "f89c16",
+        "hash": "ba586def",
+        "encoded": "private%20UserRegistrationDto%20validDto;",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "f89c16",
+        "hash": "8e1ad16a",
+        "encoded": "private%20User%20testUser;",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "f89c16",
+        "hash": "723a8218",
+        "encoded": "private%20LoginRequest%20validLoginRequest;",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "f89c16",
+        "hash": "efcd3f60",
+        "encoded": "@BeforeEach",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "f89c16",
+        "hash": "155cfdff",
+        "encoded": "void%20setUp()%20%7B",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "f89c16",
+        "hash": "486d448d",
+        "encoded": "passwordEncoder%20=%20new%20BCryptPasswordEncoder();",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "f89c16",
+        "hash": "9a66f388",
+        "encoded": "controller%20=%20new%20AuthController();",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "f89c16",
+        "hash": "3a591282",
+        "encoded": "ReflectionTestUtils.setField(controller,%20%22userService%22,%20userService);",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "f89c16",
+        "hash": "84bb0917",
+        "encoded": "ReflectionTestUtils.setField(controller,%20%22passwordEncoder%22,%20passwordEncoder);",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "f89c16",
+        "hash": "b2da0ec2",
+        "encoded": "ReflectionTestUtils.setField(controller,%20%22jwtTokenProvider%22,%20jwtTokenProvider);",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "f89c16",
+        "hash": "14337e5d",
+        "encoded": "ReflectionTestUtils.setField(controller,%20%22jwtExpirationMs%22,%2086400000L);",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "f89c16",
+        "hash": "e83dd145",
+        "encoded": "validDto%20=%20new%20UserRegistrationDto();",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "f89c16",
+        "hash": "29bd723c",
+        "encoded": "validDto.setUsername(%22johndoe%22);",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "f89c16",
+        "hash": "82b6f08d",
+        "encoded": "validDto.setEmail(%22john@test.com%22);",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "f89c16",
+        "hash": "bccff2a8",
+        "encoded": "validDto.setPassword(%22password123%22);",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "f89c16",
+        "hash": "cb4c78ea",
+        "encoded": "validDto.setFirstName(%22John%22);",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "f89c16",
+        "hash": "2ce370dc",
+        "encoded": "validDto.setLastName(%22Doe%22);",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "f89c16",
+        "hash": "ca08ce07",
+        "encoded": "validDto.setPhone(%22+1234567890%22);",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "f89c16",
+        "hash": "98759792",
+        "encoded": "validDto.setDateOfBirth(LocalDate.of(1990,%201,%201));",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "f89c16",
+        "hash": "77864745",
+        "encoded": "validDto.setAddress(%22123%20Main%20St%22);",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "f89c16",
+        "hash": "aed9e160",
+        "encoded": "testUser%20=%20new%20User();",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "f89c16",
+        "hash": "57d8db47",
+        "encoded": "testUser.setId(1L);",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "f89c16",
+        "hash": "3b2a9a94",
+        "encoded": "testUser.setUsername(%22johndoe%22);",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "f89c16",
+        "hash": "016e79fe",
+        "encoded": "testUser.setEmail(%22john@test.com%22);",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "f89c16",
+        "hash": "7254b9c6",
+        "encoded": "testUser.setPassword(passwordEncoder.encode(%22password123%22));",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "f89c16",
+        "hash": "1fd74e52",
+        "encoded": "testUser.setFirstName(%22John%22);",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "f89c16",
+        "hash": "8c426da7",
+        "encoded": "testUser.setLastName(%22Doe%22);",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "f89c16",
+        "hash": "43e3097b",
+        "encoded": "testUser.setName(%22John%20Doe%22);",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "f89c16",
+        "hash": "c5554ea5",
+        "encoded": "testUser.setPhone(%22+1234567890%22);",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "f89c16",
+        "hash": "8cd4e5f2",
+        "encoded": "testUser.setAddress(%22123%20Main%20St%22);",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "f89c16",
+        "hash": "eb7c5fe0",
+        "encoded": "testUser.setRole(UserRole.CUSTOMER);",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "f89c16",
+        "hash": "b4aa35f4",
+        "encoded": "testUser.setCreatedAt(LocalDateTime.now());",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "f89c16",
+        "hash": "e87a0b19",
+        "encoded": "testUser.setUpdatedAt(LocalDateTime.now());",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "f89c16",
+        "hash": "5d37d8a3",
+        "encoded": "validLoginRequest%20=%20new%20LoginRequest();",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "f89c16",
+        "hash": "f33f1ed7",
+        "encoded": "validLoginRequest.setEmail(%22john@test.com%22);",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "f89c16",
+        "hash": "b871e381",
+        "encoded": "validLoginRequest.setPassword(%22password123%22);",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "f89c16",
+        "hash": "c46ffadb",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "f89c16",
+        "hash": "df8bded7",
+        "encoded": "//%20=====%20REGISTER:%20Basic%20registration%20tests%20=====",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "f89c16",
+        "hash": "4964995b",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "f89c16",
+        "hash": "32a90ffa",
+        "encoded": "void%20register_ValidRequest_Returns201()%20%7B",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "f89c16",
+        "hash": "a477ba67",
+        "encoded": "when(userService.createUser(any(User.class))).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "f89c16",
+        "hash": "d6348e55",
+        "encoded": "ResponseEntity%3CUserResponse%3E%20response%20=%20controller.registerUser(validDto);",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "f89c16",
+        "hash": "eedcd77e",
+        "encoded": "assertEquals(HttpStatus.CREATED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "f89c16",
+        "hash": "5316af2d",
+        "encoded": "assertNotNull(response.getBody());",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "f89c16",
+        "hash": "ca244574",
+        "encoded": "assertEquals(%22john@test.com%22,%20response.getBody().getEmail());",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "f89c16",
+        "hash": "3a233d0a",
+        "encoded": "assertEquals(%22johndoe%22,%20response.getBody().getUsername());",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "f89c16",
+        "hash": "9b477039",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "f89c16",
+        "hash": "ebb47a9b",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "f89c16",
+        "hash": "122d787e",
+        "encoded": "void%20register_NullAddress_SetsEmpty()%20%7B",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "f89c16",
+        "hash": "b136db0d",
+        "encoded": "when(userService.createUser(any(User.class))).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "f89c16",
+        "hash": "282c30eb",
+        "encoded": "validDto.setAddress(null);",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "f89c16",
+        "hash": "e2616b99",
+        "encoded": "ResponseEntity%3CUserResponse%3E%20response%20=%20controller.registerUser(validDto);",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "f89c16",
+        "hash": "b0244233",
+        "encoded": "assertEquals(HttpStatus.CREATED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "f89c16",
+        "hash": "21cc0f70",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "f89c16",
+        "hash": "f3155be5",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "f89c16",
+        "hash": "bbcd5269",
+        "encoded": "void%20register_EmptyAddress_SetsEmpty()%20%7B",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "f89c16",
+        "hash": "2c8723b9",
+        "encoded": "when(userService.createUser(any(User.class))).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "f89c16",
+        "hash": "936074fa",
+        "encoded": "validDto.setAddress(%22%22);",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "f89c16",
+        "hash": "6a7e7c97",
+        "encoded": "ResponseEntity%3CUserResponse%3E%20response%20=%20controller.registerUser(validDto);",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "f89c16",
+        "hash": "57886970",
+        "encoded": "assertEquals(HttpStatus.CREATED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "f89c16",
+        "hash": "c251d1dd",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "f89c16",
+        "hash": "0be254dd",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "f89c16",
+        "hash": "0a78388d",
+        "encoded": "void%20register_WhitespaceAddress_SetsEmpty()%20%7B",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "f89c16",
+        "hash": "cf4a27f9",
+        "encoded": "when(userService.createUser(any(User.class))).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "f89c16",
+        "hash": "6d12acf0",
+        "encoded": "validDto.setAddress(%22%20%20%20%22);",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "f89c16",
+        "hash": "c3b89cfa",
+        "encoded": "ResponseEntity%3CUserResponse%3E%20response%20=%20controller.registerUser(validDto);",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "f89c16",
+        "hash": "494becf5",
+        "encoded": "assertEquals(HttpStatus.CREATED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "f89c16",
+        "hash": "fd8e1155",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "f89c16",
+        "hash": "e811a322",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "f89c16",
+        "hash": "ece4112d",
+        "encoded": "void%20register_ValidAddress_SetsAddress()%20%7B",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "f89c16",
+        "hash": "c3e4a930",
+        "encoded": "when(userService.createUser(any(User.class))).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "f89c16",
+        "hash": "8ef9e7cc",
+        "encoded": "validDto.setAddress(%22456%20Oak%20Ave%22);",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "f89c16",
+        "hash": "a76a5a09",
+        "encoded": "ResponseEntity%3CUserResponse%3E%20response%20=%20controller.registerUser(validDto);",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "f89c16",
+        "hash": "7cd97113",
+        "encoded": "assertEquals(HttpStatus.CREATED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "f89c16",
+        "hash": "7b145d98",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "f89c16",
+        "hash": "6eb5371b",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "f89c16",
+        "hash": "2baa1470",
+        "encoded": "void%20register_DuplicateUser_ThrowsException()%20%7B",
+        "prevChunkIds": []
+      },
+      "125": {
+        "chunkId": "f89c16",
+        "hash": "8a1651bd",
+        "encoded": "when(userService.createUser(any(User.class))).thenThrow(new%20RuntimeException(%22User%20already%20exists%22));",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "f89c16",
+        "hash": "72377c77",
+        "encoded": "assertThrows(RuntimeException.class,%20()%20-%3E%20controller.registerUser(validDto));",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "f89c16",
+        "hash": "b945986d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "f89c16",
+        "hash": "0300d911",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "f89c16",
+        "hash": "c7178713",
+        "encoded": "void%20register_ServiceException_ThrowsException()%20%7B",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "f89c16",
+        "hash": "d287542b",
+        "encoded": "when(userService.createUser(any(User.class))).thenThrow(new%20RuntimeException(%22DB%20error%22));",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "f89c16",
+        "hash": "081a6710",
+        "encoded": "assertThrows(RuntimeException.class,%20()%20-%3E%20controller.registerUser(validDto));",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "f89c16",
+        "hash": "7ebeb133",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "f89c16",
+        "hash": "2ea32b73",
+        "encoded": "//%20=====%20LOGIN:%20Basic%20login%20tests%20=====",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "f89c16",
+        "hash": "c8402053",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "f89c16",
+        "hash": "39e03422",
+        "encoded": "void%20login_ValidCredentials_Returns200WithToken()%20%7B",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "f89c16",
+        "hash": "7d60799e",
+        "encoded": "when(userService.getUserByEmail(%22john@test.com%22)).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "f89c16",
+        "hash": "b2690417",
+        "encoded": "when(jwtTokenProvider.generateToken(%22john@test.com%22,%20%22CUSTOMER%22,%201L)).thenReturn(%22mock.jwt.token%22);",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "f89c16",
+        "hash": "a60142ec",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(validLoginRequest);",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "f89c16",
+        "hash": "a3b0f492",
+        "encoded": "assertEquals(HttpStatus.OK,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "143": {
+        "chunkId": "f89c16",
+        "hash": "b257bb67",
+        "encoded": "assertNotNull(response.getBody());",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "f89c16",
+        "hash": "546cf1de",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "146": {
+        "chunkId": "f89c16",
+        "hash": "0de77245",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "f89c16",
+        "hash": "59d676d0",
+        "encoded": "void%20login_WrongPassword_Returns401()%20%7B",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "f89c16",
+        "hash": "381b0990",
+        "encoded": "when(userService.getUserByEmail(%22john@test.com%22)).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "f89c16",
+        "hash": "f05fa3aa",
+        "encoded": "LoginRequest%20wrongRequest%20=%20new%20LoginRequest();",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "f89c16",
+        "hash": "99b3482e",
+        "encoded": "wrongRequest.setEmail(%22john@test.com%22);",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "f89c16",
+        "hash": "fb4bfb14",
+        "encoded": "wrongRequest.setPassword(%22wrongpassword%22);",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "f89c16",
+        "hash": "b2cdbd59",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(wrongRequest);",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "f89c16",
+        "hash": "af075b88",
+        "encoded": "assertEquals(HttpStatus.UNAUTHORIZED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "f89c16",
+        "hash": "c2938672",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "f89c16",
+        "hash": "389319e2",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "f89c16",
+        "hash": "6d04f730",
+        "encoded": "void%20login_UserNotFound_Returns401()%20%7B",
+        "prevChunkIds": []
+      },
+      "160": {
+        "chunkId": "f89c16",
+        "hash": "f93a5e1c",
+        "encoded": "when(userService.getUserByEmail(%22john@test.com%22)).thenThrow(new%20RuntimeException(%22User%20not%20found%22));",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "f89c16",
+        "hash": "68a3375d",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(validLoginRequest);",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "f89c16",
+        "hash": "85250b68",
+        "encoded": "assertEquals(HttpStatus.UNAUTHORIZED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "f89c16",
+        "hash": "3e35702d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "f89c16",
+        "hash": "45141a0e",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "167": {
+        "chunkId": "f89c16",
+        "hash": "d977edc2",
+        "encoded": "void%20login_NullEmail_ThrowsException()%20%7B",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "f89c16",
+        "hash": "70f8bd17",
+        "encoded": "LoginRequest%20invalidRequest%20=%20new%20LoginRequest();",
+        "prevChunkIds": []
+      },
+      "169": {
+        "chunkId": "f89c16",
+        "hash": "54ba8855",
+        "encoded": "invalidRequest.setEmail(null);",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "f89c16",
+        "hash": "2cb53573",
+        "encoded": "invalidRequest.setPassword(%22password123%22);",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "f89c16",
+        "hash": "ee1fffc5",
+        "encoded": "when(userService.getUserByEmail(null)).thenThrow(new%20RuntimeException(%22Email%20cannot%20be%20null%22));",
+        "prevChunkIds": []
+      },
+      "173": {
+        "chunkId": "f89c16",
+        "hash": "7031e16e",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(invalidRequest);",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "f89c16",
+        "hash": "61b38dff",
+        "encoded": "assertEquals(HttpStatus.UNAUTHORIZED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "f89c16",
+        "hash": "cc7af933",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "f89c16",
+        "hash": "0dae7d83",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "f89c16",
+        "hash": "d59a9da5",
+        "encoded": "void%20login_EmptyPassword_Returns401()%20%7B",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "f89c16",
+        "hash": "39f5ca47",
+        "encoded": "LoginRequest%20invalidRequest%20=%20new%20LoginRequest();",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "f89c16",
+        "hash": "3d85945b",
+        "encoded": "invalidRequest.setEmail(%22john@test.com%22);",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "f89c16",
+        "hash": "c91a1124",
+        "encoded": "invalidRequest.setPassword(%22%22);",
+        "prevChunkIds": []
+      },
+      "183": {
+        "chunkId": "f89c16",
+        "hash": "c8941532",
+        "encoded": "when(userService.getUserByEmail(%22john@test.com%22)).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "f89c16",
+        "hash": "e2a176c2",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(invalidRequest);",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "f89c16",
+        "hash": "3b1d7ddf",
+        "encoded": "assertEquals(HttpStatus.UNAUTHORIZED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "f89c16",
+        "hash": "92ab12a1",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "f89c16",
+        "hash": "d53f2225",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "189": {
+        "chunkId": "f89c16",
+        "hash": "f2947c9a",
+        "encoded": "void%20login_DatabaseError_Returns401()%20%7B",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "f89c16",
+        "hash": "e2b873d4",
+        "encoded": "when(userService.getUserByEmail(anyString())).thenThrow(new%20RuntimeException(%22DB%20down%22));",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "f89c16",
+        "hash": "97ff7334",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(validLoginRequest);",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "f89c16",
+        "hash": "9674a108",
+        "encoded": "assertEquals(HttpStatus.UNAUTHORIZED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "f89c16",
+        "hash": "c7ef80cf",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "f89c16",
+        "hash": "6e23f472",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "197": {
+        "chunkId": "f89c16",
+        "hash": "dd5c4097",
+        "encoded": "void%20login_JwtGenerationSuccess_ReturnsToken()%20%7B",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "f89c16",
+        "hash": "a091a080",
+        "encoded": "when(userService.getUserByEmail(%22john@test.com%22)).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "199": {
+        "chunkId": "f89c16",
+        "hash": "560871d5",
+        "encoded": "when(jwtTokenProvider.generateToken(anyString(),%20anyString(),%20anyLong())).thenReturn(%22valid.jwt.token%22);",
+        "prevChunkIds": []
+      },
+      "201": {
+        "chunkId": "f89c16",
+        "hash": "95b90894",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(validLoginRequest);",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "f89c16",
+        "hash": "57fa8d25",
+        "encoded": "assertEquals(HttpStatus.OK,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "f89c16",
+        "hash": "6f7f74d0",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "f89c16",
+        "hash": "cbb56e2c",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "f89c16",
+        "hash": "7136ca38",
+        "encoded": "void%20login_PasswordEncoderMatches_ReturnsSuccess()%20%7B",
+        "prevChunkIds": []
+      },
+      "207": {
+        "chunkId": "f89c16",
+        "hash": "b4324e4f",
+        "encoded": "when(userService.getUserByEmail(%22john@test.com%22)).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "f89c16",
+        "hash": "98f178a8",
+        "encoded": "when(jwtTokenProvider.generateToken(anyString(),%20anyString(),%20anyLong())).thenReturn(%22token%22);",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "f89c16",
+        "hash": "e0944798",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(validLoginRequest);",
+        "prevChunkIds": []
+      },
+      "211": {
+        "chunkId": "f89c16",
+        "hash": "a68ea1d7",
+        "encoded": "assertEquals(HttpStatus.OK,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "f89c16",
+        "hash": "8e01390a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "214": {
+        "chunkId": "f89c16",
+        "hash": "f29ba696",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "215": {
+        "chunkId": "f89c16",
+        "hash": "d9d77879",
+        "encoded": "void%20login_ServiceThrowsRuntimeException_Returns401()%20%7B",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "f89c16",
+        "hash": "e95776ed",
+        "encoded": "when(userService.getUserByEmail(anyString())).thenThrow(new%20RuntimeException(%22Unexpected%20error%22));",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "f89c16",
+        "hash": "3e892436",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(validLoginRequest);",
+        "prevChunkIds": []
+      },
+      "219": {
+        "chunkId": "f89c16",
+        "hash": "54e24bb2",
+        "encoded": "assertEquals(HttpStatus.UNAUTHORIZED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "f89c16",
+        "hash": "290931bd",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "221": {
+        "chunkId": "f89c16",
+        "hash": "e44f08de",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "223": {
+        "chunkId": "41781c",
+        "hash": "78ea050c",
+        "encoded": "import%20com.fooddelivery.user.dto.LoginRequest;",
+        "prevChunkIds": []
+      },
+      "224": {
+        "chunkId": "41781c",
+        "hash": "d9556a78",
+        "encoded": "import%20com.fooddelivery.user.dto.UserRegistrationDto;",
+        "prevChunkIds": []
+      },
+      "225": {
+        "chunkId": "41781c",
+        "hash": "28cf063b",
+        "encoded": "import%20com.fooddelivery.user.dto.UserResponse;",
+        "prevChunkIds": []
+      },
+      "226": {
+        "chunkId": "41781c",
+        "hash": "67d4387b",
+        "encoded": "import%20com.fooddelivery.user.entity.User;",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "41781c",
+        "hash": "4c693684",
+        "encoded": "import%20com.fooddelivery.user.entity.UserRole;",
+        "prevChunkIds": []
+      },
+      "228": {
+        "chunkId": "41781c",
+        "hash": "56c0cbf1",
+        "encoded": "import%20com.fooddelivery.user.security.JwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "229": {
+        "chunkId": "41781c",
+        "hash": "c63669ce",
+        "encoded": "import%20com.fooddelivery.user.service.UserService;",
+        "prevChunkIds": []
+      },
+      "230": {
+        "chunkId": "41781c",
+        "hash": "d8c72a42",
+        "encoded": "import%20org.junit.jupiter.api.BeforeEach;",
+        "prevChunkIds": []
+      },
+      "231": {
+        "chunkId": "41781c",
+        "hash": "45acae00",
+        "encoded": "import%20org.junit.jupiter.api.Test;",
+        "prevChunkIds": []
+      },
+      "232": {
+        "chunkId": "41781c",
+        "hash": "6241f2ed",
+        "encoded": "import%20org.junit.jupiter.api.extension.ExtendWith;",
+        "prevChunkIds": []
+      },
+      "233": {
+        "chunkId": "41781c",
+        "hash": "47a7ea60",
+        "encoded": "import%20org.mockito.Mock;",
+        "prevChunkIds": []
+      },
+      "234": {
+        "chunkId": "41781c",
+        "hash": "7387a330",
+        "encoded": "import%20org.mockito.junit.jupiter.MockitoExtension;",
+        "prevChunkIds": []
+      },
+      "235": {
+        "chunkId": "41781c",
+        "hash": "a34ff1e2",
+        "encoded": "import%20org.springframework.http.HttpStatus;",
+        "prevChunkIds": []
+      },
+      "236": {
+        "chunkId": "41781c",
+        "hash": "717b7a17",
+        "encoded": "import%20org.springframework.http.ResponseEntity;",
+        "prevChunkIds": []
+      },
+      "237": {
+        "chunkId": "41781c",
+        "hash": "9044ab64",
+        "encoded": "import%20org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;",
+        "prevChunkIds": []
+      },
+      "238": {
+        "chunkId": "41781c",
+        "hash": "48a9ebc0",
+        "encoded": "import%20org.springframework.security.crypto.password.PasswordEncoder;",
+        "prevChunkIds": []
+      },
+      "239": {
+        "chunkId": "41781c",
+        "hash": "b219e080",
+        "encoded": "import%20org.springframework.test.util.ReflectionTestUtils;",
+        "prevChunkIds": []
+      },
+      "241": {
+        "chunkId": "41781c",
+        "hash": "dcf3babe",
+        "encoded": "import%20java.time.LocalDate;",
+        "prevChunkIds": []
+      },
+      "242": {
+        "chunkId": "41781c",
+        "hash": "cb76a7c8",
+        "encoded": "import%20java.time.LocalDateTime;",
+        "prevChunkIds": []
+      },
+      "244": {
+        "chunkId": "41781c",
+        "hash": "9f837a73",
+        "encoded": "import%20static%20org.junit.jupiter.api.Assertions.*;",
+        "prevChunkIds": []
+      },
+      "245": {
+        "chunkId": "41781c",
+        "hash": "2c85f895",
+        "encoded": "import%20static%20org.mockito.ArgumentMatchers.*;",
+        "prevChunkIds": []
+      },
+      "246": {
+        "chunkId": "41781c",
+        "hash": "692022c4",
+        "encoded": "import%20static%20org.mockito.Mockito.*;",
+        "prevChunkIds": []
+      },
+      "248": {
+        "chunkId": "41781c",
+        "hash": "7485c48e",
+        "encoded": "@ExtendWith(MockitoExtension.class)",
+        "prevChunkIds": []
+      },
+      "249": {
+        "chunkId": "41781c",
+        "hash": "bc568cfd",
+        "encoded": "class%20AuthControllerDirectTest%20%7B",
+        "prevChunkIds": []
+      },
+      "250": {
+        "chunkId": "41781c",
+        "hash": "05fbf302",
+        "encoded": "@Mock",
+        "prevChunkIds": []
+      },
+      "251": {
+        "chunkId": "41781c",
+        "hash": "ea9b5687",
+        "encoded": "private%20UserService%20userService;",
+        "prevChunkIds": []
+      },
+      "253": {
+        "chunkId": "41781c",
+        "hash": "8cc139e3",
+        "encoded": "@Mock",
+        "prevChunkIds": []
+      },
+      "254": {
+        "chunkId": "41781c",
+        "hash": "c5115ad4",
+        "encoded": "private%20JwtTokenProvider%20jwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "256": {
+        "chunkId": "41781c",
+        "hash": "cbf5a56e",
+        "encoded": "private%20PasswordEncoder%20passwordEncoder;",
+        "prevChunkIds": []
+      },
+      "258": {
+        "chunkId": "41781c",
+        "hash": "da1c2332",
+        "encoded": "private%20AuthController%20controller;",
+        "prevChunkIds": []
+      },
+      "259": {
+        "chunkId": "41781c",
+        "hash": "4eecbb41",
+        "encoded": "private%20UserRegistrationDto%20validDto;",
+        "prevChunkIds": []
+      },
+      "260": {
+        "chunkId": "41781c",
+        "hash": "099709e1",
+        "encoded": "private%20User%20testUser;",
+        "prevChunkIds": []
+      },
+      "261": {
+        "chunkId": "41781c",
+        "hash": "96c1dc5a",
+        "encoded": "private%20LoginRequest%20validLoginRequest;",
+        "prevChunkIds": []
+      },
+      "263": {
+        "chunkId": "bad129",
+        "hash": "0e63b4b2",
+        "encoded": "@BeforeEach",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "264": {
+        "chunkId": "bad129",
+        "hash": "c392161a",
+        "encoded": "void%20setUp()%20%7B",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "265": {
+        "chunkId": "bad129",
+        "hash": "6bc991b2",
+        "encoded": "passwordEncoder%20=%20new%20BCryptPasswordEncoder();",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "266": {
+        "chunkId": "bad129",
+        "hash": "dda6370f",
+        "encoded": "controller%20=%20new%20AuthController();",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "267": {
+        "chunkId": "bad129",
+        "hash": "9e224077",
+        "encoded": "ReflectionTestUtils.setField(controller,%20%22userService%22,%20userService);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "268": {
+        "chunkId": "bad129",
+        "hash": "aaba7b94",
+        "encoded": "ReflectionTestUtils.setField(controller,%20%22passwordEncoder%22,%20passwordEncoder);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "269": {
+        "chunkId": "bad129",
+        "hash": "a0c775d1",
+        "encoded": "ReflectionTestUtils.setField(controller,%20%22jwtTokenProvider%22,%20jwtTokenProvider);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "270": {
+        "chunkId": "bad129",
+        "hash": "b32fb30d",
+        "encoded": "ReflectionTestUtils.setField(controller,%20%22jwtExpirationMs%22,%2086400000L);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "272": {
+        "chunkId": "bad129",
+        "hash": "19ca27bd",
+        "encoded": "validDto%20=%20new%20UserRegistrationDto();",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "273": {
+        "chunkId": "bad129",
+        "hash": "c1eecd28",
+        "encoded": "validDto.setUsername(%22johndoe%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "274": {
+        "chunkId": "bad129",
+        "hash": "7636f493",
+        "encoded": "validDto.setEmail(%22john@test.com%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "275": {
+        "chunkId": "bad129",
+        "hash": "2cc89d76",
+        "encoded": "validDto.setPassword(%22password123%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "276": {
+        "chunkId": "bad129",
+        "hash": "4292c67f",
+        "encoded": "validDto.setFirstName(%22John%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "277": {
+        "chunkId": "bad129",
+        "hash": "68d90ff3",
+        "encoded": "validDto.setLastName(%22Doe%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "278": {
+        "chunkId": "bad129",
+        "hash": "bfab3079",
+        "encoded": "validDto.setPhone(%22+1234567890%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "279": {
+        "chunkId": "bad129",
+        "hash": "af895fc2",
+        "encoded": "validDto.setDateOfBirth(LocalDate.of(1990,%201,%201));",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "280": {
+        "chunkId": "bad129",
+        "hash": "438954d2",
+        "encoded": "validDto.setAddress(%22123%20Main%20St%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "282": {
+        "chunkId": "bad129",
+        "hash": "ad1961da",
+        "encoded": "testUser%20=%20new%20User();",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "283": {
+        "chunkId": "bad129",
+        "hash": "55b60423",
+        "encoded": "testUser.setId(1L);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "284": {
+        "chunkId": "bad129",
+        "hash": "da8abebe",
+        "encoded": "testUser.setUsername(%22johndoe%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "285": {
+        "chunkId": "bad129",
+        "hash": "95f8a230",
+        "encoded": "testUser.setEmail(%22john@test.com%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "286": {
+        "chunkId": "bad129",
+        "hash": "6abcf15d",
+        "encoded": "testUser.setPassword(passwordEncoder.encode(%22password123%22));",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "287": {
+        "chunkId": "bad129",
+        "hash": "911c5fd8",
+        "encoded": "testUser.setFirstName(%22John%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "288": {
+        "chunkId": "bad129",
+        "hash": "bcd8a793",
+        "encoded": "testUser.setLastName(%22Doe%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "289": {
+        "chunkId": "bad129",
+        "hash": "c42b1b3a",
+        "encoded": "testUser.setName(%22John%20Doe%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "290": {
+        "chunkId": "bad129",
+        "hash": "ad9b2a1f",
+        "encoded": "testUser.setPhone(%22+1234567890%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "291": {
+        "chunkId": "bad129",
+        "hash": "56231705",
+        "encoded": "testUser.setAddress(%22123%20Main%20St%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "292": {
+        "chunkId": "bad129",
+        "hash": "7f4cffa3",
+        "encoded": "testUser.setRole(UserRole.CUSTOMER);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "293": {
+        "chunkId": "bad129",
+        "hash": "e840c5bb",
+        "encoded": "testUser.setCreatedAt(LocalDateTime.now());",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "294": {
+        "chunkId": "bad129",
+        "hash": "b0f42a77",
+        "encoded": "testUser.setUpdatedAt(LocalDateTime.now());",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "296": {
+        "chunkId": "bad129",
+        "hash": "693656bd",
+        "encoded": "validLoginRequest%20=%20new%20LoginRequest();",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "297": {
+        "chunkId": "bad129",
+        "hash": "2ca3bd52",
+        "encoded": "validLoginRequest.setEmail(%22john@test.com%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "298": {
+        "chunkId": "bad129",
+        "hash": "2480750f",
+        "encoded": "validLoginRequest.setPassword(%22password123%22);",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "299": {
+        "chunkId": "bad129",
+        "hash": "567d4637",
+        "encoded": "%7D",
+        "prevChunkIds": [
+          "bad129"
+        ]
+      },
+      "301": {
+        "chunkId": "ded922",
+        "hash": "888f64a5",
+        "encoded": "//%20=====%20REGISTER:%20Basic%20registration%20tests%20=====",
+        "prevChunkIds": []
+      },
+      "302": {
+        "chunkId": "ded922",
+        "hash": "f2d7f1e7",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "303": {
+        "chunkId": "ded922",
+        "hash": "48368dc6",
+        "encoded": "void%20register_ValidRequest_Returns201()%20%7B",
+        "prevChunkIds": []
+      },
+      "304": {
+        "chunkId": "ded922",
+        "hash": "d486cc03",
+        "encoded": "when(userService.createUser(any(User.class))).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "305": {
+        "chunkId": "ded922",
+        "hash": "517c68cc",
+        "encoded": "ResponseEntity%3CUserResponse%3E%20response%20=%20controller.registerUser(validDto);",
+        "prevChunkIds": []
+      },
+      "306": {
+        "chunkId": "ded922",
+        "hash": "9e03c5d0",
+        "encoded": "assertEquals(HttpStatus.CREATED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "307": {
+        "chunkId": "ded922",
+        "hash": "44fc5fe0",
+        "encoded": "assertNotNull(response.getBody());",
+        "prevChunkIds": []
+      },
+      "308": {
+        "chunkId": "ded922",
+        "hash": "74823ecd",
+        "encoded": "assertEquals(%22john@test.com%22,%20response.getBody().getEmail());",
+        "prevChunkIds": []
+      },
+      "309": {
+        "chunkId": "ded922",
+        "hash": "bb993d6a",
+        "encoded": "assertEquals(%22johndoe%22,%20response.getBody().getUsername());",
+        "prevChunkIds": []
+      },
+      "310": {
+        "chunkId": "ded922",
+        "hash": "b19573d5",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "312": {
+        "chunkId": "ded922",
+        "hash": "f4bb6fe5",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "313": {
+        "chunkId": "ded922",
+        "hash": "c7eed027",
+        "encoded": "void%20register_NullAddress_SetsEmpty()%20%7B",
+        "prevChunkIds": []
+      },
+      "314": {
+        "chunkId": "ded922",
+        "hash": "6f4c11c9",
+        "encoded": "when(userService.createUser(any(User.class))).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "315": {
+        "chunkId": "ded922",
+        "hash": "0a70784e",
+        "encoded": "validDto.setAddress(null);",
+        "prevChunkIds": []
+      },
+      "316": {
+        "chunkId": "ded922",
+        "hash": "6694f67d",
+        "encoded": "ResponseEntity%3CUserResponse%3E%20response%20=%20controller.registerUser(validDto);",
+        "prevChunkIds": []
+      },
+      "317": {
+        "chunkId": "ded922",
+        "hash": "508cb50f",
+        "encoded": "assertEquals(HttpStatus.CREATED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "318": {
+        "chunkId": "ded922",
+        "hash": "8a6ff4be",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "320": {
+        "chunkId": "ded922",
+        "hash": "aa610731",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "321": {
+        "chunkId": "ded922",
+        "hash": "115783bb",
+        "encoded": "void%20register_EmptyAddress_SetsEmpty()%20%7B",
+        "prevChunkIds": []
+      },
+      "322": {
+        "chunkId": "ded922",
+        "hash": "08c6b57f",
+        "encoded": "when(userService.createUser(any(User.class))).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "323": {
+        "chunkId": "ded922",
+        "hash": "f6f87f65",
+        "encoded": "validDto.setAddress(%22%22);",
+        "prevChunkIds": []
+      },
+      "324": {
+        "chunkId": "ded922",
+        "hash": "57b96a8f",
+        "encoded": "ResponseEntity%3CUserResponse%3E%20response%20=%20controller.registerUser(validDto);",
+        "prevChunkIds": []
+      },
+      "325": {
+        "chunkId": "ded922",
+        "hash": "60acc582",
+        "encoded": "assertEquals(HttpStatus.CREATED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "326": {
+        "chunkId": "ded922",
+        "hash": "1645d962",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "328": {
+        "chunkId": "ded922",
+        "hash": "10fe43b9",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "329": {
+        "chunkId": "ded922",
+        "hash": "0b37110a",
+        "encoded": "void%20register_WhitespaceAddress_SetsEmpty()%20%7B",
+        "prevChunkIds": []
+      },
+      "330": {
+        "chunkId": "ded922",
+        "hash": "ee1e2369",
+        "encoded": "when(userService.createUser(any(User.class))).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "331": {
+        "chunkId": "ded922",
+        "hash": "5e1feff6",
+        "encoded": "validDto.setAddress(%22%20%20%20%22);",
+        "prevChunkIds": []
+      },
+      "332": {
+        "chunkId": "ded922",
+        "hash": "f9a9e352",
+        "encoded": "ResponseEntity%3CUserResponse%3E%20response%20=%20controller.registerUser(validDto);",
+        "prevChunkIds": []
+      },
+      "333": {
+        "chunkId": "ded922",
+        "hash": "6080c2d6",
+        "encoded": "assertEquals(HttpStatus.CREATED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "334": {
+        "chunkId": "ded922",
+        "hash": "65226cb2",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "336": {
+        "chunkId": "ded922",
+        "hash": "1a118688",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "337": {
+        "chunkId": "ded922",
+        "hash": "48b32032",
+        "encoded": "void%20register_ValidAddress_SetsAddress()%20%7B",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "338": {
+        "chunkId": "ded922",
+        "hash": "bf207839",
+        "encoded": "when(userService.createUser(any(User.class))).thenReturn(testUser);",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "339": {
+        "chunkId": "ded922",
+        "hash": "1b2bb050",
+        "encoded": "validDto.setAddress(%22456%20Oak%20Ave%22);",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "340": {
+        "chunkId": "ded922",
+        "hash": "b5d44ff9",
+        "encoded": "ResponseEntity%3CUserResponse%3E%20response%20=%20controller.registerUser(validDto);",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "341": {
+        "chunkId": "ded922",
+        "hash": "98a011e4",
+        "encoded": "assertEquals(HttpStatus.CREATED,%20response.getStatusCode());",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "342": {
+        "chunkId": "ded922",
+        "hash": "8929312f",
+        "encoded": "%7D",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "344": {
+        "chunkId": "ded922",
+        "hash": "16135634",
+        "encoded": "@Test",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "345": {
+        "chunkId": "ded922",
+        "hash": "45bab8f9",
+        "encoded": "void%20register_DuplicateUser_ThrowsException()%20%7B",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "346": {
+        "chunkId": "ded922",
+        "hash": "ff49c3a7",
+        "encoded": "when(userService.createUser(any(User.class))).thenThrow(new%20RuntimeException(%22User%20already%20exists%22));",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "347": {
+        "chunkId": "ded922",
+        "hash": "8826926d",
+        "encoded": "assertThrows(RuntimeException.class,%20()%20-%3E%20controller.registerUser(validDto));",
+        "prevChunkIds": []
+      },
+      "348": {
+        "chunkId": "ded922",
+        "hash": "20cd5d84",
+        "encoded": "%7D",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "350": {
+        "chunkId": "34f47e",
+        "hash": "2bc99b5f",
+        "encoded": "@Test",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "351": {
+        "chunkId": "ded922",
+        "hash": "ac2bf23a",
+        "encoded": "void%20register_ServiceException_ThrowsException()%20%7B",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "352": {
+        "chunkId": "ded922",
+        "hash": "06e795b8",
+        "encoded": "when(userService.createUser(any(User.class))).thenThrow(new%20RuntimeException(%22DB%20error%22));",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "353": {
+        "chunkId": "ded922",
+        "hash": "96008753",
+        "encoded": "assertThrows(RuntimeException.class,%20()%20-%3E%20controller.registerUser(validDto));",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "354": {
+        "chunkId": "34f47e",
+        "hash": "bb5dc0a7",
+        "encoded": "%7D",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "356": {
+        "chunkId": "85e76a",
+        "hash": "d72f9b59",
+        "encoded": "//%20=====%20LOGIN:%20Basic%20login%20tests%20=====",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "357": {
+        "chunkId": "85e76a",
+        "hash": "61d9083a",
+        "encoded": "@Test",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "358": {
+        "chunkId": "85e76a",
+        "hash": "63679dd6",
+        "encoded": "void%20login_ValidCredentials_Returns200WithToken()%20%7B",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "359": {
+        "chunkId": "85e76a",
+        "hash": "b0f983ee",
+        "encoded": "when(userService.getUserByEmail(%22john@test.com%22)).thenReturn(testUser);",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "360": {
+        "chunkId": "85e76a",
+        "hash": "2a1b6cd3",
+        "encoded": "when(jwtTokenProvider.generateToken(%22john@test.com%22,%20%22CUSTOMER%22,%201L)).thenReturn(%22mock.jwt.token%22);",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "362": {
+        "chunkId": "85e76a",
+        "hash": "406ddef9",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(validLoginRequest);",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "363": {
+        "chunkId": "85e76a",
+        "hash": "bfc2eb6d",
+        "encoded": "assertEquals(HttpStatus.OK,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "364": {
+        "chunkId": "85e76a",
+        "hash": "f5965968",
+        "encoded": "assertNotNull(response.getBody());",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "365": {
+        "chunkId": "85e76a",
+        "hash": "761da560",
+        "encoded": "%7D",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "367": {
+        "chunkId": "85e76a",
+        "hash": "f51c42e1",
+        "encoded": "@Test",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "368": {
+        "chunkId": "85e76a",
+        "hash": "73934b2b",
+        "encoded": "void%20login_WrongPassword_Returns401()%20%7B",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "369": {
+        "chunkId": "85e76a",
+        "hash": "a3428e6d",
+        "encoded": "when(userService.getUserByEmail(%22john@test.com%22)).thenReturn(testUser);",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "371": {
+        "chunkId": "85e76a",
+        "hash": "159faa0e",
+        "encoded": "LoginRequest%20wrongRequest%20=%20new%20LoginRequest();",
+        "prevChunkIds": []
+      },
+      "372": {
+        "chunkId": "85e76a",
+        "hash": "79dfd957",
+        "encoded": "wrongRequest.setEmail(%22john@test.com%22);",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "373": {
+        "chunkId": "85e76a",
+        "hash": "99a79b8a",
+        "encoded": "wrongRequest.setPassword(%22wrongpassword%22);",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "375": {
+        "chunkId": "85e76a",
+        "hash": "b0bd1369",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(wrongRequest);",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "376": {
+        "chunkId": "85e76a",
+        "hash": "11fb08eb",
+        "encoded": "assertEquals(HttpStatus.UNAUTHORIZED,%20response.getStatusCode());",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "377": {
+        "chunkId": "85e76a",
+        "hash": "53e09fdc",
+        "encoded": "%7D",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "379": {
+        "chunkId": "85e76a",
+        "hash": "7c8250cd",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "380": {
+        "chunkId": "85e76a",
+        "hash": "0bb575fb",
+        "encoded": "void%20login_UserNotFound_Returns401()%20%7B",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "381": {
+        "chunkId": "85e76a",
+        "hash": "d21bbf73",
+        "encoded": "when(userService.getUserByEmail(%22john@test.com%22)).thenThrow(new%20RuntimeException(%22User%20not%20found%22));",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "383": {
+        "chunkId": "85e76a",
+        "hash": "27a83904",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(validLoginRequest);",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "384": {
+        "chunkId": "85e76a",
+        "hash": "0c9566ea",
+        "encoded": "assertEquals(HttpStatus.UNAUTHORIZED,%20response.getStatusCode());",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "385": {
+        "chunkId": "85e76a",
+        "hash": "8de95e45",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "387": {
+        "chunkId": "85e76a",
+        "hash": "327cb026",
+        "encoded": "@Test",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "388": {
+        "chunkId": "85e76a",
+        "hash": "73c9bfca",
+        "encoded": "void%20login_NullEmail_ThrowsException()%20%7B",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "389": {
+        "chunkId": "85e76a",
+        "hash": "d0241859",
+        "encoded": "LoginRequest%20invalidRequest%20=%20new%20LoginRequest();",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "390": {
+        "chunkId": "85e76a",
+        "hash": "33d75397",
+        "encoded": "invalidRequest.setEmail(null);",
+        "prevChunkIds": [
+          "ded922"
+        ]
+      },
+      "391": {
+        "chunkId": "85e76a",
+        "hash": "81e1eeac",
+        "encoded": "invalidRequest.setPassword(%22password123%22);",
+        "prevChunkIds": []
+      },
+      "393": {
+        "chunkId": "85e76a",
+        "hash": "e57492c2",
+        "encoded": "when(userService.getUserByEmail(null)).thenThrow(new%20RuntimeException(%22Email%20cannot%20be%20null%22));",
+        "prevChunkIds": []
+      },
+      "394": {
+        "chunkId": "85e76a",
+        "hash": "0e51c70c",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(invalidRequest);",
+        "prevChunkIds": []
+      },
+      "395": {
+        "chunkId": "85e76a",
+        "hash": "a34774fd",
+        "encoded": "assertEquals(HttpStatus.UNAUTHORIZED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "396": {
+        "chunkId": "85e76a",
+        "hash": "d0aadab5",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "398": {
+        "chunkId": "85e76a",
+        "hash": "a8628dad",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "399": {
+        "chunkId": "85e76a",
+        "hash": "3a5fa3da",
+        "encoded": "void%20login_EmptyPassword_Returns401()%20%7B",
+        "prevChunkIds": []
+      },
+      "400": {
+        "chunkId": "85e76a",
+        "hash": "7ee6a3eb",
+        "encoded": "LoginRequest%20invalidRequest%20=%20new%20LoginRequest();",
+        "prevChunkIds": []
+      },
+      "401": {
+        "chunkId": "85e76a",
+        "hash": "b8f7a017",
+        "encoded": "invalidRequest.setEmail(%22john@test.com%22);",
+        "prevChunkIds": []
+      },
+      "402": {
+        "chunkId": "85e76a",
+        "hash": "d2d6adf2",
+        "encoded": "invalidRequest.setPassword(%22%22);",
+        "prevChunkIds": []
+      },
+      "404": {
+        "chunkId": "85e76a",
+        "hash": "fed0df36",
+        "encoded": "when(userService.getUserByEmail(%22john@test.com%22)).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "405": {
+        "chunkId": "85e76a",
+        "hash": "a44ad5a2",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(invalidRequest);",
+        "prevChunkIds": []
+      },
+      "406": {
+        "chunkId": "85e76a",
+        "hash": "3a339802",
+        "encoded": "assertEquals(HttpStatus.UNAUTHORIZED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "407": {
+        "chunkId": "85e76a",
+        "hash": "fb0fa5e9",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "409": {
+        "chunkId": "85e76a",
+        "hash": "ad5a1635",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "410": {
+        "chunkId": "85e76a",
+        "hash": "946c0b90",
+        "encoded": "void%20login_DatabaseError_Returns401()%20%7B",
+        "prevChunkIds": []
+      },
+      "411": {
+        "chunkId": "85e76a",
+        "hash": "2267b628",
+        "encoded": "when(userService.getUserByEmail(anyString())).thenThrow(new%20RuntimeException(%22DB%20down%22));",
+        "prevChunkIds": []
+      },
+      "413": {
+        "chunkId": "85e76a",
+        "hash": "14c07902",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(validLoginRequest);",
+        "prevChunkIds": []
+      },
+      "414": {
+        "chunkId": "85e76a",
+        "hash": "4529c7aa",
+        "encoded": "assertEquals(HttpStatus.UNAUTHORIZED,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "415": {
+        "chunkId": "85e76a",
+        "hash": "3be5281f",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "417": {
+        "chunkId": "85e76a",
+        "hash": "e33aac0e",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "418": {
+        "chunkId": "85e76a",
+        "hash": "2039d93f",
+        "encoded": "void%20login_JwtGenerationSuccess_ReturnsToken()%20%7B",
+        "prevChunkIds": []
+      },
+      "419": {
+        "chunkId": "85e76a",
+        "hash": "ddd8941d",
+        "encoded": "when(userService.getUserByEmail(%22john@test.com%22)).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "420": {
+        "chunkId": "85e76a",
+        "hash": "e3b18915",
+        "encoded": "when(jwtTokenProvider.generateToken(anyString(),%20anyString(),%20anyLong())).thenReturn(%22valid.jwt.token%22);",
+        "prevChunkIds": []
+      },
+      "422": {
+        "chunkId": "85e76a",
+        "hash": "afa0d096",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(validLoginRequest);",
+        "prevChunkIds": []
+      },
+      "423": {
+        "chunkId": "85e76a",
+        "hash": "5b7f03d6",
+        "encoded": "assertEquals(HttpStatus.OK,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "424": {
+        "chunkId": "ded922",
+        "hash": "a8c40013",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "426": {
+        "chunkId": "ded922",
+        "hash": "5e9d591e",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "427": {
+        "chunkId": "85e76a",
+        "hash": "6bb27b3f",
+        "encoded": "void%20login_PasswordEncoderMatches_ReturnsSuccess()%20%7B",
+        "prevChunkIds": []
+      },
+      "428": {
+        "chunkId": "85e76a",
+        "hash": "89ee5219",
+        "encoded": "when(userService.getUserByEmail(%22john@test.com%22)).thenReturn(testUser);",
+        "prevChunkIds": []
+      },
+      "429": {
+        "chunkId": "85e76a",
+        "hash": "58474f10",
+        "encoded": "when(jwtTokenProvider.generateToken(anyString(),%20anyString(),%20anyLong())).thenReturn(%22token%22);",
+        "prevChunkIds": []
+      },
+      "431": {
+        "chunkId": "85e76a",
+        "hash": "71fa2070",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(validLoginRequest);",
+        "prevChunkIds": []
+      },
+      "432": {
+        "chunkId": "85e76a",
+        "hash": "a64897c8",
+        "encoded": "assertEquals(HttpStatus.OK,%20response.getStatusCode());",
+        "prevChunkIds": []
+      },
+      "433": {
+        "chunkId": "85e76a",
+        "hash": "d2f028f7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "435": {
+        "chunkId": "85e76a",
+        "hash": "d472bfe3",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "436": {
+        "chunkId": "85e76a",
+        "hash": "0d4b447c",
+        "encoded": "void%20login_ServiceThrowsRuntimeException_Returns401()%20%7B",
+        "prevChunkIds": []
+      },
+      "437": {
+        "chunkId": "85e76a",
+        "hash": "96e44daf",
+        "encoded": "when(userService.getUserByEmail(anyString())).thenThrow(new%20RuntimeException(%22Unexpected%20error%22));",
+        "prevChunkIds": []
+      },
+      "439": {
+        "chunkId": "85e76a",
+        "hash": "110e5a45",
+        "encoded": "ResponseEntity%3C?%3E%20response%20=%20controller.loginUser(validLoginRequest);",
+        "prevChunkIds": [
+          "34f47e"
+        ]
+      },
+      "440": {
+        "chunkId": "85e76a",
+        "hash": "d75086c3",
+        "encoded": "assertEquals(HttpStatus.UNAUTHORIZED,%20response.getStatusCode());",
+        "prevChunkIds": [
+          "34f47e"
+        ]
+      },
+      "441": {
+        "chunkId": "85e76a",
+        "hash": "945fa564",
+        "encoded": "%7D",
+        "prevChunkIds": [
+          "34f47e"
+        ]
+      },
+      "442": {
+        "chunkId": "85e76a",
+        "hash": "5bf33b9e",
+        "encoded": "%7D",
+        "prevChunkIds": [
+          "34f47e"
+        ]
+      }
+    },
+    "_prevLineCount": 222
+  }
+}

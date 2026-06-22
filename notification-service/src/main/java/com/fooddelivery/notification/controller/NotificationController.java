@@ -55,6 +55,7 @@ public class NotificationController {
     public ResponseEntity<Notification> sendNotification(@Valid @RequestBody NotificationRequest notificationRequest) {
         Notification notification = new Notification();
         notification.setUserId(notificationRequest.getUserId());
+        notification.setTitle(notificationRequest.getTitle());
         notification.setMessage(notificationRequest.getMessage());
         notification.setType(notificationRequest.getType());
         notification.setStatus("SENT");

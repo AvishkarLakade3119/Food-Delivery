@@ -21,9 +21,10 @@ class NotificationEntityTest {
 
     @Test
     void parameterizedConstructor_ShouldSetFieldsCorrectly() {
-        Notification notification = new Notification(1L, "Test message", "ORDER_CREATED");
-        
+        Notification notification = new Notification(1L, "Test Title", "Test message", "ORDER_CREATED");
+
         assertThat(notification.getUserId()).isEqualTo(1L);
+        assertThat(notification.getTitle()).isEqualTo("Test Title");
         assertThat(notification.getMessage()).isEqualTo("Test message");
         assertThat(notification.getType()).isEqualTo("ORDER_CREATED");
         assertThat(notification.getStatus()).isEqualTo("SENT");
@@ -68,16 +69,17 @@ class NotificationEntityTest {
 
     @Test
     void toString_ShouldReturnFormattedString() {
-        Notification notification = new Notification(1L, "Test message", "ORDER_CREATED");
+        Notification notification = new Notification(1L, "Test Title", "Test message", "ORDER_CREATED");
         notification.setId(1L);
         notification.setStatus("SENT");
         notification.setIsRead(false);
-        
+
         String result = notification.toString();
-        
+
         assertThat(result).contains("Notification{");
         assertThat(result).contains("id=1");
         assertThat(result).contains("userId=1");
+        assertThat(result).contains("title='Test Title'");
         assertThat(result).contains("message='Test message'");
         assertThat(result).contains("type='ORDER_CREATED'");
         assertThat(result).contains("status='SENT'");

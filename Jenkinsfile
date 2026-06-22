@@ -9,7 +9,7 @@ pipeline {
   triggers {
     githubPush()
   }
-
+z
   environment {
     DOCKERHUB_USER    = "avishkarlakade"
     DOCKERHUB_CRED_ID = "DockerHubCred"

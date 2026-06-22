@@ -1,0 +1,30 @@
+{
+  "payment-service\\src\\main\\java\\com\\fooddelivery\\payment\\config\\RabbitMQConfig.java": {
+    "filename": "RabbitMQConfig.java",
+    "path": "payment-service\\src\\main\\java\\com\\fooddelivery\\payment\\config\\RabbitMQConfig.java",
+    "version": "1.2",
+    "contextFile": "42b923ac-context.json",
+    "chunks": {
+      "e3045f": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781426601,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "cf180664",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:13:21 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {},
+    "_prevLineCount": 301
+  }
+}

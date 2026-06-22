@@ -1,0 +1,15 @@
+{
+  "filename": "COMPREHENSIVE_HEALTH_CHECK_REPORT.md",
+  "path": "COMPREHENSIVE_HEALTH_CHECK_REPORT.md",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "72ffe1ff": {
+      "value": "You are a senior Spring Boot microservices full-stack debugging, testing, and config server expert agent. My Food Delivery Microservices Platform has all services running and registered with Eureka. Your job is to do a COMPLETE health check of the entire platform, test EVERY API endpoint, verify Config Server is working correctly, and fix ONLY what is broken without touching what already works.\nCRITICAL RULES:\n\nREAD the entire project code BEFORE making any changes\nDO NOT change anything that is"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

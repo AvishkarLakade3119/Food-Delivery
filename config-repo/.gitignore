@@ -1,0 +1,20 @@
+# Git ignore for config repository
+
+# Ignore IDE files
+.idea/
+.vscode/
+*.iml
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Keep all YAML configuration files
+!*.yml
+!*.yaml

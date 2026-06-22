@@ -1,0 +1,57 @@
+# ========================================
+# Eureka Server Configuration
+# ========================================
+# Service Discovery Server Configuration
+
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+
+# Management/Actuator Configuration
+# Fix: Prevent port 8080 conflict by disabling separate management server
+management:
+  server:
+    port: 8761  # Use same port as main server to avoid 8080 conflict
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+# Eureka Server Configuration
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: false
+  client:
+    # Eureka server should not register itself as a client
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    # Disable self-preservation mode in development (enable in production)
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 10000
+    # Response cache settings
+    response-cache-update-interval-ms: 5000
+    response-cache-auto-expiration-in-seconds: 180
+    # Renewal threshold
+    renewal-percent-threshold: 0.85
+    # Wait time before serving requests (allows services to register)
+    wait-time-in-ms-when-sync-empty: 0
+  dashboard:
+    # Enable Eureka dashboard UI
+    enabled: true
+    path: /
+
+# Logging Configuration
+logging:
+  level:
+    com.netflix.eureka: INFO
+    com.netflix.discovery: INFO

@@ -1,0 +1,15 @@
+{
+  "filename": "verify-system.ps1",
+  "path": "verify-system.ps1",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "1b1194f4": {
+      "value": "I'm working on a Spring Boot microservices food delivery application with the following setup:\n\n**Project Architecture:**\n- Workspace Root: Food-Delivery-main\n- Infrastructure Services: Config Server (8888), Eureka Server (8761), API Gateway (8080/9090)\n- Business Services: User (8081), Restaurant (8082), Order (8083), Payment (8084), Notification (8085)\n- E2E Tests: e2e-tests/src/test/java/com/fooddelivery/e2e/\n- Config Repository: config-repo/\n- Kubernetes Manifests: k8s/\n- WireMock: e2e-tests"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

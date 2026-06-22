@@ -13,10 +13,7 @@ class EntityTest {
 
     @Test
     void testOrder_NoArgsConstructor() {
-        // Act
         Order order = new Order();
-        
-        // Assert
         assertNotNull(order);
         assertNull(order.getId());
         assertNull(order.getUserId());
@@ -32,15 +29,10 @@ class EntityTest {
 
     @Test
     void testOrder_ThreeArgsConstructor() {
-        // Arrange
         Long userId = 1L;
         Long restaurantId = 2L;
         String deliveryAddress = "123 Main St";
-        
-        // Act
         Order order = new Order(userId, restaurantId, deliveryAddress);
-        
-        // Assert
         assertEquals(userId, order.getUserId());
         assertEquals(restaurantId, order.getRestaurantId());
         assertEquals(deliveryAddress, order.getDeliveryAddress());
@@ -52,7 +44,6 @@ class EntityTest {
 
     @Test
     void testOrder_GettersAndSetters() {
-        // Arrange
         Order order = new Order();
         Long id = 1L;
         Long userId = 2L;
@@ -63,8 +54,7 @@ class EntityTest {
         List<OrderItem> orderItems = new ArrayList<>();
         LocalDateTime createdAt = LocalDateTime.now();
         LocalDateTime updatedAt = LocalDateTime.now();
-        
-        // Act
+
         order.setId(id);
         order.setUserId(userId);
         order.setRestaurantId(restaurantId);
@@ -74,8 +64,7 @@ class EntityTest {
         order.setOrderItems(orderItems);
         order.setCreatedAt(createdAt);
         order.setUpdatedAt(updatedAt);
-        
-        // Assert
+
         assertEquals(id, order.getId());
         assertEquals(userId, order.getUserId());
         assertEquals(restaurantId, order.getRestaurantId());
@@ -89,36 +78,23 @@ class EntityTest {
 
     @Test
     void testOrder_OnCreate() {
-        // Arrange
         Order order = new Order();
-        
-        // Act
         order.onCreate();
-        
-        // Assert
         assertNotNull(order.getCreatedAt());
         assertTrue(order.getCreatedAt().isBefore(LocalDateTime.now().plusSeconds(1)));
     }
 
     @Test
     void testOrder_OnUpdate() {
-        // Arrange
         Order order = new Order();
-        
-        // Act
         order.onUpdate();
-        
-        // Assert
         assertNotNull(order.getUpdatedAt());
         assertTrue(order.getUpdatedAt().isBefore(LocalDateTime.now().plusSeconds(1)));
     }
 
     @Test
     void testOrderItem_NoArgsConstructor() {
-        // Act
         OrderItem orderItem = new OrderItem();
-        
-        // Assert
         assertNotNull(orderItem);
         assertNull(orderItem.getId());
         assertNull(orderItem.getMenuItemId());
@@ -129,15 +105,10 @@ class EntityTest {
 
     @Test
     void testOrderItem_ThreeArgsConstructor() {
-        // Arrange
         Long menuItemId = 1L;
         Integer quantity = 2;
         BigDecimal price = new BigDecimal("12.99");
-        
-        // Act
         OrderItem orderItem = new OrderItem(menuItemId, quantity, price);
-        
-        // Assert
         assertEquals(menuItemId, orderItem.getMenuItemId());
         assertEquals(quantity, orderItem.getQuantity());
         assertEquals(price, orderItem.getPrice());
@@ -147,22 +118,19 @@ class EntityTest {
 
     @Test
     void testOrderItem_GettersAndSetters() {
-        // Arrange
         OrderItem orderItem = new OrderItem();
         Long id = 1L;
         Long menuItemId = 2L;
         Integer quantity = 3;
         BigDecimal price = new BigDecimal("15.50");
         Order order = new Order();
-        
-        // Act
+
         orderItem.setId(id);
         orderItem.setMenuItemId(menuItemId);
         orderItem.setQuantity(quantity);
         orderItem.setPrice(price);
         orderItem.setOrder(order);
-        
-        // Assert
+
         assertEquals(id, orderItem.getId());
         assertEquals(menuItemId, orderItem.getMenuItemId());
         assertEquals(quantity, orderItem.getQuantity());
@@ -172,58 +140,74 @@ class EntityTest {
 
     @Test
     void testOrderItem_GetSubtotal() {
-        // Arrange
         OrderItem orderItem = new OrderItem();
         orderItem.setPrice(new BigDecimal("10.50"));
         orderItem.setQuantity(3);
-        
-        // Act
         BigDecimal subtotal = orderItem.getSubtotal();
-        
-        // Assert
         assertEquals(new BigDecimal("31.50"), subtotal);
     }
 
     @Test
     void testOrderStatus_EnumValues() {
-        // Act & Assert
         assertEquals("CREATED", OrderStatus.CREATED.name());
+        assertEquals("PAYMENT_PENDING", OrderStatus.PAYMENT_PENDING.name());
+        assertEquals("PAID", OrderStatus.PAID.name());
+        assertEquals("PAYMENT_FAILED", OrderStatus.PAYMENT_FAILED.name());
+        assertEquals("RESTAURANT_PENDING", OrderStatus.RESTAURANT_PENDING.name());
+        assertEquals("RESTAURANT_CONFIRMED", OrderStatus.RESTAURANT_CONFIRMED.name());
+        assertEquals("RESTAURANT_REJECTED", OrderStatus.RESTAURANT_REJECTED.name());
         assertEquals("CONFIRMED", OrderStatus.CONFIRMED.name());
         assertEquals("PREPARING", OrderStatus.PREPARING.name());
         assertEquals("OUT_FOR_DELIVERY", OrderStatus.OUT_FOR_DELIVERY.name());
         assertEquals("DELIVERED", OrderStatus.DELIVERED.name());
         assertEquals("CANCELLED", OrderStatus.CANCELLED.name());
+        assertEquals("REFUND_PENDING", OrderStatus.REFUND_PENDING.name());
+        assertEquals("REFUNDED", OrderStatus.REFUNDED.name());
+        assertEquals("FAILED", OrderStatus.FAILED.name());
     }
 
     @Test
     void testOrderStatus_ValueOf() {
-        // Act & Assert
         assertEquals(OrderStatus.CREATED, OrderStatus.valueOf("CREATED"));
+        assertEquals(OrderStatus.PAYMENT_PENDING, OrderStatus.valueOf("PAYMENT_PENDING"));
+        assertEquals(OrderStatus.PAID, OrderStatus.valueOf("PAID"));
+        assertEquals(OrderStatus.PAYMENT_FAILED, OrderStatus.valueOf("PAYMENT_FAILED"));
+        assertEquals(OrderStatus.RESTAURANT_PENDING, OrderStatus.valueOf("RESTAURANT_PENDING"));
+        assertEquals(OrderStatus.RESTAURANT_CONFIRMED, OrderStatus.valueOf("RESTAURANT_CONFIRMED"));
+        assertEquals(OrderStatus.RESTAURANT_REJECTED, OrderStatus.valueOf("RESTAURANT_REJECTED"));
         assertEquals(OrderStatus.CONFIRMED, OrderStatus.valueOf("CONFIRMED"));
         assertEquals(OrderStatus.PREPARING, OrderStatus.valueOf("PREPARING"));
         assertEquals(OrderStatus.OUT_FOR_DELIVERY, OrderStatus.valueOf("OUT_FOR_DELIVERY"));
         assertEquals(OrderStatus.DELIVERED, OrderStatus.valueOf("DELIVERED"));
         assertEquals(OrderStatus.CANCELLED, OrderStatus.valueOf("CANCELLED"));
+        assertEquals(OrderStatus.REFUND_PENDING, OrderStatus.valueOf("REFUND_PENDING"));
+        assertEquals(OrderStatus.REFUNDED, OrderStatus.valueOf("REFUNDED"));
+        assertEquals(OrderStatus.FAILED, OrderStatus.valueOf("FAILED"));
     }
 
     @Test
     void testOrderStatus_Values() {
-        // Act
         OrderStatus[] values = OrderStatus.values();
-        
-        // Assert
-        assertEquals(6, values.length);
+        assertEquals(15, values.length);
         assertEquals(OrderStatus.CREATED, values[0]);
-        assertEquals(OrderStatus.CONFIRMED, values[1]);
-        assertEquals(OrderStatus.PREPARING, values[2]);
-        assertEquals(OrderStatus.OUT_FOR_DELIVERY, values[3]);
-        assertEquals(OrderStatus.DELIVERED, values[4]);
-        assertEquals(OrderStatus.CANCELLED, values[5]);
+        assertEquals(OrderStatus.PAYMENT_PENDING, values[1]);
+        assertEquals(OrderStatus.PAID, values[2]);
+        assertEquals(OrderStatus.PAYMENT_FAILED, values[3]);
+        assertEquals(OrderStatus.RESTAURANT_PENDING, values[4]);
+        assertEquals(OrderStatus.RESTAURANT_CONFIRMED, values[5]);
+        assertEquals(OrderStatus.RESTAURANT_REJECTED, values[6]);
+        assertEquals(OrderStatus.CONFIRMED, values[7]);
+        assertEquals(OrderStatus.PREPARING, values[8]);
+        assertEquals(OrderStatus.OUT_FOR_DELIVERY, values[9]);
+        assertEquals(OrderStatus.DELIVERED, values[10]);
+        assertEquals(OrderStatus.CANCELLED, values[11]);
+        assertEquals(OrderStatus.REFUND_PENDING, values[12]);
+        assertEquals(OrderStatus.REFUNDED, values[13]);
+        assertEquals(OrderStatus.FAILED, values[14]);
     }
 
     @Test
     void testOrderStatus_ValueOfInvalidValue() {
-        // Act & Assert
         assertThrows(IllegalArgumentException.class, () -> {
             OrderStatus.valueOf("INVALID_STATUS");
         });
@@ -231,10 +215,7 @@ class EntityTest {
 
     @Test
     void testOrder_NullValues() {
-        // Arrange
         Order order = new Order();
-        
-        // Act
         order.setId(null);
         order.setUserId(null);
         order.setRestaurantId(null);
@@ -244,8 +225,7 @@ class EntityTest {
         order.setOrderItems(null);
         order.setCreatedAt(null);
         order.setUpdatedAt(null);
-        
-        // Assert
+
         assertNull(order.getId());
         assertNull(order.getUserId());
         assertNull(order.getRestaurantId());
@@ -259,17 +239,13 @@ class EntityTest {
 
     @Test
     void testOrderItem_NullValues() {
-        // Arrange
         OrderItem orderItem = new OrderItem();
-        
-        // Act
         orderItem.setId(null);
         orderItem.setMenuItemId(null);
         orderItem.setQuantity(null);
         orderItem.setPrice(null);
         orderItem.setOrder(null);
-        
-        // Assert
+
         assertNull(orderItem.getId());
         assertNull(orderItem.getMenuItemId());
         assertNull(orderItem.getQuantity());
@@ -279,61 +255,40 @@ class EntityTest {
 
     @Test
     void testOrder_AllStatusValues() {
-        // Arrange
         Order order = new Order();
-        
-        // Test all enum values
         for (OrderStatus status : OrderStatus.values()) {
-            // Act
             order.setStatus(status);
-            
-            // Assert
             assertEquals(status, order.getStatus());
         }
     }
 
     @Test
     void testOrderItem_GetSubtotalWithZeroQuantity() {
-        // Arrange
         OrderItem orderItem = new OrderItem();
         orderItem.setPrice(new BigDecimal("10.50"));
         orderItem.setQuantity(0);
-
-        // Act
         BigDecimal subtotal = orderItem.getSubtotal();
-
-        // Assert
         assertEquals(new BigDecimal("0.00"), subtotal);
     }
 
     @Test
     void testOrderItem_GetSubtotalWithZeroPrice() {
-        // Arrange
         OrderItem orderItem = new OrderItem();
         orderItem.setPrice(BigDecimal.ZERO);
         orderItem.setQuantity(3);
-
-        // Act
         BigDecimal subtotal = orderItem.getSubtotal();
-
-        // Assert
         assertEquals(new BigDecimal("0"), subtotal);
     }
 
     @Test
     void testOrder_WithOrderItems() {
-        // Arrange
         Order order = new Order();
         OrderItem item1 = new OrderItem(1L, 2, new BigDecimal("10.00"));
         OrderItem item2 = new OrderItem(2L, 1, new BigDecimal("15.00"));
         List<OrderItem> items = new ArrayList<>();
         items.add(item1);
         items.add(item2);
-        
-        // Act
         order.setOrderItems(items);
-        
-        // Assert
         assertEquals(2, order.getOrderItems().size());
         assertTrue(order.getOrderItems().contains(item1));
         assertTrue(order.getOrderItems().contains(item2));

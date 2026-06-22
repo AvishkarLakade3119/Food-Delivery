@@ -1,38 +1,38 @@
+# ========================================
+# Eureka Server - Bootstrap Configuration
+# ========================================
+# CRITICAL FIX: server.port MUST be set here to 8761
+# Without this, Spring Boot defaults to 8080 which is occupied
+
 server:
   port: 8761
-  shutdown: graceful
 
 spring:
   application:
     name: eureka-server
-  lifecycle:
-    timeout-per-shutdown-phase: 30s
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    config:
+      fail-fast: false
+      retry:
+        max-attempts: 6
+        initial-interval: 1000
+        multiplier: 1.1
+        max-interval: 2000
 
+# Eureka Server Standalone Configuration
 eureka:
-  instance:
-    hostname: localhost
-    prefer-ip-address: false
-    lease-renewal-interval-in-seconds: 30
-    lease-expiration-duration-in-seconds: 90
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://localhost:8761/eureka/
   server:
     enable-self-preservation: false
-    eviction-interval-timer-in-ms: 15000
-    renewal-percent-threshold: 0.85
-    wait-time-in-ms-when-sync-empty: 0
-    response-cache-update-interval-ms: 30000
-    response-cache-auto-expiration-in-seconds: 180
+    eviction-interval-timer-in-ms: 5000
 
-logging:
-  level:
-    com.netflix.eureka: INFO
-    com.netflix.discovery: INFO
-    org.springframework.cloud.netflix.eureka: INFO
-
+# Management Configuration - Prevent port 8080 conflict
 management:
   endpoints:
     web:
@@ -41,5 +41,3 @@ management:
   endpoint:
     health:
       show-details: always
-  server:
-    port: 8761

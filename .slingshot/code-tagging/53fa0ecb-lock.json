@@ -1,0 +1,280 @@
+{
+  "config-server\\src\\main\\java\\com\\fooddelivery\\configserver\\ConfigServerApplication.java": {
+    "filename": "ConfigServerApplication.java",
+    "path": "config-server\\src\\main\\java\\com\\fooddelivery\\configserver\\ConfigServerApplication.java",
+    "version": "1.2",
+    "contextFile": "53fa0ecb-context.json",
+    "chunks": {
+      "5bfe4d": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781074696,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "811e12b1",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:28:16 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      },
+      "b1700d": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781083911,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "chat",
+        "type": "copyCode",
+        "extraContext": {
+          "promptMessage": "371e81de"
+        },
+        "hash": "ec54cf3b",
+        "messageId": "system_c45d1040-64a9-11f1-80e8-659659a77bc1",
+        "codeBlockId": "system_c45d1040-64a9-11f1-80e8-659659a77bc1-Codeblock-2",
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 3:01:51 PM\n- **source**: chat\n- **type**: copyCode\n"
+      },
+      "30eaf1": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781083930,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "chat",
+        "type": "copyCode",
+        "extraContext": {
+          "promptMessage": "371e81de"
+        },
+        "hash": "366855e1",
+        "messageId": "system_c45d1040-64a9-11f1-80e8-659659a77bc1",
+        "codeBlockId": "system_c45d1040-64a9-11f1-80e8-659659a77bc1-Codeblock-2",
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 3:02:10 PM\n- **source**: chat\n- **type**: copyCode\n"
+      },
+      "8cfaa5": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781084097,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "chat",
+        "type": "copyCode",
+        "extraContext": {
+          "promptMessage": "371e81de"
+        },
+        "hash": "967736b5",
+        "messageId": "system_c45d1040-64a9-11f1-80e8-659659a77bc1",
+        "codeBlockId": "system_c45d1040-64a9-11f1-80e8-659659a77bc1-Codeblock-4",
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 3:04:57 PM\n- **source**: chat\n- **type**: copyCode\n"
+      },
+      "33a1b6": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781084102,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "chat",
+        "type": "copyCode",
+        "extraContext": {
+          "promptMessage": "371e81de"
+        },
+        "hash": "ec54cf3b",
+        "messageId": "system_c45d1040-64a9-11f1-80e8-659659a77bc1",
+        "codeBlockId": "system_c45d1040-64a9-11f1-80e8-659659a77bc1-Codeblock-4",
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 3:05:02 PM\n- **source**: chat\n- **type**: copyCode\n"
+      },
+      "0ce9bf": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781084109,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "chat",
+        "type": "copyCode",
+        "extraContext": {
+          "promptMessage": "371e81de"
+        },
+        "hash": "366855e1",
+        "messageId": "system_c45d1040-64a9-11f1-80e8-659659a77bc1",
+        "codeBlockId": "system_c45d1040-64a9-11f1-80e8-659659a77bc1-Codeblock-4",
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 3:05:09 PM\n- **source**: chat\n- **type**: copyCode\n"
+      }
+    },
+    "lines": {
+      "2": {
+        "chunkId": "5bfe4d",
+        "hash": "b2a739bd",
+        "encoded": "import%20org.springframework.boot.SpringApplication;",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "3": {
+        "chunkId": "5bfe4d",
+        "hash": "93b94c0f",
+        "encoded": "import%20org.springframework.boot.autoconfigure.SpringBootApplication;",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "4": {
+        "chunkId": "5bfe4d",
+        "hash": "9f452104",
+        "encoded": "import%20org.springframework.cloud.config.server.EnableConfigServer;",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "6": {
+        "chunkId": "5bfe4d",
+        "hash": "692dab65",
+        "encoded": "/**",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "7": {
+        "chunkId": "5bfe4d",
+        "hash": "c6e31d61",
+        "encoded": "*%20Spring%20Cloud%20Config%20Server%20Application",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "8": {
+        "chunkId": "5bfe4d",
+        "hash": "c59c8240",
+        "encoded": "*",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "9": {
+        "chunkId": "5bfe4d",
+        "hash": "c363bc38",
+        "encoded": "*%20This%20service%20provides%20centralized%20configuration%20management%20for%20all%20microservices",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "10": {
+        "chunkId": "5bfe4d",
+        "hash": "da247b66",
+        "encoded": "*%20in%20the%20Food%20Delivery%20platform.%20It%20serves%20configuration%20files%20from%20a%20Git%20repository",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "11": {
+        "chunkId": "5bfe4d",
+        "hash": "970bc3ef",
+        "encoded": "*%20and%20integrates%20with%20Eureka%20for%20service%20discovery.",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "12": {
+        "chunkId": "5bfe4d",
+        "hash": "738e256a",
+        "encoded": "*",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "13": {
+        "chunkId": "5bfe4d",
+        "hash": "3bb27e5d",
+        "encoded": "*%20@author%20Food%20Delivery%20Team",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "14": {
+        "chunkId": "5bfe4d",
+        "hash": "f6d5ff6e",
+        "encoded": "*%20@version%201.0.0",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "15": {
+        "chunkId": "5bfe4d",
+        "hash": "97c602ba",
+        "encoded": "*/",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "16": {
+        "chunkId": "5bfe4d",
+        "hash": "063b84e0",
+        "encoded": "@SpringBootApplication",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "17": {
+        "chunkId": "5bfe4d",
+        "hash": "0cb052bd",
+        "encoded": "@EnableConfigServer",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "18": {
+        "chunkId": "5bfe4d",
+        "hash": "9eb3cda6",
+        "encoded": "public%20class%20ConfigServerApplication%20%7B",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "20": {
+        "chunkId": "5bfe4d",
+        "hash": "2561f7e2",
+        "encoded": "public%20static%20void%20main(String%5B%5D%20args)%20%7B",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "21": {
+        "chunkId": "5bfe4d",
+        "hash": "cda7c886",
+        "encoded": "SpringApplication.run(ConfigServerApplication.class,%20args);",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "22": {
+        "chunkId": "5bfe4d",
+        "hash": "4c3814eb",
+        "encoded": "%7D",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      },
+      "23": {
+        "chunkId": "5bfe4d",
+        "hash": "7b3531ab",
+        "encoded": "%7D",
+        "prevChunkIds": [
+          "5bfe4d"
+        ]
+      }
+    }
+  }
+}

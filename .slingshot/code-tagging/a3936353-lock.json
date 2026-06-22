@@ -1,0 +1,468 @@
+{
+  "user-service\\src\\main\\java\\com\\fooddelivery\\user\\controller\\AuthController.java": {
+    "filename": "AuthController.java",
+    "path": "user-service\\src\\main\\java\\com\\fooddelivery\\user\\controller\\AuthController.java",
+    "version": "1.2",
+    "contextFile": "a3936353-context.json",
+    "chunks": {
+      "732c88": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781166261,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "936e87ee"
+        },
+        "hash": "569b50df",
+        "messageId": "system_dbaceda0-656d-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 1:54:21 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "abf150": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781166261,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "936e87ee"
+        },
+        "hash": "4ee9130d",
+        "messageId": "system_dbaceda0-656d-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 1:54:21 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "75d189": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781166261,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "936e87ee"
+        },
+        "hash": "16b3881c",
+        "messageId": "system_dbaceda0-656d-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 1:54:21 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "75d189",
+        "hash": "2cce53cb",
+        "encoded": "package%20com.fooddelivery.user.controller;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "75d189",
+        "hash": "bab1875c",
+        "encoded": "import%20com.fooddelivery.user.dto.LoginRequest;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "75d189",
+        "hash": "375c482b",
+        "encoded": "import%20com.fooddelivery.user.dto.LoginResponse;",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "75d189",
+        "hash": "75c52d69",
+        "encoded": "import%20com.fooddelivery.user.dto.UserRegistrationDto;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "75d189",
+        "hash": "af163789",
+        "encoded": "import%20com.fooddelivery.user.dto.UserResponse;",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "75d189",
+        "hash": "61977c5c",
+        "encoded": "import%20com.fooddelivery.user.entity.User;",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "75d189",
+        "hash": "fb7f797d",
+        "encoded": "import%20com.fooddelivery.user.entity.UserRole;",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "75d189",
+        "hash": "2dfaeccf",
+        "encoded": "import%20com.fooddelivery.user.security.JwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "75d189",
+        "hash": "b58033aa",
+        "encoded": "import%20com.fooddelivery.user.service.UserService;",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "75d189",
+        "hash": "c4de91f3",
+        "encoded": "import%20jakarta.validation.Valid;",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "75d189",
+        "hash": "e51967f4",
+        "encoded": "import%20org.slf4j.Logger;",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "75d189",
+        "hash": "25d308b0",
+        "encoded": "import%20org.slf4j.LoggerFactory;",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "75d189",
+        "hash": "d75afd5f",
+        "encoded": "import%20org.springframework.beans.factory.annotation.Autowired;",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "75d189",
+        "hash": "263dd509",
+        "encoded": "import%20org.springframework.beans.factory.annotation.Value;",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "75d189",
+        "hash": "b608f30d",
+        "encoded": "import%20org.springframework.http.HttpStatus;",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "75d189",
+        "hash": "82068a10",
+        "encoded": "import%20org.springframework.http.ResponseEntity;",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "75d189",
+        "hash": "8f838078",
+        "encoded": "import%20org.springframework.security.crypto.password.PasswordEncoder;",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "75d189",
+        "hash": "5e352afc",
+        "encoded": "import%20org.springframework.web.bind.annotation.*;",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "abf150",
+        "hash": "0603cb93",
+        "encoded": "private%20static%20final%20Logger%20logger%20=%20LoggerFactory.getLogger(AuthController.class);",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "abf150",
+        "hash": "c76dca32",
+        "encoded": "@Autowired",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "abf150",
+        "hash": "871d9f6f",
+        "encoded": "private%20UserService%20userService;",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "abf150",
+        "hash": "8b782b48",
+        "encoded": "@Autowired",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "abf150",
+        "hash": "90635515",
+        "encoded": "private%20PasswordEncoder%20passwordEncoder;",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "abf150",
+        "hash": "bb287e96",
+        "encoded": "@Autowired",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "abf150",
+        "hash": "8618c354",
+        "encoded": "private%20JwtTokenProvider%20jwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "abf150",
+        "hash": "99e06e24",
+        "encoded": "@Value(%22$%7Bjwt.expiration%7D%22)",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "abf150",
+        "hash": "51735fee",
+        "encoded": "private%20long%20jwtExpirationMs;",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "732c88",
+        "hash": "7c8cb099",
+        "encoded": "@PostMapping(%22/register%22)",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "732c88",
+        "hash": "08b612b7",
+        "encoded": "public%20ResponseEntity%3CUserResponse%3E%20registerUser(@Valid%20@RequestBody%20UserRegistrationDto%20registrationDto)%20%7B",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "732c88",
+        "hash": "93491017",
+        "encoded": "logger.info(%22Registration%20request%20received%20for%20user:%20%7B%7D%22,%20registrationDto.getUsername());",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "732c88",
+        "hash": "5b2c2455",
+        "encoded": "//%20Convert%20DTO%20to%20User%20entity",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "732c88",
+        "hash": "88ab3254",
+        "encoded": "User%20user%20=%20new%20User();",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "732c88",
+        "hash": "38c5cfe2",
+        "encoded": "user.setUsername(registrationDto.getUsername());",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "732c88",
+        "hash": "1a56bbda",
+        "encoded": "user.setEmail(registrationDto.getEmail());",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "732c88",
+        "hash": "154d7f23",
+        "encoded": "//%20Encode%20password%20before%20saving",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "732c88",
+        "hash": "166b642d",
+        "encoded": "user.setPassword(passwordEncoder.encode(registrationDto.getPassword()));",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "732c88",
+        "hash": "f0204ddb",
+        "encoded": "user.setFirstName(registrationDto.getFirstName());",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "732c88",
+        "hash": "93e9704b",
+        "encoded": "user.setLastName(registrationDto.getLastName());",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "732c88",
+        "hash": "c2aa4863",
+        "encoded": "user.setPhone(registrationDto.getPhone());",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "732c88",
+        "hash": "9feac069",
+        "encoded": "user.setDateOfBirth(registrationDto.getDateOfBirth());",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "732c88",
+        "hash": "a8751743",
+        "encoded": "user.setName(registrationDto.getFirstName()%20+%20%22%20%22%20+%20registrationDto.getLastName());",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "732c88",
+        "hash": "9b5ff568",
+        "encoded": "//%20Set%20address",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "732c88",
+        "hash": "9e092732",
+        "encoded": "if%20(registrationDto.getAddress()%20!=%20null%20&&%20!registrationDto.getAddress().trim().isEmpty())%20%7B",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "732c88",
+        "hash": "c9fed625",
+        "encoded": "user.setAddress(registrationDto.getAddress());",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "732c88",
+        "hash": "5161fa08",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "732c88",
+        "hash": "46188713",
+        "encoded": "user.setAddress(%22%22);",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "732c88",
+        "hash": "c251d1dd",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "732c88",
+        "hash": "69e399ce",
+        "encoded": "//%20Set%20default%20role",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "732c88",
+        "hash": "0c6f2df8",
+        "encoded": "user.setRole(UserRole.CUSTOMER);",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "732c88",
+        "hash": "56c84830",
+        "encoded": "User%20registeredUser%20=%20userService.createUser(user);",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "732c88",
+        "hash": "49e82690",
+        "encoded": "logger.info(%22User%20registered%20successfully%20with%20ID:%20%7B%7D%22,%20registeredUser.getId());",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "732c88",
+        "hash": "04d00839",
+        "encoded": "//%20Create%20response%20without%20password",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "732c88",
+        "hash": "4c14798d",
+        "encoded": "UserResponse%20response%20=%20new%20UserResponse(",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "732c88",
+        "hash": "d8342526",
+        "encoded": "registeredUser.getId(),",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "732c88",
+        "hash": "426709ce",
+        "encoded": "registeredUser.getUsername(),",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "732c88",
+        "hash": "3ed5ec96",
+        "encoded": "registeredUser.getEmail(),",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "732c88",
+        "hash": "cb945cac",
+        "encoded": "registeredUser.getFirstName(),",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "732c88",
+        "hash": "2e96e75a",
+        "encoded": "registeredUser.getLastName(),",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "732c88",
+        "hash": "e9a6e97d",
+        "encoded": "registeredUser.getName(),",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "732c88",
+        "hash": "796e6a3b",
+        "encoded": "registeredUser.getPhone(),",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "732c88",
+        "hash": "a07e37eb",
+        "encoded": "registeredUser.getAddress(),",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "732c88",
+        "hash": "3bd02d15",
+        "encoded": "registeredUser.getRole(),",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "732c88",
+        "hash": "fac1867c",
+        "encoded": "registeredUser.getCreatedAt(),",
+        "prevChunkIds": []
+      },
+      "125": {
+        "chunkId": "732c88",
+        "hash": "dfb6bee7",
+        "encoded": "registeredUser.getUpdatedAt()",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "732c88",
+        "hash": "3c2a7a5e",
+        "encoded": ");",
+        "prevChunkIds": []
+      },
+      "128": {
+        "chunkId": "732c88",
+        "hash": "4ef51910",
+        "encoded": "return%20new%20ResponseEntity%3C%3E(response,%20HttpStatus.CREATED);",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "732c88",
+        "hash": "ff6991dc",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

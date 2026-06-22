@@ -1,0 +1,498 @@
+{
+  "payment-service\\src\\main\\java\\com\\fooddelivery\\payment\\event\\PaymentFailedEvent.java": {
+    "filename": "PaymentFailedEvent.java",
+    "path": "payment-service\\src\\main\\java\\com\\fooddelivery\\payment\\event\\PaymentFailedEvent.java",
+    "version": "1.2",
+    "contextFile": "a6aca17b-context.json",
+    "chunks": {
+      "787d9f": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781423482,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "b7fe811e"
+        },
+        "hash": "e9cfa1c8",
+        "messageId": "system_3657ad90-67c5-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 1:21:22 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "787d9f",
+        "hash": "49ecf8f4",
+        "encoded": "package%20com.fooddelivery.payment.event;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "787d9f",
+        "hash": "7193abca",
+        "encoded": "import%20java.io.Serializable;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "787d9f",
+        "hash": "7b12a033",
+        "encoded": "import%20java.time.LocalDateTime;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "787d9f",
+        "hash": "b9fc3b5c",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "787d9f",
+        "hash": "abaf9527",
+        "encoded": "*%20Event%20published%20when%20payment%20fails",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "787d9f",
+        "hash": "d0e9ccc7",
+        "encoded": "*%20Consumed%20by:%20order-service,%20notification-service",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "787d9f",
+        "hash": "11d7e9e0",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "787d9f",
+        "hash": "c45a1829",
+        "encoded": "public%20class%20PaymentFailedEvent%20implements%20Serializable%20%7B",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "787d9f",
+        "hash": "7eb956a7",
+        "encoded": "private%20static%20final%20long%20serialVersionUID%20=%201L;",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "787d9f",
+        "hash": "e238d21a",
+        "encoded": "private%20Long%20paymentId;",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "787d9f",
+        "hash": "d7604d55",
+        "encoded": "private%20Long%20orderId;",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "787d9f",
+        "hash": "11b8ff66",
+        "encoded": "private%20Long%20userId;",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "787d9f",
+        "hash": "64f4c305",
+        "encoded": "private%20Double%20amount;",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "787d9f",
+        "hash": "c873d010",
+        "encoded": "private%20String%20failureReason;",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "787d9f",
+        "hash": "474e2084",
+        "encoded": "private%20LocalDateTime%20timestamp;",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "787d9f",
+        "hash": "be2bd230",
+        "encoded": "//%20No-args%20constructor",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "787d9f",
+        "hash": "885422ff",
+        "encoded": "public%20PaymentFailedEvent()%20%7B",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "787d9f",
+        "hash": "fe7cb07f",
+        "encoded": "this.timestamp%20=%20LocalDateTime.now();",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "787d9f",
+        "hash": "4c3814eb",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "787d9f",
+        "hash": "66a239e5",
+        "encoded": "//%20All-args%20constructor",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "787d9f",
+        "hash": "ec3a40b0",
+        "encoded": "public%20PaymentFailedEvent(Long%20paymentId,%20Long%20orderId,%20Long%20userId,",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "787d9f",
+        "hash": "5c0825fc",
+        "encoded": "Double%20amount,%20String%20failureReason,%20LocalDateTime%20timestamp)%20%7B",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "787d9f",
+        "hash": "f29e574a",
+        "encoded": "this.paymentId%20=%20paymentId;",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "787d9f",
+        "hash": "2f1448cf",
+        "encoded": "this.orderId%20=%20orderId;",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "787d9f",
+        "hash": "654d059c",
+        "encoded": "this.userId%20=%20userId;",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "787d9f",
+        "hash": "0917890f",
+        "encoded": "this.amount%20=%20amount;",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "787d9f",
+        "hash": "9cdf2c2a",
+        "encoded": "this.failureReason%20=%20failureReason;",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "787d9f",
+        "hash": "e9c4079c",
+        "encoded": "this.timestamp%20=%20timestamp%20!=%20null%20?%20timestamp%20:%20LocalDateTime.now();",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "787d9f",
+        "hash": "0e2c0edc",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "787d9f",
+        "hash": "68610249",
+        "encoded": "//%20Getters%20and%20Setters",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "787d9f",
+        "hash": "84303302",
+        "encoded": "public%20Long%20getPaymentId()%20%7B",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "787d9f",
+        "hash": "307656d5",
+        "encoded": "return%20paymentId;",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "787d9f",
+        "hash": "1b754c76",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "787d9f",
+        "hash": "59c837ee",
+        "encoded": "public%20void%20setPaymentId(Long%20paymentId)%20%7B",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "787d9f",
+        "hash": "52dd9d06",
+        "encoded": "this.paymentId%20=%20paymentId;",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "787d9f",
+        "hash": "5663967b",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "787d9f",
+        "hash": "91764270",
+        "encoded": "public%20Long%20getOrderId()%20%7B",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "787d9f",
+        "hash": "16881fc7",
+        "encoded": "return%20orderId;",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "787d9f",
+        "hash": "f9b2449c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "787d9f",
+        "hash": "d65e2080",
+        "encoded": "public%20void%20setOrderId(Long%20orderId)%20%7B",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "787d9f",
+        "hash": "ddd58709",
+        "encoded": "this.orderId%20=%20orderId;",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "787d9f",
+        "hash": "6a5bdc1a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "787d9f",
+        "hash": "b7f00bfe",
+        "encoded": "public%20Long%20getUserId()%20%7B",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "787d9f",
+        "hash": "a102a4ed",
+        "encoded": "return%20userId;",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "787d9f",
+        "hash": "5c9d24d4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "787d9f",
+        "hash": "a7629e03",
+        "encoded": "public%20void%20setUserId(Long%20userId)%20%7B",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "787d9f",
+        "hash": "dd691ecf",
+        "encoded": "this.userId%20=%20userId;",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "787d9f",
+        "hash": "f4e179c9",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "787d9f",
+        "hash": "e630e0e8",
+        "encoded": "public%20Double%20getAmount()%20%7B",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "787d9f",
+        "hash": "203cb5b4",
+        "encoded": "return%20amount;",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "787d9f",
+        "hash": "646a8e84",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "787d9f",
+        "hash": "c6e6a368",
+        "encoded": "public%20void%20setAmount(Double%20amount)%20%7B",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "787d9f",
+        "hash": "0c0c8d80",
+        "encoded": "this.amount%20=%20amount;",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "787d9f",
+        "hash": "f706ff69",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "787d9f",
+        "hash": "479e93ee",
+        "encoded": "public%20String%20getFailureReason()%20%7B",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "787d9f",
+        "hash": "0c870452",
+        "encoded": "return%20failureReason;",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "787d9f",
+        "hash": "352e9b23",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "787d9f",
+        "hash": "642d0236",
+        "encoded": "public%20void%20setFailureReason(String%20failureReason)%20%7B",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "787d9f",
+        "hash": "4da8d5aa",
+        "encoded": "this.failureReason%20=%20failureReason;",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "787d9f",
+        "hash": "6387e751",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "787d9f",
+        "hash": "2bdad7a5",
+        "encoded": "public%20LocalDateTime%20getTimestamp()%20%7B",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "787d9f",
+        "hash": "15236aa9",
+        "encoded": "return%20timestamp;",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "787d9f",
+        "hash": "c46ffadb",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "787d9f",
+        "hash": "f5bf9c13",
+        "encoded": "public%20void%20setTimestamp(LocalDateTime%20timestamp)%20%7B",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "787d9f",
+        "hash": "25735898",
+        "encoded": "this.timestamp%20=%20timestamp;",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "787d9f",
+        "hash": "74977a35",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "787d9f",
+        "hash": "442b87b4",
+        "encoded": "@Override",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "787d9f",
+        "hash": "21899e6b",
+        "encoded": "public%20String%20toString()%20%7B",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "787d9f",
+        "hash": "cc95a2aa",
+        "encoded": "return%20%22PaymentFailedEvent%7B%22%20+",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "787d9f",
+        "hash": "c63e843a",
+        "encoded": "%22paymentId=%22%20+%20paymentId%20+",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "787d9f",
+        "hash": "058e28e9",
+        "encoded": "%22,%20orderId=%22%20+%20orderId%20+",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "787d9f",
+        "hash": "67ad1c10",
+        "encoded": "%22,%20userId=%22%20+%20userId%20+",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "787d9f",
+        "hash": "a67d61fa",
+        "encoded": "%22,%20amount=%22%20+%20amount%20+",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "787d9f",
+        "hash": "49274889",
+        "encoded": "%22,%20failureReason='%22%20+%20failureReason%20+%20'%5C''%20+",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "787d9f",
+        "hash": "8acf265e",
+        "encoded": "%22,%20timestamp=%22%20+%20timestamp%20+",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "787d9f",
+        "hash": "1643b300",
+        "encoded": "'%7D';",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "787d9f",
+        "hash": "db89230b",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "787d9f",
+        "hash": "4cb4c387",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

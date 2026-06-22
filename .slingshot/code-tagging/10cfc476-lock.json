@@ -1,0 +1,954 @@
+{
+  "DATABASE_FIX_SCRIPT.sql": {
+    "filename": "DATABASE_FIX_SCRIPT.sql",
+    "path": "DATABASE_FIX_SCRIPT.sql",
+    "version": "1.2",
+    "contextFile": "10cfc476-context.json",
+    "chunks": {
+      "6cbf8c": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781160115,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "0577c8df"
+        },
+        "hash": "fbcf4a9a",
+        "messageId": "system_5ee995d0-6558-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 12:11:55 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "6cbf8c",
+        "hash": "d8a3a989",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "6cbf8c",
+        "hash": "02a74499",
+        "encoded": "--%20FOOD%20DELIVERY%20MICROSERVICES%20-%20DATABASE%20SEQUENCE%20FIX%20SCRIPT",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "6cbf8c",
+        "hash": "1eb344dc",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "6cbf8c",
+        "hash": "18d7cb4d",
+        "encoded": "--%20Purpose:%20Reset%20all%20database%20sequences%20to%20resolve%20duplicate%20key%20constraint%20violations",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "6cbf8c",
+        "hash": "bef88b15",
+        "encoded": "--%20Issue:%20Sequences%20are%20trying%20to%20use%20IDs%20that%20already%20exist%20(ID=100)",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "6cbf8c",
+        "hash": "9f127cae",
+        "encoded": "--%20Date:%202026-06-11",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "6cbf8c",
+        "hash": "c671d9e0",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "6cbf8c",
+        "hash": "3afc143c",
+        "encoded": "--%20Connect%20to%20each%20database%20and%20execute%20the%20corresponding%20section",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "6cbf8c",
+        "hash": "5ab735e3",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "6cbf8c",
+        "hash": "c56e87ba",
+        "encoded": "--%20RESTAURANT%20DATABASE%20(Port%205433)",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "6cbf8c",
+        "hash": "f1fd57c7",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "6cbf8c",
+        "hash": "5fc05e4c",
+        "encoded": "--%20Check%20current%20sequence%20values",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "6cbf8c",
+        "hash": "38a86ddb",
+        "encoded": "SELECT%20'restaurants_id_seq%20current%20value:',%20nextval('restaurants_id_seq');",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "6cbf8c",
+        "hash": "a670af3b",
+        "encoded": "SELECT%20'menu_items_id_seq%20current%20value:',%20nextval('menu_items_id_seq');",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "6cbf8c",
+        "hash": "fe782f81",
+        "encoded": "--%20Check%20max%20IDs%20in%20tables",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "6cbf8c",
+        "hash": "0743077e",
+        "encoded": "SELECT%20'Max%20restaurant%20ID:',%20COALESCE(MAX(id),%200)%20FROM%20restaurants;",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "6cbf8c",
+        "hash": "8ed69f79",
+        "encoded": "SELECT%20'Max%20menu_item%20ID:',%20COALESCE(MAX(id),%200)%20FROM%20menu_items;",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "6cbf8c",
+        "hash": "51d4d4a2",
+        "encoded": "--%20Reset%20sequences%20to%20max%20ID%20+%201",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "6cbf8c",
+        "hash": "fbfb2a56",
+        "encoded": "SELECT%20setval('restaurants_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20restaurants),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "6cbf8c",
+        "hash": "c9b718af",
+        "encoded": "SELECT%20setval('menu_items_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20menu_items),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "6cbf8c",
+        "hash": "207671b0",
+        "encoded": "--%20Verify%20new%20sequence%20values",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "6cbf8c",
+        "hash": "7a350ae0",
+        "encoded": "SELECT%20'restaurants_id_seq%20new%20value:',%20currval('restaurants_id_seq');",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "6cbf8c",
+        "hash": "292f103a",
+        "encoded": "SELECT%20'menu_items_id_seq%20new%20value:',%20currval('menu_items_id_seq');",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "6cbf8c",
+        "hash": "2fa34874",
+        "encoded": "--%20Alternative:%20If%20you%20want%20to%20start%20from%20a%20specific%20number%20(e.g.,%20101)",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "6cbf8c",
+        "hash": "79ca73cc",
+        "encoded": "--%20ALTER%20SEQUENCE%20restaurants_id_seq%20RESTART%20WITH%20101;",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "6cbf8c",
+        "hash": "9284d4e8",
+        "encoded": "--%20ALTER%20SEQUENCE%20menu_items_id_seq%20RESTART%20WITH%20101;",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "6cbf8c",
+        "hash": "1b19779a",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "6cbf8c",
+        "hash": "381e9b93",
+        "encoded": "--%20ORDER%20DATABASE%20(Port%205434)",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "6cbf8c",
+        "hash": "e82aeed0",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "6cbf8c",
+        "hash": "36310972",
+        "encoded": "--%20Check%20current%20sequence%20value",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "6cbf8c",
+        "hash": "ac3c8493",
+        "encoded": "SELECT%20'orders_id_seq%20current%20value:',%20nextval('orders_id_seq');",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "6cbf8c",
+        "hash": "19047eae",
+        "encoded": "SELECT%20'order_items_id_seq%20current%20value:',%20nextval('order_items_id_seq');",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "6cbf8c",
+        "hash": "856420b3",
+        "encoded": "--%20Check%20max%20IDs%20in%20tables",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "6cbf8c",
+        "hash": "52c69f0f",
+        "encoded": "SELECT%20'Max%20order%20ID:',%20COALESCE(MAX(id),%200)%20FROM%20orders;",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "6cbf8c",
+        "hash": "d25dc724",
+        "encoded": "SELECT%20'Max%20order_item%20ID:',%20COALESCE(MAX(id),%200)%20FROM%20order_items;",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "6cbf8c",
+        "hash": "71ebe1f8",
+        "encoded": "--%20Reset%20sequences%20to%20max%20ID%20+%201",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "6cbf8c",
+        "hash": "5f76d08d",
+        "encoded": "SELECT%20setval('orders_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20orders),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "6cbf8c",
+        "hash": "fa4f8a75",
+        "encoded": "SELECT%20setval('order_items_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20order_items),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "6cbf8c",
+        "hash": "5938f3b3",
+        "encoded": "--%20Verify%20new%20sequence%20values",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "6cbf8c",
+        "hash": "bec21e4d",
+        "encoded": "SELECT%20'orders_id_seq%20new%20value:',%20currval('orders_id_seq');",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "6cbf8c",
+        "hash": "1e6cf35f",
+        "encoded": "SELECT%20'order_items_id_seq%20new%20value:',%20currval('order_items_id_seq');",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "6cbf8c",
+        "hash": "96bf67b2",
+        "encoded": "--%20Alternative:%20Start%20from%20specific%20number",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "6cbf8c",
+        "hash": "dae706ad",
+        "encoded": "--%20ALTER%20SEQUENCE%20orders_id_seq%20RESTART%20WITH%20101;",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "6cbf8c",
+        "hash": "2be8bf8c",
+        "encoded": "--%20ALTER%20SEQUENCE%20order_items_id_seq%20RESTART%20WITH%20101;",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "6cbf8c",
+        "hash": "6d5f0909",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "6cbf8c",
+        "hash": "ae94548d",
+        "encoded": "--%20PAYMENT%20DATABASE%20(Port%205435)",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "6cbf8c",
+        "hash": "32a32ec6",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "6cbf8c",
+        "hash": "00fad24a",
+        "encoded": "--%20Check%20current%20sequence%20value",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "6cbf8c",
+        "hash": "84b753d1",
+        "encoded": "SELECT%20'payments_id_seq%20current%20value:',%20nextval('payments_id_seq');",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "6cbf8c",
+        "hash": "0dfc10b7",
+        "encoded": "--%20Check%20max%20ID%20in%20table",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "6cbf8c",
+        "hash": "24b5c4e2",
+        "encoded": "SELECT%20'Max%20payment%20ID:',%20COALESCE(MAX(id),%200)%20FROM%20payments;",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "6cbf8c",
+        "hash": "33018e61",
+        "encoded": "--%20Reset%20sequence%20to%20max%20ID%20+%201",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "6cbf8c",
+        "hash": "1b2bd37b",
+        "encoded": "SELECT%20setval('payments_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20payments),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "6cbf8c",
+        "hash": "c02efb38",
+        "encoded": "--%20Verify%20new%20sequence%20value",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "6cbf8c",
+        "hash": "fec6a7a7",
+        "encoded": "SELECT%20'payments_id_seq%20new%20value:',%20currval('payments_id_seq');",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "6cbf8c",
+        "hash": "d36090ea",
+        "encoded": "--%20Alternative:%20Start%20from%20specific%20number",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "6cbf8c",
+        "hash": "ab5c98e5",
+        "encoded": "--%20ALTER%20SEQUENCE%20payments_id_seq%20RESTART%20WITH%20101;",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "6cbf8c",
+        "hash": "10b12c8c",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "6cbf8c",
+        "hash": "87a11b2d",
+        "encoded": "--%20USER%20DATABASE%20(Port%205432)",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "6cbf8c",
+        "hash": "897b7497",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "6cbf8c",
+        "hash": "868b61cb",
+        "encoded": "--%20Check%20current%20sequence%20value",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "6cbf8c",
+        "hash": "8dee2779",
+        "encoded": "SELECT%20'users_id_seq%20current%20value:',%20nextval('users_id_seq');",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "6cbf8c",
+        "hash": "7639b687",
+        "encoded": "--%20Check%20max%20ID%20in%20table",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "6cbf8c",
+        "hash": "e90dcfec",
+        "encoded": "SELECT%20'Max%20user%20ID:',%20COALESCE(MAX(id),%200)%20FROM%20users;",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "6cbf8c",
+        "hash": "a78efc26",
+        "encoded": "--%20Reset%20sequence%20to%20max%20ID%20+%201",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "6cbf8c",
+        "hash": "1424233d",
+        "encoded": "SELECT%20setval('users_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20users),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "6cbf8c",
+        "hash": "76f25614",
+        "encoded": "--%20Verify%20new%20sequence%20value",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "6cbf8c",
+        "hash": "2832eb9a",
+        "encoded": "SELECT%20'users_id_seq%20new%20value:',%20currval('users_id_seq');",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "6cbf8c",
+        "hash": "b2f4f00c",
+        "encoded": "--%20Alternative:%20Start%20from%20specific%20number",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "6cbf8c",
+        "hash": "5ed00ffd",
+        "encoded": "--%20ALTER%20SEQUENCE%20users_id_seq%20RESTART%20WITH%20102;",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "6cbf8c",
+        "hash": "77b63e4e",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "6cbf8c",
+        "hash": "73572d00",
+        "encoded": "--%20NOTIFICATION%20DATABASE%20(Port%205436)",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "6cbf8c",
+        "hash": "81203816",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "6cbf8c",
+        "hash": "99358d63",
+        "encoded": "--%20Check%20current%20sequence%20value",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "6cbf8c",
+        "hash": "2de1dcdb",
+        "encoded": "SELECT%20'notifications_id_seq%20current%20value:',%20nextval('notifications_id_seq');",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "6cbf8c",
+        "hash": "e59d6ab7",
+        "encoded": "--%20Check%20max%20ID%20in%20table",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "6cbf8c",
+        "hash": "9bd5c8fa",
+        "encoded": "SELECT%20'Max%20notification%20ID:',%20COALESCE(MAX(id),%200)%20FROM%20notifications;",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "6cbf8c",
+        "hash": "92f0c3a1",
+        "encoded": "--%20Reset%20sequence%20to%20max%20ID%20+%201",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "6cbf8c",
+        "hash": "1b983592",
+        "encoded": "SELECT%20setval('notifications_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20notifications),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "6cbf8c",
+        "hash": "ac0c017f",
+        "encoded": "--%20Verify%20new%20sequence%20value",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "6cbf8c",
+        "hash": "0bf78cd4",
+        "encoded": "SELECT%20'notifications_id_seq%20new%20value:',%20currval('notifications_id_seq');",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "6cbf8c",
+        "hash": "c6c02d8d",
+        "encoded": "--%20Alternative:%20Start%20from%20specific%20number",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "6cbf8c",
+        "hash": "0de672c6",
+        "encoded": "--%20ALTER%20SEQUENCE%20notifications_id_seq%20RESTART%20WITH%20111;",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "6cbf8c",
+        "hash": "9edeb4a6",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "6cbf8c",
+        "hash": "66b976d3",
+        "encoded": "--%20EXECUTION%20INSTRUCTIONS",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "6cbf8c",
+        "hash": "d7497e79",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "6cbf8c",
+        "hash": "06b1d415",
+        "encoded": "/*",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "6cbf8c",
+        "hash": "5d64f396",
+        "encoded": "OPTION%201:%20Execute%20via%20psql%20command%20line",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "6cbf8c",
+        "hash": "dd1af4ee",
+        "encoded": "#%20Restaurant%20DB",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "6cbf8c",
+        "hash": "a2a49f2e",
+        "encoded": "psql%20-h%20localhost%20-p%205433%20-U%20postgres%20-d%20restaurantdb%20-f%20DATABASE_FIX_SCRIPT.sql",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "6cbf8c",
+        "hash": "7a5bee25",
+        "encoded": "#%20Order%20DB",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "6cbf8c",
+        "hash": "9c299089",
+        "encoded": "psql%20-h%20localhost%20-p%205434%20-U%20postgres%20-d%20orderdb%20-f%20DATABASE_FIX_SCRIPT.sql",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "6cbf8c",
+        "hash": "31c3df0a",
+        "encoded": "#%20Payment%20DB",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "6cbf8c",
+        "hash": "1664ae5c",
+        "encoded": "psql%20-h%20localhost%20-p%205435%20-U%20postgres%20-d%20paymentdb%20-f%20DATABASE_FIX_SCRIPT.sql",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "6cbf8c",
+        "hash": "2566ec34",
+        "encoded": "#%20User%20DB",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "6cbf8c",
+        "hash": "0a1da705",
+        "encoded": "psql%20-h%20localhost%20-p%205432%20-U%20postgres%20-d%20userdb%20-f%20DATABASE_FIX_SCRIPT.sql",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "6cbf8c",
+        "hash": "f2a402be",
+        "encoded": "#%20Notification%20DB",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "6cbf8c",
+        "hash": "9e591d2c",
+        "encoded": "psql%20-h%20localhost%20-p%205436%20-U%20postgres%20-d%20notificationdb%20-f%20DATABASE_FIX_SCRIPT.sql",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "6cbf8c",
+        "hash": "f06cb7ec",
+        "encoded": "OPTION%202:%20Execute%20via%20Docker",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "6cbf8c",
+        "hash": "5ece2339",
+        "encoded": "#%20Restaurant%20DB",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "6cbf8c",
+        "hash": "dbca554c",
+        "encoded": "docker%20exec%20-i%20restaurant-db%20psql%20-U%20postgres%20-d%20restaurantdb%20%3C%20DATABASE_FIX_SCRIPT.sql",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "6cbf8c",
+        "hash": "1f5996c1",
+        "encoded": "#%20Order%20DB",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "6cbf8c",
+        "hash": "b768a18b",
+        "encoded": "docker%20exec%20-i%20order-db%20psql%20-U%20postgres%20-d%20orderdb%20%3C%20DATABASE_FIX_SCRIPT.sql",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "6cbf8c",
+        "hash": "7df352f1",
+        "encoded": "#%20Payment%20DB",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "6cbf8c",
+        "hash": "4969690a",
+        "encoded": "docker%20exec%20-i%20payment-db%20psql%20-U%20postgres%20-d%20paymentdb%20%3C%20DATABASE_FIX_SCRIPT.sql",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "6cbf8c",
+        "hash": "befb6ed0",
+        "encoded": "#%20User%20DB",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "6cbf8c",
+        "hash": "fc68e042",
+        "encoded": "docker%20exec%20-i%20user-db%20psql%20-U%20postgres%20-d%20userdb%20%3C%20DATABASE_FIX_SCRIPT.sql",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "6cbf8c",
+        "hash": "965534ac",
+        "encoded": "#%20Notification%20DB",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "6cbf8c",
+        "hash": "2775e5e3",
+        "encoded": "docker%20exec%20-i%20notification-db%20psql%20-U%20postgres%20-d%20notificationdb%20%3C%20DATABASE_FIX_SCRIPT.sql",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "6cbf8c",
+        "hash": "653d3729",
+        "encoded": "OPTION%203:%20Quick%20Fix%20-%20Execute%20individual%20commands",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "6cbf8c",
+        "hash": "381ce182",
+        "encoded": "#%20Connect%20to%20each%20database%20and%20run:",
+        "prevChunkIds": []
+      },
+      "160": {
+        "chunkId": "6cbf8c",
+        "hash": "8b3a43a1",
+        "encoded": "SELECT%20setval('restaurants_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20restaurants),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "161": {
+        "chunkId": "6cbf8c",
+        "hash": "5b6749a3",
+        "encoded": "SELECT%20setval('menu_items_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20menu_items),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "6cbf8c",
+        "hash": "8933557e",
+        "encoded": "SELECT%20setval('orders_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20orders),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "6cbf8c",
+        "hash": "8295f5a6",
+        "encoded": "SELECT%20setval('order_items_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20order_items),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "6cbf8c",
+        "hash": "608ea023",
+        "encoded": "SELECT%20setval('payments_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20payments),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "6cbf8c",
+        "hash": "305cfdea",
+        "encoded": "SELECT%20setval('users_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20users),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "6cbf8c",
+        "hash": "ff1d49a1",
+        "encoded": "SELECT%20setval('notifications_id_seq',%20COALESCE((SELECT%20MAX(id)%20FROM%20notifications),%200)%20+%201,%20false);",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "6cbf8c",
+        "hash": "3fb59be9",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "6cbf8c",
+        "hash": "a7e63ff7",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "171": {
+        "chunkId": "6cbf8c",
+        "hash": "a1cefcce",
+        "encoded": "--%20VERIFICATION%20QUERIES",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "6cbf8c",
+        "hash": "b9806a80",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "6cbf8c",
+        "hash": "09286537",
+        "encoded": "/*",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "6cbf8c",
+        "hash": "7e22ff91",
+        "encoded": "After%20running%20the%20fix,%20verify%20that%20sequences%20are%20correct:",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "6cbf8c",
+        "hash": "38fb60f5",
+        "encoded": "SELECT%20'restaurants',%20nextval('restaurants_id_seq')%20as%20next_id;",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "6cbf8c",
+        "hash": "729f7662",
+        "encoded": "SELECT%20'menu_items',%20nextval('menu_items_id_seq')%20as%20next_id;",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "6cbf8c",
+        "hash": "b6a414f1",
+        "encoded": "SELECT%20'orders',%20nextval('orders_id_seq')%20as%20next_id;",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "6cbf8c",
+        "hash": "36c99c96",
+        "encoded": "SELECT%20'order_items',%20nextval('order_items_id_seq')%20as%20next_id;",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "6cbf8c",
+        "hash": "a87f93ee",
+        "encoded": "SELECT%20'payments',%20nextval('payments_id_seq')%20as%20next_id;",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "6cbf8c",
+        "hash": "ada73188",
+        "encoded": "SELECT%20'users',%20nextval('users_id_seq')%20as%20next_id;",
+        "prevChunkIds": []
+      },
+      "183": {
+        "chunkId": "6cbf8c",
+        "hash": "df1d096b",
+        "encoded": "SELECT%20'notifications',%20nextval('notifications_id_seq')%20as%20next_id;",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "6cbf8c",
+        "hash": "eb6cedcc",
+        "encoded": "The%20next_id%20should%20be%20greater%20than%20the%20max%20ID%20in%20each%20table.",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "6cbf8c",
+        "hash": "0d78680b",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "6cbf8c",
+        "hash": "7274be14",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "189": {
+        "chunkId": "6cbf8c",
+        "hash": "850f789e",
+        "encoded": "--%20CLEANUP%20(OPTIONAL)",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "6cbf8c",
+        "hash": "19213af6",
+        "encoded": "--%20============================================================================",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "6cbf8c",
+        "hash": "82b63219",
+        "encoded": "/*",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "6cbf8c",
+        "hash": "53bac5e2",
+        "encoded": "If%20you%20want%20to%20delete%20all%20test%20data%20with%20ID%20%3E=%20100:",
+        "prevChunkIds": []
+      },
+      "195": {
+        "chunkId": "6cbf8c",
+        "hash": "2996b5ee",
+        "encoded": "DELETE%20FROM%20order_items%20WHERE%20order_id%20IN%20(SELECT%20id%20FROM%20orders%20WHERE%20id%20%3E=%20100);",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "6cbf8c",
+        "hash": "38a0b8b4",
+        "encoded": "DELETE%20FROM%20orders%20WHERE%20id%20%3E=%20100;",
+        "prevChunkIds": []
+      },
+      "197": {
+        "chunkId": "6cbf8c",
+        "hash": "49c088fc",
+        "encoded": "DELETE%20FROM%20menu_items%20WHERE%20id%20%3E=%20100;",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "6cbf8c",
+        "hash": "effbec5e",
+        "encoded": "DELETE%20FROM%20restaurants%20WHERE%20id%20%3E=%20100;",
+        "prevChunkIds": []
+      },
+      "199": {
+        "chunkId": "6cbf8c",
+        "hash": "7096c15c",
+        "encoded": "DELETE%20FROM%20payments%20WHERE%20id%20%3E=%20100;",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "6cbf8c",
+        "hash": "0fb5f0e3",
+        "encoded": "DELETE%20FROM%20users%20WHERE%20id%20%3E=%20100;",
+        "prevChunkIds": []
+      },
+      "201": {
+        "chunkId": "6cbf8c",
+        "hash": "08e2e333",
+        "encoded": "DELETE%20FROM%20notifications%20WHERE%20id%20%3E=%20100;",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "6cbf8c",
+        "hash": "31463b50",
+        "encoded": "Then%20reset%20sequences:",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "6cbf8c",
+        "hash": "27ad993e",
+        "encoded": "ALTER%20SEQUENCE%20restaurants_id_seq%20RESTART%20WITH%20100;",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "6cbf8c",
+        "hash": "84c87779",
+        "encoded": "ALTER%20SEQUENCE%20menu_items_id_seq%20RESTART%20WITH%20100;",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "6cbf8c",
+        "hash": "3b0db541",
+        "encoded": "ALTER%20SEQUENCE%20orders_id_seq%20RESTART%20WITH%20100;",
+        "prevChunkIds": []
+      },
+      "207": {
+        "chunkId": "6cbf8c",
+        "hash": "488f6368",
+        "encoded": "ALTER%20SEQUENCE%20order_items_id_seq%20RESTART%20WITH%20100;",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "6cbf8c",
+        "hash": "bebe4784",
+        "encoded": "ALTER%20SEQUENCE%20payments_id_seq%20RESTART%20WITH%20100;",
+        "prevChunkIds": []
+      },
+      "209": {
+        "chunkId": "6cbf8c",
+        "hash": "2bc37c0c",
+        "encoded": "ALTER%20SEQUENCE%20users_id_seq%20RESTART%20WITH%20100;",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "6cbf8c",
+        "hash": "523bce2a",
+        "encoded": "ALTER%20SEQUENCE%20notifications_id_seq%20RESTART%20WITH%20100;",
+        "prevChunkIds": []
+      },
+      "211": {
+        "chunkId": "6cbf8c",
+        "hash": "99d0fb29",
+        "encoded": "*/",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

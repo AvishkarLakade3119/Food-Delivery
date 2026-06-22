@@ -1,4 +1,12 @@
 # Test configuration for User Service Integration Tests
+
+# JWT Configuration for tests
+jwt:
+  secret: test-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-testing-purpose-only
+  expiration: 86400000
+  header: Authorization
+  prefix: "Bearer "
+
 spring:
   datasource:
     # Use H2 in-memory database for tests

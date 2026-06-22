@@ -1,0 +1,372 @@
+{
+  "order-service\\src\\main\\java\\com\\fooddelivery\\order\\event\\dto\\OrderItemDTO.java": {
+    "filename": "OrderItemDTO.java",
+    "path": "order-service\\src\\main\\java\\com\\fooddelivery\\order\\event\\dto\\OrderItemDTO.java",
+    "version": "1.2",
+    "contextFile": "8ca576ce-context.json",
+    "chunks": {
+      "55d15c": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781423459,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "b7fe811e"
+        },
+        "hash": "15af5c24",
+        "messageId": "system_3657ad90-67c5-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 1:20:59 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "55d15c",
+        "hash": "d50be199",
+        "encoded": "package%20com.fooddelivery.order.event.dto;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "55d15c",
+        "hash": "7193abca",
+        "encoded": "import%20java.io.Serializable;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "55d15c",
+        "hash": "db2da5da",
+        "encoded": "import%20java.math.BigDecimal;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "55d15c",
+        "hash": "b9fc3b5c",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "55d15c",
+        "hash": "2ac664aa",
+        "encoded": "*%20DTO%20for%20Order%20Item%20in%20events",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "55d15c",
+        "hash": "3c707cb7",
+        "encoded": "*%20Used%20in%20OrderCreatedEvent%20and%20RestaurantOrderReceivedEvent",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "55d15c",
+        "hash": "11d7e9e0",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "55d15c",
+        "hash": "039ea2e8",
+        "encoded": "public%20class%20OrderItemDTO%20implements%20Serializable%20%7B",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "55d15c",
+        "hash": "7eb956a7",
+        "encoded": "private%20static%20final%20long%20serialVersionUID%20=%201L;",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "55d15c",
+        "hash": "8b90551d",
+        "encoded": "private%20Long%20itemId;",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "55d15c",
+        "hash": "59404d63",
+        "encoded": "private%20String%20itemName;",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "55d15c",
+        "hash": "3a07f4ef",
+        "encoded": "private%20Integer%20quantity;",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "55d15c",
+        "hash": "9deed9b2",
+        "encoded": "private%20Double%20price;",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "55d15c",
+        "hash": "e083c68b",
+        "encoded": "//%20No-args%20constructor",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "55d15c",
+        "hash": "78bc7312",
+        "encoded": "public%20OrderItemDTO()%20%7B%7D",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "55d15c",
+        "hash": "af0e1e21",
+        "encoded": "//%20All-args%20constructor",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "55d15c",
+        "hash": "28c695f9",
+        "encoded": "public%20OrderItemDTO(Long%20itemId,%20String%20itemName,%20Integer%20quantity,%20Double%20price)%20%7B",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "55d15c",
+        "hash": "67ad6aba",
+        "encoded": "this.itemId%20=%20itemId;",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "55d15c",
+        "hash": "e5944254",
+        "encoded": "this.itemName%20=%20itemName;",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "55d15c",
+        "hash": "b7175199",
+        "encoded": "this.quantity%20=%20quantity;",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "55d15c",
+        "hash": "3a07f678",
+        "encoded": "this.price%20=%20price;",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "55d15c",
+        "hash": "e256b81a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "55d15c",
+        "hash": "82f58734",
+        "encoded": "//%20Getters%20and%20Setters",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "55d15c",
+        "hash": "77f17a71",
+        "encoded": "public%20Long%20getItemId()%20%7B",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "55d15c",
+        "hash": "549a1d42",
+        "encoded": "return%20itemId;",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "55d15c",
+        "hash": "43353d17",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "55d15c",
+        "hash": "e8356040",
+        "encoded": "public%20void%20setItemId(Long%20itemId)%20%7B",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "55d15c",
+        "hash": "47f47b37",
+        "encoded": "this.itemId%20=%20itemId;",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "55d15c",
+        "hash": "dfad4947",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "55d15c",
+        "hash": "edb22cfc",
+        "encoded": "public%20String%20getItemName()%20%7B",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "55d15c",
+        "hash": "281abcba",
+        "encoded": "return%20itemName;",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "55d15c",
+        "hash": "4771cdac",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "55d15c",
+        "hash": "4553768e",
+        "encoded": "public%20void%20setItemName(String%20itemName)%20%7B",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "55d15c",
+        "hash": "82c96349",
+        "encoded": "this.itemName%20=%20itemName;",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "55d15c",
+        "hash": "d6071ac7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "55d15c",
+        "hash": "e5e973aa",
+        "encoded": "public%20Integer%20getQuantity()%20%7B",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "55d15c",
+        "hash": "3e6a42c7",
+        "encoded": "return%20quantity;",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "55d15c",
+        "hash": "57c5213d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "55d15c",
+        "hash": "f1db6da8",
+        "encoded": "public%20void%20setQuantity(Integer%20quantity)%20%7B",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "55d15c",
+        "hash": "9da81570",
+        "encoded": "this.quantity%20=%20quantity;",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "55d15c",
+        "hash": "38b604dc",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "55d15c",
+        "hash": "70bdb533",
+        "encoded": "public%20Double%20getPrice()%20%7B",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "55d15c",
+        "hash": "beb1cc80",
+        "encoded": "return%20price;",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "55d15c",
+        "hash": "2ef1d392",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "55d15c",
+        "hash": "c83adb5d",
+        "encoded": "public%20void%20setPrice(Double%20price)%20%7B",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "55d15c",
+        "hash": "864f94a7",
+        "encoded": "this.price%20=%20price;",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "55d15c",
+        "hash": "309dd352",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "55d15c",
+        "hash": "0eaca1ba",
+        "encoded": "@Override",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "55d15c",
+        "hash": "48ccc524",
+        "encoded": "public%20String%20toString()%20%7B",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "55d15c",
+        "hash": "0d997d44",
+        "encoded": "return%20%22OrderItemDTO%7B%22%20+",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "55d15c",
+        "hash": "274c8cd3",
+        "encoded": "%22itemId=%22%20+%20itemId%20+",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "55d15c",
+        "hash": "f62e80f8",
+        "encoded": "%22,%20itemName='%22%20+%20itemName%20+%20'%5C''%20+",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "55d15c",
+        "hash": "6bd503b7",
+        "encoded": "%22,%20quantity=%22%20+%20quantity%20+",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "55d15c",
+        "hash": "dc90c853",
+        "encoded": "%22,%20price=%22%20+%20price%20+",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "55d15c",
+        "hash": "9d36f349",
+        "encoded": "'%7D';",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "55d15c",
+        "hash": "9b4a30da",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "55d15c",
+        "hash": "352e9b23",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

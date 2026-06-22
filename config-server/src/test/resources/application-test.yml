@@ -1,0 +1,25 @@
+# Test Configuration for Config Server
+# Disables Eureka and Git repository for unit tests
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://${java.io.tmpdir}/config-repo-test
+        health:
+          enabled: false
+
+eureka:
+  client:
+    enabled: false
+    register-with-eureka: false
+    fetch-registry: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

@@ -7,10 +7,16 @@ import com.fooddelivery.order.dto.OrderRequest;
 import com.fooddelivery.order.entity.Order;
 import com.fooddelivery.order.entity.OrderItem;
 import com.fooddelivery.order.entity.OrderStatus;
+import com.fooddelivery.order.messaging.OrderEventConsumer;
+import com.fooddelivery.order.messaging.OrderEventPublisher;
+import com.fooddelivery.order.security.JwtAuthenticationFilter;
+import com.fooddelivery.order.security.JwtTokenProvider;
 import com.fooddelivery.order.service.OrderService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -28,6 +34,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(OrderController.class)
+@AutoConfigureMockMvc(addFilters = false)
 class OrderControllerTest {
 
     @Autowired
@@ -35,6 +42,21 @@ class OrderControllerTest {
 
     @MockBean
     private OrderService orderService;
+
+    @MockBean
+    private JwtTokenProvider jwtTokenProvider;
+
+    @MockBean
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
+    
+    @MockBean
+    private RabbitTemplate rabbitTemplate;
+    
+    @MockBean
+    private OrderEventPublisher orderEventPublisher;
+    
+    @MockBean
+    private OrderEventConsumer orderEventConsumer;
 
     @Autowired
     private ObjectMapper objectMapper;

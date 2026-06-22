@@ -1,0 +1,192 @@
+{
+  "user-service\\src\\main\\java\\com\\fooddelivery\\user\\dto\\LoginRequest.java": {
+    "filename": "LoginRequest.java",
+    "path": "user-service\\src\\main\\java\\com\\fooddelivery\\user\\dto\\LoginRequest.java",
+    "version": "1.2",
+    "contextFile": "1d5327c5-context.json",
+    "chunks": {
+      "f59d5c": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781166212,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "936e87ee"
+        },
+        "hash": "37b23547",
+        "messageId": "system_dbaceda0-656d-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 1:53:32 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "f59d5c",
+        "hash": "71608fe7",
+        "encoded": "package%20com.fooddelivery.user.dto;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "f59d5c",
+        "hash": "d56f7b18",
+        "encoded": "import%20jakarta.validation.constraints.Email;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "f59d5c",
+        "hash": "368e0304",
+        "encoded": "import%20jakarta.validation.constraints.NotBlank;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "f59d5c",
+        "hash": "9eb8a556",
+        "encoded": "public%20class%20LoginRequest%20%7B",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "f59d5c",
+        "hash": "fd637c59",
+        "encoded": "@Email(message%20=%20%22Invalid%20email%20format%22)",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "f59d5c",
+        "hash": "20766254",
+        "encoded": "@NotBlank(message%20=%20%22Email%20is%20required%22)",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "f59d5c",
+        "hash": "710fedef",
+        "encoded": "private%20String%20email;",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "f59d5c",
+        "hash": "49d54e38",
+        "encoded": "@NotBlank(message%20=%20%22Password%20is%20required%22)",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "f59d5c",
+        "hash": "df3388da",
+        "encoded": "private%20String%20password;",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "f59d5c",
+        "hash": "918d45a1",
+        "encoded": "public%20LoginRequest()%20%7B%7D",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "f59d5c",
+        "hash": "e3ea98c6",
+        "encoded": "public%20LoginRequest(String%20email,%20String%20password)%20%7B",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "f59d5c",
+        "hash": "9b683e85",
+        "encoded": "this.email%20=%20email;",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "f59d5c",
+        "hash": "fdfe48f0",
+        "encoded": "this.password%20=%20password;",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "f59d5c",
+        "hash": "ee39c532",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "f59d5c",
+        "hash": "a8a36d50",
+        "encoded": "public%20String%20getEmail()%20%7B",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "f59d5c",
+        "hash": "baaf9f17",
+        "encoded": "return%20email;",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "f59d5c",
+        "hash": "7b3531ab",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "f59d5c",
+        "hash": "cf4c7780",
+        "encoded": "public%20void%20setEmail(String%20email)%20%7B",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "f59d5c",
+        "hash": "9d75d849",
+        "encoded": "this.email%20=%20email;",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "f59d5c",
+        "hash": "a7947416",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "f59d5c",
+        "hash": "667be541",
+        "encoded": "public%20String%20getPassword()%20%7B",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "f59d5c",
+        "hash": "7c612b39",
+        "encoded": "return%20password;",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "f59d5c",
+        "hash": "43353d17",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "f59d5c",
+        "hash": "b316a039",
+        "encoded": "public%20void%20setPassword(String%20password)%20%7B",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "f59d5c",
+        "hash": "b8d52c76",
+        "encoded": "this.password%20=%20password;",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "f59d5c",
+        "hash": "dfad4947",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "f59d5c",
+        "hash": "b14d68ea",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

@@ -8,130 +8,164 @@ import com.fooddelivery.order.dto.OrderRequest;
 import com.fooddelivery.order.entity.Order;
 import com.fooddelivery.order.entity.OrderItem;
 import com.fooddelivery.order.entity.OrderStatus;
+import com.fooddelivery.order.event.OrderCreatedEvent;
+import com.fooddelivery.order.messaging.OrderEventPublisher;
 import com.fooddelivery.order.repository.OrderRepository;
+import com.fooddelivery.order.saga.OrderSagaOrchestrator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.lang.reflect.Method;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 @Service
 @Transactional
 public class OrderService {
-    
+
+    private static final Logger logger = LoggerFactory.getLogger(OrderService.class);
+
     @Autowired
     private OrderRepository orderRepository;
-    
+
     @Autowired
     private RestaurantClient restaurantClient;
-    
+
     @Autowired
     private PaymentClient paymentClient;
-    
+
     @Autowired
     private NotificationClient notificationClient;
 
+    @Autowired
+    private OrderEventPublisher orderEventPublisher;
+
+    @Autowired
+    private OrderSagaOrchestrator sagaOrchestrator;
+
     @Transactional
     public Order createOrder(CreateOrderRequest createOrderRequest) {
-        // Create order entity
         Order order = new Order(
                 createOrderRequest.getUserId(),
                 createOrderRequest.getRestaurantId(),
-                createOrderRequest.getDeliveryAddress()
-        );
+                createOrderRequest.getDeliveryAddress());
 
-        // Process order items and calculate total
         List<OrderItem> orderItems = createOrderRequest.getOrderItems().stream()
                 .map(this::createOrderItem)
                 .collect(Collectors.toList());
 
-        // Set order items
         orderItems.forEach(item -> item.setOrder(order));
         order.setOrderItems(orderItems);
 
-        // Calculate total amount
         BigDecimal totalAmount = orderItems.stream()
                 .map(OrderItem::getSubtotal)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
         order.setTotalAmount(totalAmount);
 
-        // Save order
-        Order savedOrder = orderRepository.save(order);
+        order.setStatus(OrderStatus.PAYMENT_PENDING);
 
-        // Send notification
+        Order savedOrder = orderRepository.save(order);
+        logger.info("Order saved with id: {} for userId: {}", savedOrder.getId(), savedOrder.getUserId());
+
+        publishOrderCreatedEvent(savedOrder);
+
         try {
-            NotificationRequest notification = new NotificationRequest(
-                    savedOrder.getUserId(),
-                    "Your order #" + savedOrder.getId() + " has been created successfully!",
-                    "ORDER_CREATED"
-            );
-            notificationClient.sendNotification(notification);
+            sagaOrchestrator.startSaga(savedOrder);
         } catch (Exception e) {
-            // Log error but don't fail the order creation
-            System.err.println("Failed to send notification: " + e.getMessage());
+            logger.error("Failed to start saga for orderId: {}: {}", savedOrder.getId(), e.getMessage(), e);
         }
 
         return savedOrder;
     }
 
-    /**
-     * Create order from pre-built Order entity (used by new flexible API)
-     */
     @Transactional
     public Order createOrderFromEntity(Order order) {
-        // Set created timestamp
-        order.setCreatedAt(java.time.LocalDateTime.now());
+        order.setCreatedAt(LocalDateTime.now());
 
-        // Save order
+        if (order.getStatus() == null) {
+            order.setStatus(OrderStatus.PAYMENT_PENDING);
+        }
+
         Order savedOrder = orderRepository.save(order);
+        logger.info("Order (from entity) saved with id: {} for userId: {}", savedOrder.getId(), savedOrder.getUserId());
 
-        // Send notification
+        publishOrderCreatedEvent(savedOrder);
+
         try {
-            NotificationRequest notification = new NotificationRequest(
-                    savedOrder.getUserId(),
-                    "Your order #" + savedOrder.getId() + " has been created successfully!",
-                    "ORDER_CREATED"
-            );
-            notificationClient.sendNotification(notification);
+            sagaOrchestrator.startSaga(savedOrder);
         } catch (Exception e) {
-            // Log error but don't fail the order creation
-            System.err.println("Failed to send notification: " + e.getMessage());
+            logger.error("Failed to start saga for orderId: {}: {}", savedOrder.getId(), e.getMessage(), e);
         }
 
         return savedOrder;
+    }
+
+    private void publishOrderCreatedEvent(Order savedOrder) {
+        try {
+            OrderCreatedEvent event = new OrderCreatedEvent();
+
+            invokeSetterIfPresent(event, "setOrderId", Long.class, savedOrder.getId());
+            invokeSetterIfPresent(event, "setUserId", Long.class, savedOrder.getUserId());
+            invokeSetterIfPresent(event, "setRestaurantId", Long.class, savedOrder.getRestaurantId());
+
+            if (!invokeSetterIfPresent(event, "setTotalAmount", Double.class,
+                    savedOrder.getTotalAmount().doubleValue())) {
+                invokeSetterIfPresent(event, "setTotalAmount", BigDecimal.class, savedOrder.getTotalAmount());
+            }
+
+            if (!invokeSetterIfPresent(event, "setCreatedAt", LocalDateTime.class, LocalDateTime.now())) {
+                invokeSetterIfPresent(event, "setTimestamp", LocalDateTime.class, LocalDateTime.now());
+            }
+
+            invokeSetterIfPresent(event, "setDeliveryAddress", String.class, savedOrder.getDeliveryAddress());
+            invokeSetterIfPresent(event, "setStatus", String.class,
+                    savedOrder.getStatus() != null ? savedOrder.getStatus().toString() : "PAYMENT_PENDING");
+
+            orderEventPublisher.publishOrderCreated(event);
+            logger.info("Triggered publish for OrderCreatedEvent, orderId: {}", savedOrder.getId());
+        } catch (Exception e) {
+            logger.error("Failed to publish OrderCreatedEvent for orderId: {}: {}", savedOrder.getId(), e.getMessage(),
+                    e);
+        }
+    }
+
+    private boolean invokeSetterIfPresent(Object target, String setterName, Class<?> paramType, Object value) {
+        try {
+            Method method = target.getClass().getMethod(setterName, paramType);
+            method.invoke(target, value);
+            return true;
+        } catch (NoSuchMethodException e) {
+            return false;
+        } catch (Exception e) {
+            logger.debug("Could not invoke {} on {}: {}", setterName, target.getClass().getSimpleName(),
+                    e.getMessage());
+            return false;
+        }
     }
 
     private OrderItem createOrderItem(OrderItemRequest request) {
         try {
-            // Get menu item details from restaurant service
-            MenuItemDto menuItem = restaurantClient.getMenuItem(
-                    request.getMenuItemId(), // This should be restaurantId, but we'll use menuItemId for now
-                    request.getMenuItemId()
-            );
+            MenuItemDto menuItem = restaurantClient
+                    .getMenuItem(request.getMenuItemId(), request.getMenuItemId());
 
             if (!menuItem.getIsAvailable()) {
                 throw new RuntimeException("Menu item is not available: " + menuItem.getName());
             }
 
-            return new OrderItem(
-                    request.getMenuItemId(),
-                    request.getQuantity(),
-                    menuItem.getPrice()
-            );
+            return new OrderItem(request.getMenuItemId(), request.getQuantity(), menuItem.getPrice());
         } catch (Exception e) {
-            // Check if it's a menu availability exception and re-throw it
             if (e.getMessage() != null && e.getMessage().contains("Menu item is not available")) {
-                throw e;
+                throw new RuntimeException(e.getMessage());
             }
-            // For other exceptions (like service unavailable), use fallback
-            return new OrderItem(
-                    request.getMenuItemId(),
-                    request.getQuantity(),
-                    BigDecimal.valueOf(10.00) // Default price
-            );
+            logger.warn("Restaurant call failed, using fallback price for menuItemId: {}", request.getMenuItemId());
+            return new OrderItem(request.getMenuItemId(), request.getQuantity(), BigDecimal.valueOf(10.00));
         }
     }
 
@@ -165,11 +199,11 @@ public class OrderService {
     public List<Order> getOrdersByUserId(Long userId) {
         return orderRepository.findByUserIdWithItems(userId);
     }
-    
+
     public List<Order> getOrdersByRestaurantId(Long restaurantId) {
         return orderRepository.findByRestaurantId(restaurantId);
     }
-    
+
     public List<Order> getOrdersByStatus(OrderStatus status) {
         return orderRepository.findByStatus(status);
     }
@@ -177,22 +211,20 @@ public class OrderService {
     @Transactional
     public Order updateOrderStatus(Long id, OrderStatus status) {
         Order order = getOrderById(id);
-        OrderStatus oldStatus = order.getStatus();
         order.setStatus(status);
         Order updatedOrder = orderRepository.save(order);
-        
-        // Send notification for status change
+
         try {
             NotificationRequest notification = new NotificationRequest(
                     updatedOrder.getUserId(),
+                    "Order Status Updated",
                     "Your order #" + updatedOrder.getId() + " status has been updated to: " + status,
-                    "ORDER_STATUS_UPDATED"
-            );
+                    "ORDER_STATUS_UPDATED");
             notificationClient.sendNotification(notification);
         } catch (Exception e) {
-            System.err.println("Failed to send notification: " + e.getMessage());
+            logger.error("Notification dispatch failed: {}", e.getMessage());
         }
-        
+
         return updatedOrder;
     }
 
@@ -203,16 +235,15 @@ public class OrderService {
         if (order.getStatus() != OrderStatus.CREATED) {
             throw new RuntimeException("Order cannot be confirmed. Current status: " + order.getStatus());
         }
-        
-        // Process payment
+
         try {
             PaymentRequest paymentRequest = new PaymentRequest(
                     order.getId(),
                     order.getTotalAmount(),
-                    "CREDIT_CARD"
-            );
+                    "CREDIT_CARD");
+
             PaymentResponse paymentResponse = paymentClient.processPayment(paymentRequest);
-            
+
             if ("SUCCESS".equals(paymentResponse.getStatus())) {
                 return updateOrderStatus(id, OrderStatus.CONFIRMED);
             } else {

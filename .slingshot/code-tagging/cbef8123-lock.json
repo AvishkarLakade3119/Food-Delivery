@@ -1,0 +1,163 @@
+{
+  "order-service\\src\\main\\java\\com\\fooddelivery\\order\\event\\PaymentSuccessEvent.java": {
+    "filename": "PaymentSuccessEvent.java",
+    "path": "order-service\\src\\main\\java\\com\\fooddelivery\\order\\event\\PaymentSuccessEvent.java",
+    "version": "1.2",
+    "contextFile": "cbef8123-context.json",
+    "chunks": {
+      "bc7155": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427054,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "87fd57a2",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:20:54 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "bc7155",
+        "hash": "d733c3d8",
+        "encoded": "package%20com.fooddelivery.order.event;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "bc7155",
+        "hash": "7193abca",
+        "encoded": "import%20java.io.Serializable;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "bc7155",
+        "hash": "7b12a033",
+        "encoded": "import%20java.time.LocalDateTime;",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "bc7155",
+        "hash": "2fa291dd",
+        "encoded": "public%20class%20PaymentSuccessEvent%20implements%20Serializable%20%7B",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "bc7155",
+        "hash": "b92e4407",
+        "encoded": "private%20static%20final%20long%20serialVersionUID%20=%201L;",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "bc7155",
+        "hash": "42c0683f",
+        "encoded": "private%20Long%20paymentId;",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "bc7155",
+        "hash": "9c6e563d",
+        "encoded": "private%20Long%20orderId;",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "bc7155",
+        "hash": "675aaa0d",
+        "encoded": "private%20Long%20userId;",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "bc7155",
+        "hash": "048d014f",
+        "encoded": "private%20Double%20amount;",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "bc7155",
+        "hash": "a0481a86",
+        "encoded": "private%20String%20transactionId;",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "bc7155",
+        "hash": "84e1f09c",
+        "encoded": "private%20LocalDateTime%20timestamp;",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "bc7155",
+        "hash": "f2f5f931",
+        "encoded": "public%20PaymentSuccessEvent()%20%7B",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "bc7155",
+        "hash": "ee39c532",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "bc7155",
+        "hash": "cfb19554",
+        "encoded": "public%20PaymentSuccessEvent(Long%20paymentId,%20Long%20orderId,%20Long%20userId,",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "bc7155",
+        "hash": "40f0bde8",
+        "encoded": "Double%20amount,%20String%20transactionId,%20LocalDateTime%20timestamp)%20%7B",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "bc7155",
+        "hash": "29022bdd",
+        "encoded": "this.paymentId%20=%20paymentId;",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "bc7155",
+        "hash": "6eafe9a1",
+        "encoded": "this.orderId%20=%20orderId;",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "bc7155",
+        "hash": "333dfd71",
+        "encoded": "this.userId%20=%20userId;",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "bc7155",
+        "hash": "baeeeddd",
+        "encoded": "this.amount%20=%20amount;",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "bc7155",
+        "hash": "4b588538",
+        "encoded": "this.transactionId%20=%20transactionId;",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "bc7155",
+        "hash": "4e05cb23",
+        "encoded": "this.timestamp%20=%20timestamp%20!=%20null%20?%20timestamp%20:%20LocalDateTime.now();",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "bc7155",
+        "hash": "cfdac52c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    },
+    "_prevLineCount": 60
+  }
+}

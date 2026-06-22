@@ -1,0 +1,613 @@
+{
+  "payment-service\\src\\main\\resources\\application.yml": {
+    "filename": "application.yml",
+    "path": "payment-service\\src\\main\\resources\\application.yml",
+    "version": "1.2",
+    "contextFile": "afbf3ad0-context.json",
+    "chunks": {
+      "002637": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075687,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "e803e205",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:44:47 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "cf608e": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781153566,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "141ea5f0"
+        },
+        "hash": "8f2af143",
+        "messageId": "system_56f6cd00-6550-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:22:46 AM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "9698c6": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781196338,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "df2ea822"
+        },
+        "hash": "ebb9e833",
+        "messageId": "system_79e8b040-65b3-11f1-8360-b9f58a4ec7ec",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:15:38 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "70091c": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427580,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "e7e9f8c5",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:29:40 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "cf608e",
+        "hash": "d1aad523",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "cf608e",
+        "hash": "379c0db6",
+        "encoded": "#%20Payment%20Service%20-%20Bootstrap%20Configuration",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "cf608e",
+        "hash": "6325830d",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "cf608e",
+        "hash": "6b94f34f",
+        "encoded": "#%20Minimal%20configuration%20to%20connect%20to%20Config%20Server",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "cf608e",
+        "hash": "638a8061",
+        "encoded": "#%20All%20other%20properties%20are%20fetched%20from%20config-server",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "cf608e",
+        "hash": "8e5ec212",
+        "encoded": "server:",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "cf608e",
+        "hash": "e1d688a8",
+        "encoded": "port:%208084",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "cf608e",
+        "hash": "f19d3673",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "cf608e",
+        "hash": "e02d1c5c",
+        "encoded": "application:",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "cf608e",
+        "hash": "79194ce1",
+        "encoded": "name:%20payment-service",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "cf608e",
+        "hash": "f5a3bc6a",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "cf608e",
+        "hash": "8061768f",
+        "encoded": "import:%20optional:configserver:http://localhost:8888",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "cf608e",
+        "hash": "2d10db39",
+        "encoded": "cloud:",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "cf608e",
+        "hash": "9033fb87",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "cf608e",
+        "hash": "c2e99ac3",
+        "encoded": "fail-fast:%20false",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "cf608e",
+        "hash": "7c5f1b86",
+        "encoded": "override-none:%20true",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "cf608e",
+        "hash": "f43585af",
+        "encoded": "allow-override:%20true",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "cf608e",
+        "hash": "df0d8f85",
+        "encoded": "override-system-properties:%20false",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "cf608e",
+        "hash": "552490da",
+        "encoded": "retry:",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "cf608e",
+        "hash": "1d676416",
+        "encoded": "max-attempts:%206",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "cf608e",
+        "hash": "323fa2b8",
+        "encoded": "initial-interval:%201000",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "cf608e",
+        "hash": "392c24d2",
+        "encoded": "multiplier:%201.1",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "cf608e",
+        "hash": "aab53345",
+        "encoded": "max-interval:%202000",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "cf608e",
+        "hash": "c46efb26",
+        "encoded": "#%20Fallback%20PostgreSQL%20Database%20Configuration",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "cf608e",
+        "hash": "aea787d1",
+        "encoded": "datasource:",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "cf608e",
+        "hash": "912fcceb",
+        "encoded": "url:%20jdbc:postgresql://localhost:5435/paymentdb",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "cf608e",
+        "hash": "2bb17950",
+        "encoded": "username:%20postgres",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "cf608e",
+        "hash": "fffffa0b",
+        "encoded": "password:%20password",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "cf608e",
+        "hash": "0c02cf9f",
+        "encoded": "driver-class-name:%20org.postgresql.Driver",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "cf608e",
+        "hash": "9fef51c4",
+        "encoded": "#%20Fallback%20JPA%20Configuration",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "cf608e",
+        "hash": "305936f8",
+        "encoded": "jpa:",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "cf608e",
+        "hash": "c436e5c8",
+        "encoded": "hibernate:",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "cf608e",
+        "hash": "4b586772",
+        "encoded": "ddl-auto:%20update",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "cf608e",
+        "hash": "0e441197",
+        "encoded": "defer-datasource-initialization:%20true",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "cf608e",
+        "hash": "69858405",
+        "encoded": "show-sql:%20true",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "70091c",
+        "hash": "f6995797",
+        "encoded": "#%20SQL%20Initialization",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "70091c",
+        "hash": "4642c1e0",
+        "encoded": "sql:",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "70091c",
+        "hash": "cc3d7a8b",
+        "encoded": "init:",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "70091c",
+        "hash": "25bec6ec",
+        "encoded": "mode:%20never",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "70091c",
+        "hash": "9ffb1f78",
+        "encoded": "#%20RabbitMQ%20Configuration",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "70091c",
+        "hash": "03482ed8",
+        "encoded": "rabbitmq:",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "70091c",
+        "hash": "80db54ea",
+        "encoded": "host:%20localhost",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "70091c",
+        "hash": "3698f599",
+        "encoded": "port:%205672",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "70091c",
+        "hash": "1a94d5b0",
+        "encoded": "username:%20guest",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "70091c",
+        "hash": "8d3a1e05",
+        "encoded": "password:%20guest",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "70091c",
+        "hash": "77c26379",
+        "encoded": "connection-timeout:%205000",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "70091c",
+        "hash": "1b192977",
+        "encoded": "#%20JWT%20Configuration%20(MUST%20match%20user-service)",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "9698c6",
+        "hash": "e083b4f5",
+        "encoded": "sql:",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "9698c6",
+        "hash": "cc193fc1",
+        "encoded": "init:",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "9698c6",
+        "hash": "3a45831a",
+        "encoded": "mode:%20never",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "9698c6",
+        "hash": "a2bea675",
+        "encoded": "#%20JWT%20Configuration",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "9698c6",
+        "hash": "f512c1c7",
+        "encoded": "jwt:",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "9698c6",
+        "hash": "0f388c57",
+        "encoded": "secret:%20food-delivery-platform-jwt-secret-key-2026-must-be-at-least-256-bits-long-for-hmac-sha256",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "9698c6",
+        "hash": "a821cf99",
+        "encoded": "expiration:%2086400000",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "9698c6",
+        "hash": "6e5104c2",
+        "encoded": "#%20Eureka%20Client%20Configuration",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "9698c6",
+        "hash": "35369506",
+        "encoded": "eureka:",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "9698c6",
+        "hash": "fbd78b36",
+        "encoded": "client:",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "9698c6",
+        "hash": "eca8cddd",
+        "encoded": "service-url:",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "9698c6",
+        "hash": "86490512",
+        "encoded": "defaultZone:%20http://localhost:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "9698c6",
+        "hash": "b860d4d9",
+        "encoded": "register-with-eureka:%20true",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "9698c6",
+        "hash": "3885c401",
+        "encoded": "fetch-registry:%20true",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "cf608e",
+        "hash": "f79f6535",
+        "encoded": "sql:",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "cf608e",
+        "hash": "01c88bfc",
+        "encoded": "init:",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "cf608e",
+        "hash": "cdfc0422",
+        "encoded": "mode:%20never",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "cf608e",
+        "hash": "da2ca19a",
+        "encoded": "#%20Eureka%20Client%20Configuration",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "cf608e",
+        "hash": "92b97c10",
+        "encoded": "eureka:",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "cf608e",
+        "hash": "a1f32bc1",
+        "encoded": "client:",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "cf608e",
+        "hash": "50a4ccff",
+        "encoded": "service-url:",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "cf608e",
+        "hash": "7cbd8e38",
+        "encoded": "defaultZone:%20http://localhost:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "cf608e",
+        "hash": "4b019a91",
+        "encoded": "register-with-eureka:%20true",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "cf608e",
+        "hash": "b4ffb797",
+        "encoded": "fetch-registry:%20true",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "002637",
+        "hash": "44504dca",
+        "encoded": "#%20Payment%20Service%20-%20Bootstrap%20Configuration",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "002637",
+        "hash": "b18f385b",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "002637",
+        "hash": "4fe85234",
+        "encoded": "#%20Minimal%20configuration%20to%20connect%20to%20Config%20Server",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "002637",
+        "hash": "edd18910",
+        "encoded": "#%20All%20other%20properties%20are%20fetched%20from%20config-server",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "002637",
+        "hash": "9fbb7d45",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "002637",
+        "hash": "90b1323e",
+        "encoded": "application:",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "002637",
+        "hash": "4fbc2a7b",
+        "encoded": "name:%20payment-service",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "002637",
+        "hash": "2058e78b",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "002637",
+        "hash": "f24bca33",
+        "encoded": "import:%20optional:configserver:http://localhost:8888",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "002637",
+        "hash": "c5eb0219",
+        "encoded": "cloud:",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "002637",
+        "hash": "9ef1b107",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "002637",
+        "hash": "b5f1c07e",
+        "encoded": "fail-fast:%20false",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "002637",
+        "hash": "12687cc0",
+        "encoded": "retry:",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "002637",
+        "hash": "54f52d6b",
+        "encoded": "max-attempts:%206",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "002637",
+        "hash": "157f996d",
+        "encoded": "initial-interval:%201000",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "002637",
+        "hash": "d48accfb",
+        "encoded": "multiplier:%201.1",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "002637",
+        "hash": "6a75450e",
+        "encoded": "max-interval:%202000",
+        "prevChunkIds": []
+      }
+    },
+    "_prevLineCount": 68
+  }
+}

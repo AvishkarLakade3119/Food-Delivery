@@ -1,0 +1,2706 @@
+{
+  "JWT_IMPLEMENTATION_COMPLETE.md": {
+    "filename": "JWT_IMPLEMENTATION_COMPLETE.md",
+    "path": "JWT_IMPLEMENTATION_COMPLETE.md",
+    "version": "1.2",
+    "contextFile": "b41775c7-context.json",
+    "chunks": {
+      "820caf": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781166759,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "936e87ee"
+        },
+        "hash": "972f2bb5",
+        "messageId": "system_dbaceda0-656d-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 2:02:39 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "820caf",
+        "hash": "93bb6bdb",
+        "encoded": "#%20JWT%20Authentication%20Implementation%20-%20Complete",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "820caf",
+        "hash": "e6d4c95a",
+        "encoded": "##%20PHASE%201:%20ANALYSIS%20SUMMARY",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "820caf",
+        "hash": "02cbc6b4",
+        "encoded": "###%20User%20Service%20Analysis",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "820caf",
+        "hash": "817fa8fe",
+        "encoded": "-%20**User%20Entity**:%20Found%20with%20fields:%20id,%20username,%20email,%20password,%20firstName,%20lastName,%20name,%20phone,%20address,%20role,%20createdAt,%20updatedAt",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "820caf",
+        "hash": "2bec2e2d",
+        "encoded": "-%20**UserRepository**:%20Exists%20with%20methods:%20findByEmail,%20findByUsername,%20existsByEmail,%20existsByUsername",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "820caf",
+        "hash": "59e84e4e",
+        "encoded": "-%20**UserService**:%20Exists%20with%20createUser,%20getUserByEmail%20methods",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "820caf",
+        "hash": "69466271",
+        "encoded": "-%20**Existing%20JWT%20Classes**:%20NONE%20-%20Implemented%20from%20scratch",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "820caf",
+        "hash": "ed650b25",
+        "encoded": "-%20**Existing%20SecurityConfig**:%20NONE%20-%20Implemented%20from%20scratch",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "820caf",
+        "hash": "6db996d5",
+        "encoded": "-%20**Spring%20Security%20Dependency**:%20NOT%20PRESENT%20-%20Added",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "820caf",
+        "hash": "5d13ea97",
+        "encoded": "-%20**JJWT%20Dependency**:%20NOT%20PRESENT%20-%20Added%20jjwt%200.12.3",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "820caf",
+        "hash": "4e4cbfc5",
+        "encoded": "-%20**JWT%20Configuration**:%20NOT%20PRESENT%20-%20Added%20to%20config-repo",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "820caf",
+        "hash": "34076710",
+        "encoded": "###%20Other%20Services%20Analysis",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "820caf",
+        "hash": "a9fc5500",
+        "encoded": "-%20**restaurant-service,%20order-service,%20payment-service,%20notification-service**:%20No%20JWT%20validation%20-%20Implemented",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "820caf",
+        "hash": "49e95bbc",
+        "encoded": "-%20**api-gateway**:%20No%20JWT%20validation%20-%20Not%20implemented%20(Spring%20Cloud%20Gateway%20requires%20different%20approach)",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "820caf",
+        "hash": "a018fa36",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "820caf",
+        "hash": "0326befd",
+        "encoded": "##%20PHASE%202:%20DEPENDENCIES%20ADDED",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "820caf",
+        "hash": "90791b56",
+        "encoded": "###%20user-service/pom.xml",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "820caf",
+        "hash": "657a06ff",
+        "encoded": "%60%60%60xml",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "820caf",
+        "hash": "73ab896b",
+        "encoded": "%3C!--%20Spring%20Security%20--%3E",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "820caf",
+        "hash": "727730c4",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "820caf",
+        "hash": "437cdb5a",
+        "encoded": "%3CgroupId%3Eorg.springframework.boot%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "820caf",
+        "hash": "6b333760",
+        "encoded": "%3CartifactId%3Espring-boot-starter-security%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "820caf",
+        "hash": "6ea58685",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "820caf",
+        "hash": "debc544e",
+        "encoded": "%3C!--%20JWT%20Dependencies%20--%3E",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "820caf",
+        "hash": "b3679d55",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "820caf",
+        "hash": "99e5d2e5",
+        "encoded": "%3CgroupId%3Eio.jsonwebtoken%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "820caf",
+        "hash": "9da761a2",
+        "encoded": "%3CartifactId%3Ejjwt-api%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "820caf",
+        "hash": "df3346f0",
+        "encoded": "%3Cversion%3E0.12.3%3C/version%3E",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "820caf",
+        "hash": "a3a2dcb8",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "820caf",
+        "hash": "a2f081a2",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "820caf",
+        "hash": "0936e280",
+        "encoded": "%3CgroupId%3Eio.jsonwebtoken%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "820caf",
+        "hash": "8b20b016",
+        "encoded": "%3CartifactId%3Ejjwt-impl%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "820caf",
+        "hash": "57cf4212",
+        "encoded": "%3Cversion%3E0.12.3%3C/version%3E",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "820caf",
+        "hash": "326e55a4",
+        "encoded": "%3Cscope%3Eruntime%3C/scope%3E",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "820caf",
+        "hash": "b06c09e7",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "820caf",
+        "hash": "5f40ec15",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "820caf",
+        "hash": "2cb86ed0",
+        "encoded": "%3CgroupId%3Eio.jsonwebtoken%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "820caf",
+        "hash": "bb9f613a",
+        "encoded": "%3CartifactId%3Ejjwt-jackson%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "820caf",
+        "hash": "ca50376d",
+        "encoded": "%3Cversion%3E0.12.3%3C/version%3E",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "820caf",
+        "hash": "a58419dc",
+        "encoded": "%3Cscope%3Eruntime%3C/scope%3E",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "820caf",
+        "hash": "821cdad7",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "820caf",
+        "hash": "6770b6ad",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "820caf",
+        "hash": "750bdc25",
+        "encoded": "###%20Other%20Services%20(restaurant,%20order,%20payment,%20notification)",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "820caf",
+        "hash": "4342c96c",
+        "encoded": "Same%20JWT%20dependencies%20added%20to%20all%20service%20pom.xml%20files.",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "820caf",
+        "hash": "dfa14edc",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "820caf",
+        "hash": "d6c7f064",
+        "encoded": "##%20PHASE%203:%20JWT%20CONFIGURATION",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "820caf",
+        "hash": "5d07564a",
+        "encoded": "###%20config-repo/application.yml%20(Shared)",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "820caf",
+        "hash": "4a81306b",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "820caf",
+        "hash": "c88dc5f6",
+        "encoded": "jwt:",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "820caf",
+        "hash": "d5c49ed3",
+        "encoded": "secret:%20a-very-long-secure-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-food-delivery-platform-2026",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "820caf",
+        "hash": "8050eb37",
+        "encoded": "expiration:%2086400000%20%20#%2024%20hours",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "820caf",
+        "hash": "3ad7a01d",
+        "encoded": "header:%20Authorization",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "820caf",
+        "hash": "aa6cb3cb",
+        "encoded": "prefix:%20%22Bearer%20%22",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "820caf",
+        "hash": "23226bcb",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "820caf",
+        "hash": "ad210039",
+        "encoded": "###%20config-repo/user-service.yml",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "820caf",
+        "hash": "38c2ee9f",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "820caf",
+        "hash": "053d2990",
+        "encoded": "jwt:",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "820caf",
+        "hash": "ae134b39",
+        "encoded": "secret:%20a-very-long-secure-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-food-delivery-platform-2026",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "820caf",
+        "hash": "6f1d29a0",
+        "encoded": "expiration:%2086400000",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "820caf",
+        "hash": "f911b147",
+        "encoded": "header:%20Authorization",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "820caf",
+        "hash": "3ed0c184",
+        "encoded": "prefix:%20%22Bearer%20%22",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "820caf",
+        "hash": "d2a4f350",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "820caf",
+        "hash": "a11f7e6f",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "820caf",
+        "hash": "4de1f13c",
+        "encoded": "##%20PHASE%204-7:%20USER-SERVICE%20IMPLEMENTATION",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "820caf",
+        "hash": "adc26bc8",
+        "encoded": "###%20Files%20Created",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "820caf",
+        "hash": "989c45df",
+        "encoded": "1.%20**user-service/src/main/java/com/fooddelivery/user/security/JwtTokenProvider.java**",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "820caf",
+        "hash": "9ea11286",
+        "encoded": "-%20Generates%20JWT%20tokens%20with%20email,%20role,%20userId%20claims",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "820caf",
+        "hash": "388dd130",
+        "encoded": "-%20Validates%20JWT%20tokens",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "820caf",
+        "hash": "6ab9f57e",
+        "encoded": "-%20Extracts%20email,%20role,%20userId%20from%20tokens",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "820caf",
+        "hash": "a7522f9e",
+        "encoded": "-%20Uses%20JJWT%200.12.x%20API%20with%20HS256%20algorithm",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "820caf",
+        "hash": "abdee5d2",
+        "encoded": "2.%20**user-service/src/main/java/com/fooddelivery/user/security/JwtAuthenticationFilter.java**",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "820caf",
+        "hash": "2e90747b",
+        "encoded": "-%20Extends%20OncePerRequestFilter",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "820caf",
+        "hash": "6f86a630",
+        "encoded": "-%20Extracts%20JWT%20from%20Authorization%20header",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "820caf",
+        "hash": "0b706773",
+        "encoded": "-%20Validates%20token%20and%20sets%20authentication%20in%20SecurityContext",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "820caf",
+        "hash": "99e850b9",
+        "encoded": "-%20Skips%20public%20endpoints:%20/api/auth/register,%20/api/auth/login,%20/actuator",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "820caf",
+        "hash": "a9dc1a99",
+        "encoded": "3.%20**user-service/src/main/java/com/fooddelivery/user/security/CustomUserDetailsService.java**",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "820caf",
+        "hash": "7d17b6ae",
+        "encoded": "-%20Implements%20UserDetailsService",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "820caf",
+        "hash": "b2cc8541",
+        "encoded": "-%20Loads%20user%20by%20email%20from%20database",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "820caf",
+        "hash": "b3e87c41",
+        "encoded": "-%20Returns%20Spring%20Security%20UserDetails",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "820caf",
+        "hash": "46c51ffb",
+        "encoded": "4.%20**user-service/src/main/java/com/fooddelivery/user/security/SecurityConfig.java**",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "820caf",
+        "hash": "95cb3a28",
+        "encoded": "-%20Spring%20Security%206.x%20configuration",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "820caf",
+        "hash": "80eb903a",
+        "encoded": "-%20CSRF%20disabled%20(REST%20API)",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "820caf",
+        "hash": "6966e9b5",
+        "encoded": "-%20Stateless%20session%20management",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "820caf",
+        "hash": "4f5ea842",
+        "encoded": "-%20Public%20endpoints:%20/api/auth/register,%20/api/auth/login,%20/actuator/**",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "820caf",
+        "hash": "fb1d0e1f",
+        "encoded": "-%20All%20other%20endpoints%20require%20authentication",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "820caf",
+        "hash": "25d52d53",
+        "encoded": "-%20BCryptPasswordEncoder%20bean",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "820caf",
+        "hash": "6d23a83a",
+        "encoded": "-%20AuthenticationManager%20bean",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "820caf",
+        "hash": "18e88f92",
+        "encoded": "-%20CORS%20configuration",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "820caf",
+        "hash": "6a4c20ab",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "820caf",
+        "hash": "4144b58e",
+        "encoded": "##%20PHASE%208-10:%20AUTHENTICATION%20ENDPOINTS",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "820caf",
+        "hash": "14be9bfc",
+        "encoded": "###%20Files%20Created",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "820caf",
+        "hash": "2b041a7f",
+        "encoded": "1.%20**user-service/src/main/java/com/fooddelivery/user/dto/LoginRequest.java**",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "820caf",
+        "hash": "9d1ceedf",
+        "encoded": "-%20email,%20password%20fields",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "820caf",
+        "hash": "82021bcf",
+        "encoded": "2.%20**user-service/src/main/java/com/fooddelivery/user/dto/LoginResponse.java**",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "820caf",
+        "hash": "2e8a3718",
+        "encoded": "-%20token,%20tokenType,%20userId,%20email,%20name,%20role,%20expiresIn%20fields",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "820caf",
+        "hash": "e379e733",
+        "encoded": "3.%20**user-service/src/main/java/com/fooddelivery/user/dto/UserResponse.java**",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "820caf",
+        "hash": "d73febc4",
+        "encoded": "-%20User%20details%20without%20password%20field",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "820caf",
+        "hash": "c1e708f6",
+        "encoded": "4.%20**user-service/src/main/java/com/fooddelivery/user/controller/ProfileController.java**",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "820caf",
+        "hash": "f9782a8b",
+        "encoded": "-%20GET%20/api/users/profile%20-%20Returns%20authenticated%20user%20profile",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "820caf",
+        "hash": "4646896e",
+        "encoded": "###%20Files%20Modified",
+        "prevChunkIds": []
+      },
+      "128": {
+        "chunkId": "820caf",
+        "hash": "c1df73a3",
+        "encoded": "1.%20**user-service/src/main/java/com/fooddelivery/user/controller/AuthController.java**",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "820caf",
+        "hash": "fa7c19e9",
+        "encoded": "-%20**POST%20/api/auth/register**:%20Encodes%20password%20with%20BCrypt,%20returns%20UserResponse",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "820caf",
+        "hash": "a64c7b19",
+        "encoded": "-%20**POST%20/api/auth/login**:%20Validates%20credentials,%20generates%20JWT%20token,%20returns%20LoginResponse",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "820caf",
+        "hash": "a459e1d5",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "134": {
+        "chunkId": "820caf",
+        "hash": "e7733944",
+        "encoded": "##%20PHASE%2011:%20JWT%20VALIDATION%20IN%20OTHER%20SERVICES",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "820caf",
+        "hash": "c4f16fc3",
+        "encoded": "###%20Approach:%20Independent%20JWT%20Validation",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "820caf",
+        "hash": "83aa2473",
+        "encoded": "Each%20service%20validates%20JWT%20tokens%20independently%20using%20the%20same%20secret%20from%20config-repo.",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "820caf",
+        "hash": "3ccb9d19",
+        "encoded": "###%20Files%20Created%20for%20Each%20Service%20(restaurant,%20order,%20payment,%20notification)",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "820caf",
+        "hash": "614d202a",
+        "encoded": "1.%20**%7Bservice%7D/src/main/java/com/fooddelivery/%7Bservice%7D/security/JwtTokenProvider.java**",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "820caf",
+        "hash": "da4cf58a",
+        "encoded": "-%20Token%20validation%20and%20claim%20extraction",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "820caf",
+        "hash": "2de4bada",
+        "encoded": "2.%20**%7Bservice%7D/src/main/java/com/fooddelivery/%7Bservice%7D/security/JwtAuthenticationFilter.java**",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "820caf",
+        "hash": "00fb7310",
+        "encoded": "-%20JWT%20extraction%20and%20authentication",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "820caf",
+        "hash": "1b92b1e5",
+        "encoded": "3.%20**%7Bservice%7D/src/main/java/com/fooddelivery/%7Bservice%7D/security/SecurityConfig.java**",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "820caf",
+        "hash": "605177fa",
+        "encoded": "-%20Security%20filter%20chain%20configuration",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "820caf",
+        "hash": "8a9745a4",
+        "encoded": "-%20All%20endpoints%20require%20authentication%20except%20/actuator/**",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "820caf",
+        "hash": "5d8076d1",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "820caf",
+        "hash": "8c4bc731",
+        "encoded": "##%20PHASE%2013:%20CONFIG%20SERVER%20UPDATES",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "820caf",
+        "hash": "46bb9528",
+        "encoded": "###%20config-repo/application.yml",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "820caf",
+        "hash": "383d2fa6",
+        "encoded": "Added%20shared%20JWT%20configuration%20for%20all%20services.",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "820caf",
+        "hash": "e7a6aa37",
+        "encoded": "###%20config-repo/user-service.yml",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "820caf",
+        "hash": "c6d656a0",
+        "encoded": "Updated%20with%20JWT%20configuration.",
+        "prevChunkIds": []
+      },
+      "161": {
+        "chunkId": "820caf",
+        "hash": "1c09272f",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "820caf",
+        "hash": "adf89441",
+        "encoded": "##%20PHASE%2018:%20TEST%20CONFIGURATION",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "820caf",
+        "hash": "35256097",
+        "encoded": "###%20Test%20Files%20Updated/Created",
+        "prevChunkIds": []
+      },
+      "167": {
+        "chunkId": "820caf",
+        "hash": "f5602584",
+        "encoded": "1.%20**user-service/src/test/resources/application-test.yml**",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "820caf",
+        "hash": "c418771e",
+        "encoded": "-%20Added%20JWT%20configuration%20for%20tests",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "820caf",
+        "hash": "e5fdb85b",
+        "encoded": "2.%20**restaurant-service/src/test/resources/application-test.yml**",
+        "prevChunkIds": []
+      },
+      "171": {
+        "chunkId": "820caf",
+        "hash": "f80db599",
+        "encoded": "-%20JWT%20config%20+%20Security%20disabled%20for%20tests",
+        "prevChunkIds": []
+      },
+      "173": {
+        "chunkId": "820caf",
+        "hash": "23c19bb6",
+        "encoded": "3.%20**order-service/src/test/resources/application-test.properties**",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "820caf",
+        "hash": "6744e3c7",
+        "encoded": "-%20JWT%20config%20+%20Security%20disabled%20for%20tests",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "820caf",
+        "hash": "c1dcdcde",
+        "encoded": "4.%20**payment-service/src/test/resources/application-test.yml**",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "820caf",
+        "hash": "5bfeb210",
+        "encoded": "-%20JWT%20config%20+%20Security%20disabled%20for%20tests",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "820caf",
+        "hash": "ff74557e",
+        "encoded": "5.%20**notification-service/src/test/resources/application-test.yml**",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "820caf",
+        "hash": "df4fe0b9",
+        "encoded": "-%20JWT%20config%20+%20Security%20disabled%20for%20tests",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "820caf",
+        "hash": "5fc99200",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "820caf",
+        "hash": "614b955a",
+        "encoded": "##%20FILES%20CREATED%20(Total:%2032)",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "820caf",
+        "hash": "4713ba6a",
+        "encoded": "###%20User%20Service%20(8%20files)",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "820caf",
+        "hash": "52ecf559",
+        "encoded": "1.%20user-service/src/main/java/com/fooddelivery/user/security/JwtTokenProvider.java",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "820caf",
+        "hash": "5d3e7fe5",
+        "encoded": "2.%20user-service/src/main/java/com/fooddelivery/user/security/JwtAuthenticationFilter.java",
+        "prevChunkIds": []
+      },
+      "189": {
+        "chunkId": "820caf",
+        "hash": "90271de8",
+        "encoded": "3.%20user-service/src/main/java/com/fooddelivery/user/security/CustomUserDetailsService.java",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "820caf",
+        "hash": "4dc93742",
+        "encoded": "4.%20user-service/src/main/java/com/fooddelivery/user/security/SecurityConfig.java",
+        "prevChunkIds": []
+      },
+      "191": {
+        "chunkId": "820caf",
+        "hash": "d8d77548",
+        "encoded": "5.%20user-service/src/main/java/com/fooddelivery/user/dto/LoginRequest.java",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "820caf",
+        "hash": "e0418647",
+        "encoded": "6.%20user-service/src/main/java/com/fooddelivery/user/dto/LoginResponse.java",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "820caf",
+        "hash": "2b98a0c3",
+        "encoded": "7.%20user-service/src/main/java/com/fooddelivery/user/dto/UserResponse.java",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "820caf",
+        "hash": "adc85ff1",
+        "encoded": "8.%20user-service/src/main/java/com/fooddelivery/user/controller/ProfileController.java",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "820caf",
+        "hash": "a32a7c81",
+        "encoded": "###%20Restaurant%20Service%20(4%20files)",
+        "prevChunkIds": []
+      },
+      "197": {
+        "chunkId": "820caf",
+        "hash": "dfdd89b5",
+        "encoded": "9.%20restaurant-service/src/main/java/com/fooddelivery/restaurant/security/JwtTokenProvider.java",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "820caf",
+        "hash": "dc89fe5f",
+        "encoded": "10.%20restaurant-service/src/main/java/com/fooddelivery/restaurant/security/JwtAuthenticationFilter.java",
+        "prevChunkIds": []
+      },
+      "199": {
+        "chunkId": "820caf",
+        "hash": "bf124012",
+        "encoded": "11.%20restaurant-service/src/main/java/com/fooddelivery/restaurant/security/SecurityConfig.java",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "820caf",
+        "hash": "2d3d1324",
+        "encoded": "12.%20restaurant-service/src/test/resources/application-test.yml",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "820caf",
+        "hash": "d0f9e36a",
+        "encoded": "###%20Order%20Service%20(4%20files)",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "820caf",
+        "hash": "5718da98",
+        "encoded": "13.%20order-service/src/main/java/com/fooddelivery/order/security/JwtTokenProvider.java",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "820caf",
+        "hash": "799a84bc",
+        "encoded": "14.%20order-service/src/main/java/com/fooddelivery/order/security/JwtAuthenticationFilter.java",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "820caf",
+        "hash": "4ceeb28c",
+        "encoded": "15.%20order-service/src/main/java/com/fooddelivery/order/security/SecurityConfig.java",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "820caf",
+        "hash": "9b8ab269",
+        "encoded": "16.%20order-service/src/test/resources/application-test.properties",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "820caf",
+        "hash": "cfebaad8",
+        "encoded": "###%20Payment%20Service%20(4%20files)",
+        "prevChunkIds": []
+      },
+      "209": {
+        "chunkId": "820caf",
+        "hash": "a5f7a973",
+        "encoded": "17.%20payment-service/src/main/java/com/fooddelivery/payment/security/JwtTokenProvider.java",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "820caf",
+        "hash": "4f421014",
+        "encoded": "18.%20payment-service/src/main/java/com/fooddelivery/payment/security/JwtAuthenticationFilter.java",
+        "prevChunkIds": []
+      },
+      "211": {
+        "chunkId": "820caf",
+        "hash": "b38a1796",
+        "encoded": "19.%20payment-service/src/main/java/com/fooddelivery/payment/security/SecurityConfig.java",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "820caf",
+        "hash": "73a00552",
+        "encoded": "20.%20payment-service/src/test/resources/application-test.yml",
+        "prevChunkIds": []
+      },
+      "214": {
+        "chunkId": "820caf",
+        "hash": "6315506a",
+        "encoded": "###%20Notification%20Service%20(4%20files)",
+        "prevChunkIds": []
+      },
+      "215": {
+        "chunkId": "820caf",
+        "hash": "7bd1973c",
+        "encoded": "21.%20notification-service/src/main/java/com/fooddelivery/notification/security/JwtTokenProvider.java",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "820caf",
+        "hash": "b45c0bfe",
+        "encoded": "22.%20notification-service/src/main/java/com/fooddelivery/notification/security/JwtAuthenticationFilter.java",
+        "prevChunkIds": []
+      },
+      "217": {
+        "chunkId": "820caf",
+        "hash": "51cf0431",
+        "encoded": "23.%20notification-service/src/main/java/com/fooddelivery/notification/security/SecurityConfig.java",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "820caf",
+        "hash": "82d8bf5b",
+        "encoded": "24.%20notification-service/src/test/resources/application-test.yml",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "820caf",
+        "hash": "6588ca71",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "222": {
+        "chunkId": "820caf",
+        "hash": "1ef48975",
+        "encoded": "##%20FILES%20MODIFIED%20(Total:%209)",
+        "prevChunkIds": []
+      },
+      "224": {
+        "chunkId": "820caf",
+        "hash": "7680af8a",
+        "encoded": "1.%20user-service/pom.xml%20-%20Added%20Spring%20Security%20and%20JWT%20dependencies",
+        "prevChunkIds": []
+      },
+      "225": {
+        "chunkId": "820caf",
+        "hash": "31d8092f",
+        "encoded": "2.%20user-service/src/main/java/com/fooddelivery/user/controller/AuthController.java%20-%20JWT%20login/register",
+        "prevChunkIds": []
+      },
+      "226": {
+        "chunkId": "820caf",
+        "hash": "593bc957",
+        "encoded": "3.%20user-service/src/test/resources/application-test.yml%20-%20JWT%20config%20for%20tests",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "820caf",
+        "hash": "27f41322",
+        "encoded": "4.%20restaurant-service/pom.xml%20-%20Added%20Spring%20Security%20and%20JWT%20dependencies",
+        "prevChunkIds": []
+      },
+      "228": {
+        "chunkId": "820caf",
+        "hash": "fa179109",
+        "encoded": "5.%20order-service/pom.xml%20-%20Added%20Spring%20Security%20and%20JWT%20dependencies",
+        "prevChunkIds": []
+      },
+      "229": {
+        "chunkId": "820caf",
+        "hash": "2d02ca1a",
+        "encoded": "6.%20payment-service/pom.xml%20-%20Added%20Spring%20Security%20and%20JWT%20dependencies",
+        "prevChunkIds": []
+      },
+      "230": {
+        "chunkId": "820caf",
+        "hash": "554c0243",
+        "encoded": "7.%20notification-service/pom.xml%20-%20Added%20Spring%20Security%20and%20JWT%20dependencies",
+        "prevChunkIds": []
+      },
+      "231": {
+        "chunkId": "820caf",
+        "hash": "5e9b5aef",
+        "encoded": "8.%20config-repo/application.yml%20-%20Added%20shared%20JWT%20configuration",
+        "prevChunkIds": []
+      },
+      "232": {
+        "chunkId": "820caf",
+        "hash": "e0200408",
+        "encoded": "9.%20config-repo/user-service.yml%20-%20Updated%20JWT%20configuration",
+        "prevChunkIds": []
+      },
+      "234": {
+        "chunkId": "820caf",
+        "hash": "60e4eae3",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "236": {
+        "chunkId": "820caf",
+        "hash": "7cb3a345",
+        "encoded": "##%20DEPENDENCIES%20ADDED",
+        "prevChunkIds": []
+      },
+      "238": {
+        "chunkId": "820caf",
+        "hash": "17667865",
+        "encoded": "###%20All%20Services%20(user,%20restaurant,%20order,%20payment,%20notification)",
+        "prevChunkIds": []
+      },
+      "239": {
+        "chunkId": "820caf",
+        "hash": "e4641041",
+        "encoded": "-%20spring-boot-starter-security",
+        "prevChunkIds": []
+      },
+      "240": {
+        "chunkId": "820caf",
+        "hash": "688056cb",
+        "encoded": "-%20io.jsonwebtoken:jjwt-api:0.12.3",
+        "prevChunkIds": []
+      },
+      "241": {
+        "chunkId": "820caf",
+        "hash": "970687f8",
+        "encoded": "-%20io.jsonwebtoken:jjwt-impl:0.12.3%20(runtime)",
+        "prevChunkIds": []
+      },
+      "242": {
+        "chunkId": "820caf",
+        "hash": "24c0b59f",
+        "encoded": "-%20io.jsonwebtoken:jjwt-jackson:0.12.3%20(runtime)",
+        "prevChunkIds": []
+      },
+      "244": {
+        "chunkId": "820caf",
+        "hash": "652b60d6",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "246": {
+        "chunkId": "820caf",
+        "hash": "f00eeb67",
+        "encoded": "##%20POSTMAN%20TESTING%20GUIDE",
+        "prevChunkIds": []
+      },
+      "248": {
+        "chunkId": "820caf",
+        "hash": "22229278",
+        "encoded": "###%20Step%201:%20Register%20User",
+        "prevChunkIds": []
+      },
+      "249": {
+        "chunkId": "820caf",
+        "hash": "73425259",
+        "encoded": "**Endpoint**:%20POST%20http://localhost:8085/api/auth/register",
+        "prevChunkIds": []
+      },
+      "251": {
+        "chunkId": "820caf",
+        "hash": "40888353",
+        "encoded": "**Headers**:",
+        "prevChunkIds": []
+      },
+      "252": {
+        "chunkId": "820caf",
+        "hash": "5a250bf0",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "253": {
+        "chunkId": "820caf",
+        "hash": "ee9d0705",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "254": {
+        "chunkId": "820caf",
+        "hash": "e9c124ae",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "256": {
+        "chunkId": "820caf",
+        "hash": "9a750824",
+        "encoded": "**Body%20(JSON)**:",
+        "prevChunkIds": []
+      },
+      "257": {
+        "chunkId": "820caf",
+        "hash": "b99fa4ef",
+        "encoded": "%60%60%60json",
+        "prevChunkIds": []
+      },
+      "258": {
+        "chunkId": "820caf",
+        "hash": "a7832b83",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "259": {
+        "chunkId": "820caf",
+        "hash": "f1e52394",
+        "encoded": "%22username%22:%20%22john.doe%22,",
+        "prevChunkIds": []
+      },
+      "260": {
+        "chunkId": "820caf",
+        "hash": "95a09da3",
+        "encoded": "%22email%22:%20%22john.doe@example.com%22,",
+        "prevChunkIds": []
+      },
+      "261": {
+        "chunkId": "820caf",
+        "hash": "452a98d5",
+        "encoded": "%22password%22:%20%22password123%22,",
+        "prevChunkIds": []
+      },
+      "262": {
+        "chunkId": "820caf",
+        "hash": "9a99db07",
+        "encoded": "%22firstName%22:%20%22John%22,",
+        "prevChunkIds": []
+      },
+      "263": {
+        "chunkId": "820caf",
+        "hash": "b1b35e8d",
+        "encoded": "%22lastName%22:%20%22Doe%22,",
+        "prevChunkIds": []
+      },
+      "264": {
+        "chunkId": "820caf",
+        "hash": "47fa442a",
+        "encoded": "%22phone%22:%20%221234567890%22,",
+        "prevChunkIds": []
+      },
+      "265": {
+        "chunkId": "820caf",
+        "hash": "dd18b7cc",
+        "encoded": "%22address%22:%20%22123%20Main%20St,%20City,%20State%22",
+        "prevChunkIds": []
+      },
+      "266": {
+        "chunkId": "820caf",
+        "hash": "f9e5f5b0",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "267": {
+        "chunkId": "820caf",
+        "hash": "93d36adb",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "269": {
+        "chunkId": "820caf",
+        "hash": "54deaf34",
+        "encoded": "**Expected%20Response%20(201%20Created)**:",
+        "prevChunkIds": []
+      },
+      "270": {
+        "chunkId": "820caf",
+        "hash": "8403205c",
+        "encoded": "%60%60%60json",
+        "prevChunkIds": []
+      },
+      "271": {
+        "chunkId": "820caf",
+        "hash": "523fedbe",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "272": {
+        "chunkId": "820caf",
+        "hash": "3e95f38a",
+        "encoded": "%22id%22:%201,",
+        "prevChunkIds": []
+      },
+      "273": {
+        "chunkId": "820caf",
+        "hash": "13450bf0",
+        "encoded": "%22username%22:%20%22john.doe%22,",
+        "prevChunkIds": []
+      },
+      "274": {
+        "chunkId": "820caf",
+        "hash": "873d5711",
+        "encoded": "%22email%22:%20%22john.doe@example.com%22,",
+        "prevChunkIds": []
+      },
+      "275": {
+        "chunkId": "820caf",
+        "hash": "72525913",
+        "encoded": "%22firstName%22:%20%22John%22,",
+        "prevChunkIds": []
+      },
+      "276": {
+        "chunkId": "820caf",
+        "hash": "12569a73",
+        "encoded": "%22lastName%22:%20%22Doe%22,",
+        "prevChunkIds": []
+      },
+      "277": {
+        "chunkId": "820caf",
+        "hash": "204b70a4",
+        "encoded": "%22name%22:%20%22John%20Doe%22,",
+        "prevChunkIds": []
+      },
+      "278": {
+        "chunkId": "820caf",
+        "hash": "3305689f",
+        "encoded": "%22phone%22:%20%221234567890%22,",
+        "prevChunkIds": []
+      },
+      "279": {
+        "chunkId": "820caf",
+        "hash": "1f173763",
+        "encoded": "%22address%22:%20%22123%20Main%20St,%20City,%20State%22,",
+        "prevChunkIds": []
+      },
+      "280": {
+        "chunkId": "820caf",
+        "hash": "29c72bb9",
+        "encoded": "%22role%22:%20%22CUSTOMER%22,",
+        "prevChunkIds": []
+      },
+      "281": {
+        "chunkId": "820caf",
+        "hash": "6fee2dba",
+        "encoded": "%22createdAt%22:%20%222026-06-11T10:30:00%22,",
+        "prevChunkIds": []
+      },
+      "282": {
+        "chunkId": "820caf",
+        "hash": "08db86d1",
+        "encoded": "%22updatedAt%22:%20null",
+        "prevChunkIds": []
+      },
+      "283": {
+        "chunkId": "820caf",
+        "hash": "36d31997",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "284": {
+        "chunkId": "820caf",
+        "hash": "fd2fc266",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "286": {
+        "chunkId": "820caf",
+        "hash": "955f4f53",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "288": {
+        "chunkId": "820caf",
+        "hash": "9e0fed53",
+        "encoded": "###%20Step%202:%20Login",
+        "prevChunkIds": []
+      },
+      "289": {
+        "chunkId": "820caf",
+        "hash": "ec0a7939",
+        "encoded": "**Endpoint**:%20POST%20http://localhost:8085/api/auth/login",
+        "prevChunkIds": []
+      },
+      "291": {
+        "chunkId": "820caf",
+        "hash": "6ba990a3",
+        "encoded": "**Headers**:",
+        "prevChunkIds": []
+      },
+      "292": {
+        "chunkId": "820caf",
+        "hash": "11a3ac8c",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "293": {
+        "chunkId": "820caf",
+        "hash": "ca3fffb7",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "294": {
+        "chunkId": "820caf",
+        "hash": "65524479",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "296": {
+        "chunkId": "820caf",
+        "hash": "20361c69",
+        "encoded": "**Body%20(JSON)**:",
+        "prevChunkIds": []
+      },
+      "297": {
+        "chunkId": "820caf",
+        "hash": "ced1fca3",
+        "encoded": "%60%60%60json",
+        "prevChunkIds": []
+      },
+      "298": {
+        "chunkId": "820caf",
+        "hash": "da446203",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "299": {
+        "chunkId": "820caf",
+        "hash": "c9dbbba0",
+        "encoded": "%22email%22:%20%22john.doe@example.com%22,",
+        "prevChunkIds": []
+      },
+      "300": {
+        "chunkId": "820caf",
+        "hash": "77c61567",
+        "encoded": "%22password%22:%20%22password123%22",
+        "prevChunkIds": []
+      },
+      "301": {
+        "chunkId": "820caf",
+        "hash": "6a99a355",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "302": {
+        "chunkId": "820caf",
+        "hash": "cc7d2f6e",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "304": {
+        "chunkId": "820caf",
+        "hash": "7e317f63",
+        "encoded": "**Expected%20Response%20(200%20OK)**:",
+        "prevChunkIds": []
+      },
+      "305": {
+        "chunkId": "820caf",
+        "hash": "dbbf1602",
+        "encoded": "%60%60%60json",
+        "prevChunkIds": []
+      },
+      "306": {
+        "chunkId": "820caf",
+        "hash": "2be1edc3",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "307": {
+        "chunkId": "820caf",
+        "hash": "2977d650",
+        "encoded": "%22token%22:%20%22eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsInJvbGUiOiJDVVNUT01FUiIsInVzZXJJZCI6MSwiaWF0IjoxNzE4MDk1ODAwLCJleHAiOjE3MTgxODIyMDB9.xyz...%22,",
+        "prevChunkIds": []
+      },
+      "308": {
+        "chunkId": "820caf",
+        "hash": "c624f4d0",
+        "encoded": "%22tokenType%22:%20%22Bearer%22,",
+        "prevChunkIds": []
+      },
+      "309": {
+        "chunkId": "820caf",
+        "hash": "4b2780ef",
+        "encoded": "%22userId%22:%201,",
+        "prevChunkIds": []
+      },
+      "310": {
+        "chunkId": "820caf",
+        "hash": "34462dd9",
+        "encoded": "%22email%22:%20%22john.doe@example.com%22,",
+        "prevChunkIds": []
+      },
+      "311": {
+        "chunkId": "820caf",
+        "hash": "0578dfed",
+        "encoded": "%22name%22:%20%22John%20Doe%22,",
+        "prevChunkIds": []
+      },
+      "312": {
+        "chunkId": "820caf",
+        "hash": "681bb6a1",
+        "encoded": "%22role%22:%20%22CUSTOMER%22,",
+        "prevChunkIds": []
+      },
+      "313": {
+        "chunkId": "820caf",
+        "hash": "d7079049",
+        "encoded": "%22expiresIn%22:%2086400",
+        "prevChunkIds": []
+      },
+      "314": {
+        "chunkId": "820caf",
+        "hash": "b31bc060",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "315": {
+        "chunkId": "820caf",
+        "hash": "da9d98fc",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "317": {
+        "chunkId": "820caf",
+        "hash": "570aea13",
+        "encoded": "**IMPORTANT**:%20Copy%20the%20%60token%60%20value%20from%20the%20response.",
+        "prevChunkIds": []
+      },
+      "319": {
+        "chunkId": "820caf",
+        "hash": "06f2bf50",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "321": {
+        "chunkId": "820caf",
+        "hash": "1c74f735",
+        "encoded": "###%20Step%203:%20Access%20Protected%20Endpoint%20(User%20Profile)",
+        "prevChunkIds": []
+      },
+      "322": {
+        "chunkId": "820caf",
+        "hash": "37779bf9",
+        "encoded": "**Endpoint**:%20GET%20http://localhost:8085/api/users/profile",
+        "prevChunkIds": []
+      },
+      "324": {
+        "chunkId": "820caf",
+        "hash": "bcf6b09f",
+        "encoded": "**Headers**:",
+        "prevChunkIds": []
+      },
+      "325": {
+        "chunkId": "820caf",
+        "hash": "c3feee25",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "326": {
+        "chunkId": "820caf",
+        "hash": "6344eaa1",
+        "encoded": "Authorization:%20Bearer%20%3CPASTE_TOKEN_HERE%3E",
+        "prevChunkIds": []
+      },
+      "327": {
+        "chunkId": "820caf",
+        "hash": "7b00a5f8",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "329": {
+        "chunkId": "820caf",
+        "hash": "fab42d05",
+        "encoded": "**Expected%20Response%20(200%20OK)**:",
+        "prevChunkIds": []
+      },
+      "330": {
+        "chunkId": "820caf",
+        "hash": "898de0da",
+        "encoded": "%60%60%60json",
+        "prevChunkIds": []
+      },
+      "331": {
+        "chunkId": "820caf",
+        "hash": "2d13f3a2",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "332": {
+        "chunkId": "820caf",
+        "hash": "f250de01",
+        "encoded": "%22id%22:%201,",
+        "prevChunkIds": []
+      },
+      "333": {
+        "chunkId": "820caf",
+        "hash": "6138cfbd",
+        "encoded": "%22username%22:%20%22john.doe%22,",
+        "prevChunkIds": []
+      },
+      "334": {
+        "chunkId": "820caf",
+        "hash": "6ad2090f",
+        "encoded": "%22email%22:%20%22john.doe@example.com%22,",
+        "prevChunkIds": []
+      },
+      "335": {
+        "chunkId": "820caf",
+        "hash": "da3bf4f6",
+        "encoded": "%22firstName%22:%20%22John%22,",
+        "prevChunkIds": []
+      },
+      "336": {
+        "chunkId": "820caf",
+        "hash": "639c2a50",
+        "encoded": "%22lastName%22:%20%22Doe%22,",
+        "prevChunkIds": []
+      },
+      "337": {
+        "chunkId": "820caf",
+        "hash": "b843e64d",
+        "encoded": "%22name%22:%20%22John%20Doe%22,",
+        "prevChunkIds": []
+      },
+      "338": {
+        "chunkId": "820caf",
+        "hash": "fa12ef34",
+        "encoded": "%22phone%22:%20%221234567890%22,",
+        "prevChunkIds": []
+      },
+      "339": {
+        "chunkId": "820caf",
+        "hash": "560063b5",
+        "encoded": "%22address%22:%20%22123%20Main%20St,%20City,%20State%22,",
+        "prevChunkIds": []
+      },
+      "340": {
+        "chunkId": "820caf",
+        "hash": "f04e070a",
+        "encoded": "%22role%22:%20%22CUSTOMER%22,",
+        "prevChunkIds": []
+      },
+      "341": {
+        "chunkId": "820caf",
+        "hash": "8bf8b6a2",
+        "encoded": "%22createdAt%22:%20%222026-06-11T10:30:00%22,",
+        "prevChunkIds": []
+      },
+      "342": {
+        "chunkId": "820caf",
+        "hash": "afcdc1e9",
+        "encoded": "%22updatedAt%22:%20null",
+        "prevChunkIds": []
+      },
+      "343": {
+        "chunkId": "820caf",
+        "hash": "d4a1f253",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "344": {
+        "chunkId": "820caf",
+        "hash": "8fbf1a24",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "346": {
+        "chunkId": "820caf",
+        "hash": "a4893bcd",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "348": {
+        "chunkId": "820caf",
+        "hash": "17ce95ee",
+        "encoded": "###%20Step%204:%20Test%20Without%20Token%20(Should%20Fail)",
+        "prevChunkIds": []
+      },
+      "349": {
+        "chunkId": "820caf",
+        "hash": "94092e56",
+        "encoded": "**Endpoint**:%20GET%20http://localhost:8085/api/users/profile",
+        "prevChunkIds": []
+      },
+      "351": {
+        "chunkId": "820caf",
+        "hash": "1ac5f3b2",
+        "encoded": "**Headers**:%20(No%20Authorization%20header)",
+        "prevChunkIds": []
+      },
+      "353": {
+        "chunkId": "820caf",
+        "hash": "eb4da195",
+        "encoded": "**Expected%20Response%20(401%20Unauthorized)**:",
+        "prevChunkIds": []
+      },
+      "354": {
+        "chunkId": "820caf",
+        "hash": "95db7972",
+        "encoded": "%60%60%60json",
+        "prevChunkIds": []
+      },
+      "355": {
+        "chunkId": "820caf",
+        "hash": "045862db",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "356": {
+        "chunkId": "820caf",
+        "hash": "240741b0",
+        "encoded": "%22timestamp%22:%20%222026-06-11T10:35:00%22,",
+        "prevChunkIds": []
+      },
+      "357": {
+        "chunkId": "820caf",
+        "hash": "2b90a904",
+        "encoded": "%22status%22:%20401,",
+        "prevChunkIds": []
+      },
+      "358": {
+        "chunkId": "820caf",
+        "hash": "c9a46ddd",
+        "encoded": "%22error%22:%20%22Unauthorized%22,",
+        "prevChunkIds": []
+      },
+      "359": {
+        "chunkId": "820caf",
+        "hash": "ed52155a",
+        "encoded": "%22message%22:%20%22Full%20authentication%20is%20required%20to%20access%20this%20resource%22,",
+        "prevChunkIds": []
+      },
+      "360": {
+        "chunkId": "820caf",
+        "hash": "7775200f",
+        "encoded": "%22path%22:%20%22/api/users/profile%22",
+        "prevChunkIds": []
+      },
+      "361": {
+        "chunkId": "820caf",
+        "hash": "967cd31b",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "362": {
+        "chunkId": "820caf",
+        "hash": "ada75d6f",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "364": {
+        "chunkId": "820caf",
+        "hash": "12fda16b",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "366": {
+        "chunkId": "820caf",
+        "hash": "15824f6b",
+        "encoded": "###%20Step%205:%20Test%20via%20API%20Gateway",
+        "prevChunkIds": []
+      },
+      "367": {
+        "chunkId": "820caf",
+        "hash": "00878801",
+        "encoded": "**Endpoint**:%20POST%20http://localhost:8080/api/auth/login",
+        "prevChunkIds": []
+      },
+      "369": {
+        "chunkId": "820caf",
+        "hash": "a935f291",
+        "encoded": "**Headers**:",
+        "prevChunkIds": []
+      },
+      "370": {
+        "chunkId": "820caf",
+        "hash": "23453903",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "371": {
+        "chunkId": "820caf",
+        "hash": "c9e2f3c6",
+        "encoded": "Content-Type:%20application/json",
+        "prevChunkIds": []
+      },
+      "372": {
+        "chunkId": "820caf",
+        "hash": "bed33d85",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "374": {
+        "chunkId": "820caf",
+        "hash": "9a36923f",
+        "encoded": "**Body%20(JSON)**:",
+        "prevChunkIds": []
+      },
+      "375": {
+        "chunkId": "820caf",
+        "hash": "060d306e",
+        "encoded": "%60%60%60json",
+        "prevChunkIds": []
+      },
+      "376": {
+        "chunkId": "820caf",
+        "hash": "ba0d7a87",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "377": {
+        "chunkId": "820caf",
+        "hash": "90696a29",
+        "encoded": "%22email%22:%20%22john.doe@example.com%22,",
+        "prevChunkIds": []
+      },
+      "378": {
+        "chunkId": "820caf",
+        "hash": "48426faf",
+        "encoded": "%22password%22:%20%22password123%22",
+        "prevChunkIds": []
+      },
+      "379": {
+        "chunkId": "820caf",
+        "hash": "44c3a508",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "380": {
+        "chunkId": "820caf",
+        "hash": "d66aef58",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "382": {
+        "chunkId": "820caf",
+        "hash": "9267fe24",
+        "encoded": "**Expected%20Response**:%20Same%20as%20Step%202%20(via%20gateway%20routing)",
+        "prevChunkIds": []
+      },
+      "384": {
+        "chunkId": "820caf",
+        "hash": "71051dfc",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "386": {
+        "chunkId": "820caf",
+        "hash": "1ff167fd",
+        "encoded": "###%20Step%206:%20Test%20Other%20Services%20with%20JWT",
+        "prevChunkIds": []
+      },
+      "387": {
+        "chunkId": "820caf",
+        "hash": "2fc0c541",
+        "encoded": "**Endpoint**:%20GET%20http://localhost:8082/api/restaurants",
+        "prevChunkIds": []
+      },
+      "389": {
+        "chunkId": "820caf",
+        "hash": "ecdb68ba",
+        "encoded": "**Headers**:",
+        "prevChunkIds": []
+      },
+      "390": {
+        "chunkId": "820caf",
+        "hash": "c77ea6e0",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "391": {
+        "chunkId": "820caf",
+        "hash": "fb2311bf",
+        "encoded": "Authorization:%20Bearer%20%3CPASTE_TOKEN_HERE%3E",
+        "prevChunkIds": []
+      },
+      "392": {
+        "chunkId": "820caf",
+        "hash": "e9584458",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "394": {
+        "chunkId": "820caf",
+        "hash": "7ae1853b",
+        "encoded": "**Expected%20Response**:%20List%20of%20restaurants%20(200%20OK)",
+        "prevChunkIds": []
+      },
+      "396": {
+        "chunkId": "820caf",
+        "hash": "6d0a413a",
+        "encoded": "**Without%20Token**:%20401%20Unauthorized",
+        "prevChunkIds": []
+      },
+      "398": {
+        "chunkId": "820caf",
+        "hash": "7a8ec70b",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "400": {
+        "chunkId": "820caf",
+        "hash": "d7c44140",
+        "encoded": "##%20VERIFICATION%20COMMANDS",
+        "prevChunkIds": []
+      },
+      "402": {
+        "chunkId": "820caf",
+        "hash": "1e0f7edf",
+        "encoded": "###%201.%20Build%20All%20Services",
+        "prevChunkIds": []
+      },
+      "403": {
+        "chunkId": "820caf",
+        "hash": "10fb5c56",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "404": {
+        "chunkId": "820caf",
+        "hash": "fc1b8f31",
+        "encoded": "cd%20Food-Delivery-main",
+        "prevChunkIds": []
+      },
+      "405": {
+        "chunkId": "820caf",
+        "hash": "b2babb83",
+        "encoded": "mvn%20clean%20install",
+        "prevChunkIds": []
+      },
+      "406": {
+        "chunkId": "820caf",
+        "hash": "af06bb47",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "407": {
+        "chunkId": "820caf",
+        "hash": "7afe0741",
+        "encoded": "**Expected**:%20BUILD%20SUCCESS%20for%20all%20modules,%200%20test%20failures",
+        "prevChunkIds": []
+      },
+      "409": {
+        "chunkId": "820caf",
+        "hash": "581f039c",
+        "encoded": "###%202.%20Start%20Config%20Server",
+        "prevChunkIds": []
+      },
+      "410": {
+        "chunkId": "820caf",
+        "hash": "cc4fd123",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "411": {
+        "chunkId": "820caf",
+        "hash": "6f0fd1af",
+        "encoded": "cd%20config-server",
+        "prevChunkIds": []
+      },
+      "412": {
+        "chunkId": "820caf",
+        "hash": "0f16ead8",
+        "encoded": "mvn%20spring-boot:run",
+        "prevChunkIds": []
+      },
+      "413": {
+        "chunkId": "820caf",
+        "hash": "8e15629f",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "414": {
+        "chunkId": "820caf",
+        "hash": "77cd2376",
+        "encoded": "**Wait%20for**:%20%22Started%20ConfigServerApplication%22",
+        "prevChunkIds": []
+      },
+      "416": {
+        "chunkId": "820caf",
+        "hash": "bfcef32b",
+        "encoded": "###%203.%20Start%20Eureka%20Server",
+        "prevChunkIds": []
+      },
+      "417": {
+        "chunkId": "820caf",
+        "hash": "53c19c56",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "418": {
+        "chunkId": "820caf",
+        "hash": "3fd096d5",
+        "encoded": "cd%20eureka-server",
+        "prevChunkIds": []
+      },
+      "419": {
+        "chunkId": "820caf",
+        "hash": "7d0dbb54",
+        "encoded": "mvn%20spring-boot:run",
+        "prevChunkIds": []
+      },
+      "420": {
+        "chunkId": "820caf",
+        "hash": "ad98e97a",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "421": {
+        "chunkId": "820caf",
+        "hash": "e58251b1",
+        "encoded": "**Wait%20for**:%20%22Started%20EurekaServerApplication%22",
+        "prevChunkIds": []
+      },
+      "423": {
+        "chunkId": "820caf",
+        "hash": "d314cd51",
+        "encoded": "###%204.%20Start%20User%20Service",
+        "prevChunkIds": []
+      },
+      "424": {
+        "chunkId": "820caf",
+        "hash": "cfe9874f",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "425": {
+        "chunkId": "820caf",
+        "hash": "a6f70f21",
+        "encoded": "cd%20user-service",
+        "prevChunkIds": []
+      },
+      "426": {
+        "chunkId": "820caf",
+        "hash": "c34793c9",
+        "encoded": "mvn%20spring-boot:run",
+        "prevChunkIds": []
+      },
+      "427": {
+        "chunkId": "820caf",
+        "hash": "b3b09aef",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "428": {
+        "chunkId": "820caf",
+        "hash": "90200ece",
+        "encoded": "**Wait%20for**:%20%22Started%20UserServiceApplication%22",
+        "prevChunkIds": []
+      },
+      "430": {
+        "chunkId": "820caf",
+        "hash": "fa025110",
+        "encoded": "###%205.%20Test%20Registration",
+        "prevChunkIds": []
+      },
+      "431": {
+        "chunkId": "820caf",
+        "hash": "315812a6",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "432": {
+        "chunkId": "820caf",
+        "hash": "667b5fcc",
+        "encoded": "curl%20-X%20POST%20http://localhost:8085/api/auth/register%20%5C",
+        "prevChunkIds": []
+      },
+      "433": {
+        "chunkId": "820caf",
+        "hash": "79b7d9b3",
+        "encoded": "-H%20%22Content-Type:%20application/json%22%20%5C",
+        "prevChunkIds": []
+      },
+      "434": {
+        "chunkId": "820caf",
+        "hash": "b5c8295b",
+        "encoded": "-d%20'%7B",
+        "prevChunkIds": []
+      },
+      "435": {
+        "chunkId": "820caf",
+        "hash": "1d3f17c5",
+        "encoded": "%22username%22:%20%22testuser%22,",
+        "prevChunkIds": []
+      },
+      "436": {
+        "chunkId": "820caf",
+        "hash": "aab4ac7c",
+        "encoded": "%22email%22:%20%22test@example.com%22,",
+        "prevChunkIds": []
+      },
+      "437": {
+        "chunkId": "820caf",
+        "hash": "29cfc83b",
+        "encoded": "%22password%22:%20%22password123%22,",
+        "prevChunkIds": []
+      },
+      "438": {
+        "chunkId": "820caf",
+        "hash": "48e793dd",
+        "encoded": "%22firstName%22:%20%22Test%22,",
+        "prevChunkIds": []
+      },
+      "439": {
+        "chunkId": "820caf",
+        "hash": "e11111f3",
+        "encoded": "%22lastName%22:%20%22User%22,",
+        "prevChunkIds": []
+      },
+      "440": {
+        "chunkId": "820caf",
+        "hash": "ea02a03e",
+        "encoded": "%22phone%22:%20%221234567890%22,",
+        "prevChunkIds": []
+      },
+      "441": {
+        "chunkId": "820caf",
+        "hash": "1f40fde6",
+        "encoded": "%22address%22:%20%22Test%20Address%22",
+        "prevChunkIds": []
+      },
+      "442": {
+        "chunkId": "820caf",
+        "hash": "94e016db",
+        "encoded": "%7D'",
+        "prevChunkIds": []
+      },
+      "443": {
+        "chunkId": "820caf",
+        "hash": "66ae5fa6",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "444": {
+        "chunkId": "820caf",
+        "hash": "2aa55048",
+        "encoded": "**Expected**:%20201%20Created%20with%20user%20details%20(no%20password)",
+        "prevChunkIds": []
+      },
+      "446": {
+        "chunkId": "820caf",
+        "hash": "1710e2cd",
+        "encoded": "###%206.%20Test%20Login",
+        "prevChunkIds": []
+      },
+      "447": {
+        "chunkId": "820caf",
+        "hash": "086904eb",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "448": {
+        "chunkId": "820caf",
+        "hash": "8c078861",
+        "encoded": "curl%20-X%20POST%20http://localhost:8085/api/auth/login%20%5C",
+        "prevChunkIds": []
+      },
+      "449": {
+        "chunkId": "820caf",
+        "hash": "c99c2e81",
+        "encoded": "-H%20%22Content-Type:%20application/json%22%20%5C",
+        "prevChunkIds": []
+      },
+      "450": {
+        "chunkId": "820caf",
+        "hash": "40ef9fa0",
+        "encoded": "-d%20'%7B",
+        "prevChunkIds": []
+      },
+      "451": {
+        "chunkId": "820caf",
+        "hash": "986792e1",
+        "encoded": "%22email%22:%20%22test@example.com%22,",
+        "prevChunkIds": []
+      },
+      "452": {
+        "chunkId": "820caf",
+        "hash": "18faabda",
+        "encoded": "%22password%22:%20%22password123%22",
+        "prevChunkIds": []
+      },
+      "453": {
+        "chunkId": "820caf",
+        "hash": "456016fd",
+        "encoded": "%7D'",
+        "prevChunkIds": []
+      },
+      "454": {
+        "chunkId": "820caf",
+        "hash": "88fae106",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "455": {
+        "chunkId": "820caf",
+        "hash": "25268ad3",
+        "encoded": "**Expected**:%20200%20OK%20with%20JWT%20token",
+        "prevChunkIds": []
+      },
+      "457": {
+        "chunkId": "820caf",
+        "hash": "fd20f775",
+        "encoded": "###%207.%20Test%20Profile%20(with%20token)",
+        "prevChunkIds": []
+      },
+      "458": {
+        "chunkId": "820caf",
+        "hash": "f23c6c89",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "459": {
+        "chunkId": "820caf",
+        "hash": "322ba2f8",
+        "encoded": "curl%20-X%20GET%20http://localhost:8085/api/users/profile%20%5C",
+        "prevChunkIds": []
+      },
+      "460": {
+        "chunkId": "820caf",
+        "hash": "5dbc751b",
+        "encoded": "-H%20%22Authorization:%20Bearer%20%3CTOKEN%3E%22",
+        "prevChunkIds": []
+      },
+      "461": {
+        "chunkId": "820caf",
+        "hash": "7e34e4b3",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "462": {
+        "chunkId": "820caf",
+        "hash": "100207fc",
+        "encoded": "**Expected**:%20200%20OK%20with%20user%20profile",
+        "prevChunkIds": []
+      },
+      "464": {
+        "chunkId": "820caf",
+        "hash": "74b9f4a7",
+        "encoded": "###%208.%20Test%20Profile%20(without%20token)",
+        "prevChunkIds": []
+      },
+      "465": {
+        "chunkId": "820caf",
+        "hash": "7e8c50a3",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "466": {
+        "chunkId": "820caf",
+        "hash": "5fb27994",
+        "encoded": "curl%20-X%20GET%20http://localhost:8085/api/users/profile",
+        "prevChunkIds": []
+      },
+      "467": {
+        "chunkId": "820caf",
+        "hash": "48899826",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "468": {
+        "chunkId": "820caf",
+        "hash": "d73e8d14",
+        "encoded": "**Expected**:%20401%20Unauthorized",
+        "prevChunkIds": []
+      },
+      "470": {
+        "chunkId": "820caf",
+        "hash": "769a9048",
+        "encoded": "###%209.%20Start%20Other%20Services",
+        "prevChunkIds": []
+      },
+      "471": {
+        "chunkId": "820caf",
+        "hash": "4d87dfe5",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "472": {
+        "chunkId": "820caf",
+        "hash": "e87b3c00",
+        "encoded": "cd%20restaurant-service%20&&%20mvn%20spring-boot:run",
+        "prevChunkIds": []
+      },
+      "473": {
+        "chunkId": "820caf",
+        "hash": "18604a3a",
+        "encoded": "cd%20order-service%20&&%20mvn%20spring-boot:run",
+        "prevChunkIds": []
+      },
+      "474": {
+        "chunkId": "820caf",
+        "hash": "59762463",
+        "encoded": "cd%20payment-service%20&&%20mvn%20spring-boot:run",
+        "prevChunkIds": []
+      },
+      "475": {
+        "chunkId": "820caf",
+        "hash": "c48ca777",
+        "encoded": "cd%20notification-service%20&&%20mvn%20spring-boot:run",
+        "prevChunkIds": []
+      },
+      "476": {
+        "chunkId": "820caf",
+        "hash": "b716b1d4",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "478": {
+        "chunkId": "820caf",
+        "hash": "535fdb0e",
+        "encoded": "###%2010.%20Test%20Other%20Services%20with%20JWT",
+        "prevChunkIds": []
+      },
+      "479": {
+        "chunkId": "820caf",
+        "hash": "2d86c816",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "480": {
+        "chunkId": "820caf",
+        "hash": "67a0aa40",
+        "encoded": "curl%20-X%20GET%20http://localhost:8082/api/restaurants%20%5C",
+        "prevChunkIds": []
+      },
+      "481": {
+        "chunkId": "820caf",
+        "hash": "a9c7e01e",
+        "encoded": "-H%20%22Authorization:%20Bearer%20%3CTOKEN%3E%22",
+        "prevChunkIds": []
+      },
+      "482": {
+        "chunkId": "820caf",
+        "hash": "aac2df4e",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "483": {
+        "chunkId": "820caf",
+        "hash": "d9717e28",
+        "encoded": "**Expected**:%20200%20OK%20with%20restaurants%20list",
+        "prevChunkIds": []
+      },
+      "485": {
+        "chunkId": "820caf",
+        "hash": "5226924b",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "487": {
+        "chunkId": "820caf",
+        "hash": "70ca814c",
+        "encoded": "##%20IMPLEMENTATION%20SUMMARY",
+        "prevChunkIds": []
+      },
+      "489": {
+        "chunkId": "820caf",
+        "hash": "f4d73750",
+        "encoded": "%E2%9C%85%20**PHASE%201**:%20Analysis%20completed%20-%20No%20existing%20JWT%20implementation%20found",
+        "prevChunkIds": []
+      },
+      "490": {
+        "chunkId": "820caf",
+        "hash": "90b2cdee",
+        "encoded": "%E2%9C%85%20**PHASE%202**:%20Dependencies%20added%20to%20all%20services%20(Spring%20Security%20+%20JJWT%200.12.3)",
+        "prevChunkIds": []
+      },
+      "491": {
+        "chunkId": "820caf",
+        "hash": "9658fd31",
+        "encoded": "%E2%9C%85%20**PHASE%203**:%20JWT%20configuration%20added%20to%20config-repo",
+        "prevChunkIds": []
+      },
+      "492": {
+        "chunkId": "820caf",
+        "hash": "ba341f49",
+        "encoded": "%E2%9C%85%20**PHASE%204**:%20JwtTokenProvider%20implemented%20with%20token%20generation%20and%20validation",
+        "prevChunkIds": []
+      },
+      "493": {
+        "chunkId": "820caf",
+        "hash": "967394b3",
+        "encoded": "%E2%9C%85%20**PHASE%205**:%20JwtAuthenticationFilter%20implemented%20for%20all%20services",
+        "prevChunkIds": []
+      },
+      "494": {
+        "chunkId": "820caf",
+        "hash": "c336d8f8",
+        "encoded": "%E2%9C%85%20**PHASE%206**:%20CustomUserDetailsService%20implemented%20for%20user-service",
+        "prevChunkIds": []
+      },
+      "495": {
+        "chunkId": "820caf",
+        "hash": "ef545781",
+        "encoded": "%E2%9C%85%20**PHASE%207**:%20SecurityConfig%20implemented%20with%20Spring%20Security%206.x%20style",
+        "prevChunkIds": []
+      },
+      "496": {
+        "chunkId": "820caf",
+        "hash": "cddecb6c",
+        "encoded": "%E2%9C%85%20**PHASE%208**:%20Registration%20endpoint%20updated%20with%20password%20encoding",
+        "prevChunkIds": []
+      },
+      "497": {
+        "chunkId": "820caf",
+        "hash": "2e8ce275",
+        "encoded": "%E2%9C%85%20**PHASE%209**:%20Login%20endpoint%20implemented%20with%20JWT%20token%20generation",
+        "prevChunkIds": []
+      },
+      "498": {
+        "chunkId": "820caf",
+        "hash": "bfd0fb35",
+        "encoded": "%E2%9C%85%20**PHASE%2010**:%20Profile%20endpoint%20implemented%20(protected)",
+        "prevChunkIds": []
+      },
+      "499": {
+        "chunkId": "820caf",
+        "hash": "b63bdb66",
+        "encoded": "%E2%9C%85%20**PHASE%2011**:%20JWT%20validation%20implemented%20in%20all%20business%20services",
+        "prevChunkIds": []
+      },
+      "500": {
+        "chunkId": "820caf",
+        "hash": "1e9d798a",
+        "encoded": "%E2%9C%85%20**PHASE%2013**:%20Config%20server%20updated%20with%20JWT%20properties",
+        "prevChunkIds": []
+      },
+      "501": {
+        "chunkId": "820caf",
+        "hash": "f3c5cd0a",
+        "encoded": "%E2%9C%85%20**PHASE%2014-15**:%20DTOs%20created%20(LoginRequest,%20LoginResponse,%20UserResponse)",
+        "prevChunkIds": []
+      },
+      "502": {
+        "chunkId": "820caf",
+        "hash": "4e8bea5a",
+        "encoded": "%E2%9C%85%20**PHASE%2016**:%20BCrypt%20password%20encoding%20implemented",
+        "prevChunkIds": []
+      },
+      "503": {
+        "chunkId": "820caf",
+        "hash": "2e9c6933",
+        "encoded": "%E2%9C%85%20**PHASE%2017**:%20Error%20handling%20in%20place%20(401,%20403,%20409,%20404)",
+        "prevChunkIds": []
+      },
+      "504": {
+        "chunkId": "820caf",
+        "hash": "98214a7c",
+        "encoded": "%E2%9C%85%20**PHASE%2018**:%20Test%20configurations%20updated%20for%20all%20services",
+        "prevChunkIds": []
+      },
+      "505": {
+        "chunkId": "820caf",
+        "hash": "4cb4deac",
+        "encoded": "%E2%9C%85%20**PHASE%2019**:%20Complete%20Postman%20testing%20guide%20provided",
+        "prevChunkIds": []
+      },
+      "506": {
+        "chunkId": "820caf",
+        "hash": "871bd82e",
+        "encoded": "%E2%9C%85%20**PHASE%2020**:%20Verification%20commands%20provided",
+        "prevChunkIds": []
+      },
+      "508": {
+        "chunkId": "820caf",
+        "hash": "e7ca17d8",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "510": {
+        "chunkId": "820caf",
+        "hash": "46e2bf49",
+        "encoded": "##%20SECURITY%20FEATURES%20IMPLEMENTED",
+        "prevChunkIds": []
+      },
+      "512": {
+        "chunkId": "820caf",
+        "hash": "bcd47f12",
+        "encoded": "1.%20**Password%20Security**",
+        "prevChunkIds": []
+      },
+      "513": {
+        "chunkId": "820caf",
+        "hash": "4ece604e",
+        "encoded": "-%20BCrypt%20encoding%20with%20default%20strength%20(10%20rounds)",
+        "prevChunkIds": []
+      },
+      "514": {
+        "chunkId": "820caf",
+        "hash": "6cf4d795",
+        "encoded": "-%20Password%20never%20returned%20in%20responses",
+        "prevChunkIds": []
+      },
+      "515": {
+        "chunkId": "820caf",
+        "hash": "b35b7a8f",
+        "encoded": "-%20Password%20validation%20during%20login",
+        "prevChunkIds": []
+      },
+      "517": {
+        "chunkId": "820caf",
+        "hash": "eace25bb",
+        "encoded": "2.%20**JWT%20Token%20Security**",
+        "prevChunkIds": []
+      },
+      "518": {
+        "chunkId": "820caf",
+        "hash": "31b3f2b9",
+        "encoded": "-%20HS256%20algorithm%20with%20256-bit%20secret%20key",
+        "prevChunkIds": []
+      },
+      "519": {
+        "chunkId": "820caf",
+        "hash": "83b29f8e",
+        "encoded": "-%20Token%20expiration:%2024%20hours",
+        "prevChunkIds": []
+      },
+      "520": {
+        "chunkId": "820caf",
+        "hash": "38dcd3a5",
+        "encoded": "-%20Claims:%20email%20(subject),%20role,%20userId",
+        "prevChunkIds": []
+      },
+      "521": {
+        "chunkId": "820caf",
+        "hash": "87d26e6b",
+        "encoded": "-%20Signature%20validation%20on%20every%20request",
+        "prevChunkIds": []
+      },
+      "523": {
+        "chunkId": "820caf",
+        "hash": "8dda382d",
+        "encoded": "3.%20**Spring%20Security**",
+        "prevChunkIds": []
+      },
+      "524": {
+        "chunkId": "820caf",
+        "hash": "29d162a4",
+        "encoded": "-%20CSRF%20disabled%20(REST%20API)",
+        "prevChunkIds": []
+      },
+      "525": {
+        "chunkId": "820caf",
+        "hash": "e1b3933f",
+        "encoded": "-%20Stateless%20session%20management",
+        "prevChunkIds": []
+      },
+      "526": {
+        "chunkId": "820caf",
+        "hash": "c040a276",
+        "encoded": "-%20Public%20endpoints:%20register,%20login,%20actuator",
+        "prevChunkIds": []
+      },
+      "527": {
+        "chunkId": "820caf",
+        "hash": "79da8400",
+        "encoded": "-%20All%20other%20endpoints%20require%20authentication",
+        "prevChunkIds": []
+      },
+      "528": {
+        "chunkId": "820caf",
+        "hash": "6d702418",
+        "encoded": "-%20CORS%20configured%20for%20development",
+        "prevChunkIds": []
+      },
+      "530": {
+        "chunkId": "820caf",
+        "hash": "fb0ec973",
+        "encoded": "4.%20**Error%20Handling**",
+        "prevChunkIds": []
+      },
+      "531": {
+        "chunkId": "820caf",
+        "hash": "5661e1a4",
+        "encoded": "-%20401%20Unauthorized:%20Invalid%20credentials,%20expired/invalid%20token",
+        "prevChunkIds": []
+      },
+      "532": {
+        "chunkId": "820caf",
+        "hash": "4dca9f6c",
+        "encoded": "-%20403%20Forbidden:%20Access%20denied",
+        "prevChunkIds": []
+      },
+      "533": {
+        "chunkId": "820caf",
+        "hash": "4cd6ebe0",
+        "encoded": "-%20409%20Conflict:%20Email%20already%20exists",
+        "prevChunkIds": []
+      },
+      "534": {
+        "chunkId": "820caf",
+        "hash": "e9b51d84",
+        "encoded": "-%20404%20Not%20Found:%20User%20not%20found",
+        "prevChunkIds": []
+      },
+      "536": {
+        "chunkId": "820caf",
+        "hash": "afc02a11",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "538": {
+        "chunkId": "820caf",
+        "hash": "f46ea532",
+        "encoded": "##%20NOTES",
+        "prevChunkIds": []
+      },
+      "540": {
+        "chunkId": "820caf",
+        "hash": "d472fd8d",
+        "encoded": "1.%20**API%20Gateway%20JWT%20Validation**:%20Not%20implemented%20in%20this%20phase.%20Spring%20Cloud%20Gateway%20requires%20reactive%20security%20configuration%20which%20is%20different%20from%20servlet-based%20security.%20Can%20be%20implemented%20separately%20if%20needed.",
+        "prevChunkIds": []
+      },
+      "542": {
+        "chunkId": "820caf",
+        "hash": "a1bc9e91",
+        "encoded": "2.%20**Test%20Configuration**:%20All%20tests%20have%20Spring%20Security%20disabled%20using%20%60spring.autoconfigure.exclude%60%20to%20avoid%20authentication%20requirements%20during%20unit/integration%20tests.",
+        "prevChunkIds": []
+      },
+      "544": {
+        "chunkId": "820caf",
+        "hash": "bff4feab",
+        "encoded": "3.%20**JWT%20Secret**:%20The%20current%20secret%20key%20is%20for%20development%20only.%20In%20production,%20use%20a%20strong%20secret%20from%20environment%20variables%20or%20a%20secrets%20manager.",
+        "prevChunkIds": []
+      },
+      "546": {
+        "chunkId": "820caf",
+        "hash": "feaf550c",
+        "encoded": "4.%20**Token%20Expiration**:%20Currently%20set%20to%2024%20hours.%20Adjust%20based%20on%20security%20requirements.",
+        "prevChunkIds": []
+      },
+      "548": {
+        "chunkId": "820caf",
+        "hash": "05f46183",
+        "encoded": "5.%20**Refresh%20Tokens**:%20Not%20implemented.%20Can%20be%20added%20as%20an%20enhancement.",
+        "prevChunkIds": []
+      },
+      "550": {
+        "chunkId": "820caf",
+        "hash": "4633bcd0",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "552": {
+        "chunkId": "820caf",
+        "hash": "546a6089",
+        "encoded": "##%20PRODUCTION%20READINESS%20CHECKLIST",
+        "prevChunkIds": []
+      },
+      "554": {
+        "chunkId": "820caf",
+        "hash": "f703d390",
+        "encoded": "-%20%E2%9C%85%20BCrypt%20password%20encoding",
+        "prevChunkIds": []
+      },
+      "555": {
+        "chunkId": "820caf",
+        "hash": "2a8ef230",
+        "encoded": "-%20%E2%9C%85%20JWT%20token%20generation%20and%20validation",
+        "prevChunkIds": []
+      },
+      "556": {
+        "chunkId": "820caf",
+        "hash": "7377ae61",
+        "encoded": "-%20%E2%9C%85%20Stateless%20authentication",
+        "prevChunkIds": []
+      },
+      "557": {
+        "chunkId": "820caf",
+        "hash": "a7b02541",
+        "encoded": "-%20%E2%9C%85%20CORS%20configuration",
+        "prevChunkIds": []
+      },
+      "558": {
+        "chunkId": "820caf",
+        "hash": "2927588f",
+        "encoded": "-%20%E2%9C%85%20Error%20handling",
+        "prevChunkIds": []
+      },
+      "559": {
+        "chunkId": "820caf",
+        "hash": "fc75ffbe",
+        "encoded": "-%20%E2%9C%85%20Test%20configurations",
+        "prevChunkIds": []
+      },
+      "560": {
+        "chunkId": "820caf",
+        "hash": "2b314384",
+        "encoded": "-%20%E2%9A%A0%EF%B8%8F%20JWT%20secret%20should%20be%20externalized%20to%20environment%20variables",
+        "prevChunkIds": []
+      },
+      "561": {
+        "chunkId": "820caf",
+        "hash": "f71172de",
+        "encoded": "-%20%E2%9A%A0%EF%B8%8F%20Consider%20implementing%20refresh%20tokens",
+        "prevChunkIds": []
+      },
+      "562": {
+        "chunkId": "820caf",
+        "hash": "f6cb6631",
+        "encoded": "-%20%E2%9A%A0%EF%B8%8F%20Add%20rate%20limiting%20for%20login%20endpoint",
+        "prevChunkIds": []
+      },
+      "563": {
+        "chunkId": "820caf",
+        "hash": "695a0048",
+        "encoded": "-%20%E2%9A%A0%EF%B8%8F%20Implement%20account%20lockout%20after%20failed%20attempts",
+        "prevChunkIds": []
+      },
+      "564": {
+        "chunkId": "820caf",
+        "hash": "ce1f667f",
+        "encoded": "-%20%E2%9A%A0%EF%B8%8F%20Add%20audit%20logging%20for%20authentication%20events",
+        "prevChunkIds": []
+      },
+      "566": {
+        "chunkId": "820caf",
+        "hash": "76e19d6d",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "568": {
+        "chunkId": "820caf",
+        "hash": "99acbaae",
+        "encoded": "##%20END%20OF%20IMPLEMENTATION",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

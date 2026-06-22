@@ -1,0 +1,67 @@
+# ========================================
+# User Service Configuration
+# ========================================
+# User management and authentication service configuration
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-service
+  
+  # PostgreSQL Database Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/userdb
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 20000
+      idle-timeout: 300000
+      max-lifetime: 1200000
+      pool-name: UserServiceHikariPool
+  
+  # JPA/Hibernate Configuration
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  
+  # SQL Initialization
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+
+# JWT Configuration
+jwt:
+  secret: a-very-long-secure-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-food-delivery-platform-2026
+  expiration: 86400000  # 24 hours in milliseconds
+  header: Authorization
+  prefix: "Bearer "
+
+# Security Configuration
+security:
+  allowed-origins:
+    - http://localhost:3000
+    - http://localhost:4200
+    - http://localhost:8080
+
+# Logging Configuration
+logging:
+  level:
+    com.fooddelivery.user: DEBUG
+    org.hibernate.SQL: INFO

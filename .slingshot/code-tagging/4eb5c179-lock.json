@@ -1,0 +1,234 @@
+{
+  "payment-service\\src\\test\\resources\\application-test.yml": {
+    "filename": "application-test.yml",
+    "path": "payment-service\\src\\test\\resources\\application-test.yml",
+    "version": "1.2",
+    "contextFile": "4eb5c179-context.json",
+    "chunks": {
+      "460bca": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781166666,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "936e87ee"
+        },
+        "hash": "e6babd49",
+        "messageId": "system_dbaceda0-656d-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 2:01:06 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "460bca",
+        "hash": "e37f4658",
+        "encoded": "#%20Test%20configuration%20for%20Payment%20Service",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "460bca",
+        "hash": "c63207a1",
+        "encoded": "#%20JWT%20Configuration%20for%20tests",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "460bca",
+        "hash": "53770ca0",
+        "encoded": "jwt:",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "460bca",
+        "hash": "806ea0a2",
+        "encoded": "secret:%20test-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-testing-purpose-only",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "460bca",
+        "hash": "17744299",
+        "encoded": "expiration:%2086400000",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "460bca",
+        "hash": "c5dc4613",
+        "encoded": "header:%20Authorization",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "460bca",
+        "hash": "65dfe84d",
+        "encoded": "prefix:%20%22Bearer%20%22",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "460bca",
+        "hash": "f19d3673",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "460bca",
+        "hash": "c7b11df0",
+        "encoded": "datasource:",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "460bca",
+        "hash": "48a8a891",
+        "encoded": "url:%20jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "460bca",
+        "hash": "9b845e54",
+        "encoded": "username:%20sa",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "460bca",
+        "hash": "a09cca43",
+        "encoded": "password:",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "460bca",
+        "hash": "a9e4e4ab",
+        "encoded": "driver-class-name:%20org.h2.Driver",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "460bca",
+        "hash": "4e7474f0",
+        "encoded": "jpa:",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "460bca",
+        "hash": "91a4c26b",
+        "encoded": "hibernate:",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "460bca",
+        "hash": "6b1cea35",
+        "encoded": "ddl-auto:%20create-drop",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "460bca",
+        "hash": "9b5c4be6",
+        "encoded": "show-sql:%20false",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "460bca",
+        "hash": "286cbcb0",
+        "encoded": "properties:",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "460bca",
+        "hash": "c357606c",
+        "encoded": "hibernate:",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "460bca",
+        "hash": "6647aace",
+        "encoded": "dialect:%20org.hibernate.dialect.H2Dialect",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "460bca",
+        "hash": "99d10d33",
+        "encoded": "defer-datasource-initialization:%20true",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "460bca",
+        "hash": "12ea86ff",
+        "encoded": "sql:",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "460bca",
+        "hash": "f7bdc18a",
+        "encoded": "init:",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "460bca",
+        "hash": "2e77db51",
+        "encoded": "mode:%20never",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "460bca",
+        "hash": "bb90dbfe",
+        "encoded": "cloud:",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "460bca",
+        "hash": "473480e5",
+        "encoded": "discovery:",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "460bca",
+        "hash": "60c63aac",
+        "encoded": "enabled:%20false",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "460bca",
+        "hash": "1e994dc8",
+        "encoded": "#%20Disable%20Spring%20Security%20for%20tests",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "460bca",
+        "hash": "aa862811",
+        "encoded": "spring.autoconfigure.exclude:%20org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "460bca",
+        "hash": "fb93b1a9",
+        "encoded": "management:",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "460bca",
+        "hash": "8cbf1100",
+        "encoded": "endpoints:",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "460bca",
+        "hash": "dd078e25",
+        "encoded": "enabled-by-default:%20false",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "460bca",
+        "hash": "c8a7f769",
+        "encoded": "server:",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "460bca",
+        "hash": "77d8bb41",
+        "encoded": "port:%200",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

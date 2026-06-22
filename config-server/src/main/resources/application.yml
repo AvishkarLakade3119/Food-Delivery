@@ -1,0 +1,77 @@
+# ========================================
+# Spring Cloud Config Server Configuration
+# ========================================
+# This configuration file sets up the Config Server to serve centralized
+# configuration for all microservices in the Food Delivery platform.
+
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  
+  # Cloud Config Server Settings
+  cloud:
+    config:
+      server:
+        git:
+          # Local Git repository for configuration files
+          # In production, replace with remote Git repository URL (e.g., GitHub, GitLab)
+          uri: file://${user.home}/config-repo
+          
+          # Default branch to fetch configurations from
+          default-label: main
+          
+          # Clone repository on startup
+          clone-on-start: true
+          
+          # Timeout settings for Git operations
+          timeout: 10
+          
+          # Force pull on every request (useful during development)
+          force-pull: true
+        
+        # Enable native profile as fallback (optional)
+        native:
+          search-locations: classpath:/config
+        
+        # Health check configuration
+        health:
+          enabled: true
+
+# Eureka Client Configuration
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+
+# Actuator Configuration for Health Checks and Monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,refresh,configprops
+  endpoint:
+    health:
+      show-details: always
+  health:
+    config:
+      enabled: true
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.config: DEBUG
+    org.springframework.cloud.netflix.eureka: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

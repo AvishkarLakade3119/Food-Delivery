@@ -1,0 +1,15 @@
+{
+  "filename": "JWT_AUTHENTICATION_ANALYSIS_AND_IMPLEMENTATION_REPORT.md",
+  "path": "JWT_AUTHENTICATION_ANALYSIS_AND_IMPLEMENTATION_REPORT.md",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "cc9c3c53": {
+      "value": "You are a senior Spring Boot + Spring Security + JWT + automated testing expert agent. Your job is to check if JWT authentication is implemented in my Food Delivery Microservices Platform. If it is already implemented, test it. If it is partially implemented, complete and fix it. If it is not implemented at all, implement it from scratch. Then write automated integration tests that test ALL endpoints with JWT tokens automatically without any manual Postman work.\nProject: Food Delivery Microservi"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

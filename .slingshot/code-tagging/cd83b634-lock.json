@@ -1,0 +1,120 @@
+{
+  "user-service\\src\\test\\java\\com\\fooddelivery\\user\\controller\\AuthControllerIntegrationTest.java": {
+    "filename": "AuthControllerIntegrationTest.java",
+    "path": "user-service\\src\\test\\java\\com\\fooddelivery\\user\\controller\\AuthControllerIntegrationTest.java",
+    "version": "1.2",
+    "contextFile": "cd83b634-context.json",
+    "chunks": {
+      "4828d6": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781448059,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "a5cd2577"
+        },
+        "hash": "390b5cac",
+        "messageId": "system_86f25aa0-67fe-11f1-947b-e939855a9737",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 8:10:59 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "57": {
+        "chunkId": "4828d6",
+        "hash": "ffecdabb",
+        "encoded": "@Test",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "4828d6",
+        "hash": "affeb5e9",
+        "encoded": "void%20registerUser_Success_Returns201()%20throws%20Exception%20%7B",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "4828d6",
+        "hash": "45c82cae",
+        "encoded": "mockMvc.perform(post(%22/api/auth/register%22)",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "4828d6",
+        "hash": "1dca443a",
+        "encoded": ".contentType(MediaType.APPLICATION_JSON)",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "4828d6",
+        "hash": "fe0859b6",
+        "encoded": ".content(objectMapper.writeValueAsString(validRegistrationDto)))",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "4828d6",
+        "hash": "06d6a79e",
+        "encoded": ".andExpect(status().isCreated())",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "4828d6",
+        "hash": "4f95fa3b",
+        "encoded": ".andExpect(content().contentType(MediaType.APPLICATION_JSON))",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "4828d6",
+        "hash": "44e349a7",
+        "encoded": ".andExpect(jsonPath(%22$.id%22).exists())",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "4828d6",
+        "hash": "f37520e2",
+        "encoded": ".andExpect(jsonPath(%22$.username%22).value(%22john_doe%22))",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "4828d6",
+        "hash": "76cb6149",
+        "encoded": ".andExpect(jsonPath(%22$.email%22).value(%22john.doe@example.com%22))",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "4828d6",
+        "hash": "3bc2e655",
+        "encoded": ".andExpect(jsonPath(%22$.firstName%22).value(%22John%22))",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "4828d6",
+        "hash": "21540ab9",
+        "encoded": ".andExpect(jsonPath(%22$.lastName%22).value(%22Doe%22))",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "4828d6",
+        "hash": "4468dff6",
+        "encoded": ".andExpect(jsonPath(%22$.role%22).value(%22CUSTOMER%22))",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "4828d6",
+        "hash": "17414732",
+        "encoded": ".andExpect(jsonPath(%22$.createdAt%22).exists());",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "4828d6",
+        "hash": "f064f9d6",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

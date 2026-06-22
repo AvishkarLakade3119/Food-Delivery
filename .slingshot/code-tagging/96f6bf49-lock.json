@@ -1,0 +1,193 @@
+{
+  "notification-service\\src\\main\\resources\\application.yml": {
+    "filename": "application.yml",
+    "path": "notification-service\\src\\main\\resources\\application.yml",
+    "version": "1.2",
+    "contextFile": "96f6bf49-context.json",
+    "chunks": {
+      "2b55cb": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075687,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "52c1fd07",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:44:47 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "8f7074": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781101948,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "77e2d028"
+        },
+        "hash": "eb1d7b47",
+        "messageId": "system_fe6791f0-64d8-11f1-80e8-659659a77bc1",
+        "codeBlockId": null,
+        "isActive": false,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 8:02:28 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "c04fdd": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781277215,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "2c8de540"
+        },
+        "hash": "b469f796",
+        "messageId": "system_c5e1dcc0-6670-11f1-895d-cd57985b5050",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/12/2026, 8:43:35 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "acc0e2": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427581,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "e7e9f8c5",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:29:41 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "42": {
+        "chunkId": "acc0e2",
+        "hash": "462cb601",
+        "encoded": "#%20SQL%20Initialization",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "acc0e2",
+        "hash": "6ce273fa",
+        "encoded": "sql:",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "acc0e2",
+        "hash": "148d24df",
+        "encoded": "init:",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "acc0e2",
+        "hash": "6caf19fb",
+        "encoded": "mode:%20never",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "acc0e2",
+        "hash": "389bc37e",
+        "encoded": "#%20RabbitMQ%20Configuration",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "acc0e2",
+        "hash": "c1355ac0",
+        "encoded": "rabbitmq:",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "acc0e2",
+        "hash": "014a1f8b",
+        "encoded": "host:%20localhost",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "acc0e2",
+        "hash": "f1f7f7fe",
+        "encoded": "port:%205672",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "acc0e2",
+        "hash": "9fd23bac",
+        "encoded": "username:%20guest",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "acc0e2",
+        "hash": "9b1f0f23",
+        "encoded": "password:%20guest",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "acc0e2",
+        "hash": "3fcd266a",
+        "encoded": "connection-timeout:%205000",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "acc0e2",
+        "hash": "09b658ad",
+        "encoded": "#%20JWT%20Configuration%20(MUST%20match%20user-service)",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "c04fdd",
+        "hash": "155ac08e",
+        "encoded": "#%20JWT%20Configuration%20(MUST%20match%20user-service)",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "c04fdd",
+        "hash": "c697ad66",
+        "encoded": "jwt:",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "c04fdd",
+        "hash": "6664e194",
+        "encoded": "secret:%20a-very-long-secure-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-food-delivery-platform-2026",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "c04fdd",
+        "hash": "74b42c5d",
+        "encoded": "expiration:%2086400000",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "c04fdd",
+        "hash": "b551d917",
+        "encoded": "header:%20Authorization",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "c04fdd",
+        "hash": "09f3a1f6",
+        "encoded": "prefix:%20%22Bearer%20%22",
+        "prevChunkIds": []
+      }
+    },
+    "_prevLineCount": 77
+  }
+}

@@ -1,0 +1,1590 @@
+{
+  "verify-system.ps1": {
+    "filename": "verify-system.ps1",
+    "path": "verify-system.ps1",
+    "version": "1.2",
+    "contextFile": "8703c080-context.json",
+    "chunks": {
+      "d562eb": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781254337,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "1b1194f4"
+        },
+        "hash": "6ba49ff1",
+        "messageId": "system_b7e54bb0-663a-11f1-895d-cd57985b5050",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/12/2026, 2:22:17 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "d562eb",
+        "hash": "728e40ac",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "d562eb",
+        "hash": "76902bdf",
+        "encoded": "#%20Food%20Delivery%20Microservices%20-%20System%20Verification%20Script",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "d562eb",
+        "hash": "74045fda",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "d562eb",
+        "hash": "74c0a76f",
+        "encoded": "#%20Purpose:%20Comprehensive%20system%20health%20check%20and%20smoke%20tests",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "d562eb",
+        "hash": "cbe0423f",
+        "encoded": "#%20Author:%20Slingshot%20AI%20Agent",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "d562eb",
+        "hash": "df2c8b6d",
+        "encoded": "#%20Date:%202026-06-12",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "d562eb",
+        "hash": "835be0c6",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "d562eb",
+        "hash": "69656b67",
+        "encoded": "param(",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "d562eb",
+        "hash": "bde600ab",
+        "encoded": "%5Bswitch%5D$SkipSmokeTests,",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "d562eb",
+        "hash": "4a5492a6",
+        "encoded": "%5Bswitch%5D$GenerateReport",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "d562eb",
+        "hash": "395c59e2",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "d562eb",
+        "hash": "fcd1381f",
+        "encoded": "#%20Color%20output%20functions",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "d562eb",
+        "hash": "75ed5da1",
+        "encoded": "function%20Write-Success%20%7B%20param($msg)%20Write-Host%20%22%E2%9C%93%20$msg%22%20-ForegroundColor%20Green%20%7D",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "d562eb",
+        "hash": "9445d73e",
+        "encoded": "function%20Write-Error-Custom%20%7B%20param($msg)%20Write-Host%20%22%E2%9C%97%20$msg%22%20-ForegroundColor%20Red%20%7D",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "d562eb",
+        "hash": "9843497c",
+        "encoded": "function%20Write-Warning-Custom%20%7B%20param($msg)%20Write-Host%20%22%E2%9A%A0%20$msg%22%20-ForegroundColor%20Yellow%20%7D",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "d562eb",
+        "hash": "d154af9a",
+        "encoded": "function%20Write-Info%20%7B%20param($msg)%20Write-Host%20%22%E2%84%B9%20$msg%22%20-ForegroundColor%20Cyan%20%7D",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "d562eb",
+        "hash": "482bc0d3",
+        "encoded": "function%20Write-Section%20%7B%20param($msg)%20Write-Host%20%22%60n==========%20$msg%20==========%22%20-ForegroundColor%20Magenta%20%7D",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "d562eb",
+        "hash": "edcd0262",
+        "encoded": "Write-Host%20%22%60n%22%20-NoNewline",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "d562eb",
+        "hash": "003ac0d9",
+        "encoded": "Write-Host%20%22%E2%95%94%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%97%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "d562eb",
+        "hash": "3ad76f31",
+        "encoded": "Write-Host%20%22%E2%95%91%20%20Food%20Delivery%20Microservices%20-%20System%20Verification%20Tool%20%20%20%20%20%20%20%20%20%20%E2%95%91%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "d562eb",
+        "hash": "9421feab",
+        "encoded": "Write-Host%20%22%E2%95%91%20%20Version%201.0%20%7C%20Date:%202026-06-12%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%95%91%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "d562eb",
+        "hash": "fcaceeda",
+        "encoded": "Write-Host%20%22%E2%95%9A%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%9D%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "d562eb",
+        "hash": "1adc486f",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "d562eb",
+        "hash": "519fb9ce",
+        "encoded": "$verificationResults%20=%20@()",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "d562eb",
+        "hash": "ada63855",
+        "encoded": "$healthyServices%20=%200",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "d562eb",
+        "hash": "782afd11",
+        "encoded": "$totalServices%20=%200",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "d562eb",
+        "hash": "ca758126",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "d562eb",
+        "hash": "275f35a2",
+        "encoded": "#%20PHASE%201:%20Service%20Health%20Endpoint%20Verification",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "d562eb",
+        "hash": "e4152118",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "d562eb",
+        "hash": "f11024cb",
+        "encoded": "Write-Section%20%22PHASE%201:%20Service%20Health%20Checks%22",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "d562eb",
+        "hash": "3fe7baa8",
+        "encoded": "$services%20=%20@(",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "d562eb",
+        "hash": "e7d7b8a1",
+        "encoded": "@%7BName=%22Config%20Server%22;%20Port=8888;%20HealthUrl=%22http://localhost:8888/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "d562eb",
+        "hash": "aa55bfe3",
+        "encoded": "@%7BName=%22Eureka%20Server%22;%20Port=8761;%20HealthUrl=%22http://localhost:8761/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "d562eb",
+        "hash": "f437616e",
+        "encoded": "@%7BName=%22User%20Service%22;%20Port=8085;%20HealthUrl=%22http://localhost:8085/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "d562eb",
+        "hash": "b512015c",
+        "encoded": "@%7BName=%22Restaurant%20Service%22;%20Port=8082;%20HealthUrl=%22http://localhost:8082/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "d562eb",
+        "hash": "67fa95ec",
+        "encoded": "@%7BName=%22Order%20Service%22;%20Port=8083;%20HealthUrl=%22http://localhost:8083/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "d562eb",
+        "hash": "03a95642",
+        "encoded": "@%7BName=%22Payment%20Service%22;%20Port=8084;%20HealthUrl=%22http://localhost:8084/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "d562eb",
+        "hash": "7cbedd73",
+        "encoded": "@%7BName=%22Notification%20Service%22;%20Port=8081;%20HealthUrl=%22http://localhost:8081/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "d562eb",
+        "hash": "45af8393",
+        "encoded": "@%7BName=%22API%20Gateway%22;%20Port=8080;%20HealthUrl=%22http://localhost:8080/actuator/health%22%7D",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "d562eb",
+        "hash": "aef2f732",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "d562eb",
+        "hash": "4bf76171",
+        "encoded": "$totalServices%20=%20$services.Count",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "d562eb",
+        "hash": "0436a843",
+        "encoded": "foreach%20($service%20in%20$services)%20%7B",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "d562eb",
+        "hash": "00478f8d",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "d562eb",
+        "hash": "c77d94e4",
+        "encoded": "$response%20=%20Invoke-WebRequest%20-Uri%20$service.HealthUrl%20-TimeoutSec%205%20-ErrorAction%20Stop",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "d562eb",
+        "hash": "b7754975",
+        "encoded": "if%20($response.StatusCode%20-eq%20200)%20%7B",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "d562eb",
+        "hash": "eaabd4d6",
+        "encoded": "$healthData%20=%20$response.Content%20%7C%20ConvertFrom-Json",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "d562eb",
+        "hash": "999be702",
+        "encoded": "$status%20=%20$healthData.status",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "d562eb",
+        "hash": "9b93d0dd",
+        "encoded": "if%20($status%20-eq%20%22UP%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "d562eb",
+        "hash": "cf9fabe9",
+        "encoded": "Write-Success%20%22$($service.Name)%20(Port%20$($service.Port))%20-%20UP%22",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "d562eb",
+        "hash": "a8503491",
+        "encoded": "$verificationResults%20+=%20%22%5BPASS%5D%20$($service.Name)%20-%20Health%20check%20passed%22",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "d562eb",
+        "hash": "a907d01e",
+        "encoded": "$healthyServices++",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "d562eb",
+        "hash": "db846e68",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "d562eb",
+        "hash": "8810922b",
+        "encoded": "Write-Warning-Custom%20%22$($service.Name)%20(Port%20$($service.Port))%20-%20Status:%20$status%22",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "d562eb",
+        "hash": "a58632c8",
+        "encoded": "$verificationResults%20+=%20%22%5BWARN%5D%20$($service.Name)%20-%20Status:%20$status%22",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "d562eb",
+        "hash": "48dc6fe2",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "d562eb",
+        "hash": "912d88e4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "d562eb",
+        "hash": "035329a5",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "d562eb",
+        "hash": "8ebbfd14",
+        "encoded": "Write-Error-Custom%20%22$($service.Name)%20(Port%20$($service.Port))%20-%20NOT%20RESPONDING%22",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "d562eb",
+        "hash": "1b0074a4",
+        "encoded": "$verificationResults%20+=%20%22%5BFAIL%5D%20$($service.Name)%20-%20Not%20responding%22",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "d562eb",
+        "hash": "9b4a30da",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "d562eb",
+        "hash": "352e9b23",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "d562eb",
+        "hash": "a223b440",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "d562eb",
+        "hash": "449af197",
+        "encoded": "Write-Info%20%22Health%20Check%20Summary:%20$healthyServices/$totalServices%20services%20are%20healthy%22",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "d562eb",
+        "hash": "55598d73",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "d562eb",
+        "hash": "fb759a4d",
+        "encoded": "#%20PHASE%202:%20Eureka%20Service%20Registry%20Validation",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "d562eb",
+        "hash": "d6ce9e68",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "d562eb",
+        "hash": "7752f263",
+        "encoded": "Write-Section%20%22PHASE%202:%20Eureka%20Service%20Registry%22",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "d562eb",
+        "hash": "af248ae8",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "d562eb",
+        "hash": "4bd77fbd",
+        "encoded": "$eurekaResponse%20=%20Invoke-WebRequest%20-Uri%20%22http://localhost:8761/eureka/apps%22%20-TimeoutSec%205%20-ErrorAction%20Stop",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "d562eb",
+        "hash": "0c9d92c8",
+        "encoded": "$eurekaContent%20=%20$eurekaResponse.Content",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "d562eb",
+        "hash": "3cc2a6d0",
+        "encoded": "Write-Success%20%22Eureka%20Server%20is%20accessible%22",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "d562eb",
+        "hash": "19dc5840",
+        "encoded": "$expectedServices%20=%20@(",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "d562eb",
+        "hash": "f73dd9c6",
+        "encoded": "%22USER-SERVICE%22,",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "d562eb",
+        "hash": "6de44d56",
+        "encoded": "%22RESTAURANT-SERVICE%22,",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "d562eb",
+        "hash": "805180f2",
+        "encoded": "%22ORDER-SERVICE%22,",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "d562eb",
+        "hash": "f2968233",
+        "encoded": "%22PAYMENT-SERVICE%22,",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "d562eb",
+        "hash": "a1465993",
+        "encoded": "%22NOTIFICATION-SERVICE%22,",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "d562eb",
+        "hash": "3865aa6f",
+        "encoded": "%22API-GATEWAY%22",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "d562eb",
+        "hash": "4e828b8d",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "d562eb",
+        "hash": "076b1b1a",
+        "encoded": "$registeredCount%20=%200",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "d562eb",
+        "hash": "68aa0013",
+        "encoded": "foreach%20($serviceName%20in%20$expectedServices)%20%7B",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "d562eb",
+        "hash": "058283dd",
+        "encoded": "if%20($eurekaContent%20-match%20$serviceName)%20%7B",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "d562eb",
+        "hash": "c89f332b",
+        "encoded": "Write-Success%20%22$serviceName%20is%20registered%22",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "d562eb",
+        "hash": "f61af9fe",
+        "encoded": "$verificationResults%20+=%20%22%5BPASS%5D%20$serviceName%20-%20Registered%20with%20Eureka%22",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "d562eb",
+        "hash": "acbee7db",
+        "encoded": "$registeredCount++",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "d562eb",
+        "hash": "a8f91b35",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "d562eb",
+        "hash": "e8866065",
+        "encoded": "Write-Error-Custom%20%22$serviceName%20is%20NOT%20registered%22",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "d562eb",
+        "hash": "724be9ea",
+        "encoded": "$verificationResults%20+=%20%22%5BFAIL%5D%20$serviceName%20-%20Not%20registered%20with%20Eureka%22",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "d562eb",
+        "hash": "7a43bd29",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "d562eb",
+        "hash": "c251d1dd",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "d562eb",
+        "hash": "8f83877c",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "d562eb",
+        "hash": "50d654de",
+        "encoded": "Write-Info%20%22Eureka%20Registration:%20$registeredCount/$($expectedServices.Count)%20services%20registered%22",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "d562eb",
+        "hash": "4915293a",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "d562eb",
+        "hash": "062aa553",
+        "encoded": "Write-Error-Custom%20%22Failed%20to%20connect%20to%20Eureka%20Server%22",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "d562eb",
+        "hash": "b06509a6",
+        "encoded": "$verificationResults%20+=%20%22%5BFAIL%5D%20Eureka%20Server%20-%20Not%20accessible%22",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "d562eb",
+        "hash": "fd8e1155",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "d562eb",
+        "hash": "7dd8e346",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "d562eb",
+        "hash": "a1014389",
+        "encoded": "#%20PHASE%203:%20API%20Gateway%20Routing%20Verification",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "d562eb",
+        "hash": "52e0a5f1",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "d562eb",
+        "hash": "22a61b9f",
+        "encoded": "Write-Section%20%22PHASE%203:%20API%20Gateway%20Routes%22",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "d562eb",
+        "hash": "4d162d07",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "d562eb",
+        "hash": "5b56da1c",
+        "encoded": "$routesResponse%20=%20Invoke-WebRequest%20-Uri%20%22http://localhost:8080/actuator/gateway/routes%22%20-TimeoutSec%205%20-ErrorAction%20Stop",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "d562eb",
+        "hash": "3bfc093a",
+        "encoded": "if%20($routesResponse.StatusCode%20-eq%20200)%20%7B",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "d562eb",
+        "hash": "a07d9295",
+        "encoded": "Write-Success%20%22API%20Gateway%20routes%20endpoint%20is%20accessible%22",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "d562eb",
+        "hash": "1f9b5cc2",
+        "encoded": "$routes%20=%20$routesResponse.Content%20%7C%20ConvertFrom-Json",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "d562eb",
+        "hash": "00bd18d0",
+        "encoded": "$routeCount%20=%20$routes.Count",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "d562eb",
+        "hash": "9b878151",
+        "encoded": "Write-Info%20%22Total%20routes%20configured:%20$routeCount%22",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "d562eb",
+        "hash": "8dbd8d41",
+        "encoded": "#%20Check%20for%20expected%20routes",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "d562eb",
+        "hash": "62eb0a85",
+        "encoded": "$expectedRoutes%20=%20@(%22user-service%22,%20%22restaurant-service%22,%20%22order-service%22,%20%22payment-service%22,%20%22notification-service%22)",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "d562eb",
+        "hash": "e540b43d",
+        "encoded": "$configuredRoutes%20=%200",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "d562eb",
+        "hash": "e4da1f57",
+        "encoded": "foreach%20($expectedRoute%20in%20$expectedRoutes)%20%7B",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "d562eb",
+        "hash": "7de30ffc",
+        "encoded": "$routeFound%20=%20$routes%20%7C%20Where-Object%20%7B%20$_.route_id%20-match%20$expectedRoute%20-or%20$_.uri%20-match%20$expectedRoute%20%7D",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "d562eb",
+        "hash": "35a2f0e1",
+        "encoded": "if%20($routeFound)%20%7B",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "d562eb",
+        "hash": "3b4de77a",
+        "encoded": "Write-Success%20%22Route%20configured%20for:%20$expectedRoute%22",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "d562eb",
+        "hash": "7cddbf95",
+        "encoded": "$configuredRoutes++",
+        "prevChunkIds": []
+      },
+      "140": {
+        "chunkId": "d562eb",
+        "hash": "027f5524",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "d562eb",
+        "hash": "ee34a4b9",
+        "encoded": "Write-Warning-Custom%20%22Route%20not%20found%20for:%20$expectedRoute%22",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "d562eb",
+        "hash": "1b2fde43",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "143": {
+        "chunkId": "d562eb",
+        "hash": "52c5d6be",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "d562eb",
+        "hash": "66f202b1",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "146": {
+        "chunkId": "d562eb",
+        "hash": "ceb116d2",
+        "encoded": "Write-Info%20%22Configured%20Routes:%20$configuredRoutes/$($expectedRoutes.Count)%22",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "d562eb",
+        "hash": "2b0807ea",
+        "encoded": "$verificationResults%20+=%20%22%5BPASS%5D%20API%20Gateway%20-%20$configuredRoutes%20routes%20configured%22",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "d562eb",
+        "hash": "a6adb000",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "d562eb",
+        "hash": "76cfa9f7",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "d562eb",
+        "hash": "33970617",
+        "encoded": "Write-Error-Custom%20%22Failed%20to%20retrieve%20API%20Gateway%20routes%22",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "d562eb",
+        "hash": "780a2fb5",
+        "encoded": "$verificationResults%20+=%20%22%5BFAIL%5D%20API%20Gateway%20-%20Routes%20not%20accessible%22",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "d562eb",
+        "hash": "bbf48fdf",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "d562eb",
+        "hash": "915f4a94",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "d562eb",
+        "hash": "779c3784",
+        "encoded": "#%20PHASE%204:%20Database%20Connection%20Verification",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "d562eb",
+        "hash": "ec324693",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "d562eb",
+        "hash": "4ba32072",
+        "encoded": "Write-Section%20%22PHASE%204:%20Database%20Connectivity%22",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "d562eb",
+        "hash": "2012c927",
+        "encoded": "Write-Info%20%22Checking%20database%20configurations...%22",
+        "prevChunkIds": []
+      },
+      "161": {
+        "chunkId": "d562eb",
+        "hash": "eb296f15",
+        "encoded": "$dbServices%20=%20@(",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "d562eb",
+        "hash": "ba71d7bf",
+        "encoded": "@%7BService=%22User%20Service%22;%20Port=8085;%20ActuatorUrl=%22http://localhost:8085/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "d562eb",
+        "hash": "6e7a49fa",
+        "encoded": "@%7BService=%22Restaurant%20Service%22;%20Port=8082;%20ActuatorUrl=%22http://localhost:8082/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "d562eb",
+        "hash": "1df170f8",
+        "encoded": "@%7BService=%22Order%20Service%22;%20Port=8083;%20ActuatorUrl=%22http://localhost:8083/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "d562eb",
+        "hash": "96e623d1",
+        "encoded": "@%7BService=%22Payment%20Service%22;%20Port=8084;%20ActuatorUrl=%22http://localhost:8084/actuator/health%22%7D,",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "d562eb",
+        "hash": "1a1b4f98",
+        "encoded": "@%7BService=%22Notification%20Service%22;%20Port=8081;%20ActuatorUrl=%22http://localhost:8081/actuator/health%22%7D",
+        "prevChunkIds": []
+      },
+      "167": {
+        "chunkId": "d562eb",
+        "hash": "b887ce18",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "169": {
+        "chunkId": "d562eb",
+        "hash": "dbfdb090",
+        "encoded": "foreach%20($dbService%20in%20$dbServices)%20%7B",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "d562eb",
+        "hash": "372f3eb6",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "171": {
+        "chunkId": "d562eb",
+        "hash": "21e53c19",
+        "encoded": "$healthResponse%20=%20Invoke-WebRequest%20-Uri%20$dbService.ActuatorUrl%20-TimeoutSec%205%20-ErrorAction%20Stop",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "d562eb",
+        "hash": "3cca544f",
+        "encoded": "$healthData%20=%20$healthResponse.Content%20%7C%20ConvertFrom-Json",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "d562eb",
+        "hash": "edf4913b",
+        "encoded": "#%20Check%20if%20database%20health%20is%20included",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "d562eb",
+        "hash": "e0ce2cca",
+        "encoded": "if%20($healthData.components.db)%20%7B",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "d562eb",
+        "hash": "9d3cb63c",
+        "encoded": "$dbStatus%20=%20$healthData.components.db.status",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "d562eb",
+        "hash": "94295d3c",
+        "encoded": "if%20($dbStatus%20-eq%20%22UP%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "d562eb",
+        "hash": "96a33654",
+        "encoded": "Write-Success%20%22$($dbService.Service)%20-%20Database%20connection%20OK%22",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "d562eb",
+        "hash": "e5ae45f4",
+        "encoded": "$verificationResults%20+=%20%22%5BPASS%5D%20$($dbService.Service)%20-%20Database%20connected%22",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "d562eb",
+        "hash": "3b436fd3",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "d562eb",
+        "hash": "dfb7c048",
+        "encoded": "Write-Warning-Custom%20%22$($dbService.Service)%20-%20Database%20status:%20$dbStatus%22",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "d562eb",
+        "hash": "7a2c3e21",
+        "encoded": "$verificationResults%20+=%20%22%5BWARN%5D%20$($dbService.Service)%20-%20Database%20status:%20$dbStatus%22",
+        "prevChunkIds": []
+      },
+      "183": {
+        "chunkId": "d562eb",
+        "hash": "98787a28",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "d562eb",
+        "hash": "39c9c858",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "d562eb",
+        "hash": "cceb1e71",
+        "encoded": "Write-Info%20%22$($dbService.Service)%20-%20Database%20health%20not%20exposed%20(may%20be%20using%20H2%20in-memory)%22",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "d562eb",
+        "hash": "92ab12a1",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "d562eb",
+        "hash": "7b8db973",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "d562eb",
+        "hash": "3393c169",
+        "encoded": "Write-Warning-Custom%20%22$($dbService.Service)%20-%20Cannot%20verify%20database%20connection%22",
+        "prevChunkIds": []
+      },
+      "189": {
+        "chunkId": "d562eb",
+        "hash": "00c06a24",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "d562eb",
+        "hash": "6e59ae01",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "d562eb",
+        "hash": "1973f8c9",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "d562eb",
+        "hash": "ae3ed3c5",
+        "encoded": "#%20PHASE%205:%20Smoke%20Tests%20(Optional)",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "d562eb",
+        "hash": "de2198ac",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "195": {
+        "chunkId": "d562eb",
+        "hash": "cb2f6763",
+        "encoded": "if%20(-not%20$SkipSmokeTests)%20%7B",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "d562eb",
+        "hash": "4dc0b5a1",
+        "encoded": "Write-Section%20%22PHASE%205:%20Smoke%20Tests%22",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "d562eb",
+        "hash": "65b1c03d",
+        "encoded": "Write-Info%20%22Running%20basic%20smoke%20tests%20through%20API%20Gateway...%22",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "d562eb",
+        "hash": "27923c67",
+        "encoded": "#%20Test%201:%20User%20Service%20Health%20through%20Gateway",
+        "prevChunkIds": []
+      },
+      "201": {
+        "chunkId": "d562eb",
+        "hash": "fefbb2ea",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "d562eb",
+        "hash": "61792d71",
+        "encoded": "$userHealthResponse%20=%20Invoke-WebRequest%20-Uri%20%22http://localhost:8080/user-service/actuator/health%22%20-TimeoutSec%205%20-ErrorAction%20Stop",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "d562eb",
+        "hash": "94fadf17",
+        "encoded": "if%20($userHealthResponse.StatusCode%20-eq%20200)%20%7B",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "d562eb",
+        "hash": "98134316",
+        "encoded": "Write-Success%20%22Smoke%20Test%201:%20User%20Service%20accessible%20through%20API%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "d562eb",
+        "hash": "a51b0d53",
+        "encoded": "$verificationResults%20+=%20%22%5BPASS%5D%20Smoke%20Test%20-%20User%20Service%20via%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "d562eb",
+        "hash": "b70b04fa",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "207": {
+        "chunkId": "d562eb",
+        "hash": "57ec59b7",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "d562eb",
+        "hash": "adf5e4a6",
+        "encoded": "Write-Error-Custom%20%22Smoke%20Test%201:%20User%20Service%20NOT%20accessible%20through%20API%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "209": {
+        "chunkId": "d562eb",
+        "hash": "2e86a294",
+        "encoded": "$verificationResults%20+=%20%22%5BFAIL%5D%20Smoke%20Test%20-%20User%20Service%20via%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "d562eb",
+        "hash": "6d1e7132",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "d562eb",
+        "hash": "7e0c9b70",
+        "encoded": "#%20Test%202:%20Restaurant%20Service%20Health%20through%20Gateway",
+        "prevChunkIds": []
+      },
+      "213": {
+        "chunkId": "d562eb",
+        "hash": "a01feee7",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "214": {
+        "chunkId": "d562eb",
+        "hash": "0947275d",
+        "encoded": "$restaurantHealthResponse%20=%20Invoke-WebRequest%20-Uri%20%22http://localhost:8080/restaurant-service/actuator/health%22%20-TimeoutSec%205%20-ErrorAction%20Stop",
+        "prevChunkIds": []
+      },
+      "215": {
+        "chunkId": "d562eb",
+        "hash": "f6f7383b",
+        "encoded": "if%20($restaurantHealthResponse.StatusCode%20-eq%20200)%20%7B",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "d562eb",
+        "hash": "424c0bcc",
+        "encoded": "Write-Success%20%22Smoke%20Test%202:%20Restaurant%20Service%20accessible%20through%20API%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "217": {
+        "chunkId": "d562eb",
+        "hash": "44cb5984",
+        "encoded": "$verificationResults%20+=%20%22%5BPASS%5D%20Smoke%20Test%20-%20Restaurant%20Service%20via%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "d562eb",
+        "hash": "f83f30dc",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "219": {
+        "chunkId": "d562eb",
+        "hash": "e608cb74",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "d562eb",
+        "hash": "53edefe4",
+        "encoded": "Write-Error-Custom%20%22Smoke%20Test%202:%20Restaurant%20Service%20NOT%20accessible%20through%20API%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "221": {
+        "chunkId": "d562eb",
+        "hash": "c5f89fe1",
+        "encoded": "$verificationResults%20+=%20%22%5BFAIL%5D%20Smoke%20Test%20-%20Restaurant%20Service%20via%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "222": {
+        "chunkId": "d562eb",
+        "hash": "0a685fe7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "224": {
+        "chunkId": "d562eb",
+        "hash": "1052f8d8",
+        "encoded": "#%20Test%203:%20Order%20Service%20Health%20through%20Gateway",
+        "prevChunkIds": []
+      },
+      "225": {
+        "chunkId": "d562eb",
+        "hash": "81946ac2",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "226": {
+        "chunkId": "d562eb",
+        "hash": "95a67008",
+        "encoded": "$orderHealthResponse%20=%20Invoke-WebRequest%20-Uri%20%22http://localhost:8080/order-service/actuator/health%22%20-TimeoutSec%205%20-ErrorAction%20Stop",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "d562eb",
+        "hash": "d18bc908",
+        "encoded": "if%20($orderHealthResponse.StatusCode%20-eq%20200)%20%7B",
+        "prevChunkIds": []
+      },
+      "228": {
+        "chunkId": "d562eb",
+        "hash": "02041a6e",
+        "encoded": "Write-Success%20%22Smoke%20Test%203:%20Order%20Service%20accessible%20through%20API%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "229": {
+        "chunkId": "d562eb",
+        "hash": "7e9b52da",
+        "encoded": "$verificationResults%20+=%20%22%5BPASS%5D%20Smoke%20Test%20-%20Order%20Service%20via%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "230": {
+        "chunkId": "d562eb",
+        "hash": "6f19d2d6",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "231": {
+        "chunkId": "d562eb",
+        "hash": "bd2f1ce9",
+        "encoded": "%7D%20catch%20%7B",
+        "prevChunkIds": []
+      },
+      "232": {
+        "chunkId": "d562eb",
+        "hash": "fb2eac33",
+        "encoded": "Write-Error-Custom%20%22Smoke%20Test%203:%20Order%20Service%20NOT%20accessible%20through%20API%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "233": {
+        "chunkId": "d562eb",
+        "hash": "026bebfd",
+        "encoded": "$verificationResults%20+=%20%22%5BFAIL%5D%20Smoke%20Test%20-%20Order%20Service%20via%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "234": {
+        "chunkId": "d562eb",
+        "hash": "29109e1d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "236": {
+        "chunkId": "d562eb",
+        "hash": "84ec3303",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "237": {
+        "chunkId": "d562eb",
+        "hash": "2029f3a3",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "238": {
+        "chunkId": "d562eb",
+        "hash": "fa1f0733",
+        "encoded": "Write-Info%20%22Skipping%20smoke%20tests%22",
+        "prevChunkIds": []
+      },
+      "239": {
+        "chunkId": "d562eb",
+        "hash": "f6a01e4c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "241": {
+        "chunkId": "d562eb",
+        "hash": "74d9ea6f",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "242": {
+        "chunkId": "d562eb",
+        "hash": "637c258e",
+        "encoded": "#%20VERIFICATION%20SUMMARY",
+        "prevChunkIds": []
+      },
+      "243": {
+        "chunkId": "d562eb",
+        "hash": "1c463004",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "244": {
+        "chunkId": "d562eb",
+        "hash": "cfc9550b",
+        "encoded": "Write-Section%20%22VERIFICATION%20SUMMARY%22",
+        "prevChunkIds": []
+      },
+      "246": {
+        "chunkId": "d562eb",
+        "hash": "abbee828",
+        "encoded": "$passCount%20=%20($verificationResults%20%7C%20Where-Object%20%7B%20$_%20-match%20%22%5C%5BPASS%5C%5D%22%20%7D).Count",
+        "prevChunkIds": []
+      },
+      "247": {
+        "chunkId": "d562eb",
+        "hash": "46ec677b",
+        "encoded": "$failCount%20=%20($verificationResults%20%7C%20Where-Object%20%7B%20$_%20-match%20%22%5C%5BFAIL%5C%5D%22%20%7D).Count",
+        "prevChunkIds": []
+      },
+      "248": {
+        "chunkId": "d562eb",
+        "hash": "03283484",
+        "encoded": "$warnCount%20=%20($verificationResults%20%7C%20Where-Object%20%7B%20$_%20-match%20%22%5C%5BWARN%5C%5D%22%20%7D).Count",
+        "prevChunkIds": []
+      },
+      "250": {
+        "chunkId": "d562eb",
+        "hash": "5822666c",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "251": {
+        "chunkId": "d562eb",
+        "hash": "1863d119",
+        "encoded": "Write-Host%20%22Verification%20Results:%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "252": {
+        "chunkId": "d562eb",
+        "hash": "0c29ec68",
+        "encoded": "Write-Host%20%22====================%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "253": {
+        "chunkId": "d562eb",
+        "hash": "18102ee5",
+        "encoded": "Write-Success%20%22Passed:%20%20%20$passCount%22",
+        "prevChunkIds": []
+      },
+      "254": {
+        "chunkId": "d562eb",
+        "hash": "5a584dda",
+        "encoded": "Write-Error-Custom%20%22Failed:%20%20%20$failCount%22",
+        "prevChunkIds": []
+      },
+      "255": {
+        "chunkId": "d562eb",
+        "hash": "6101a430",
+        "encoded": "Write-Warning-Custom%20%22Warnings:%20$warnCount%22",
+        "prevChunkIds": []
+      },
+      "256": {
+        "chunkId": "d562eb",
+        "hash": "3f35dc07",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "258": {
+        "chunkId": "d562eb",
+        "hash": "3b92d6d4",
+        "encoded": "if%20($failCount%20-eq%200%20-and%20$warnCount%20-eq%200)%20%7B",
+        "prevChunkIds": []
+      },
+      "259": {
+        "chunkId": "d562eb",
+        "hash": "5f5b4ba0",
+        "encoded": "Write-Host%20%22%E2%95%94%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%97%22%20-ForegroundColor%20Green",
+        "prevChunkIds": []
+      },
+      "260": {
+        "chunkId": "d562eb",
+        "hash": "f3f4b725",
+        "encoded": "Write-Host%20%22%E2%95%91%20%20%E2%9C%93%20ALL%20VERIFICATIONS%20PASSED%20-%20SYSTEM%20FULLY%20OPERATIONAL%20%20%20%20%20%20%20%20%20%20%20%20%E2%95%91%22%20-ForegroundColor%20Green",
+        "prevChunkIds": []
+      },
+      "261": {
+        "chunkId": "d562eb",
+        "hash": "d079e5d2",
+        "encoded": "Write-Host%20%22%E2%95%9A%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%9D%22%20-ForegroundColor%20Green",
+        "prevChunkIds": []
+      },
+      "262": {
+        "chunkId": "d562eb",
+        "hash": "0094f937",
+        "encoded": "%7D%20elseif%20($failCount%20-eq%200)%20%7B",
+        "prevChunkIds": []
+      },
+      "263": {
+        "chunkId": "d562eb",
+        "hash": "9c6d5716",
+        "encoded": "Write-Host%20%22%E2%95%94%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%97%22%20-ForegroundColor%20Yellow",
+        "prevChunkIds": []
+      },
+      "264": {
+        "chunkId": "d562eb",
+        "hash": "3e32b01d",
+        "encoded": "Write-Host%20%22%E2%95%91%20%20%E2%9A%A0%20WARNINGS%20DETECTED%20-%20REVIEW%20BEFORE%20PRODUCTION%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%95%91%22%20-ForegroundColor%20Yellow",
+        "prevChunkIds": []
+      },
+      "265": {
+        "chunkId": "d562eb",
+        "hash": "08899842",
+        "encoded": "Write-Host%20%22%E2%95%9A%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%9D%22%20-ForegroundColor%20Yellow",
+        "prevChunkIds": []
+      },
+      "266": {
+        "chunkId": "d562eb",
+        "hash": "6c6ae576",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "267": {
+        "chunkId": "d562eb",
+        "hash": "f5226c54",
+        "encoded": "Write-Host%20%22%E2%95%94%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%97%22%20-ForegroundColor%20Red",
+        "prevChunkIds": []
+      },
+      "268": {
+        "chunkId": "d562eb",
+        "hash": "7f067b5a",
+        "encoded": "Write-Host%20%22%E2%95%91%20%20%E2%9C%97%20CRITICAL%20ISSUES%20DETECTED%20-%20IMMEDIATE%20ACTION%20REQUIRED%20%20%20%20%20%20%20%20%20%20%E2%95%91%22%20-ForegroundColor%20Red",
+        "prevChunkIds": []
+      },
+      "269": {
+        "chunkId": "d562eb",
+        "hash": "39d7ea0b",
+        "encoded": "Write-Host%20%22%E2%95%9A%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%9D%22%20-ForegroundColor%20Red",
+        "prevChunkIds": []
+      },
+      "270": {
+        "chunkId": "d562eb",
+        "hash": "7357472c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "272": {
+        "chunkId": "d562eb",
+        "hash": "403b5830",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      },
+      "274": {
+        "chunkId": "d562eb",
+        "hash": "0b734f08",
+        "encoded": "#%20Generate%20report%20if%20requested",
+        "prevChunkIds": []
+      },
+      "275": {
+        "chunkId": "d562eb",
+        "hash": "2b78cf28",
+        "encoded": "if%20($GenerateReport)%20%7B",
+        "prevChunkIds": []
+      },
+      "276": {
+        "chunkId": "d562eb",
+        "hash": "155c8541",
+        "encoded": "$reportFile%20=%20%22system-health-report-$(Get-Date%20-Format%20'yyyyMMdd-HHmmss').txt%22",
+        "prevChunkIds": []
+      },
+      "278": {
+        "chunkId": "d562eb",
+        "hash": "7d58ad92",
+        "encoded": "$reportContent%20=%20@%22",
+        "prevChunkIds": []
+      },
+      "279": {
+        "chunkId": "d562eb",
+        "hash": "1acd3dcc",
+        "encoded": "Food%20Delivery%20Microservices%20-%20System%20Health%20Report",
+        "prevChunkIds": []
+      },
+      "280": {
+        "chunkId": "d562eb",
+        "hash": "d091ce4c",
+        "encoded": "Generated:%20$(Get-Date%20-Format%20'yyyy-MM-dd%20HH:mm:ss')",
+        "prevChunkIds": []
+      },
+      "282": {
+        "chunkId": "d562eb",
+        "hash": "4ea080f9",
+        "encoded": "========================================",
+        "prevChunkIds": []
+      },
+      "283": {
+        "chunkId": "d562eb",
+        "hash": "31aac4df",
+        "encoded": "SUMMARY",
+        "prevChunkIds": []
+      },
+      "284": {
+        "chunkId": "d562eb",
+        "hash": "8bb91249",
+        "encoded": "========================================",
+        "prevChunkIds": []
+      },
+      "285": {
+        "chunkId": "d562eb",
+        "hash": "569db80a",
+        "encoded": "Total%20Checks:%20%20$($passCount%20+%20$failCount%20+%20$warnCount)",
+        "prevChunkIds": []
+      },
+      "286": {
+        "chunkId": "d562eb",
+        "hash": "5aec5f5a",
+        "encoded": "Passed:%20%20%20%20%20%20%20%20$passCount",
+        "prevChunkIds": []
+      },
+      "287": {
+        "chunkId": "d562eb",
+        "hash": "cfbba2c1",
+        "encoded": "Failed:%20%20%20%20%20%20%20%20$failCount",
+        "prevChunkIds": []
+      },
+      "288": {
+        "chunkId": "d562eb",
+        "hash": "b296991c",
+        "encoded": "Warnings:%20%20%20%20%20%20$warnCount",
+        "prevChunkIds": []
+      },
+      "290": {
+        "chunkId": "d562eb",
+        "hash": "87d3d880",
+        "encoded": "Service%20Health:%20$healthyServices/$totalServices%20services%20healthy",
+        "prevChunkIds": []
+      },
+      "292": {
+        "chunkId": "d562eb",
+        "hash": "bb1fb1c1",
+        "encoded": "========================================",
+        "prevChunkIds": []
+      },
+      "293": {
+        "chunkId": "d562eb",
+        "hash": "a14649fc",
+        "encoded": "DETAILED%20RESULTS",
+        "prevChunkIds": []
+      },
+      "294": {
+        "chunkId": "d562eb",
+        "hash": "a6a29bda",
+        "encoded": "========================================",
+        "prevChunkIds": []
+      },
+      "295": {
+        "chunkId": "d562eb",
+        "hash": "81c00da7",
+        "encoded": "%22@",
+        "prevChunkIds": []
+      },
+      "297": {
+        "chunkId": "d562eb",
+        "hash": "5f3a9f1b",
+        "encoded": "foreach%20($result%20in%20$verificationResults)%20%7B",
+        "prevChunkIds": []
+      },
+      "298": {
+        "chunkId": "d562eb",
+        "hash": "d589902c",
+        "encoded": "$reportContent%20+=%20%22%60n$result%22",
+        "prevChunkIds": []
+      },
+      "299": {
+        "chunkId": "d562eb",
+        "hash": "567d4637",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "301": {
+        "chunkId": "d562eb",
+        "hash": "f1e81f51",
+        "encoded": "$reportContent%20%7C%20Out-File%20$reportFile%20-Encoding%20UTF8",
+        "prevChunkIds": []
+      },
+      "302": {
+        "chunkId": "d562eb",
+        "hash": "4faaa605",
+        "encoded": "Write-Success%20%22Health%20report%20saved%20to:%20$reportFile%22",
+        "prevChunkIds": []
+      },
+      "303": {
+        "chunkId": "d562eb",
+        "hash": "ca7d8d23",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "305": {
+        "chunkId": "d562eb",
+        "hash": "007ad70d",
+        "encoded": "Write-Host%20%22Next%20Steps:%22%20-ForegroundColor%20Cyan",
+        "prevChunkIds": []
+      },
+      "306": {
+        "chunkId": "d562eb",
+        "hash": "d6171f2d",
+        "encoded": "Write-Host%20%22%20%201.%20If%20all%20checks%20passed:%20System%20is%20ready%20for%20use%22%20-ForegroundColor%20White",
+        "prevChunkIds": []
+      },
+      "307": {
+        "chunkId": "d562eb",
+        "hash": "14f28e90",
+        "encoded": "Write-Host%20%22%20%202.%20If%20failures%20detected:%20Check%20service%20logs%20for%20errors%22%20-ForegroundColor%20White",
+        "prevChunkIds": []
+      },
+      "308": {
+        "chunkId": "d562eb",
+        "hash": "db7b4065",
+        "encoded": "Write-Host%20%22%20%203.%20Run%20.%5Crun-e2e-tests.ps1%20for%20comprehensive%20testing%22%20-ForegroundColor%20White",
+        "prevChunkIds": []
+      },
+      "309": {
+        "chunkId": "d562eb",
+        "hash": "0ad23b1e",
+        "encoded": "Write-Host%20%22%22",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

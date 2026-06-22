@@ -1,0 +1,192 @@
+{
+  "user-service\\src\\main\\java\\com\\fooddelivery\\user\\security\\CustomUserDetailsService.java": {
+    "filename": "CustomUserDetailsService.java",
+    "path": "user-service\\src\\main\\java\\com\\fooddelivery\\user\\security\\CustomUserDetailsService.java",
+    "version": "1.2",
+    "contextFile": "bde8b136-context.json",
+    "chunks": {
+      "ff3ca2": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781166181,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "936e87ee"
+        },
+        "hash": "ea5e4c42",
+        "messageId": "system_dbaceda0-656d-11f1-8beb-77e30c2c3758",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 1:53:01 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "ff3ca2",
+        "hash": "c585888f",
+        "encoded": "package%20com.fooddelivery.user.security;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "ff3ca2",
+        "hash": "8900ed1d",
+        "encoded": "import%20com.fooddelivery.user.entity.User;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "ff3ca2",
+        "hash": "617ff1d0",
+        "encoded": "import%20com.fooddelivery.user.repository.UserRepository;",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "ff3ca2",
+        "hash": "d524b006",
+        "encoded": "import%20org.springframework.beans.factory.annotation.Autowired;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "ff3ca2",
+        "hash": "6570aab7",
+        "encoded": "import%20org.springframework.security.core.authority.SimpleGrantedAuthority;",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "ff3ca2",
+        "hash": "2b778f1f",
+        "encoded": "import%20org.springframework.security.core.userdetails.UserDetails;",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "ff3ca2",
+        "hash": "7a1dbc7e",
+        "encoded": "import%20org.springframework.security.core.userdetails.UserDetailsService;",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "ff3ca2",
+        "hash": "9db3ffc9",
+        "encoded": "import%20org.springframework.security.core.userdetails.UsernameNotFoundException;",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "ff3ca2",
+        "hash": "3987e6ce",
+        "encoded": "import%20org.springframework.stereotype.Service;",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "ff3ca2",
+        "hash": "b82dcd6a",
+        "encoded": "import%20java.util.Collections;",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "ff3ca2",
+        "hash": "d8906426",
+        "encoded": "@Service",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "ff3ca2",
+        "hash": "7e982c2a",
+        "encoded": "public%20class%20CustomUserDetailsService%20implements%20UserDetailsService%20%7B",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "ff3ca2",
+        "hash": "c1162626",
+        "encoded": "@Autowired",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "ff3ca2",
+        "hash": "c337d368",
+        "encoded": "private%20UserRepository%20userRepository;",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "ff3ca2",
+        "hash": "a6662db4",
+        "encoded": "@Override",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "ff3ca2",
+        "hash": "b75e3b0f",
+        "encoded": "public%20UserDetails%20loadUserByUsername(String%20email)%20throws%20UsernameNotFoundException%20%7B",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "ff3ca2",
+        "hash": "8f989b1b",
+        "encoded": "User%20user%20=%20userRepository.findByEmail(email)",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "ff3ca2",
+        "hash": "d1d2de19",
+        "encoded": ".orElseThrow(()%20-%3E%20new%20UsernameNotFoundException(%22User%20not%20found%20with%20email:%20%22%20+%20email));",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "ff3ca2",
+        "hash": "2d8e9d5d",
+        "encoded": "return%20org.springframework.security.core.userdetails.User.builder()",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "ff3ca2",
+        "hash": "56b07345",
+        "encoded": ".username(user.getEmail())",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "ff3ca2",
+        "hash": "20c93676",
+        "encoded": ".password(user.getPassword())",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "ff3ca2",
+        "hash": "5d629e92",
+        "encoded": ".authorities(Collections.singletonList(",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "ff3ca2",
+        "hash": "915725e3",
+        "encoded": "new%20SimpleGrantedAuthority(%22ROLE_%22%20+%20user.getRole().name())",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "ff3ca2",
+        "hash": "7d351cf2",
+        "encoded": "))",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "ff3ca2",
+        "hash": "dacd41ad",
+        "encoded": ".build();",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "ff3ca2",
+        "hash": "43353d17",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "ff3ca2",
+        "hash": "699fd80f",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

@@ -36,32 +36,33 @@ public class NotificationService {
     public List<Notification> getNotificationsByUserId(Long userId) {
         return notificationRepository.findByUserIdOrderByCreatedAtDesc(userId);
     }
-    
+
     // Create a new notification
     public Notification createNotification(NotificationRequest request) {
-        Notification notification = new Notification(request.getUserId(), request.getMessage(), request.getType());
+        Notification notification = new Notification(request.getUserId(), request.getTitle(), request.getMessage(), request.getType());
         Notification savedNotification = notificationRepository.save(notification);
-        
+
         // Also send the notification (log it)
         sendNotification(request);
-        
+
         return savedNotification;
     }
-    
+
     // Update notification
     public Optional<Notification> updateNotification(Long id, NotificationRequest request) {
         Optional<Notification> existingNotification = notificationRepository.findById(id);
-        
+
         if (existingNotification.isPresent()) {
             Notification notification = existingNotification.get();
             notification.setUserId(request.getUserId());
+            notification.setTitle(request.getTitle());
             notification.setMessage(request.getMessage());
             notification.setType(request.getType());
             notification.preUpdate();
-            
+
             return Optional.of(notificationRepository.save(notification));
         }
-        
+
         return Optional.empty();
     }
 
@@ -154,22 +155,25 @@ public class NotificationService {
                 "=================================================\n",
                 timestamp, request.getUserId(), request.getMessage(), request.getType());
     }
-    
+
     public void sendOrderStatusNotification(Long userId, String orderStatus, Long orderId) {
+        String title = "Order Status Update";
         String message = String.format("Your order #%d status has been updated to: %s", orderId, orderStatus);
-        NotificationRequest request = new NotificationRequest(userId, message, "ORDER_STATUS_UPDATE");
+        NotificationRequest request = new NotificationRequest(userId, title, message, "ORDER_STATUS_UPDATE");
         sendNotification(request);
     }
-    
+
     public void sendWelcomeNotification(Long userId, String userName) {
+        String title = "Welcome to Food Delivery";
         String message = String.format("Welcome to Food Delivery App, %s! Your account has been created successfully.", userName);
-        NotificationRequest request = new NotificationRequest(userId, message, "WELCOME");
+        NotificationRequest request = new NotificationRequest(userId, title, message, "WELCOME");
         sendNotification(request);
     }
-    
+
     public void sendPaymentNotification(Long userId, String paymentStatus, String transactionId) {
+        String title = "Payment Notification";
         String message = String.format("Payment %s. Transaction ID: %s", paymentStatus, transactionId);
-        NotificationRequest request = new NotificationRequest(userId, message, "PAYMENT_UPDATE");
+        NotificationRequest request = new NotificationRequest(userId, title, message, "PAYMENT_UPDATE");
         sendNotification(request);
     }
 }

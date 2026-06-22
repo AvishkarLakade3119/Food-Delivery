@@ -1,0 +1,402 @@
+{
+  "restaurant-service\\src\\main\\java\\com\\fooddelivery\\restaurant\\messaging\\RestaurantEventPublisher.java": {
+    "filename": "RestaurantEventPublisher.java",
+    "path": "restaurant-service\\src\\main\\java\\com\\fooddelivery\\restaurant\\messaging\\RestaurantEventPublisher.java",
+    "version": "1.2",
+    "contextFile": "0c1d0c20-context.json",
+    "chunks": {
+      "dea026": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781426656,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "88a339e5",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:14:16 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "dea026",
+        "hash": "689bee3e",
+        "encoded": "package%20com.fooddelivery.restaurant.messaging;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "dea026",
+        "hash": "04f9d6a3",
+        "encoded": "import%20com.fooddelivery.restaurant.config.RabbitMQConfig;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "dea026",
+        "hash": "2066d20d",
+        "encoded": "import%20com.fooddelivery.restaurant.event.RestaurantAcceptedEvent;",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "dea026",
+        "hash": "dd7ac1eb",
+        "encoded": "import%20com.fooddelivery.restaurant.event.RestaurantRejectedEvent;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "dea026",
+        "hash": "b2c0a8ea",
+        "encoded": "import%20org.slf4j.Logger;",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "dea026",
+        "hash": "7ea108b7",
+        "encoded": "import%20org.slf4j.LoggerFactory;",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "dea026",
+        "hash": "1d0ee441",
+        "encoded": "import%20org.springframework.amqp.rabbit.core.RabbitTemplate;",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "dea026",
+        "hash": "72e4ceaf",
+        "encoded": "import%20org.springframework.stereotype.Component;",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "dea026",
+        "hash": "87707c3e",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "dea026",
+        "hash": "c17a09e7",
+        "encoded": "*%20Publisher%20for%20Restaurant%20Events",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "dea026",
+        "hash": "5ec85624",
+        "encoded": "*%20Publishes%20restaurant-related%20events%20to%20RabbitMQ%20exchanges",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "dea026",
+        "hash": "e0d506f1",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "dea026",
+        "hash": "03b40bf0",
+        "encoded": "@Component",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "dea026",
+        "hash": "69835f55",
+        "encoded": "public%20class%20RestaurantEventPublisher%20%7B",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "dea026",
+        "hash": "830c817e",
+        "encoded": "private%20static%20final%20Logger%20logger%20=%20LoggerFactory.getLogger(RestaurantEventPublisher.class);",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "dea026",
+        "hash": "ef7b04bb",
+        "encoded": "private%20final%20RabbitTemplate%20rabbitTemplate;",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "dea026",
+        "hash": "11371868",
+        "encoded": "public%20RestaurantEventPublisher(RabbitTemplate%20rabbitTemplate)%20%7B",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "dea026",
+        "hash": "2ac11f12",
+        "encoded": "this.rabbitTemplate%20=%20rabbitTemplate;",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "dea026",
+        "hash": "4c3814eb",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "dea026",
+        "hash": "a1f7b1b8",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "dea026",
+        "hash": "5cc76995",
+        "encoded": "*%20Publish%20RestaurantAcceptedEvent%20to%20restaurant.exchange",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "dea026",
+        "hash": "581445b1",
+        "encoded": "*%20@param%20event%20RestaurantAcceptedEvent",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "dea026",
+        "hash": "d7e56af4",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "dea026",
+        "hash": "08b1f452",
+        "encoded": "public%20void%20publishRestaurantAccepted(RestaurantAcceptedEvent%20event)%20%7B",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "dea026",
+        "hash": "a80b9080",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "dea026",
+        "hash": "eb6705c7",
+        "encoded": "logger.info(%22Publishing%20RestaurantAcceptedEvent%20for%20orderId:%20%7B%7D,%20restaurantId:%20%7B%7D%22,",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "dea026",
+        "hash": "599d28e0",
+        "encoded": "event.getOrderId(),%20event.getRestaurantId());",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "dea026",
+        "hash": "19290672",
+        "encoded": "rabbitTemplate.convertAndSend(",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "dea026",
+        "hash": "2d2d9a47",
+        "encoded": "RabbitMQConfig.RESTAURANT_EXCHANGE,",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "dea026",
+        "hash": "8bd764f1",
+        "encoded": "RabbitMQConfig.RESTAURANT_ACCEPTED_KEY,",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "dea026",
+        "hash": "63f0bb42",
+        "encoded": "event",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "dea026",
+        "hash": "f2c6d78f",
+        "encoded": ");",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "dea026",
+        "hash": "6c30448d",
+        "encoded": "logger.info(%22Successfully%20published%20RestaurantAcceptedEvent%20for%20orderId:%20%7B%7D,%20restaurantId:%20%7B%7D%22,",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "dea026",
+        "hash": "f638685f",
+        "encoded": "event.getOrderId(),%20event.getRestaurantId());",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "dea026",
+        "hash": "3167153a",
+        "encoded": "%7D%20catch%20(Exception%20e)%20%7B",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "dea026",
+        "hash": "8172467e",
+        "encoded": "logger.error(%22Failed%20to%20publish%20RestaurantAcceptedEvent%20for%20orderId:%20%7B%7D,%20restaurantId:%20%7B%7D%22,",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "dea026",
+        "hash": "bc2ce7f5",
+        "encoded": "event.getOrderId(),%20event.getRestaurantId(),%20e);",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "dea026",
+        "hash": "1e3136c4",
+        "encoded": "//%20Service%20should%20continue%20even%20if%20message%20publishing%20fails",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "dea026",
+        "hash": "d6071ac7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "dea026",
+        "hash": "5046e502",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "dea026",
+        "hash": "fe10bc0c",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "dea026",
+        "hash": "38f78e8f",
+        "encoded": "*%20Publish%20RestaurantRejectedEvent%20to%20restaurant.exchange",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "dea026",
+        "hash": "e2c89404",
+        "encoded": "*%20@param%20event%20RestaurantRejectedEvent",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "dea026",
+        "hash": "37df0f4f",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "dea026",
+        "hash": "a6b4874c",
+        "encoded": "public%20void%20publishRestaurantRejected(RestaurantRejectedEvent%20event)%20%7B",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "dea026",
+        "hash": "f7bbeb43",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "dea026",
+        "hash": "7cf83c9e",
+        "encoded": "logger.info(%22Publishing%20RestaurantRejectedEvent%20for%20orderId:%20%7B%7D,%20restaurantId:%20%7B%7D%22,",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "dea026",
+        "hash": "4f6ebc74",
+        "encoded": "event.getOrderId(),%20event.getRestaurantId());",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "dea026",
+        "hash": "e8954581",
+        "encoded": "rabbitTemplate.convertAndSend(",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "dea026",
+        "hash": "73190328",
+        "encoded": "RabbitMQConfig.RESTAURANT_EXCHANGE,",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "dea026",
+        "hash": "6912daf9",
+        "encoded": "RabbitMQConfig.RESTAURANT_REJECTED_KEY,",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "dea026",
+        "hash": "748c03ff",
+        "encoded": "event",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "dea026",
+        "hash": "da701617",
+        "encoded": ");",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "dea026",
+        "hash": "3f25bf16",
+        "encoded": "logger.info(%22Successfully%20published%20RestaurantRejectedEvent%20for%20orderId:%20%7B%7D,%20restaurantId:%20%7B%7D%22,",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "dea026",
+        "hash": "fb165720",
+        "encoded": "event.getOrderId(),%20event.getRestaurantId());",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "dea026",
+        "hash": "222fe698",
+        "encoded": "%7D%20catch%20(Exception%20e)%20%7B",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "dea026",
+        "hash": "56a70508",
+        "encoded": "logger.error(%22Failed%20to%20publish%20RestaurantRejectedEvent%20for%20orderId:%20%7B%7D,%20restaurantId:%20%7B%7D%22,",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "dea026",
+        "hash": "5b3b20f7",
+        "encoded": "event.getOrderId(),%20event.getRestaurantId(),%20e);",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "dea026",
+        "hash": "604f2709",
+        "encoded": "//%20Service%20should%20continue%20even%20if%20message%20publishing%20fails",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "dea026",
+        "hash": "912d88e4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "dea026",
+        "hash": "f706ff69",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "dea026",
+        "hash": "bf862585",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

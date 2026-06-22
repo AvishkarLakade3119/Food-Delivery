@@ -170,6 +170,7 @@ class DtoTest {
         // Assert
         assertNotNull(request);
         assertNull(request.getUserId());
+        assertNull(request.getTitle());
         assertNull(request.getMessage());
         assertNull(request.getType());
     }
@@ -178,14 +179,16 @@ class DtoTest {
     void testNotificationRequest_AllArgsConstructor() {
         // Arrange
         Long userId = 1L;
+        String title = "Order Update";
         String message = "Order confirmed";
         String type = "ORDER_CONFIRMATION";
 
         // Act
-        NotificationRequest request = new NotificationRequest(userId, message, type);
+        NotificationRequest request = new NotificationRequest(userId, title, message, type);
 
         // Assert
         assertEquals(userId, request.getUserId());
+        assertEquals(title, request.getTitle());
         assertEquals(message, request.getMessage());
         assertEquals(type, request.getType());
     }
@@ -195,16 +198,19 @@ class DtoTest {
         // Arrange
         NotificationRequest request = new NotificationRequest();
         Long userId = 1L;
+        String title = "Order Update";
         String message = "Order confirmed";
         String type = "ORDER_CONFIRMATION";
 
         // Act
         request.setUserId(userId);
+        request.setTitle(title);
         request.setMessage(message);
         request.setType(type);
 
         // Assert
         assertEquals(userId, request.getUserId());
+        assertEquals(title, request.getTitle());
         assertEquals(message, request.getMessage());
         assertEquals(type, request.getType());
     }
@@ -701,11 +707,13 @@ class DtoTest {
     void testNotificationRequest_EqualsWithNullUserId() {
         NotificationRequest req1 = new NotificationRequest();
         req1.setUserId(null);
+        req1.setTitle("Order Update");
         req1.setMessage("Test message");
         req1.setType("ORDER_CONFIRMATION");
 
         NotificationRequest req2 = new NotificationRequest();
         req2.setUserId(1L);
+        req2.setTitle("Order Update");
         req2.setMessage("Test message");
         req2.setType("ORDER_CONFIRMATION");
 

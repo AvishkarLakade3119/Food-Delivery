@@ -1,0 +1,240 @@
+{
+  "order-service\\src\\test\\java\\com\\fooddelivery\\order\\controller\\OrderControllerTest.java": {
+    "filename": "OrderControllerTest.java",
+    "path": "order-service\\src\\test\\java\\com\\fooddelivery\\order\\controller\\OrderControllerTest.java",
+    "version": "1.2",
+    "contextFile": "ab257953-context.json",
+    "chunks": {
+      "71e8fb": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781196346,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "df2ea822"
+        },
+        "hash": "f9d18dd7",
+        "messageId": "system_79e8b040-65b3-11f1-8360-b9f58a4ec7ec",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:15:46 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "c34230": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427587,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "08f327be",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:29:47 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "71e8fb",
+        "hash": "3f9c95bc",
+        "encoded": "package%20com.fooddelivery.order.controller;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "71e8fb",
+        "hash": "88d9f65a",
+        "encoded": "import%20com.fasterxml.jackson.databind.ObjectMapper;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "71e8fb",
+        "hash": "a74e0e26",
+        "encoded": "import%20com.fooddelivery.order.dto.CreateOrderRequest;",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "71e8fb",
+        "hash": "2074a814",
+        "encoded": "import%20com.fooddelivery.order.dto.OrderItemRequest;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "71e8fb",
+        "hash": "0348c6f2",
+        "encoded": "import%20com.fooddelivery.order.dto.OrderRequest;",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "71e8fb",
+        "hash": "2706a1b0",
+        "encoded": "import%20com.fooddelivery.order.entity.Order;",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "71e8fb",
+        "hash": "ba3c888b",
+        "encoded": "import%20com.fooddelivery.order.entity.OrderItem;",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "71e8fb",
+        "hash": "3c1d2175",
+        "encoded": "import%20com.fooddelivery.order.entity.OrderStatus;",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "c34230",
+        "hash": "927d9cd2",
+        "encoded": "import%20com.fooddelivery.order.messaging.OrderEventConsumer;",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "c34230",
+        "hash": "615812f7",
+        "encoded": "import%20com.fooddelivery.order.messaging.OrderEventPublisher;",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "c34230",
+        "hash": "494526f7",
+        "encoded": "import%20com.fooddelivery.order.security.JwtAuthenticationFilter;",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "c34230",
+        "hash": "a915e830",
+        "encoded": "import%20com.fooddelivery.order.security.JwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "c34230",
+        "hash": "e339080a",
+        "encoded": "import%20com.fooddelivery.order.service.OrderService;",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "c34230",
+        "hash": "54734ff1",
+        "encoded": "import%20org.junit.jupiter.api.BeforeEach;",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "c34230",
+        "hash": "a4769cb8",
+        "encoded": "import%20org.junit.jupiter.api.Test;",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "c34230",
+        "hash": "f522cfdf",
+        "encoded": "import%20org.springframework.amqp.rabbit.core.RabbitTemplate;",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "c34230",
+        "hash": "d12c967f",
+        "encoded": "import%20org.springframework.beans.factory.annotation.Autowired;",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "c34230",
+        "hash": "fffb11b3",
+        "encoded": "import%20org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "c34230",
+        "hash": "b245cfc8",
+        "encoded": "import%20org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "c34230",
+        "hash": "4acc4b55",
+        "encoded": "import%20org.springframework.boot.test.mock.mockito.MockBean;",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "c34230",
+        "hash": "e77c515c",
+        "encoded": "import%20org.springframework.http.MediaType;",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "c34230",
+        "hash": "45ce72b6",
+        "encoded": "import%20org.springframework.test.web.servlet.MockMvc;",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "71e8fb",
+        "hash": "e1ce440f",
+        "encoded": "import%20com.fooddelivery.order.security.JwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "71e8fb",
+        "hash": "886f0532",
+        "encoded": "import%20com.fooddelivery.order.service.OrderService;",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "71e8fb",
+        "hash": "4b7007c4",
+        "encoded": "import%20org.junit.jupiter.api.BeforeEach;",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "71e8fb",
+        "hash": "d97a2266",
+        "encoded": "import%20org.junit.jupiter.api.Test;",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "71e8fb",
+        "hash": "aec0c428",
+        "encoded": "import%20org.springframework.beans.factory.annotation.Autowired;",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "71e8fb",
+        "hash": "5b08bfaf",
+        "encoded": "import%20org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "71e8fb",
+        "hash": "1618093e",
+        "encoded": "import%20org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "71e8fb",
+        "hash": "9ef77c61",
+        "encoded": "import%20org.springframework.boot.test.mock.mockito.MockBean;",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "71e8fb",
+        "hash": "3a239d79",
+        "encoded": "import%20org.springframework.http.MediaType;",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "71e8fb",
+        "hash": "a4f9e5dc",
+        "encoded": "import%20org.springframework.test.web.servlet.MockMvc;",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

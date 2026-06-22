@@ -1,0 +1,204 @@
+{
+  "user-service\\src\\test\\java\\com\\fooddelivery\\user\\controller\\UserControllerTest.java": {
+    "filename": "UserControllerTest.java",
+    "path": "user-service\\src\\test\\java\\com\\fooddelivery\\user\\controller\\UserControllerTest.java",
+    "version": "1.2",
+    "contextFile": "b21dcb35-context.json",
+    "chunks": {
+      "360ff2": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781196339,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "df2ea822"
+        },
+        "hash": "1b0a2fbb",
+        "messageId": "system_79e8b040-65b3-11f1-8360-b9f58a4ec7ec",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:15:39 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "3bdb7f": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781196339,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "df2ea822"
+        },
+        "hash": "309c6790",
+        "messageId": "system_79e8b040-65b3-11f1-8360-b9f58a4ec7ec",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:15:39 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "3bdb7f",
+        "hash": "2cce53cb",
+        "encoded": "package%20com.fooddelivery.user.controller;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "3bdb7f",
+        "hash": "88d9f65a",
+        "encoded": "import%20com.fasterxml.jackson.databind.ObjectMapper;",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "3bdb7f",
+        "hash": "12a224f1",
+        "encoded": "import%20com.fooddelivery.user.entity.User;",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "3bdb7f",
+        "hash": "17ee9104",
+        "encoded": "import%20com.fooddelivery.user.entity.UserRole;",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "3bdb7f",
+        "hash": "b811bb8a",
+        "encoded": "import%20com.fooddelivery.user.security.JwtAuthenticationFilter;",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "3bdb7f",
+        "hash": "d71d671c",
+        "encoded": "import%20com.fooddelivery.user.security.JwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "3bdb7f",
+        "hash": "d41bcd9b",
+        "encoded": "import%20com.fooddelivery.user.service.UserService;",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "3bdb7f",
+        "hash": "17d2d0d5",
+        "encoded": "import%20org.junit.jupiter.api.BeforeEach;",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "3bdb7f",
+        "hash": "56824e3f",
+        "encoded": "import%20org.junit.jupiter.api.Test;",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "3bdb7f",
+        "hash": "5b9c7404",
+        "encoded": "import%20org.springframework.beans.factory.annotation.Autowired;",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "3bdb7f",
+        "hash": "328a83f1",
+        "encoded": "import%20org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "3bdb7f",
+        "hash": "a67f7558",
+        "encoded": "import%20org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "3bdb7f",
+        "hash": "e4b403e3",
+        "encoded": "import%20org.springframework.boot.test.mock.mockito.MockBean;",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "3bdb7f",
+        "hash": "d4af143c",
+        "encoded": "import%20org.springframework.http.MediaType;",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "3bdb7f",
+        "hash": "a49db204",
+        "encoded": "import%20org.springframework.test.web.servlet.MockMvc;",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "360ff2",
+        "hash": "f86e1a56",
+        "encoded": "@WebMvcTest(UserController.class)",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "360ff2",
+        "hash": "5f40ea82",
+        "encoded": "@AutoConfigureMockMvc(addFilters%20=%20false)",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "360ff2",
+        "hash": "ee0b0431",
+        "encoded": "class%20UserControllerTest%20%7B",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "360ff2",
+        "hash": "60264804",
+        "encoded": "@Autowired",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "360ff2",
+        "hash": "45f243dd",
+        "encoded": "private%20MockMvc%20mockMvc;",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "360ff2",
+        "hash": "e2b834a7",
+        "encoded": "@MockBean",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "360ff2",
+        "hash": "5fef015f",
+        "encoded": "private%20UserService%20userService;",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "360ff2",
+        "hash": "541f0cb1",
+        "encoded": "@MockBean",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "360ff2",
+        "hash": "b21dcabf",
+        "encoded": "private%20JwtTokenProvider%20jwtTokenProvider;",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "360ff2",
+        "hash": "ed092748",
+        "encoded": "@MockBean",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "360ff2",
+        "hash": "9b6719c5",
+        "encoded": "private%20JwtAuthenticationFilter%20jwtAuthenticationFilter;",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

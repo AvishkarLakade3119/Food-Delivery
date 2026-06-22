@@ -1,8 +1,11 @@
 package com.fooddelivery.user.controller;
 
+import com.fooddelivery.user.dto.LoginRequest;
 import com.fooddelivery.user.dto.UserRegistrationDto;
+import com.fooddelivery.user.dto.UserResponse;
 import com.fooddelivery.user.entity.User;
 import com.fooddelivery.user.entity.UserRole;
+import com.fooddelivery.user.security.JwtTokenProvider;
 import com.fooddelivery.user.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,12 +14,12 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
@@ -27,15 +30,24 @@ class AuthControllerDirectTest {
     @Mock
     private UserService userService;
     
+    @Mock
+    private JwtTokenProvider jwtTokenProvider;
+    
+    private PasswordEncoder passwordEncoder;
+    
     private AuthController controller;
     private UserRegistrationDto validDto;
     private User testUser;
-    private Map<String, String> validLoginRequest;
+    private LoginRequest validLoginRequest;
     
     @BeforeEach
     void setUp() {
+        passwordEncoder = new BCryptPasswordEncoder();
         controller = new AuthController();
         ReflectionTestUtils.setField(controller, "userService", userService);
+        ReflectionTestUtils.setField(controller, "passwordEncoder", passwordEncoder);
+        ReflectionTestUtils.setField(controller, "jwtTokenProvider", jwtTokenProvider);
+        ReflectionTestUtils.setField(controller, "jwtExpirationMs", 86400000L);
         
         validDto = new UserRegistrationDto();
         validDto.setUsername("johndoe");
@@ -51,7 +63,7 @@ class AuthControllerDirectTest {
         testUser.setId(1L);
         testUser.setUsername("johndoe");
         testUser.setEmail("john@test.com");
-        testUser.setPassword("password123");
+        testUser.setPassword(passwordEncoder.encode("password123"));
         testUser.setFirstName("John");
         testUser.setLastName("Doe");
         testUser.setName("John Doe");
@@ -59,40 +71,29 @@ class AuthControllerDirectTest {
         testUser.setAddress("123 Main St");
         testUser.setRole(UserRole.CUSTOMER);
         testUser.setCreatedAt(LocalDateTime.now());
+        testUser.setUpdatedAt(LocalDateTime.now());
         
-        validLoginRequest = new HashMap<>();
-        validLoginRequest.put("email", "john@test.com");
-        validLoginRequest.put("password", "password123");
+        validLoginRequest = new LoginRequest();
+        validLoginRequest.setEmail("john@test.com");
+        validLoginRequest.setPassword("password123");
     }
     
-    // ===== REGISTER: Content-Type branches (line 49) =====
+    // ===== REGISTER: Basic registration tests =====
     @Test
-    void register_NullContentType_Returns400() {
-        ResponseEntity<Map<String, Object>> response = controller.registerUser(validDto, null);
-        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-        assertEquals(false, response.getBody().get("success"));
-    }
-    
-    @Test
-    void register_TextPlainContentType_Returns400() {
-        ResponseEntity<Map<String, Object>> response = controller.registerUser(validDto, "text/plain");
-        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-    }
-    
-    @Test
-    void register_JsonContentType_Returns201() {
+    void register_ValidRequest_Returns201() {
         when(userService.createUser(any(User.class))).thenReturn(testUser);
-        ResponseEntity<Map<String, Object>> response = controller.registerUser(validDto, "application/json");
+        ResponseEntity<UserResponse> response = controller.registerUser(validDto);
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
-        assertEquals(true, response.getBody().get("success"));
+        assertNotNull(response.getBody());
+        assertEquals("john@test.com", response.getBody().getEmail());
+        assertEquals("johndoe", response.getBody().getUsername());
     }
     
-    // ===== REGISTER: Address branches (line 73) =====
     @Test
     void register_NullAddress_SetsEmpty() {
         when(userService.createUser(any(User.class))).thenReturn(testUser);
         validDto.setAddress(null);
-        ResponseEntity<Map<String, Object>> response = controller.registerUser(validDto, "application/json");
+        ResponseEntity<UserResponse> response = controller.registerUser(validDto);
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
     }
     
@@ -100,7 +101,7 @@ class AuthControllerDirectTest {
     void register_EmptyAddress_SetsEmpty() {
         when(userService.createUser(any(User.class))).thenReturn(testUser);
         validDto.setAddress("");
-        ResponseEntity<Map<String, Object>> response = controller.registerUser(validDto, "application/json");
+        ResponseEntity<UserResponse> response = controller.registerUser(validDto);
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
     }
     
@@ -108,7 +109,7 @@ class AuthControllerDirectTest {
     void register_WhitespaceAddress_SetsEmpty() {
         when(userService.createUser(any(User.class))).thenReturn(testUser);
         validDto.setAddress("   ");
-        ResponseEntity<Map<String, Object>> response = controller.registerUser(validDto, "application/json");
+        ResponseEntity<UserResponse> response = controller.registerUser(validDto);
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
     }
     
@@ -116,106 +117,106 @@ class AuthControllerDirectTest {
     void register_ValidAddress_SetsAddress() {
         when(userService.createUser(any(User.class))).thenReturn(testUser);
         validDto.setAddress("456 Oak Ave");
-        ResponseEntity<Map<String, Object>> response = controller.registerUser(validDto, "application/json");
+        ResponseEntity<UserResponse> response = controller.registerUser(validDto);
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
     }
     
-    // ===== REGISTER: Exception branches (lines 99, 108) =====
     @Test
-    void register_IllegalArgException_Returns400() {
-        when(userService.createUser(any(User.class))).thenThrow(new IllegalArgumentException("bad"));
-        ResponseEntity<Map<String, Object>> response = controller.registerUser(validDto, "application/json");
-        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-        assertEquals(false, response.getBody().get("success"));
+    void register_DuplicateUser_ThrowsException() {
+        when(userService.createUser(any(User.class))).thenThrow(new RuntimeException("User already exists"));
+        assertThrows(RuntimeException.class, () -> controller.registerUser(validDto));
     }
     
     @Test
-    void register_RuntimeException_Rethrows() {
+    void register_ServiceException_ThrowsException() {
         when(userService.createUser(any(User.class))).thenThrow(new RuntimeException("DB error"));
-        assertThrows(RuntimeException.class, () -> controller.registerUser(validDto, "application/json"));
+        assertThrows(RuntimeException.class, () -> controller.registerUser(validDto));
     }
     
-    // ===== LOGIN: Content-Type branches (line 128) =====
+    // ===== LOGIN: Basic login tests =====
     @Test
-    void login_NullContentType_Returns400() {
-        ResponseEntity<Map<String, Object>> response = controller.loginUser(validLoginRequest, null);
-        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-        assertEquals(false, response.getBody().get("success"));
-    }
-    
-    @Test
-    void login_TextPlainContentType_Returns400() {
-        ResponseEntity<Map<String, Object>> response = controller.loginUser(validLoginRequest, "text/plain");
-        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-    }
-    
-    @Test
-    void login_JsonContentType_Returns200() {
+    void login_ValidCredentials_Returns200WithToken() {
         when(userService.getUserByEmail("john@test.com")).thenReturn(testUser);
-        ResponseEntity<Map<String, Object>> response = controller.loginUser(validLoginRequest, "application/json");
+        when(jwtTokenProvider.generateToken("john@test.com", "CUSTOMER", 1L)).thenReturn("mock.jwt.token");
+        
+        ResponseEntity<?> response = controller.loginUser(validLoginRequest);
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(true, response.getBody().get("success"));
-    }
-    
-    // ===== LOGIN: Null email/password branches (line 143) =====
-    @Test
-    void login_NullEmail_Returns400() {
-        Map<String, String> request = new HashMap<>();
-        request.put("email", null);
-        request.put("password", "pass");
-        ResponseEntity<Map<String, Object>> response = controller.loginUser(request, "application/json");
-        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-    }
-    
-    @Test
-    void login_NullPassword_Returns400() {
-        Map<String, String> request = new HashMap<>();
-        request.put("email", "john@test.com");
-        request.put("password", null);
-        ResponseEntity<Map<String, Object>> response = controller.loginUser(request, "application/json");
-        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-    }
-    
-    @Test
-    void login_BothNull_Returns400() {
-        Map<String, String> request = new HashMap<>();
-        request.put("email", null);
-        request.put("password", null);
-        ResponseEntity<Map<String, Object>> response = controller.loginUser(request, "application/json");
-        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-    }
-    
-    // ===== LOGIN: Password check branches (line 154) =====
-    @Test
-    void login_CorrectPassword_Returns200() {
-        when(userService.getUserByEmail("john@test.com")).thenReturn(testUser);
-        ResponseEntity<Map<String, Object>> response = controller.loginUser(validLoginRequest, "application/json");
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(true, response.getBody().get("success"));
+        assertNotNull(response.getBody());
     }
     
     @Test
     void login_WrongPassword_Returns401() {
-        User user = new User();
-        user.setPassword("differentPassword");
-        when(userService.getUserByEmail("john@test.com")).thenReturn(user);
-        ResponseEntity<Map<String, Object>> response = controller.loginUser(validLoginRequest, "application/json");
+        when(userService.getUserByEmail("john@test.com")).thenReturn(testUser);
+        
+        LoginRequest wrongRequest = new LoginRequest();
+        wrongRequest.setEmail("john@test.com");
+        wrongRequest.setPassword("wrongpassword");
+        
+        ResponseEntity<?> response = controller.loginUser(wrongRequest);
         assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
     }
     
     @Test
-    void login_NullUser_Returns401() {
-        when(userService.getUserByEmail("john@test.com")).thenReturn(null);
-        ResponseEntity<Map<String, Object>> response = controller.loginUser(validLoginRequest, "application/json");
+    void login_UserNotFound_Returns401() {
+        when(userService.getUserByEmail("john@test.com")).thenThrow(new RuntimeException("User not found"));
+        
+        ResponseEntity<?> response = controller.loginUser(validLoginRequest);
         assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
     }
     
-    // ===== LOGIN: Exception branch (line 173) =====
     @Test
-    void login_ServiceException_Returns500() {
+    void login_NullEmail_ThrowsException() {
+        LoginRequest invalidRequest = new LoginRequest();
+        invalidRequest.setEmail(null);
+        invalidRequest.setPassword("password123");
+        
+        when(userService.getUserByEmail(null)).thenThrow(new RuntimeException("Email cannot be null"));
+        ResponseEntity<?> response = controller.loginUser(invalidRequest);
+        assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
+    }
+    
+    @Test
+    void login_EmptyPassword_Returns401() {
+        LoginRequest invalidRequest = new LoginRequest();
+        invalidRequest.setEmail("john@test.com");
+        invalidRequest.setPassword("");
+        
+        when(userService.getUserByEmail("john@test.com")).thenReturn(testUser);
+        ResponseEntity<?> response = controller.loginUser(invalidRequest);
+        assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
+    }
+    
+    @Test
+    void login_DatabaseError_Returns401() {
         when(userService.getUserByEmail(anyString())).thenThrow(new RuntimeException("DB down"));
-        ResponseEntity<Map<String, Object>> response = controller.loginUser(validLoginRequest, "application/json");
-        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
-        assertEquals(false, response.getBody().get("success"));
+        
+        ResponseEntity<?> response = controller.loginUser(validLoginRequest);
+        assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
+    }
+    
+    @Test
+    void login_JwtGenerationSuccess_ReturnsToken() {
+        when(userService.getUserByEmail("john@test.com")).thenReturn(testUser);
+        when(jwtTokenProvider.generateToken(anyString(), anyString(), anyLong())).thenReturn("valid.jwt.token");
+        
+        ResponseEntity<?> response = controller.loginUser(validLoginRequest);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+    
+    @Test
+    void login_PasswordEncoderMatches_ReturnsSuccess() {
+        when(userService.getUserByEmail("john@test.com")).thenReturn(testUser);
+        when(jwtTokenProvider.generateToken(anyString(), anyString(), anyLong())).thenReturn("token");
+        
+        ResponseEntity<?> response = controller.loginUser(validLoginRequest);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+    
+    @Test
+    void login_ServiceThrowsRuntimeException_Returns401() {
+        when(userService.getUserByEmail(anyString())).thenThrow(new RuntimeException("Unexpected error"));
+        
+        ResponseEntity<?> response = controller.loginUser(validLoginRequest);
+        assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
     }
 }

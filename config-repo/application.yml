@@ -1,0 +1,143 @@
+
+# ========================================
+# Common Configuration for All Microservices
+# ========================================
+# This file contains shared properties that apply to ALL services
+# in the Food Delivery platform.
+
+# JWT Configuration (Shared across all services)
+jwt:
+  secret: a-very-long-secure-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-food-delivery-platform-2026
+  expiration: 86400000  # 24 hours in milliseconds
+  header: Authorization
+  prefix: "Bearer "
+
+# Common Eureka Client Configuration
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 10
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+# Common Actuator Configuration (UPDATED)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,refresh,circuitbreakers,retries,bulkheads,timelimiters,ratelimiters,gateway,env,loggers,heapdump,threaddump,httpexchanges
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+    prometheus:
+      enabled: true
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
+    circuitbreakers:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+        step: 10s
+    tags:
+      application: ${spring.application.name}
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+      percentiles:
+        http.server.requests: 0.5, 0.75, 0.95, 0.99
+  observations:
+    annotations:
+      enabled: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+        step: 10s
+
+# Common Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.fooddelivery: DEBUG
+    org.springframework.web: INFO
+    org.springframework.cloud: INFO
+    org.hibernate: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/${spring.application.name}.log
+    max-size: 10MB
+    max-history: 30
+
+# Common Spring Configuration
+spring:
+  # JPA Common Settings (for services using JPA)
+  jpa:
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+  
+  # Jackson Configuration
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+      fail-on-empty-beans: false
+    deserialization:
+      fail-on-unknown-properties: false
+    default-property-inclusion: non_null
+    time-zone: UTC
+  
+  # Common HTTP Configuration
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+  
+  # RabbitMQ Common Configuration
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 30000
+    template:
+      retry:
+        enabled: true
+        initial-interval: 2000
+        max-attempts: 3
+        max-interval: 10000
+        multiplier: 2.0
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 2000
+          max-attempts: 3
+          max-interval: 10000
+          multiplier: 2.0
+        acknowledge-mode: auto
+        prefetch: 1
+

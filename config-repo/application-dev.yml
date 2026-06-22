@@ -1,0 +1,37 @@
+# ========================================
+# Development Profile Configuration
+# ========================================
+# This file contains development-specific settings
+# Use with: --spring.profiles.active=dev
+
+spring:
+  # RabbitMQ Dev Configuration (Non-durable, ephemeral)
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    # Non-durable queues for development
+    template:
+      default-receive-queue: ""
+      exchange: ""
+      routing-key: ""
+    listener:
+      simple:
+        default-requeue-rejected: false
+        
+# RabbitMQ Queue Configuration for Dev (Non-durable)
+rabbitmq:
+  queues:
+    durable: false  # Non-durable queues for dev
+  exchanges:
+    durable: false  # Non-durable exchanges for dev
+  messages:
+    persistent: false  # Transient messages for dev
+
+logging:
+  level:
+    root: INFO
+    com.fooddelivery: DEBUG
+    org.springframework.amqp: DEBUG
+    org.springframework.rabbit: DEBUG

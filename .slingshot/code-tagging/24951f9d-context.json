@@ -1,0 +1,18 @@
+{
+  "filename": "NotificationControllerTest.java",
+  "path": "notification-service\\src\\test\\java\\com\\fooddelivery\\notification\\controller\\NotificationControllerTest.java",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "bbc0ee03": {
+      "value": "You are a senior Spring Boot + Spring Security test debugging agent. Fix 14 errors in notification-service NotificationControllerTest.\nError: All 14 test methods fail with ApplicationContext failure threshold exceeded. This means the Spring test context failed to load on the first test and all subsequent tests were skipped.\nRoot cause: After adding Spring Security with JWT to the project, the @WebMvcTest annotation in NotificationControllerTest tries to load SecurityAutoConfiguration. The securi"
+    },
+    "abe2834d": {
+      "value": "You are a senior Spring Boot + RabbitMQ integration expert agent. My Food Delivery Microservices Platform has RabbitMQ container running and healthy on ports 5672 and 15672. Phase 2 RabbitMQ setup was started but only 30% is complete. The RabbitMQ Management UI shows 0 connections because services are not connecting to RabbitMQ yet.\nWhat is already done:\n\nRabbitMQ Docker container running (rabbitmq:3-management)\nConfig-repo application.yml has RabbitMQ common config\nEvent DTO classes created in "
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

@@ -2,9 +2,18 @@ package com.fooddelivery.order.entity;
 
 public enum OrderStatus {
     CREATED,
+    PAYMENT_PENDING,
+    PAID,
+    PAYMENT_FAILED,
+    RESTAURANT_PENDING,
+    RESTAURANT_CONFIRMED,
+    RESTAURANT_REJECTED,
     CONFIRMED,
     PREPARING,
     OUT_FOR_DELIVERY,
     DELIVERED,
-    CANCELLED
+    CANCELLED,
+    REFUND_PENDING,
+    REFUNDED,
+    FAILED
 }

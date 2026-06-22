@@ -1,0 +1,216 @@
+{
+  "user-service\\src\\test\\java\\com\\fooddelivery\\user\\UserServiceMainTest.java": {
+    "filename": "UserServiceMainTest.java",
+    "path": "user-service\\src\\test\\java\\com\\fooddelivery\\user\\UserServiceMainTest.java",
+    "version": "1.2",
+    "contextFile": "a994dcdd-context.json",
+    "chunks": {
+      "c1546b": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781196338,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "df2ea822"
+        },
+        "hash": "f682ca5b",
+        "messageId": "system_79e8b040-65b3-11f1-8360-b9f58a4ec7ec",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:15:38 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      },
+      "92e472": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781196338,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "df2ea822"
+        },
+        "hash": "f05c5c15",
+        "messageId": "system_79e8b040-65b3-11f1-8360-b9f58a4ec7ec",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/11/2026, 10:15:38 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "16": {
+        "chunkId": "c1546b",
+        "hash": "fe91c416",
+        "encoded": "@TestPropertySource(properties%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "c1546b",
+        "hash": "e4ed3c9e",
+        "encoded": "%22spring.datasource.url=jdbc:h2:mem:mainTestDb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false%22,",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "c1546b",
+        "hash": "5ac0d039",
+        "encoded": "%22spring.datasource.driver-class-name=org.h2.Driver%22,",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "c1546b",
+        "hash": "e035e4b3",
+        "encoded": "%22spring.datasource.username=sa%22,",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "c1546b",
+        "hash": "00c84036",
+        "encoded": "%22spring.datasource.password=%22,",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "c1546b",
+        "hash": "39f34ab3",
+        "encoded": "%22spring.jpa.database-platform=org.hibernate.dialect.H2Dialect%22,",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "c1546b",
+        "hash": "6b70ccd3",
+        "encoded": "%22spring.jpa.hibernate.ddl-auto=create-drop%22,",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "c1546b",
+        "hash": "e85b5021",
+        "encoded": "%22eureka.client.enabled=false%22,",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "c1546b",
+        "hash": "e237063b",
+        "encoded": "%22spring.cloud.discovery.enabled=false%22,",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "c1546b",
+        "hash": "a395ea71",
+        "encoded": "%22management.endpoints.web.exposure.include=health,info%22,",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "c1546b",
+        "hash": "33b8c310",
+        "encoded": "%22management.endpoint.health.show-details=always%22,",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "c1546b",
+        "hash": "31d31127",
+        "encoded": "%22logging.level.com.fooddelivery.user=DEBUG%22,",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "c1546b",
+        "hash": "bd33280a",
+        "encoded": "%22jwt.secret=test-secret-key-for-unit-testing-must-be-long-enough-for-hs256-algorithm-food-delivery%22,",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "c1546b",
+        "hash": "6cb3e2c0",
+        "encoded": "%22jwt.expiration=86400000%22",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "c1546b",
+        "hash": "254ff795",
+        "encoded": "%7D)",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "92e472",
+        "hash": "2f685da2",
+        "encoded": "String%5B%5D%20args%20=%20new%20String%5B%5D%7B",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "92e472",
+        "hash": "dd42c04d",
+        "encoded": "%22--spring.datasource.url=jdbc:h2:mem:maintest;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false%22,",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "92e472",
+        "hash": "bd969672",
+        "encoded": "%22--spring.datasource.driver-class-name=org.h2.Driver%22,",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "92e472",
+        "hash": "f943f7f6",
+        "encoded": "%22--spring.datasource.username=sa%22,",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "92e472",
+        "hash": "f8839d3a",
+        "encoded": "%22--spring.datasource.password=%22,",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "92e472",
+        "hash": "9d6d6c59",
+        "encoded": "%22--spring.jpa.database-platform=org.hibernate.dialect.H2Dialect%22,",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "92e472",
+        "hash": "f1526aef",
+        "encoded": "%22--spring.jpa.hibernate.ddl-auto=create-drop%22,",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "92e472",
+        "hash": "e0795fc0",
+        "encoded": "%22--eureka.client.enabled=false%22,",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "92e472",
+        "hash": "96c00676",
+        "encoded": "%22--spring.cloud.discovery.enabled=false%22,",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "92e472",
+        "hash": "1a4fc5fb",
+        "encoded": "%22--server.port=0%22,",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "92e472",
+        "hash": "734612b7",
+        "encoded": "%22--jwt.secret=test-secret-key-for-unit-testing-must-be-long-enough-for-hs256-algorithm-food-delivery%22,",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "92e472",
+        "hash": "a91dfcce",
+        "encoded": "%22--jwt.expiration=86400000%22",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "92e472",
+        "hash": "a50e1a88",
+        "encoded": "%7D;",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

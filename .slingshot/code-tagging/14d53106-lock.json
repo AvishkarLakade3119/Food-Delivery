@@ -1,0 +1,2370 @@
+{
+  "README-SCRIPTS.md": {
+    "filename": "README-SCRIPTS.md",
+    "path": "README-SCRIPTS.md",
+    "version": "1.2",
+    "contextFile": "14d53106-context.json",
+    "chunks": {
+      "90eb8a": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781254569,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "1b1194f4"
+        },
+        "hash": "3a7097e7",
+        "messageId": "system_b7e54bb0-663a-11f1-895d-cd57985b5050",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/12/2026, 2:26:09 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "90eb8a",
+        "hash": "1d76a73c",
+        "encoded": "#%20Food%20Delivery%20Microservices%20-%20Automation%20Scripts%20Guide",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "90eb8a",
+        "hash": "438e49c5",
+        "encoded": "**Complete%20Solution%20for%20Diagnosis,%20Fixes,%20Startup,%20and%20Testing**",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "90eb8a",
+        "hash": "15783c36",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "90eb8a",
+        "hash": "e411cd88",
+        "encoded": "##%20%F0%9F%9A%80%20Quick%20Start%20(3%20Commands)",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "90eb8a",
+        "hash": "13fbd246",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "90eb8a",
+        "hash": "bcab2910",
+        "encoded": "#%201.%20Diagnose%20your%20system",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "90eb8a",
+        "hash": "b6ee3d1d",
+        "encoded": ".%5Cdiagnose-all.ps1",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "90eb8a",
+        "hash": "7c4e7e88",
+        "encoded": "#%202.%20Fix%20any%20issues%20found",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "90eb8a",
+        "hash": "0a031ea9",
+        "encoded": ".%5Cfix-all.ps1",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "90eb8a",
+        "hash": "4ae375a5",
+        "encoded": "#%203.%20Start%20all%20services",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "90eb8a",
+        "hash": "a20a9ffa",
+        "encoded": ".%5Cstart-all-services.ps1",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "90eb8a",
+        "hash": "0c3f91cc",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "90eb8a",
+        "hash": "ab9733e7",
+        "encoded": "**That's%20it!**%20Your%20entire%20microservices%20platform%20is%20now%20running.",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "90eb8a",
+        "hash": "14243945",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "90eb8a",
+        "hash": "73737a1b",
+        "encoded": "##%20%F0%9F%93%81%20Available%20Scripts",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "90eb8a",
+        "hash": "9b1cd341",
+        "encoded": "%7C%20Script%20%7C%20Purpose%20%7C%20When%20to%20Use%20%7C",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "90eb8a",
+        "hash": "f3ae2a07",
+        "encoded": "%7C--------%7C---------%7C-------------%7C",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "90eb8a",
+        "hash": "7f681b27",
+        "encoded": "%7C%20%60diagnose-all.ps1%60%20%7C%20Complete%20system%20diagnostic%20%7C%20Before%20starting%20services%20%7C",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "90eb8a",
+        "hash": "5f97df96",
+        "encoded": "%7C%20%60fix-all.ps1%60%20%7C%20Automated%20issue%20resolution%20%7C%20When%20diagnostics%20show%20errors%20%7C",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "90eb8a",
+        "hash": "b6cdc582",
+        "encoded": "%7C%20%60start-all-services.ps1%60%20%7C%20Start%20all%20services%20in%20order%20%7C%20To%20launch%20the%20platform%20%7C",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "90eb8a",
+        "hash": "88167993",
+        "encoded": "%7C%20%60verify-system.ps1%60%20%7C%20Health%20check%20all%20services%20%7C%20After%20services%20are%20running%20%7C",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "90eb8a",
+        "hash": "4b30b9cb",
+        "encoded": "%7C%20%60run-e2e-tests.ps1%60%20%7C%20Execute%20E2E%20tests%20%7C%20To%20validate%20functionality%20%7C",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "90eb8a",
+        "hash": "e1c96dc2",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "90eb8a",
+        "hash": "8b7b6f03",
+        "encoded": "##%20%F0%9F%94%8D%20diagnose-all.ps1",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "90eb8a",
+        "hash": "626dbab3",
+        "encoded": "**Purpose:**%20Comprehensive%20pre-flight%20check%20before%20starting%20services",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "90eb8a",
+        "hash": "4da235ea",
+        "encoded": "###%20What%20It%20Checks",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "90eb8a",
+        "hash": "a2fb4f75",
+        "encoded": "%E2%9C%85%20Java%2017+%20installation",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "90eb8a",
+        "hash": "9ef8ea05",
+        "encoded": "%E2%9C%85%20Maven%20installation",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "90eb8a",
+        "hash": "aa912a3d",
+        "encoded": "%E2%9C%85%20Port%20availability%20(8888,%208761,%208080,%208081-8085,%209090)",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "90eb8a",
+        "hash": "c13ed873",
+        "encoded": "%E2%9C%85%20All%20pom.xml%20files%20validity",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "90eb8a",
+        "hash": "992ceb69",
+        "encoded": "%E2%9C%85%20Spring%20Boot/Cloud%20version%20compatibility",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "90eb8a",
+        "hash": "661c34ae",
+        "encoded": "%E2%9C%85%20Configuration%20files%20existence",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "90eb8a",
+        "hash": "555e6d36",
+        "encoded": "%E2%9C%85%20Database%20configurations",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "90eb8a",
+        "hash": "00c2a179",
+        "encoded": "%E2%9C%85%20WireMock%20directory%20structure",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "90eb8a",
+        "hash": "83edc8f7",
+        "encoded": "%E2%9C%85%20Maven%20compilation%20validation",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "90eb8a",
+        "hash": "d6f5dff3",
+        "encoded": "%E2%9C%85%20Service%20health%20(if%20already%20running)",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "90eb8a",
+        "hash": "ecd70455",
+        "encoded": "###%20Usage",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "90eb8a",
+        "hash": "0b18912d",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "90eb8a",
+        "hash": "d9d40642",
+        "encoded": "#%20Basic%20diagnostic",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "90eb8a",
+        "hash": "94f34db8",
+        "encoded": ".%5Cdiagnose-all.ps1",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "90eb8a",
+        "hash": "e3f52b4e",
+        "encoded": "#%20Verbose%20output%20with%20detailed%20logs",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "90eb8a",
+        "hash": "4823e432",
+        "encoded": ".%5Cdiagnose-all.ps1%20-Verbose",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "90eb8a",
+        "hash": "d24c2ee5",
+        "encoded": "#%20Export%20diagnostic%20report%20to%20file",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "90eb8a",
+        "hash": "b711074b",
+        "encoded": ".%5Cdiagnose-all.ps1%20-ExportReport",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "90eb8a",
+        "hash": "666504fe",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "90eb8a",
+        "hash": "4c3f5f35",
+        "encoded": "###%20Output%20Example",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "90eb8a",
+        "hash": "dfb5484c",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "90eb8a",
+        "hash": "ed9a3802",
+        "encoded": "%E2%9C%93%20Java%2017%20detected%20(Required:%20Java%2017+)",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "90eb8a",
+        "hash": "5b45bfe6",
+        "encoded": "%E2%9C%93%20Maven%20detected:%203.9.5",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "90eb8a",
+        "hash": "3a496266",
+        "encoded": "%E2%9C%93%20Port%208888%20(Config%20Server)%20is%20AVAILABLE",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "90eb8a",
+        "hash": "381d9d82",
+        "encoded": "%E2%9C%93%20Port%208761%20(Eureka%20Server)%20is%20AVAILABLE",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "90eb8a",
+        "hash": "60f559bb",
+        "encoded": "%E2%9C%93%20Valid%20POM:%20pom.xml%20(food-delivery-system)",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "90eb8a",
+        "hash": "db738a2c",
+        "encoded": "%E2%9C%93%20Spring%20Boot%20and%20Cloud%20versions%20are%20compatible",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "90eb8a",
+        "hash": "53a28063",
+        "encoded": "%E2%9C%93%20Configuration%20file%20exists:%20config-repo/application.yml",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "90eb8a",
+        "hash": "c2a0ce1e",
+        "encoded": "%E2%95%94%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%97",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "90eb8a",
+        "hash": "0fd638be",
+        "encoded": "%E2%95%91%20%20%E2%9C%93%20ALL%20CHECKS%20PASSED%20-%20SYSTEM%20READY%20FOR%20STARTUP%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%95%91",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "90eb8a",
+        "hash": "463c695a",
+        "encoded": "%E2%95%9A%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%9D",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "90eb8a",
+        "hash": "3b0706cd",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "90eb8a",
+        "hash": "6d0a3a7c",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "90eb8a",
+        "hash": "ac53f4b3",
+        "encoded": "##%20%F0%9F%94%A7%20fix-all.ps1",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "90eb8a",
+        "hash": "5cc12c2e",
+        "encoded": "**Purpose:**%20Automatically%20fix%20common%20issues%20detected%20by%20diagnostics",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "90eb8a",
+        "hash": "cda0fd98",
+        "encoded": "###%20What%20It%20Fixes",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "90eb8a",
+        "hash": "0699ffd0",
+        "encoded": "%E2%9C%85%20Kills%20processes%20on%20conflicting%20ports",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "90eb8a",
+        "hash": "37dddfa5",
+        "encoded": "%E2%9C%85%20Creates%20missing%20directories%20(logs,%20wiremock/*)",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "90eb8a",
+        "hash": "e88e339d",
+        "encoded": "%E2%9C%85%20Sets%20up%20config-repo%20in%20user%20home%20directory",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "90eb8a",
+        "hash": "7eee0c36",
+        "encoded": "%E2%9C%85%20Validates%20database%20configurations",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "90eb8a",
+        "hash": "2ed04fcd",
+        "encoded": "%E2%9C%85%20Creates%20backup%20before%20making%20changes",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "90eb8a",
+        "hash": "0acd2b80",
+        "encoded": "%E2%9C%85%20Optionally%20runs%20clean%20Maven%20build",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "90eb8a",
+        "hash": "8095651e",
+        "encoded": "%E2%9C%85%20Verifies%20environment%20variables",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "90eb8a",
+        "hash": "300cd127",
+        "encoded": "###%20Usage",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "90eb8a",
+        "hash": "ed70c426",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "90eb8a",
+        "hash": "3feed321",
+        "encoded": "#%20Standard%20usage%20(with%20confirmation%20and%20backup)",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "90eb8a",
+        "hash": "3eb537d6",
+        "encoded": ".%5Cfix-all.ps1",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "90eb8a",
+        "hash": "793815c1",
+        "encoded": "#%20Skip%20backup%20(not%20recommended)",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "90eb8a",
+        "hash": "745b5202",
+        "encoded": ".%5Cfix-all.ps1%20-SkipBackup",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "90eb8a",
+        "hash": "ed74f1fc",
+        "encoded": "#%20Force%20execution%20without%20prompts",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "90eb8a",
+        "hash": "3cb3f483",
+        "encoded": ".%5Cfix-all.ps1%20-Force",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "90eb8a",
+        "hash": "e52b4fee",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "90eb8a",
+        "hash": "3bafee01",
+        "encoded": "###%20Safety%20Features",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "90eb8a",
+        "hash": "6bc5e8a6",
+        "encoded": "-%20**Automatic%20Backup**:%20Creates%20timestamped%20backup%20before%20changes",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "90eb8a",
+        "hash": "8ca3e17b",
+        "encoded": "-%20**Confirmation%20Prompts**:%20Asks%20before%20making%20changes",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "90eb8a",
+        "hash": "9d0fcf1f",
+        "encoded": "-%20**Rollback%20Support**:%20Backup%20can%20be%20restored%20if%20needed",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "90eb8a",
+        "hash": "a9a165c0",
+        "encoded": "###%20Output%20Example",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "90eb8a",
+        "hash": "34ee810d",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "90eb8a",
+        "hash": "f369afa6",
+        "encoded": "%E2%9C%93%20Backup%20completed:%20backup-20260612-143022",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "90eb8a",
+        "hash": "0491f08c",
+        "encoded": "%E2%9C%93%20Port%208888%20freed%20successfully",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "90eb8a",
+        "hash": "5043c2de",
+        "encoded": "%E2%9C%93%20Created%20directory:%20e2e-tests/wiremock/mappings",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "90eb8a",
+        "hash": "1804cc24",
+        "encoded": "%E2%9C%93%20Config%20repository%20exists%20in%20user%20home%20directory",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "90eb8a",
+        "hash": "08b25c84",
+        "encoded": "%E2%95%94%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%97",
+        "prevChunkIds": []
+      },
+      "125": {
+        "chunkId": "90eb8a",
+        "hash": "880bbad7",
+        "encoded": "%E2%95%91%20%20%E2%9C%93%20FIXES%20COMPLETED%20-%20READY%20TO%20START%20SERVICES%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%95%91",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "90eb8a",
+        "hash": "ebded627",
+        "encoded": "%E2%95%9A%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%9D",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "90eb8a",
+        "hash": "b23b66af",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "90eb8a",
+        "hash": "d551940d",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "90eb8a",
+        "hash": "71ce7697",
+        "encoded": "##%20%F0%9F%9A%80%20start-all-services.ps1",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "90eb8a",
+        "hash": "81cb57fd",
+        "encoded": "**Purpose:**%20Start%20all%20microservices%20in%20correct%20order%20with%20health%20monitoring",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "90eb8a",
+        "hash": "20019308",
+        "encoded": "###%20Startup%20Sequence",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "90eb8a",
+        "hash": "518833cd",
+        "encoded": "1.%20**Config%20Server**%20(Port%208888)%20%E2%86%92%20Wait%20for%20health%20endpoint",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "90eb8a",
+        "hash": "bfa6ef39",
+        "encoded": "2.%20**Eureka%20Server**%20(Port%208761)%20%E2%86%92%20Wait%20for%20dashboard",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "90eb8a",
+        "hash": "1dde41c7",
+        "encoded": "3.%20**Business%20Services**%20(Parallel)%20%E2%86%92%20Wait%20for%20Eureka%20registration",
+        "prevChunkIds": []
+      },
+      "140": {
+        "chunkId": "90eb8a",
+        "hash": "dd307932",
+        "encoded": "-%20User%20Service%20(8085)",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "90eb8a",
+        "hash": "25a3d17a",
+        "encoded": "-%20Restaurant%20Service%20(8082)",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "90eb8a",
+        "hash": "b568b1a0",
+        "encoded": "-%20Order%20Service%20(8083)",
+        "prevChunkIds": []
+      },
+      "143": {
+        "chunkId": "90eb8a",
+        "hash": "fbbfd7e4",
+        "encoded": "-%20Payment%20Service%20(8084)",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "90eb8a",
+        "hash": "e5296ff5",
+        "encoded": "-%20Notification%20Service%20(8081)",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "90eb8a",
+        "hash": "46cf9126",
+        "encoded": "4.%20**API%20Gateway**%20(Port%208080)%20%E2%86%92%20Wait%20for%20route%20configuration",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "90eb8a",
+        "hash": "c00fa81f",
+        "encoded": "###%20Features",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "90eb8a",
+        "hash": "5cf4b494",
+        "encoded": "%E2%9C%85%20Health%20check%20after%20each%20service%20starts",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "90eb8a",
+        "hash": "9da402af",
+        "encoded": "%E2%9C%85%20Eureka%20registration%20verification",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "90eb8a",
+        "hash": "2ebd074f",
+        "encoded": "%E2%9C%85%20Automatic%20Eureka%20Dashboard%20opening",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "90eb8a",
+        "hash": "a1077cb8",
+        "encoded": "%E2%9C%85%20Color-coded%20real-time%20status%20updates",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "90eb8a",
+        "hash": "73ccde86",
+        "encoded": "%E2%9C%85%20Timeout%20handling%20with%20graceful%20failures",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "90eb8a",
+        "hash": "e87172b7",
+        "encoded": "%E2%9C%85%20Process%20tracking%20for%20easy%20shutdown",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "90eb8a",
+        "hash": "e6a8a4c4",
+        "encoded": "###%20Usage",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "90eb8a",
+        "hash": "de7b11c8",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "90eb8a",
+        "hash": "f1aee068",
+        "encoded": "#%20Full%20startup%20with%20build",
+        "prevChunkIds": []
+      },
+      "160": {
+        "chunkId": "90eb8a",
+        "hash": "8bc6257b",
+        "encoded": ".%5Cstart-all-services.ps1",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "90eb8a",
+        "hash": "7e38edff",
+        "encoded": "#%20Skip%20build%20(faster,%20uses%20existing%20JARs)",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "90eb8a",
+        "hash": "38a9d38e",
+        "encoded": ".%5Cstart-all-services.ps1%20-SkipBuild",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "90eb8a",
+        "hash": "f58026d8",
+        "encoded": "#%20Verbose%20output",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "90eb8a",
+        "hash": "a0ae20b8",
+        "encoded": ".%5Cstart-all-services.ps1%20-Verbose",
+        "prevChunkIds": []
+      },
+      "167": {
+        "chunkId": "90eb8a",
+        "hash": "b6f1c8b8",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "169": {
+        "chunkId": "90eb8a",
+        "hash": "eb88ba8f",
+        "encoded": "###%20Output%20Example",
+        "prevChunkIds": []
+      },
+      "171": {
+        "chunkId": "90eb8a",
+        "hash": "cea911cf",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "90eb8a",
+        "hash": "305de118",
+        "encoded": "%E2%84%B9%20Starting%20Config%20Server...",
+        "prevChunkIds": []
+      },
+      "173": {
+        "chunkId": "90eb8a",
+        "hash": "de35bbac",
+        "encoded": "%E2%9C%93%20Config%20Server%20process%20started%20(PID:%2012345)",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "90eb8a",
+        "hash": "004f481e",
+        "encoded": "%E2%84%B9%20Waiting%20for%20Config%20Server%20to%20become%20healthy...",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "90eb8a",
+        "hash": "dadbe36d",
+        "encoded": "%E2%9C%93%20Config%20Server%20is%20UP%20and%20healthy",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "90eb8a",
+        "hash": "103d8f63",
+        "encoded": "%E2%84%B9%20Starting%20Eureka%20Server...",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "90eb8a",
+        "hash": "92479df8",
+        "encoded": "%E2%9C%93%20Eureka%20Server%20is%20UP%20and%20healthy",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "90eb8a",
+        "hash": "de7213bd",
+        "encoded": "%E2%84%B9%20Opening%20Eureka%20Dashboard...",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "90eb8a",
+        "hash": "fe5a0d36",
+        "encoded": "%E2%84%B9%20Starting%20all%20business%20services%20in%20parallel...",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "90eb8a",
+        "hash": "dc602fb9",
+        "encoded": "%E2%9C%93%20User%20Service%20is%20UP%20and%20healthy",
+        "prevChunkIds": []
+      },
+      "183": {
+        "chunkId": "90eb8a",
+        "hash": "1e86539d",
+        "encoded": "%E2%9C%93%20USER-SERVICE%20registered%20with%20Eureka",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "90eb8a",
+        "hash": "99f1adbc",
+        "encoded": "%E2%95%94%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%97",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "90eb8a",
+        "hash": "24be74ae",
+        "encoded": "%E2%95%91%20%20%E2%9C%93%20STARTUP%20COMPLETE%20-%20ALL%20SERVICES%20LAUNCHED%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%95%91",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "90eb8a",
+        "hash": "4b145db2",
+        "encoded": "%E2%95%9A%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%9D",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "90eb8a",
+        "hash": "9c195bb5",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "90eb8a",
+        "hash": "777c7015",
+        "encoded": "###%20Important%20URLs",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "90eb8a",
+        "hash": "8f187ac5",
+        "encoded": "-%20**Eureka%20Dashboard**:%20http://localhost:8761",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "90eb8a",
+        "hash": "dd57a9d3",
+        "encoded": "-%20**API%20Gateway**:%20http://localhost:8080",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "90eb8a",
+        "hash": "36b961c1",
+        "encoded": "-%20**Config%20Server**:%20http://localhost:8888",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "90eb8a",
+        "hash": "98332756",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "90eb8a",
+        "hash": "c5b51a94",
+        "encoded": "##%20%E2%9C%94%EF%B8%8F%20verify-system.ps1",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "90eb8a",
+        "hash": "7c47f5d8",
+        "encoded": "**Purpose:**%20Comprehensive%20health%20check%20and%20smoke%20testing",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "90eb8a",
+        "hash": "d9b9d867",
+        "encoded": "###%20Verification%20Phases",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "90eb8a",
+        "hash": "7322d4b3",
+        "encoded": "1.%20**Service%20Health%20Checks**%20-%20All%20actuator/health%20endpoints",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "90eb8a",
+        "hash": "80c06cc9",
+        "encoded": "2.%20**Eureka%20Registration**%20-%20Verify%20all%20services%20registered",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "90eb8a",
+        "hash": "4aad7c2d",
+        "encoded": "3.%20**API%20Gateway%20Routes**%20-%20Check%20route%20configuration",
+        "prevChunkIds": []
+      },
+      "207": {
+        "chunkId": "90eb8a",
+        "hash": "51e62a71",
+        "encoded": "4.%20**Database%20Connectivity**%20-%20Verify%20database%20connections",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "90eb8a",
+        "hash": "f36d47ac",
+        "encoded": "5.%20**Smoke%20Tests**%20-%20Test%20services%20through%20API%20Gateway",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "90eb8a",
+        "hash": "39144e07",
+        "encoded": "###%20Usage",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "90eb8a",
+        "hash": "129819d5",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "213": {
+        "chunkId": "90eb8a",
+        "hash": "bcffa681",
+        "encoded": "#%20Full%20verification",
+        "prevChunkIds": []
+      },
+      "214": {
+        "chunkId": "90eb8a",
+        "hash": "bbb61c11",
+        "encoded": ".%5Cverify-system.ps1",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "90eb8a",
+        "hash": "f063d785",
+        "encoded": "#%20Skip%20smoke%20tests",
+        "prevChunkIds": []
+      },
+      "217": {
+        "chunkId": "90eb8a",
+        "hash": "7d44be74",
+        "encoded": ".%5Cverify-system.ps1%20-SkipSmokeTests",
+        "prevChunkIds": []
+      },
+      "219": {
+        "chunkId": "90eb8a",
+        "hash": "168b7498",
+        "encoded": "#%20Generate%20health%20report%20file",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "90eb8a",
+        "hash": "4f212d69",
+        "encoded": ".%5Cverify-system.ps1%20-GenerateReport",
+        "prevChunkIds": []
+      },
+      "221": {
+        "chunkId": "90eb8a",
+        "hash": "a4646b1d",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "223": {
+        "chunkId": "90eb8a",
+        "hash": "57934cbb",
+        "encoded": "###%20Output%20Example",
+        "prevChunkIds": []
+      },
+      "225": {
+        "chunkId": "90eb8a",
+        "hash": "793b03c9",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "226": {
+        "chunkId": "90eb8a",
+        "hash": "97af5a6b",
+        "encoded": "%E2%9C%93%20Config%20Server%20(Port%208888)%20-%20UP",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "90eb8a",
+        "hash": "6db3fe93",
+        "encoded": "%E2%9C%93%20Eureka%20Server%20(Port%208761)%20-%20UP",
+        "prevChunkIds": []
+      },
+      "228": {
+        "chunkId": "90eb8a",
+        "hash": "95384e21",
+        "encoded": "%E2%9C%93%20User%20Service%20(Port%208085)%20-%20UP",
+        "prevChunkIds": []
+      },
+      "229": {
+        "chunkId": "90eb8a",
+        "hash": "06c79856",
+        "encoded": "%E2%9C%93%20USER-SERVICE%20is%20registered",
+        "prevChunkIds": []
+      },
+      "230": {
+        "chunkId": "90eb8a",
+        "hash": "384304ee",
+        "encoded": "%E2%9C%93%20API%20Gateway%20routes%20endpoint%20is%20accessible",
+        "prevChunkIds": []
+      },
+      "231": {
+        "chunkId": "90eb8a",
+        "hash": "569e37f0",
+        "encoded": "%E2%9C%93%20User%20Service%20-%20Database%20connection%20OK",
+        "prevChunkIds": []
+      },
+      "232": {
+        "chunkId": "90eb8a",
+        "hash": "47150b63",
+        "encoded": "%E2%9C%93%20Smoke%20Test%201:%20User%20Service%20accessible%20through%20API%20Gateway",
+        "prevChunkIds": []
+      },
+      "234": {
+        "chunkId": "90eb8a",
+        "hash": "67fb63b8",
+        "encoded": "%E2%95%94%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%97",
+        "prevChunkIds": []
+      },
+      "235": {
+        "chunkId": "90eb8a",
+        "hash": "387fccb3",
+        "encoded": "%E2%95%91%20%20%E2%9C%93%20ALL%20VERIFICATIONS%20PASSED%20-%20SYSTEM%20FULLY%20OPERATIONAL%20%20%20%20%20%20%20%20%20%20%20%20%E2%95%91",
+        "prevChunkIds": []
+      },
+      "236": {
+        "chunkId": "90eb8a",
+        "hash": "b1f1083f",
+        "encoded": "%E2%95%9A%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%9D",
+        "prevChunkIds": []
+      },
+      "237": {
+        "chunkId": "90eb8a",
+        "hash": "0a9adfca",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "239": {
+        "chunkId": "90eb8a",
+        "hash": "39887ee3",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "241": {
+        "chunkId": "90eb8a",
+        "hash": "bd3ecaf7",
+        "encoded": "##%20%F0%9F%A7%AA%20run-e2e-tests.ps1",
+        "prevChunkIds": []
+      },
+      "243": {
+        "chunkId": "90eb8a",
+        "hash": "505cf04f",
+        "encoded": "**Purpose:**%20Execute%20comprehensive%20end-to-end%20tests",
+        "prevChunkIds": []
+      },
+      "245": {
+        "chunkId": "90eb8a",
+        "hash": "120b1097",
+        "encoded": "###%20Test%20Categories",
+        "prevChunkIds": []
+      },
+      "247": {
+        "chunkId": "90eb8a",
+        "hash": "23a4e977",
+        "encoded": "1.%20**Integration%20Tests**%20-%20Service%20integration%20verification",
+        "prevChunkIds": []
+      },
+      "248": {
+        "chunkId": "90eb8a",
+        "hash": "5bfbb8b0",
+        "encoded": "2.%20**Workflow%20Tests**%20-%20Order%20placement%20workflows",
+        "prevChunkIds": []
+      },
+      "249": {
+        "chunkId": "90eb8a",
+        "hash": "5aaad757",
+        "encoded": "3.%20**Performance%20Tests**%20-%20Load%20and%20performance%20testing",
+        "prevChunkIds": []
+      },
+      "251": {
+        "chunkId": "90eb8a",
+        "hash": "e398c1ce",
+        "encoded": "###%20Features",
+        "prevChunkIds": []
+      },
+      "253": {
+        "chunkId": "90eb8a",
+        "hash": "493fc7cb",
+        "encoded": "%E2%9C%85%20Pre-test%20service%20verification",
+        "prevChunkIds": []
+      },
+      "254": {
+        "chunkId": "90eb8a",
+        "hash": "ca1370d7",
+        "encoded": "%E2%9C%85%20Eureka%20registration%20check",
+        "prevChunkIds": []
+      },
+      "255": {
+        "chunkId": "90eb8a",
+        "hash": "b3e7e89a",
+        "encoded": "%E2%9C%85%20WireMock%20setup%20validation",
+        "prevChunkIds": []
+      },
+      "256": {
+        "chunkId": "90eb8a",
+        "hash": "23a42e4c",
+        "encoded": "%E2%9C%85%20Test%20execution%20with%20detailed%20results",
+        "prevChunkIds": []
+      },
+      "257": {
+        "chunkId": "90eb8a",
+        "hash": "55d57fda",
+        "encoded": "%E2%9C%85%20HTML%20report%20generation",
+        "prevChunkIds": []
+      },
+      "258": {
+        "chunkId": "90eb8a",
+        "hash": "585cc7b8",
+        "encoded": "%E2%9C%85%20Failure%20stack%20trace%20capture",
+        "prevChunkIds": []
+      },
+      "259": {
+        "chunkId": "90eb8a",
+        "hash": "7fb0be12",
+        "encoded": "%E2%9C%85%20Test%20coverage%20summary",
+        "prevChunkIds": []
+      },
+      "261": {
+        "chunkId": "90eb8a",
+        "hash": "db293ccb",
+        "encoded": "###%20Usage",
+        "prevChunkIds": []
+      },
+      "263": {
+        "chunkId": "90eb8a",
+        "hash": "db01146e",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "264": {
+        "chunkId": "90eb8a",
+        "hash": "0a8a5e80",
+        "encoded": "#%20Run%20all%20E2E%20tests",
+        "prevChunkIds": []
+      },
+      "265": {
+        "chunkId": "90eb8a",
+        "hash": "5e2f28d6",
+        "encoded": ".%5Crun-e2e-tests.ps1",
+        "prevChunkIds": []
+      },
+      "267": {
+        "chunkId": "90eb8a",
+        "hash": "7ed00b13",
+        "encoded": "#%20Run%20only%20integration%20tests",
+        "prevChunkIds": []
+      },
+      "268": {
+        "chunkId": "90eb8a",
+        "hash": "effe5ed5",
+        "encoded": ".%5Crun-e2e-tests.ps1%20-IntegrationOnly",
+        "prevChunkIds": []
+      },
+      "270": {
+        "chunkId": "90eb8a",
+        "hash": "551079d4",
+        "encoded": "#%20Run%20only%20workflow%20tests",
+        "prevChunkIds": []
+      },
+      "271": {
+        "chunkId": "90eb8a",
+        "hash": "9b261d26",
+        "encoded": ".%5Crun-e2e-tests.ps1%20-WorkflowOnly",
+        "prevChunkIds": []
+      },
+      "273": {
+        "chunkId": "90eb8a",
+        "hash": "0ffd2a77",
+        "encoded": "#%20Run%20only%20performance%20tests",
+        "prevChunkIds": []
+      },
+      "274": {
+        "chunkId": "90eb8a",
+        "hash": "dc921f08",
+        "encoded": ".%5Crun-e2e-tests.ps1%20-PerformanceOnly",
+        "prevChunkIds": []
+      },
+      "276": {
+        "chunkId": "90eb8a",
+        "hash": "bb8104cc",
+        "encoded": "#%20Generate%20HTML%20report",
+        "prevChunkIds": []
+      },
+      "277": {
+        "chunkId": "90eb8a",
+        "hash": "70eba6a0",
+        "encoded": ".%5Crun-e2e-tests.ps1%20-GenerateReport",
+        "prevChunkIds": []
+      },
+      "279": {
+        "chunkId": "90eb8a",
+        "hash": "6477b08c",
+        "encoded": "#%20Skip%20service%20verification%20(not%20recommended)",
+        "prevChunkIds": []
+      },
+      "280": {
+        "chunkId": "90eb8a",
+        "hash": "7d24642f",
+        "encoded": ".%5Crun-e2e-tests.ps1%20-SkipServiceCheck",
+        "prevChunkIds": []
+      },
+      "281": {
+        "chunkId": "90eb8a",
+        "hash": "be4faeb5",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "283": {
+        "chunkId": "90eb8a",
+        "hash": "8db1a9ee",
+        "encoded": "###%20Output%20Example",
+        "prevChunkIds": []
+      },
+      "285": {
+        "chunkId": "90eb8a",
+        "hash": "49992ac4",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "286": {
+        "chunkId": "90eb8a",
+        "hash": "d3d50527",
+        "encoded": "%E2%9C%93%20Config%20Server%20is%20UP",
+        "prevChunkIds": []
+      },
+      "287": {
+        "chunkId": "90eb8a",
+        "hash": "4347a6b7",
+        "encoded": "%E2%9C%93%20Eureka%20Server%20is%20UP",
+        "prevChunkIds": []
+      },
+      "288": {
+        "chunkId": "90eb8a",
+        "hash": "9f55c4fe",
+        "encoded": "%E2%9C%93%20USER-SERVICE%20is%20registered%20with%20Eureka",
+        "prevChunkIds": []
+      },
+      "289": {
+        "chunkId": "90eb8a",
+        "hash": "61e84175",
+        "encoded": "%E2%9C%93%20WireMock%20directory%20exists:%20e2e-tests/wiremock/mappings",
+        "prevChunkIds": []
+      },
+      "291": {
+        "chunkId": "90eb8a",
+        "hash": "c8f18bb4",
+        "encoded": "%E2%84%B9%20Running%20test:%20ServiceIntegrationTest",
+        "prevChunkIds": []
+      },
+      "292": {
+        "chunkId": "90eb8a",
+        "hash": "cb9ac782",
+        "encoded": "%E2%9C%93%20ServiceIntegrationTest:%20PASSED%20(15%20tests)",
+        "prevChunkIds": []
+      },
+      "294": {
+        "chunkId": "90eb8a",
+        "hash": "56a941ac",
+        "encoded": "%E2%84%B9%20Running%20test:%20OrderPlacementWorkflowE2ETest",
+        "prevChunkIds": []
+      },
+      "295": {
+        "chunkId": "90eb8a",
+        "hash": "605c65d2",
+        "encoded": "%E2%9C%93%20OrderPlacementWorkflowE2ETest:%20PASSED%20(8%20tests)",
+        "prevChunkIds": []
+      },
+      "297": {
+        "chunkId": "90eb8a",
+        "hash": "d7063f71",
+        "encoded": "Test%20Execution%20Summary:",
+        "prevChunkIds": []
+      },
+      "298": {
+        "chunkId": "90eb8a",
+        "hash": "a91f13bd",
+        "encoded": "======================",
+        "prevChunkIds": []
+      },
+      "299": {
+        "chunkId": "90eb8a",
+        "hash": "10b09613",
+        "encoded": "Total%20Tests:%20%20%2023",
+        "prevChunkIds": []
+      },
+      "300": {
+        "chunkId": "90eb8a",
+        "hash": "2f9ccd84",
+        "encoded": "%E2%9C%93%20Passed:%20%20%20%20%20%20%20%2023",
+        "prevChunkIds": []
+      },
+      "301": {
+        "chunkId": "90eb8a",
+        "hash": "b6d06830",
+        "encoded": "%E2%9C%97%20Failed:%20%20%20%20%20%20%20%200",
+        "prevChunkIds": []
+      },
+      "302": {
+        "chunkId": "90eb8a",
+        "hash": "075719f9",
+        "encoded": "%E2%9A%A0%20Skipped:%20%20%20%20%20%20%200",
+        "prevChunkIds": []
+      },
+      "304": {
+        "chunkId": "90eb8a",
+        "hash": "262c0976",
+        "encoded": "Success%20Rate:%20%20100%25",
+        "prevChunkIds": []
+      },
+      "306": {
+        "chunkId": "90eb8a",
+        "hash": "ce98f445",
+        "encoded": "%E2%95%94%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%97",
+        "prevChunkIds": []
+      },
+      "307": {
+        "chunkId": "90eb8a",
+        "hash": "8080ae82",
+        "encoded": "%E2%95%91%20%20%E2%9C%93%20ALL%20E2E%20TESTS%20PASSED%20-%20SYSTEM%20VERIFIED%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%95%91",
+        "prevChunkIds": []
+      },
+      "308": {
+        "chunkId": "90eb8a",
+        "hash": "48caf19e",
+        "encoded": "%E2%95%9A%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%90%E2%95%9D",
+        "prevChunkIds": []
+      },
+      "309": {
+        "chunkId": "90eb8a",
+        "hash": "a9c3f9f7",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "311": {
+        "chunkId": "90eb8a",
+        "hash": "70e977fd",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "313": {
+        "chunkId": "90eb8a",
+        "hash": "909cfed7",
+        "encoded": "##%20%F0%9F%93%8A%20Complete%20Workflow",
+        "prevChunkIds": []
+      },
+      "315": {
+        "chunkId": "90eb8a",
+        "hash": "578f7fd3",
+        "encoded": "###%20First%20Time%20Setup",
+        "prevChunkIds": []
+      },
+      "317": {
+        "chunkId": "90eb8a",
+        "hash": "6747f2bc",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "318": {
+        "chunkId": "90eb8a",
+        "hash": "293785fd",
+        "encoded": "#%20Step%201:%20Diagnose%20system",
+        "prevChunkIds": []
+      },
+      "319": {
+        "chunkId": "90eb8a",
+        "hash": "d63483a2",
+        "encoded": ".%5Cdiagnose-all.ps1%20-ExportReport",
+        "prevChunkIds": []
+      },
+      "321": {
+        "chunkId": "90eb8a",
+        "hash": "b93a28ac",
+        "encoded": "#%20Step%202:%20Fix%20any%20issues",
+        "prevChunkIds": []
+      },
+      "322": {
+        "chunkId": "90eb8a",
+        "hash": "ee8aed7d",
+        "encoded": ".%5Cfix-all.ps1",
+        "prevChunkIds": []
+      },
+      "324": {
+        "chunkId": "90eb8a",
+        "hash": "a803ff09",
+        "encoded": "#%20Step%203:%20Start%20services",
+        "prevChunkIds": []
+      },
+      "325": {
+        "chunkId": "90eb8a",
+        "hash": "ac6b387f",
+        "encoded": ".%5Cstart-all-services.ps1",
+        "prevChunkIds": []
+      },
+      "327": {
+        "chunkId": "90eb8a",
+        "hash": "b5e436aa",
+        "encoded": "#%20Step%204:%20Verify%20everything%20is%20working",
+        "prevChunkIds": []
+      },
+      "328": {
+        "chunkId": "90eb8a",
+        "hash": "5fd1b544",
+        "encoded": ".%5Cverify-system.ps1%20-GenerateReport",
+        "prevChunkIds": []
+      },
+      "330": {
+        "chunkId": "90eb8a",
+        "hash": "bfe37ad4",
+        "encoded": "#%20Step%205:%20Run%20E2E%20tests",
+        "prevChunkIds": []
+      },
+      "331": {
+        "chunkId": "90eb8a",
+        "hash": "d21e022a",
+        "encoded": ".%5Crun-e2e-tests.ps1%20-GenerateReport",
+        "prevChunkIds": []
+      },
+      "332": {
+        "chunkId": "90eb8a",
+        "hash": "1cd868b6",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "334": {
+        "chunkId": "90eb8a",
+        "hash": "86dd067f",
+        "encoded": "###%20Daily%20Development%20Workflow",
+        "prevChunkIds": []
+      },
+      "336": {
+        "chunkId": "90eb8a",
+        "hash": "e258521b",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "337": {
+        "chunkId": "90eb8a",
+        "hash": "fb5c91e3",
+        "encoded": "#%20Quick%20start%20(skip%20build%20if%20no%20code%20changes)",
+        "prevChunkIds": []
+      },
+      "338": {
+        "chunkId": "90eb8a",
+        "hash": "92108d59",
+        "encoded": ".%5Cstart-all-services.ps1%20-SkipBuild",
+        "prevChunkIds": []
+      },
+      "340": {
+        "chunkId": "90eb8a",
+        "hash": "814ae45d",
+        "encoded": "#%20Verify%20services%20are%20healthy",
+        "prevChunkIds": []
+      },
+      "341": {
+        "chunkId": "90eb8a",
+        "hash": "f772b645",
+        "encoded": ".%5Cverify-system.ps1",
+        "prevChunkIds": []
+      },
+      "343": {
+        "chunkId": "90eb8a",
+        "hash": "2e3e7999",
+        "encoded": "#%20Run%20specific%20tests",
+        "prevChunkIds": []
+      },
+      "344": {
+        "chunkId": "90eb8a",
+        "hash": "24f2e692",
+        "encoded": ".%5Crun-e2e-tests.ps1%20-IntegrationOnly",
+        "prevChunkIds": []
+      },
+      "345": {
+        "chunkId": "90eb8a",
+        "hash": "e0d7dc85",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "347": {
+        "chunkId": "90eb8a",
+        "hash": "024c4a2d",
+        "encoded": "###%20Troubleshooting%20Workflow",
+        "prevChunkIds": []
+      },
+      "349": {
+        "chunkId": "90eb8a",
+        "hash": "de2b5e2c",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "350": {
+        "chunkId": "90eb8a",
+        "hash": "559e890c",
+        "encoded": "#%20Step%201:%20Run%20diagnostics",
+        "prevChunkIds": []
+      },
+      "351": {
+        "chunkId": "90eb8a",
+        "hash": "d8eae39c",
+        "encoded": ".%5Cdiagnose-all.ps1%20-Verbose%20-ExportReport",
+        "prevChunkIds": []
+      },
+      "353": {
+        "chunkId": "90eb8a",
+        "hash": "b2855c30",
+        "encoded": "#%20Step%202:%20Review%20diagnostic%20report",
+        "prevChunkIds": []
+      },
+      "354": {
+        "chunkId": "90eb8a",
+        "hash": "e9ac2109",
+        "encoded": "Get-Content%20diagnostic-report-*.txt",
+        "prevChunkIds": []
+      },
+      "356": {
+        "chunkId": "90eb8a",
+        "hash": "7f9cc300",
+        "encoded": "#%20Step%203:%20Apply%20fixes",
+        "prevChunkIds": []
+      },
+      "357": {
+        "chunkId": "90eb8a",
+        "hash": "1937a9df",
+        "encoded": ".%5Cfix-all.ps1",
+        "prevChunkIds": []
+      },
+      "359": {
+        "chunkId": "90eb8a",
+        "hash": "f35a2d20",
+        "encoded": "#%20Step%204:%20Verify%20fixes",
+        "prevChunkIds": []
+      },
+      "360": {
+        "chunkId": "90eb8a",
+        "hash": "5b72be18",
+        "encoded": ".%5Cdiagnose-all.ps1",
+        "prevChunkIds": []
+      },
+      "362": {
+        "chunkId": "90eb8a",
+        "hash": "88ab482b",
+        "encoded": "#%20Step%205:%20Restart%20services",
+        "prevChunkIds": []
+      },
+      "363": {
+        "chunkId": "90eb8a",
+        "hash": "559fdeb9",
+        "encoded": ".%5Cstart-all-services.ps1",
+        "prevChunkIds": []
+      },
+      "364": {
+        "chunkId": "90eb8a",
+        "hash": "79c7f02b",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "366": {
+        "chunkId": "90eb8a",
+        "hash": "ecee4540",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "368": {
+        "chunkId": "90eb8a",
+        "hash": "40cdbbb7",
+        "encoded": "##%20%F0%9F%93%9D%20Documentation%20Files",
+        "prevChunkIds": []
+      },
+      "370": {
+        "chunkId": "90eb8a",
+        "hash": "a1d2533e",
+        "encoded": "%7C%20File%20%7C%20Description%20%7C",
+        "prevChunkIds": []
+      },
+      "371": {
+        "chunkId": "90eb8a",
+        "hash": "312faca8",
+        "encoded": "%7C------%7C-------------%7C",
+        "prevChunkIds": []
+      },
+      "372": {
+        "chunkId": "90eb8a",
+        "hash": "2985aeda",
+        "encoded": "%7C%20%60COMPLETE-SETUP-GUIDE.md%60%20%7C%20Comprehensive%20setup,%20troubleshooting,%20and%20API%20documentation%20%7C",
+        "prevChunkIds": []
+      },
+      "373": {
+        "chunkId": "90eb8a",
+        "hash": "f423b6a0",
+        "encoded": "%7C%20%60README-SCRIPTS.md%60%20%7C%20This%20file%20-%20script%20usage%20guide%20%7C",
+        "prevChunkIds": []
+      },
+      "374": {
+        "chunkId": "90eb8a",
+        "hash": "57ea5e8a",
+        "encoded": "%7C%20%60API_TESTING_REPORT.md%60%20%7C%20API%20endpoint%20testing%20results%20%7C",
+        "prevChunkIds": []
+      },
+      "375": {
+        "chunkId": "90eb8a",
+        "hash": "9b61ee85",
+        "encoded": "%7C%20%60COMPREHENSIVE_HEALTH_CHECK_REPORT.md%60%20%7C%20System%20health%20check%20results%20%7C",
+        "prevChunkIds": []
+      },
+      "377": {
+        "chunkId": "90eb8a",
+        "hash": "b98a9cac",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "379": {
+        "chunkId": "90eb8a",
+        "hash": "4d2aa4f7",
+        "encoded": "##%20%E2%9A%99%EF%B8%8F%20Configuration%20Files",
+        "prevChunkIds": []
+      },
+      "381": {
+        "chunkId": "90eb8a",
+        "hash": "c9be2c70",
+        "encoded": "###%20Config%20Repository%20Structure",
+        "prevChunkIds": []
+      },
+      "383": {
+        "chunkId": "90eb8a",
+        "hash": "65d39c7a",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "384": {
+        "chunkId": "90eb8a",
+        "hash": "8fb7a6f8",
+        "encoded": "config-repo/",
+        "prevChunkIds": []
+      },
+      "385": {
+        "chunkId": "90eb8a",
+        "hash": "37c64c32",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20application.yml%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20Shared%20configuration",
+        "prevChunkIds": []
+      },
+      "386": {
+        "chunkId": "90eb8a",
+        "hash": "0c8fcfa2",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20user-service.yml%20%20%20%20%20%20%20%20%20%20%20%20#%20User%20service%20config",
+        "prevChunkIds": []
+      },
+      "387": {
+        "chunkId": "90eb8a",
+        "hash": "e922e3e0",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20restaurant-service.yml%20%20%20%20%20%20#%20Restaurant%20service%20config",
+        "prevChunkIds": []
+      },
+      "388": {
+        "chunkId": "90eb8a",
+        "hash": "2b249bfa",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20order-service.yml%20%20%20%20%20%20%20%20%20%20%20#%20Order%20service%20config",
+        "prevChunkIds": []
+      },
+      "389": {
+        "chunkId": "90eb8a",
+        "hash": "cc3275df",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20payment-service.yml%20%20%20%20%20%20%20%20%20#%20Payment%20service%20config",
+        "prevChunkIds": []
+      },
+      "390": {
+        "chunkId": "90eb8a",
+        "hash": "3d9ccdc8",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20notification-service.yml%20%20%20%20#%20Notification%20service%20config",
+        "prevChunkIds": []
+      },
+      "391": {
+        "chunkId": "90eb8a",
+        "hash": "603e3325",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20api-gateway.yml%20%20%20%20%20%20%20%20%20%20%20%20%20#%20API%20Gateway%20config",
+        "prevChunkIds": []
+      },
+      "392": {
+        "chunkId": "90eb8a",
+        "hash": "ccfd39f3",
+        "encoded": "%E2%94%94%E2%94%80%E2%94%80%20eureka-server.yml%20%20%20%20%20%20%20%20%20%20%20#%20Eureka%20Server%20config",
+        "prevChunkIds": []
+      },
+      "393": {
+        "chunkId": "90eb8a",
+        "hash": "65b86e00",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "395": {
+        "chunkId": "90eb8a",
+        "hash": "9a9a5d02",
+        "encoded": "###%20Important%20Configuration%20Locations",
+        "prevChunkIds": []
+      },
+      "397": {
+        "chunkId": "90eb8a",
+        "hash": "e68e7368",
+        "encoded": "-%20**Config%20Server**:%20%60config-server/src/main/resources/application.yml%60",
+        "prevChunkIds": []
+      },
+      "398": {
+        "chunkId": "90eb8a",
+        "hash": "4507dc9a",
+        "encoded": "-%20**Service%20Configs**:%20%60%7Bservice%7D/src/main/resources/application.yml%60",
+        "prevChunkIds": []
+      },
+      "399": {
+        "chunkId": "90eb8a",
+        "hash": "26ba67f3",
+        "encoded": "-%20**Test%20Configs**:%20%60%7Bservice%7D/src/test/resources/application-test.yml%60",
+        "prevChunkIds": []
+      },
+      "400": {
+        "chunkId": "90eb8a",
+        "hash": "91c47a7c",
+        "encoded": "-%20**E2E%20Test%20Config**:%20%60e2e-tests/src/test/resources/application-e2e-test.yml%60",
+        "prevChunkIds": []
+      },
+      "402": {
+        "chunkId": "90eb8a",
+        "hash": "6ece3154",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "404": {
+        "chunkId": "90eb8a",
+        "hash": "4b9dd1c6",
+        "encoded": "##%20%F0%9F%90%9E%20Common%20Issues%20and%20Quick%20Fixes",
+        "prevChunkIds": []
+      },
+      "406": {
+        "chunkId": "90eb8a",
+        "hash": "54c83d4a",
+        "encoded": "###%20Port%20Already%20in%20Use",
+        "prevChunkIds": []
+      },
+      "408": {
+        "chunkId": "90eb8a",
+        "hash": "727b4b51",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "409": {
+        "chunkId": "90eb8a",
+        "hash": "dddd243c",
+        "encoded": ".%5Cfix-all.ps1%20%20#%20Automatically%20kills%20processes%20on%20conflicting%20ports",
+        "prevChunkIds": []
+      },
+      "410": {
+        "chunkId": "90eb8a",
+        "hash": "fcb094a4",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "412": {
+        "chunkId": "90eb8a",
+        "hash": "428151f7",
+        "encoded": "###%20Config%20Server%20Not%20Found",
+        "prevChunkIds": []
+      },
+      "414": {
+        "chunkId": "90eb8a",
+        "hash": "ade4d9b3",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "415": {
+        "chunkId": "90eb8a",
+        "hash": "fabe29df",
+        "encoded": ".%5Cfix-all.ps1%20%20#%20Sets%20up%20config-repo%20in%20user%20home%20directory",
+        "prevChunkIds": []
+      },
+      "416": {
+        "chunkId": "90eb8a",
+        "hash": "1adde9fb",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "418": {
+        "chunkId": "90eb8a",
+        "hash": "7d56b01b",
+        "encoded": "###%20Services%20Not%20Registering%20with%20Eureka",
+        "prevChunkIds": []
+      },
+      "420": {
+        "chunkId": "90eb8a",
+        "hash": "048abfb4",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "421": {
+        "chunkId": "90eb8a",
+        "hash": "2e88005f",
+        "encoded": "#%20Wait%2030-60%20seconds%20after%20Eureka%20starts",
+        "prevChunkIds": []
+      },
+      "422": {
+        "chunkId": "90eb8a",
+        "hash": "569494e6",
+        "encoded": "#%20Check%20Eureka%20Dashboard:%20http://localhost:8761",
+        "prevChunkIds": []
+      },
+      "423": {
+        "chunkId": "90eb8a",
+        "hash": "0e10142b",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "425": {
+        "chunkId": "90eb8a",
+        "hash": "5dd0e9c9",
+        "encoded": "###%20Database%20Connection%20Failed",
+        "prevChunkIds": []
+      },
+      "427": {
+        "chunkId": "90eb8a",
+        "hash": "1e1e699e",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "428": {
+        "chunkId": "90eb8a",
+        "hash": "1a2950af",
+        "encoded": "#%20Ensure%20PostgreSQL%20is%20running",
+        "prevChunkIds": []
+      },
+      "429": {
+        "chunkId": "90eb8a",
+        "hash": "457eb62b",
+        "encoded": "Get-Service%20-Name%20postgresql*",
+        "prevChunkIds": []
+      },
+      "431": {
+        "chunkId": "90eb8a",
+        "hash": "2ea6ace5",
+        "encoded": "#%20Or%20use%20H2%20in-memory%20database%20(default%20for%20tests)",
+        "prevChunkIds": []
+      },
+      "432": {
+        "chunkId": "90eb8a",
+        "hash": "6b3c508b",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "434": {
+        "chunkId": "90eb8a",
+        "hash": "73d2663f",
+        "encoded": "###%20Maven%20Build%20Failures",
+        "prevChunkIds": []
+      },
+      "436": {
+        "chunkId": "90eb8a",
+        "hash": "5980803d",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "437": {
+        "chunkId": "90eb8a",
+        "hash": "4e49c65f",
+        "encoded": "#%20Clean%20and%20rebuild",
+        "prevChunkIds": []
+      },
+      "438": {
+        "chunkId": "90eb8a",
+        "hash": "05bcb544",
+        "encoded": "mvn%20clean%20install%20-DskipTests",
+        "prevChunkIds": []
+      },
+      "440": {
+        "chunkId": "90eb8a",
+        "hash": "c7f8d622",
+        "encoded": "#%20Or%20use%20fix-all.ps1%20with%20build%20option",
+        "prevChunkIds": []
+      },
+      "441": {
+        "chunkId": "90eb8a",
+        "hash": "c177a028",
+        "encoded": ".%5Cfix-all.ps1%20%20#%20Select%20'Y'%20when%20prompted%20for%20clean%20build",
+        "prevChunkIds": []
+      },
+      "442": {
+        "chunkId": "90eb8a",
+        "hash": "0a30a901",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "444": {
+        "chunkId": "90eb8a",
+        "hash": "a4fe94c5",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "446": {
+        "chunkId": "90eb8a",
+        "hash": "819eaff2",
+        "encoded": "##%20%F0%9F%9B%A1%EF%B8%8F%20Safety%20Features",
+        "prevChunkIds": []
+      },
+      "448": {
+        "chunkId": "90eb8a",
+        "hash": "13466e81",
+        "encoded": "###%20Automatic%20Backups",
+        "prevChunkIds": []
+      },
+      "450": {
+        "chunkId": "90eb8a",
+        "hash": "72e1b67e",
+        "encoded": "-%20%60fix-all.ps1%60%20creates%20timestamped%20backups%20before%20making%20changes",
+        "prevChunkIds": []
+      },
+      "451": {
+        "chunkId": "90eb8a",
+        "hash": "b29b1f70",
+        "encoded": "-%20Backup%20location:%20%60backup-%7Btimestamp%7D/%60",
+        "prevChunkIds": []
+      },
+      "452": {
+        "chunkId": "90eb8a",
+        "hash": "53d1ee37",
+        "encoded": "-%20Includes%20config-repo%20and%20all%20service%20application.yml%20files",
+        "prevChunkIds": []
+      },
+      "454": {
+        "chunkId": "90eb8a",
+        "hash": "574040ac",
+        "encoded": "###%20Confirmation%20Prompts",
+        "prevChunkIds": []
+      },
+      "456": {
+        "chunkId": "90eb8a",
+        "hash": "e4815e7d",
+        "encoded": "-%20Scripts%20ask%20for%20confirmation%20before%20destructive%20operations",
+        "prevChunkIds": []
+      },
+      "457": {
+        "chunkId": "90eb8a",
+        "hash": "99209b6a",
+        "encoded": "-%20Use%20%60-Force%60%20flag%20to%20skip%20prompts%20(use%20with%20caution)",
+        "prevChunkIds": []
+      },
+      "459": {
+        "chunkId": "90eb8a",
+        "hash": "9b4a3470",
+        "encoded": "###%20Graceful%20Failure%20Handling",
+        "prevChunkIds": []
+      },
+      "461": {
+        "chunkId": "90eb8a",
+        "hash": "3f12d472",
+        "encoded": "-%20Scripts%20continue%20with%20warnings%20instead%20of%20failing%20completely",
+        "prevChunkIds": []
+      },
+      "462": {
+        "chunkId": "90eb8a",
+        "hash": "34eb6719",
+        "encoded": "-%20Color-coded%20output:%20Green%20(success),%20Yellow%20(warning),%20Red%20(error)",
+        "prevChunkIds": []
+      },
+      "463": {
+        "chunkId": "90eb8a",
+        "hash": "c417dd80",
+        "encoded": "-%20Detailed%20error%20messages%20with%20suggested%20fixes",
+        "prevChunkIds": []
+      },
+      "465": {
+        "chunkId": "90eb8a",
+        "hash": "e42516a8",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "467": {
+        "chunkId": "90eb8a",
+        "hash": "c9349e55",
+        "encoded": "##%20%F0%9F%93%8A%20Monitoring%20and%20Logs",
+        "prevChunkIds": []
+      },
+      "469": {
+        "chunkId": "90eb8a",
+        "hash": "00cbade7",
+        "encoded": "###%20Service%20Logs",
+        "prevChunkIds": []
+      },
+      "471": {
+        "chunkId": "90eb8a",
+        "hash": "0e5d326e",
+        "encoded": "Each%20service%20runs%20in%20its%20own%20PowerShell%20window%20with%20real-time%20logs.",
+        "prevChunkIds": []
+      },
+      "473": {
+        "chunkId": "90eb8a",
+        "hash": "6fbbda1b",
+        "encoded": "###%20Actuator%20Endpoints",
+        "prevChunkIds": []
+      },
+      "475": {
+        "chunkId": "90eb8a",
+        "hash": "7a458720",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "476": {
+        "chunkId": "90eb8a",
+        "hash": "0287e86a",
+        "encoded": "#%20Health%20check",
+        "prevChunkIds": []
+      },
+      "477": {
+        "chunkId": "90eb8a",
+        "hash": "fd00612d",
+        "encoded": "curl%20http://localhost:8085/actuator/health",
+        "prevChunkIds": []
+      },
+      "479": {
+        "chunkId": "90eb8a",
+        "hash": "48df3f65",
+        "encoded": "#%20Service%20info",
+        "prevChunkIds": []
+      },
+      "480": {
+        "chunkId": "90eb8a",
+        "hash": "b0dc16fe",
+        "encoded": "curl%20http://localhost:8085/actuator/info",
+        "prevChunkIds": []
+      },
+      "482": {
+        "chunkId": "90eb8a",
+        "hash": "035ec67d",
+        "encoded": "#%20Metrics",
+        "prevChunkIds": []
+      },
+      "483": {
+        "chunkId": "90eb8a",
+        "hash": "b1ca5293",
+        "encoded": "curl%20http://localhost:8085/actuator/metrics",
+        "prevChunkIds": []
+      },
+      "485": {
+        "chunkId": "90eb8a",
+        "hash": "f8e3e92a",
+        "encoded": "#%20Environment",
+        "prevChunkIds": []
+      },
+      "486": {
+        "chunkId": "90eb8a",
+        "hash": "2569dbad",
+        "encoded": "curl%20http://localhost:8085/actuator/env",
+        "prevChunkIds": []
+      },
+      "487": {
+        "chunkId": "90eb8a",
+        "hash": "b2f7b5fb",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "489": {
+        "chunkId": "90eb8a",
+        "hash": "f647c0d4",
+        "encoded": "###%20Eureka%20Dashboard",
+        "prevChunkIds": []
+      },
+      "491": {
+        "chunkId": "90eb8a",
+        "hash": "ba05f31a",
+        "encoded": "Monitor%20all%20registered%20services:%20http://localhost:8761",
+        "prevChunkIds": []
+      },
+      "493": {
+        "chunkId": "90eb8a",
+        "hash": "97d5faa8",
+        "encoded": "###%20API%20Gateway%20Routes",
+        "prevChunkIds": []
+      },
+      "495": {
+        "chunkId": "90eb8a",
+        "hash": "50dfa17e",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "496": {
+        "chunkId": "90eb8a",
+        "hash": "0d92cdad",
+        "encoded": "curl%20http://localhost:8080/actuator/gateway/routes",
+        "prevChunkIds": []
+      },
+      "497": {
+        "chunkId": "90eb8a",
+        "hash": "4721fdb8",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "499": {
+        "chunkId": "90eb8a",
+        "hash": "176e311b",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "501": {
+        "chunkId": "90eb8a",
+        "hash": "14d3a72f",
+        "encoded": "##%20%F0%9F%8E%AF%20Performance%20Tips",
+        "prevChunkIds": []
+      },
+      "503": {
+        "chunkId": "90eb8a",
+        "hash": "78580069",
+        "encoded": "###%20Skip%20Build%20for%20Faster%20Startup",
+        "prevChunkIds": []
+      },
+      "505": {
+        "chunkId": "90eb8a",
+        "hash": "1e4a1e4b",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "506": {
+        "chunkId": "90eb8a",
+        "hash": "1f58cda6",
+        "encoded": ".%5Cstart-all-services.ps1%20-SkipBuild",
+        "prevChunkIds": []
+      },
+      "507": {
+        "chunkId": "90eb8a",
+        "hash": "befa74f9",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "509": {
+        "chunkId": "90eb8a",
+        "hash": "42237f40",
+        "encoded": "###%20Run%20Tests%20in%20Parallel",
+        "prevChunkIds": []
+      },
+      "511": {
+        "chunkId": "90eb8a",
+        "hash": "25d40eb3",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "512": {
+        "chunkId": "90eb8a",
+        "hash": "a07038ae",
+        "encoded": "#%20Run%20different%20test%20categories%20in%20separate%20windows",
+        "prevChunkIds": []
+      },
+      "513": {
+        "chunkId": "90eb8a",
+        "hash": "c1aba3ad",
+        "encoded": "Start-Process%20powershell%20-ArgumentList%20%22.%5Crun-e2e-tests.ps1%20-IntegrationOnly%22",
+        "prevChunkIds": []
+      },
+      "514": {
+        "chunkId": "90eb8a",
+        "hash": "1e757494",
+        "encoded": "Start-Process%20powershell%20-ArgumentList%20%22.%5Crun-e2e-tests.ps1%20-WorkflowOnly%22",
+        "prevChunkIds": []
+      },
+      "515": {
+        "chunkId": "90eb8a",
+        "hash": "bf8240c0",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "517": {
+        "chunkId": "90eb8a",
+        "hash": "4b0a0f61",
+        "encoded": "###%20Increase%20Maven%20Memory",
+        "prevChunkIds": []
+      },
+      "519": {
+        "chunkId": "90eb8a",
+        "hash": "0351147c",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "520": {
+        "chunkId": "90eb8a",
+        "hash": "c68d7e91",
+        "encoded": "$env:MAVEN_OPTS%20=%20%22-Xmx2048m%22",
+        "prevChunkIds": []
+      },
+      "521": {
+        "chunkId": "90eb8a",
+        "hash": "2d37a4fb",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "523": {
+        "chunkId": "90eb8a",
+        "hash": "a2269a96",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "525": {
+        "chunkId": "90eb8a",
+        "hash": "0a21e6c6",
+        "encoded": "##%20%F0%9F%94%92%20Security%20Notes",
+        "prevChunkIds": []
+      },
+      "527": {
+        "chunkId": "90eb8a",
+        "hash": "9d5d01d4",
+        "encoded": "1.%20**Never%20commit**%20database%20passwords%20to%20config-repo",
+        "prevChunkIds": []
+      },
+      "528": {
+        "chunkId": "90eb8a",
+        "hash": "47d6af49",
+        "encoded": "2.%20Use%20**environment%20variables**%20for%20sensitive%20data",
+        "prevChunkIds": []
+      },
+      "529": {
+        "chunkId": "90eb8a",
+        "hash": "be01519d",
+        "encoded": "3.%20Rotate%20**JWT%20secrets**%20regularly",
+        "prevChunkIds": []
+      },
+      "530": {
+        "chunkId": "90eb8a",
+        "hash": "6a087bd2",
+        "encoded": "4.%20Enable%20**HTTPS**%20in%20production",
+        "prevChunkIds": []
+      },
+      "531": {
+        "chunkId": "90eb8a",
+        "hash": "dabbaf4d",
+        "encoded": "5.%20Implement%20**rate%20limiting**%20on%20API%20Gateway",
+        "prevChunkIds": []
+      },
+      "533": {
+        "chunkId": "90eb8a",
+        "hash": "53bcce95",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "535": {
+        "chunkId": "90eb8a",
+        "hash": "39b7f241",
+        "encoded": "##%20%F0%9F%93%9E%20Support",
+        "prevChunkIds": []
+      },
+      "537": {
+        "chunkId": "90eb8a",
+        "hash": "32a47873",
+        "encoded": "For%20issues%20or%20questions:",
+        "prevChunkIds": []
+      },
+      "539": {
+        "chunkId": "90eb8a",
+        "hash": "f31a1596",
+        "encoded": "1.%20Check%20%60COMPLETE-SETUP-GUIDE.md%60%20for%20detailed%20troubleshooting",
+        "prevChunkIds": []
+      },
+      "540": {
+        "chunkId": "90eb8a",
+        "hash": "32cebf2f",
+        "encoded": "2.%20Run%20%60diagnose-all.ps1%20-Verbose%20-ExportReport%60%20and%20review%20the%20report",
+        "prevChunkIds": []
+      },
+      "541": {
+        "chunkId": "90eb8a",
+        "hash": "c192ad8b",
+        "encoded": "3.%20Check%20service%20logs%20in%20PowerShell%20windows",
+        "prevChunkIds": []
+      },
+      "542": {
+        "chunkId": "90eb8a",
+        "hash": "9bc5b54b",
+        "encoded": "4.%20Verify%20Eureka%20Dashboard%20for%20service%20registration",
+        "prevChunkIds": []
+      },
+      "544": {
+        "chunkId": "90eb8a",
+        "hash": "bef475f4",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "546": {
+        "chunkId": "90eb8a",
+        "hash": "9990d44a",
+        "encoded": "##%20%F0%9F%93%9D%20Version%20Information",
+        "prevChunkIds": []
+      },
+      "548": {
+        "chunkId": "90eb8a",
+        "hash": "ea8350b4",
+        "encoded": "-%20**Spring%20Boot**:%203.2.0",
+        "prevChunkIds": []
+      },
+      "549": {
+        "chunkId": "90eb8a",
+        "hash": "20000745",
+        "encoded": "-%20**Spring%20Cloud**:%202023.0.0",
+        "prevChunkIds": []
+      },
+      "550": {
+        "chunkId": "90eb8a",
+        "hash": "51988b92",
+        "encoded": "-%20**Java**:%2017+",
+        "prevChunkIds": []
+      },
+      "551": {
+        "chunkId": "90eb8a",
+        "hash": "f2f6c7c5",
+        "encoded": "-%20**Maven**:%203.8+",
+        "prevChunkIds": []
+      },
+      "552": {
+        "chunkId": "90eb8a",
+        "hash": "9859822f",
+        "encoded": "-%20**PostgreSQL**:%2012+%20(optional,%20H2%20available)",
+        "prevChunkIds": []
+      },
+      "554": {
+        "chunkId": "90eb8a",
+        "hash": "e95d1ad7",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "556": {
+        "chunkId": "90eb8a",
+        "hash": "d6c115fa",
+        "encoded": "**Last%20Updated:**%202026-06-12",
+        "prevChunkIds": []
+      },
+      "557": {
+        "chunkId": "90eb8a",
+        "hash": "a7418c97",
+        "encoded": "**Script%20Version:**%201.0",
+        "prevChunkIds": []
+      },
+      "558": {
+        "chunkId": "90eb8a",
+        "hash": "fef1e170",
+        "encoded": "**Maintained%20By:**%20Slingshot%20AI%20Agent",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

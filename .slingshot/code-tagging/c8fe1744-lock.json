@@ -1,0 +1,91 @@
+{
+  "order-service\\src\\main\\java\\com\\fooddelivery\\order\\entity\\OrderStatus.java": {
+    "filename": "OrderStatus.java",
+    "path": "order-service\\src\\main\\java\\com\\fooddelivery\\order\\entity\\OrderStatus.java",
+    "version": "1.2",
+    "contextFile": "c8fe1744-context.json",
+    "chunks": {
+      "3502bd": {
+        "user": "Avishkar Lakade",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1781427055,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "abe2834d"
+        },
+        "hash": "7975cfcf",
+        "messageId": "system_8b07ce90-67cc-11f1-bccb-d52eed5e9338",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 6/14/2026, 2:20:55 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "3502bd",
+        "hash": "7d34acbb",
+        "encoded": "package%20com.fooddelivery.order.entity;",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "3502bd",
+        "hash": "ba405965",
+        "encoded": "public%20enum%20OrderStatus%20%7B",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "3502bd",
+        "hash": "8421a59c",
+        "encoded": "CREATED,",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "3502bd",
+        "hash": "cf1e2c9d",
+        "encoded": "PAID,",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "3502bd",
+        "hash": "3cf56f2b",
+        "encoded": "PAYMENT_FAILED,",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "3502bd",
+        "hash": "7816e012",
+        "encoded": "CONFIRMED,",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "3502bd",
+        "hash": "a3a4f0bf",
+        "encoded": "PREPARING,",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "3502bd",
+        "hash": "8b0ff293",
+        "encoded": "OUT_FOR_DELIVERY,",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "3502bd",
+        "hash": "470ba215",
+        "encoded": "DELIVERED,",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "3502bd",
+        "hash": "ee20bc2a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    },
+    "_prevLineCount": 19
+  }
+}

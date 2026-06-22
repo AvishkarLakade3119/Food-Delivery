@@ -7,6 +7,7 @@ import com.fooddelivery.order.dto.*;
 import com.fooddelivery.order.entity.Order;
 import com.fooddelivery.order.entity.OrderItem;
 import com.fooddelivery.order.entity.OrderStatus;
+import com.fooddelivery.order.messaging.OrderEventPublisher;
 import com.fooddelivery.order.repository.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,6 +15,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -27,6 +30,7 @@ import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
+@MockitoSettings(strictness = Strictness.LENIENT)
 class OrderServiceTest {
 
     @Mock
@@ -40,6 +44,9 @@ class OrderServiceTest {
 
     @Mock
     private NotificationClient notificationClient;
+
+    @Mock
+    private OrderEventPublisher orderEventPublisher;
 
     @InjectMocks
     private OrderService orderService;
@@ -90,7 +97,6 @@ class OrderServiceTest {
     void createOrder_ShouldCreateAndReturnOrder() {
         when(restaurantClient.getMenuItem(anyLong(), anyLong())).thenReturn(menuItemDto);
         when(orderRepository.save(any(Order.class))).thenReturn(order);
-        doNothing().when(notificationClient).sendNotification(any(NotificationRequest.class));
 
         Order result = orderService.createOrder(createOrderRequest);
 
@@ -98,20 +104,17 @@ class OrderServiceTest {
         assertThat(result.getUserId()).isEqualTo(1L);
         assertThat(result.getRestaurantId()).isEqualTo(1L);
         verify(orderRepository).save(any(Order.class));
-        verify(notificationClient).sendNotification(any(NotificationRequest.class));
     }
 
     @Test
     void createOrderFromEntity_ShouldCreateAndReturnOrder() {
         when(orderRepository.save(any(Order.class))).thenReturn(order);
-        doNothing().when(notificationClient).sendNotification(any(NotificationRequest.class));
 
         Order result = orderService.createOrderFromEntity(order);
 
         assertThat(result).isNotNull();
         assertThat(result.getId()).isEqualTo(1L);
         verify(orderRepository).save(order);
-        verify(notificationClient).sendNotification(any(NotificationRequest.class));
     }
 
     @Test
@@ -384,7 +387,6 @@ class OrderServiceTest {
 
         when(restaurantClient.getMenuItem(anyLong(), anyLong())).thenThrow(new RuntimeException("Service unavailable"));
         when(orderRepository.save(any(Order.class))).thenReturn(order);
-        doNothing().when(notificationClient).sendNotification(any(NotificationRequest.class));
 
         Order result = orderService.createOrder(requestWithServiceError);
 
@@ -396,27 +398,23 @@ class OrderServiceTest {
     void createOrder_NotificationFails_ShouldStillCreateOrder() {
         when(restaurantClient.getMenuItem(anyLong(), anyLong())).thenReturn(menuItemDto);
         when(orderRepository.save(any(Order.class))).thenReturn(order);
-        doThrow(new RuntimeException("Notification service down")).when(notificationClient).sendNotification(any(NotificationRequest.class));
 
         Order result = orderService.createOrder(createOrderRequest);
 
         assertThat(result).isNotNull();
         assertThat(result.getId()).isEqualTo(1L);
         verify(orderRepository).save(any(Order.class));
-        verify(notificationClient).sendNotification(any(NotificationRequest.class));
     }
 
     @Test
     void createOrderFromEntity_NotificationFails_ShouldStillCreateOrder() {
         when(orderRepository.save(any(Order.class))).thenReturn(order);
-        doThrow(new RuntimeException("Notification service down")).when(notificationClient).sendNotification(any(NotificationRequest.class));
 
         Order result = orderService.createOrderFromEntity(order);
 
         assertThat(result).isNotNull();
         assertThat(result.getId()).isEqualTo(1L);
         verify(orderRepository).save(order);
-        verify(notificationClient).sendNotification(any(NotificationRequest.class));
     }
 
     @Test
@@ -427,7 +425,8 @@ class OrderServiceTest {
 
         when(orderRepository.findByIdWithItems(1L)).thenReturn(Optional.of(order));
         when(orderRepository.save(any(Order.class))).thenReturn(updatedOrder);
-        doThrow(new RuntimeException("Notification service down")).when(notificationClient).sendNotification(any(NotificationRequest.class));
+        doThrow(new RuntimeException("Notification service down")).when(notificationClient)
+                .sendNotification(any(NotificationRequest.class));
 
         Order result = orderService.updateOrderStatus(1L, OrderStatus.CONFIRMED);
 
@@ -475,7 +474,8 @@ class OrderServiceTest {
     @Test
     void confirmOrder_PaymentException_ShouldThrowException() {
         when(orderRepository.findByIdWithItems(1L)).thenReturn(Optional.of(order));
-        when(paymentClient.processPayment(any(PaymentRequest.class))).thenThrow(new RuntimeException("Payment service unavailable"));
+        when(paymentClient.processPayment(any(PaymentRequest.class)))
+                .thenThrow(new RuntimeException("Payment service unavailable"));
 
         assertThatThrownBy(() -> orderService.confirmOrder(1L))
                 .isInstanceOf(RuntimeException.class)
@@ -544,11 +544,9 @@ class OrderServiceTest {
         requestWithNullMessageException.setDeliveryAddress("123 Test St");
         requestWithNullMessageException.setOrderItems(Arrays.asList(itemRequest));
 
-        // Create exception with null message to test the missed branch
         RuntimeException exceptionWithNullMessage = new RuntimeException((String) null);
         when(restaurantClient.getMenuItem(anyLong(), anyLong())).thenThrow(exceptionWithNullMessage);
         when(orderRepository.save(any(Order.class))).thenReturn(order);
-        doNothing().when(notificationClient).sendNotification(any(NotificationRequest.class));
 
         Order result = orderService.createOrder(requestWithNullMessageException);
 

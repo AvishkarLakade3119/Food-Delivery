@@ -1,0 +1,18 @@
+{
+  "filename": "AuthControllerTest.java",
+  "path": "user-service\\src\\test\\java\\com\\fooddelivery\\user\\controller\\AuthControllerTest.java",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "df2ea822": {
+      "value": "You are a senior Spring Boot + JWT + test fixing agent. After implementing JWT security across my Food Delivery Microservices Platform, multiple services have failing controller tests because the ApplicationContext cannot load due to missing JWT security beans in @WebMvcTest slice.\nThe same error pattern occurs in ALL services that have JWT security: OrderControllerTest, PaymentControllerTest, RestaurantControllerTest, NotificationControllerTest, UserControllerTest.\nError: ApplicationContext fai"
+    },
+    "a5cd2577": {
+      "value": "You are a senior Spring Boot test debugging agent. Fix ALL failing tests in user-service. There are 2 failing test files with 22 total errors/failures.\nFile 1: AuthControllerTest.java (21 errors)\nRoot cause: No qualifying bean of type PasswordEncoder available\nThe AuthController injects PasswordEncoder directly via @Autowired. In @WebMvcTest slice, this bean is not available.\nFile 2: AuthControllerIntegrationTest.java (1 failure)\nTest: registerUser_Success_Returns201\nYour task:\n\nRead AuthControl"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

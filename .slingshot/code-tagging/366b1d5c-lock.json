@@ -1,0 +1,84 @@
+{
+  "eureka-server\\pom.xml": {
+    "filename": "pom.xml",
+    "path": "eureka-server\\pom.xml",
+    "version": "1.2",
+    "contextFile": "366b1d5c-context.json",
+    "chunks": {
+      "f11407": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075389,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "8f89b3fb",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:39:49 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "25": {
+        "chunkId": "f11407",
+        "hash": "727730c4",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "f11407",
+        "hash": "437cdb5a",
+        "encoded": "%3CgroupId%3Eorg.springframework.boot%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "f11407",
+        "hash": "e43dd125",
+        "encoded": "%3CartifactId%3Espring-boot-starter-actuator%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "f11407",
+        "hash": "6ea58685",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "f11407",
+        "hash": "e84d79b0",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "f11407",
+        "hash": "846641e3",
+        "encoded": "%3CgroupId%3Eorg.springframework.cloud%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "f11407",
+        "hash": "6093a713",
+        "encoded": "%3CartifactId%3Espring-cloud-starter-config%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "f11407",
+        "hash": "f228b390",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "f11407",
+        "hash": "25475750",
+        "encoded": "%3C!--%20Test%20Dependencies%20--%3E",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

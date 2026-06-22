@@ -1,0 +1,420 @@
+{
+  "config-server\\src\\main\\resources\\application.yml": {
+    "filename": "application.yml",
+    "path": "config-server\\src\\main\\resources\\application.yml",
+    "version": "1.2",
+    "contextFile": "460506c8-context.json",
+    "chunks": {
+      "fd8523": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075073,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "86d0aab4",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:34:33 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "fd8523",
+        "hash": "d1aad523",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "fd8523",
+        "hash": "eb40decd",
+        "encoded": "#%20Spring%20Cloud%20Config%20Server%20Configuration",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "fd8523",
+        "hash": "6325830d",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "fd8523",
+        "hash": "7e016ff1",
+        "encoded": "#%20This%20configuration%20file%20sets%20up%20the%20Config%20Server%20to%20serve%20centralized",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "fd8523",
+        "hash": "632acaf2",
+        "encoded": "#%20configuration%20for%20all%20microservices%20in%20the%20Food%20Delivery%20platform.",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "fd8523",
+        "hash": "8e5ec212",
+        "encoded": "server:",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "fd8523",
+        "hash": "bbf9edc4",
+        "encoded": "port:%208888",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "fd8523",
+        "hash": "f19d3673",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "fd8523",
+        "hash": "e02d1c5c",
+        "encoded": "application:",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "fd8523",
+        "hash": "645ab81f",
+        "encoded": "name:%20config-server",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "fd8523",
+        "hash": "0aef6ce9",
+        "encoded": "#%20Cloud%20Config%20Server%20Settings",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "fd8523",
+        "hash": "2d10db39",
+        "encoded": "cloud:",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "fd8523",
+        "hash": "9033fb87",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "fd8523",
+        "hash": "7ba432c7",
+        "encoded": "server:",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "fd8523",
+        "hash": "ca0a7267",
+        "encoded": "git:",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "fd8523",
+        "hash": "80f9984b",
+        "encoded": "#%20Local%20Git%20repository%20for%20configuration%20files",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "fd8523",
+        "hash": "9d315a35",
+        "encoded": "#%20In%20production,%20replace%20with%20remote%20Git%20repository%20URL%20(e.g.,%20GitHub,%20GitLab)",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "fd8523",
+        "hash": "e849d153",
+        "encoded": "uri:%20file://$%7Buser.home%7D/config-repo",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "fd8523",
+        "hash": "726232cd",
+        "encoded": "#%20Default%20branch%20to%20fetch%20configurations%20from",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "fd8523",
+        "hash": "2076b6df",
+        "encoded": "default-label:%20main",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "fd8523",
+        "hash": "9a179927",
+        "encoded": "#%20Clone%20repository%20on%20startup",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "fd8523",
+        "hash": "7f2832bf",
+        "encoded": "clone-on-start:%20true",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "fd8523",
+        "hash": "06b8e6f9",
+        "encoded": "#%20Timeout%20settings%20for%20Git%20operations",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "fd8523",
+        "hash": "bf895a8e",
+        "encoded": "timeout:%2010",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "fd8523",
+        "hash": "9ba85e9f",
+        "encoded": "#%20Force%20pull%20on%20every%20request%20(useful%20during%20development)",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "fd8523",
+        "hash": "ab839af9",
+        "encoded": "force-pull:%20true",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "fd8523",
+        "hash": "997a3253",
+        "encoded": "#%20Enable%20native%20profile%20as%20fallback%20(optional)",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "fd8523",
+        "hash": "34b7f787",
+        "encoded": "native:",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "fd8523",
+        "hash": "64106e3d",
+        "encoded": "search-locations:%20classpath:/config",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "fd8523",
+        "hash": "b1e51a91",
+        "encoded": "#%20Health%20check%20configuration",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "fd8523",
+        "hash": "cf6f0d85",
+        "encoded": "health:",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "fd8523",
+        "hash": "ec76e068",
+        "encoded": "enabled:%20true",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "fd8523",
+        "hash": "6a45b4d2",
+        "encoded": "#%20Eureka%20Client%20Configuration",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "fd8523",
+        "hash": "c1814fa4",
+        "encoded": "eureka:",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "fd8523",
+        "hash": "87ca31c2",
+        "encoded": "client:",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "fd8523",
+        "hash": "a4203cb3",
+        "encoded": "serviceUrl:",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "fd8523",
+        "hash": "1b734cd6",
+        "encoded": "defaultZone:%20http://localhost:8761/eureka/",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "fd8523",
+        "hash": "70a83f49",
+        "encoded": "fetch-registry:%20true",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "fd8523",
+        "hash": "4df6f211",
+        "encoded": "register-with-eureka:%20true",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "fd8523",
+        "hash": "13bae9c5",
+        "encoded": "instance:",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "fd8523",
+        "hash": "3893cac2",
+        "encoded": "prefer-ip-address:%20true",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "fd8523",
+        "hash": "b61266f3",
+        "encoded": "instance-id:%20$%7Bspring.application.name%7D:$%7Bspring.application.instance_id:$%7Brandom.value%7D%7D",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "fd8523",
+        "hash": "4ddc116b",
+        "encoded": "lease-renewal-interval-in-seconds:%2010",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "fd8523",
+        "hash": "b0df22fb",
+        "encoded": "lease-expiration-duration-in-seconds:%2030",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "fd8523",
+        "hash": "8636a518",
+        "encoded": "#%20Actuator%20Configuration%20for%20Health%20Checks%20and%20Monitoring",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "fd8523",
+        "hash": "32a0aab3",
+        "encoded": "management:",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "fd8523",
+        "hash": "ce3fa56b",
+        "encoded": "endpoints:",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "fd8523",
+        "hash": "3838de65",
+        "encoded": "web:",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "fd8523",
+        "hash": "39e23a78",
+        "encoded": "exposure:",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "fd8523",
+        "hash": "c526d4e2",
+        "encoded": "include:%20health,info,env,refresh,configprops",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "fd8523",
+        "hash": "543689c4",
+        "encoded": "endpoint:",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "fd8523",
+        "hash": "7e99cda3",
+        "encoded": "health:",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "fd8523",
+        "hash": "c150cbff",
+        "encoded": "show-details:%20always",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "fd8523",
+        "hash": "64bb47e3",
+        "encoded": "health:",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "fd8523",
+        "hash": "8b691d11",
+        "encoded": "config:",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "fd8523",
+        "hash": "04d36a3e",
+        "encoded": "enabled:%20true",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "fd8523",
+        "hash": "b7bebf4d",
+        "encoded": "#%20Logging%20Configuration",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "fd8523",
+        "hash": "be8363d9",
+        "encoded": "logging:",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "fd8523",
+        "hash": "74b3e07f",
+        "encoded": "level:",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "fd8523",
+        "hash": "3dc0c9f5",
+        "encoded": "root:%20INFO",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "fd8523",
+        "hash": "06f6d01e",
+        "encoded": "org.springframework.cloud.config:%20DEBUG",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "fd8523",
+        "hash": "66bbcd18",
+        "encoded": "org.springframework.cloud.netflix.eureka:%20INFO",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "fd8523",
+        "hash": "dd1e5d56",
+        "encoded": "pattern:",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "fd8523",
+        "hash": "01f5a382",
+        "encoded": "console:%20%22%25d%7Byyyy-MM-dd%20HH:mm:ss%7D%20-%20%25msg%25n%22",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "fd8523",
+        "hash": "4ba3cf93",
+        "encoded": "file:%20%22%25d%7Byyyy-MM-dd%20HH:mm:ss%7D%20%5B%25thread%5D%20%25-5level%20%25logger%7B36%7D%20-%20%25msg%25n%22",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

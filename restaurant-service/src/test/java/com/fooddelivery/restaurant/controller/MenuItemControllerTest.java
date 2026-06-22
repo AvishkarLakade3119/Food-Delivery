@@ -3,10 +3,13 @@ package com.fooddelivery.restaurant.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fooddelivery.restaurant.entity.MenuItem;
 import com.fooddelivery.restaurant.entity.Restaurant;
+import com.fooddelivery.restaurant.security.JwtAuthenticationFilter;
+import com.fooddelivery.restaurant.security.JwtTokenProvider;
 import com.fooddelivery.restaurant.service.MenuItemService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -24,6 +27,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(MenuItemController.class)
+@AutoConfigureMockMvc(addFilters = false)
 class MenuItemControllerTest {
 
     @Autowired
@@ -31,6 +35,12 @@ class MenuItemControllerTest {
 
     @MockBean
     private MenuItemService menuItemService;
+
+    @MockBean
+    private JwtTokenProvider jwtTokenProvider;
+
+    @MockBean
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Autowired
     private ObjectMapper objectMapper;

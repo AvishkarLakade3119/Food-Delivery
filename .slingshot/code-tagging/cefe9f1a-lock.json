@@ -1,0 +1,384 @@
+{
+  "config-repo\\eureka-server.yml": {
+    "filename": "eureka-server.yml",
+    "path": "config-repo\\eureka-server.yml",
+    "version": "1.2",
+    "contextFile": "cefe9f1a-context.json",
+    "chunks": {
+      "23330c": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781075338,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "313d9cd4"
+        },
+        "hash": "2e0ab735",
+        "messageId": "system_99b759a0-6499-11f1-832e-e5e0980c7321",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 12:38:58 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      },
+      "2998c9": {
+        "user": "Avishkar Lakade",
+        "model": "gpt-4.1",
+        "timestamp": 1781081700,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.5.2",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "371e81de"
+        },
+        "hash": "e1f15afc",
+        "messageId": "system_c45d1040-64a9-11f1-80e8-659659a77bc1",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Avishkar Lakade\n- **model**: gpt-4.1\n- **timestamp**: 6/10/2026, 2:25:00 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "23330c",
+        "hash": "d1aad523",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "23330c",
+        "hash": "d6275511",
+        "encoded": "#%20Eureka%20Server%20Configuration",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "23330c",
+        "hash": "6325830d",
+        "encoded": "#%20========================================",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "23330c",
+        "hash": "ec7221cc",
+        "encoded": "#%20Service%20Discovery%20Server%20Configuration",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "2998c9",
+        "hash": "cf646c2a",
+        "encoded": "server:",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "2998c9",
+        "hash": "5188da88",
+        "encoded": "port:%208761",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "2998c9",
+        "hash": "8272a99c",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "2998c9",
+        "hash": "b1aa7c6d",
+        "encoded": "application:",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "2998c9",
+        "hash": "20294607",
+        "encoded": "name:%20eureka-server",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "2998c9",
+        "hash": "9cde4f80",
+        "encoded": "#%20Management/Actuator%20Configuration",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "2998c9",
+        "hash": "0eb7bc4f",
+        "encoded": "#%20Fix:%20Prevent%20port%208080%20conflict%20by%20disabling%20separate%20management%20server",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "2998c9",
+        "hash": "a67465a6",
+        "encoded": "management:",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "2998c9",
+        "hash": "5d686080",
+        "encoded": "server:",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "2998c9",
+        "hash": "b6ee8e1b",
+        "encoded": "port:%208761%20%20#%20Use%20same%20port%20as%20main%20server%20to%20avoid%208080%20conflict",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "2998c9",
+        "hash": "87ce0bc4",
+        "encoded": "endpoints:",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "2998c9",
+        "hash": "c239888b",
+        "encoded": "web:",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "2998c9",
+        "hash": "86074577",
+        "encoded": "exposure:",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "2998c9",
+        "hash": "b12a8e1b",
+        "encoded": "include:%20health,info,metrics",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "2998c9",
+        "hash": "0bf05bd4",
+        "encoded": "endpoint:",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "2998c9",
+        "hash": "228d5590",
+        "encoded": "health:",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "2998c9",
+        "hash": "966cad83",
+        "encoded": "show-details:%20always",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "23330c",
+        "hash": "be8656b8",
+        "encoded": "port:%208761",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "23330c",
+        "hash": "b6786047",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "23330c",
+        "hash": "c1fcc256",
+        "encoded": "application:",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "23330c",
+        "hash": "1fa16a13",
+        "encoded": "name:%20eureka-server",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "23330c",
+        "hash": "a4f39ea9",
+        "encoded": "#%20Eureka%20Server%20Configuration",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "23330c",
+        "hash": "6a648b72",
+        "encoded": "eureka:",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "23330c",
+        "hash": "c7c5a378",
+        "encoded": "instance:",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "23330c",
+        "hash": "55716b2e",
+        "encoded": "hostname:%20localhost",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "23330c",
+        "hash": "4712a2fa",
+        "encoded": "prefer-ip-address:%20false",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "23330c",
+        "hash": "b6335c5c",
+        "encoded": "client:",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "23330c",
+        "hash": "93363bcf",
+        "encoded": "#%20Eureka%20server%20should%20not%20register%20itself%20as%20a%20client",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "23330c",
+        "hash": "4208d610",
+        "encoded": "register-with-eureka:%20false",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "23330c",
+        "hash": "ff38e3aa",
+        "encoded": "fetch-registry:%20false",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "23330c",
+        "hash": "dc4b98f7",
+        "encoded": "serviceUrl:",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "23330c",
+        "hash": "c74ed936",
+        "encoded": "defaultZone:%20http://$%7Beureka.instance.hostname%7D:$%7Bserver.port%7D/eureka/",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "23330c",
+        "hash": "ae0b5c08",
+        "encoded": "server:",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "23330c",
+        "hash": "a7206dc1",
+        "encoded": "#%20Disable%20self-preservation%20mode%20in%20development%20(enable%20in%20production)",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "23330c",
+        "hash": "679207d1",
+        "encoded": "enable-self-preservation:%20false",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "23330c",
+        "hash": "b1880f0d",
+        "encoded": "eviction-interval-timer-in-ms:%2010000",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "23330c",
+        "hash": "d511de34",
+        "encoded": "#%20Response%20cache%20settings",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "23330c",
+        "hash": "30f9775b",
+        "encoded": "response-cache-update-interval-ms:%205000",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "23330c",
+        "hash": "568a47ce",
+        "encoded": "response-cache-auto-expiration-in-seconds:%20180",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "23330c",
+        "hash": "d0e858e8",
+        "encoded": "#%20Renewal%20threshold",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "23330c",
+        "hash": "160df0f8",
+        "encoded": "renewal-percent-threshold:%200.85",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "23330c",
+        "hash": "401ae6d8",
+        "encoded": "#%20Wait%20time%20before%20serving%20requests%20(allows%20services%20to%20register)",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "23330c",
+        "hash": "9129c236",
+        "encoded": "wait-time-in-ms-when-sync-empty:%200",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "23330c",
+        "hash": "b45e9ec7",
+        "encoded": "dashboard:",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "23330c",
+        "hash": "32938f7c",
+        "encoded": "#%20Enable%20Eureka%20dashboard%20UI",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "23330c",
+        "hash": "1ed6a7eb",
+        "encoded": "enabled:%20true",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "23330c",
+        "hash": "f8065d2a",
+        "encoded": "path:%20/",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "23330c",
+        "hash": "f2f0cb72",
+        "encoded": "#%20Logging%20Configuration",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "23330c",
+        "hash": "4514667b",
+        "encoded": "logging:",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "23330c",
+        "hash": "4abfb827",
+        "encoded": "level:",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "23330c",
+        "hash": "6038a76a",
+        "encoded": "com.netflix.eureka:%20INFO",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "23330c",
+        "hash": "fa5fcfa0",
+        "encoded": "com.netflix.discovery:%20INFO",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

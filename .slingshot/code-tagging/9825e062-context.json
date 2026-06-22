@@ -1,0 +1,15 @@
+{
+  "filename": "PHASE_2_RABBITMQ_IMPLEMENTATION_COMPLETE.md",
+  "path": "PHASE_2_RABBITMQ_IMPLEMENTATION_COMPLETE.md",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "b7fe811e": {
+      "value": "You are an expert Java Spring Boot microservices architect. I have an existing Food Delivery Microservices Platform with Phase 1 (Config Server) already implemented and working. Now I need you to implement Phase 2 — RabbitMQ Setup with async event-driven communication between microservices.\n\n## My Existing Project Structure\n\nI have the following microservices already running:\n\n1. config-server (Spring Cloud Config Server - port 8888)\n2. eureka-server (Service Discovery - port 8761)\n3. api-gatewa"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

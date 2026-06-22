@@ -3,10 +3,13 @@ package com.fooddelivery.user.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fooddelivery.user.entity.User;
 import com.fooddelivery.user.entity.UserRole;
+import com.fooddelivery.user.security.JwtAuthenticationFilter;
+import com.fooddelivery.user.security.JwtTokenProvider;
 import com.fooddelivery.user.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -27,6 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Tests all REST endpoints with proper mocking of the service layer.
  */
 @WebMvcTest(UserController.class)
+@AutoConfigureMockMvc(addFilters = false)
 class UserControllerTest {
 
     @Autowired
@@ -34,6 +38,12 @@ class UserControllerTest {
 
     @MockBean
     private UserService userService;
+
+    @MockBean
+    private JwtTokenProvider jwtTokenProvider;
+
+    @MockBean
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Autowired
     private ObjectMapper objectMapper;

@@ -1,0 +1,49 @@
+# ========================================
+# Production Profile Configuration
+# ========================================
+# This file contains production-specific settings
+# Use with: --spring.profiles.active=prod
+
+spring:
+  # RabbitMQ Production Configuration (Durable, persistent)
+  rabbitmq:
+    host: ${RABBITMQ_HOST:rabbitmq-service}  # Kubernetes service name or production host
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:admin}  # Use environment variable in production
+    password: ${RABBITMQ_PASSWORD:changeme}  # Use environment variable in production
+    connection-timeout: 60000
+    template:
+      retry:
+        enabled: true
+        initial-interval: 3000
+        max-attempts: 5
+        max-interval: 30000
+        multiplier: 2.0
+      mandatory: true
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 3000
+          max-attempts: 5
+          max-interval: 30000
+          multiplier: 2.0
+        acknowledge-mode: auto
+        prefetch: 10
+        default-requeue-rejected: true
+        
+# RabbitMQ Queue Configuration for Production (Durable)
+rabbitmq:
+  queues:
+    durable: true  # Durable queues for production
+  exchanges:
+    durable: true  # Durable exchanges for production
+  messages:
+    persistent: true  # Persistent messages for production
+
+logging:
+  level:
+    root: INFO
+    com.fooddelivery: INFO
+    org.springframework.amqp: WARN
+    org.springframework.rabbit: WARN
