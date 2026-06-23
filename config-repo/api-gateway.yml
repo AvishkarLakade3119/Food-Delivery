@@ -9,6 +9,13 @@ server:
 spring:
   application:
     name: api-gateway
+  eureka:
+    instance:
+      secure-port-enabled: true
+      secure-port: 8443
+      non-secure-port-enabled: false
+      hostname: localhost
+      prefer-ip-address: false
   
   # Spring Cloud Gateway Configuration
   cloud:

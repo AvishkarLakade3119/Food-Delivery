@@ -65,3 +65,9 @@ logging:
   level:
     com.fooddelivery.user: DEBUG
     org.hibernate.SQL: INFO
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: false
+    instance-id: ${spring.application.name}:${server.port}
