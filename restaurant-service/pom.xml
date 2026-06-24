@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -10,9 +10,9 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>notification-service</artifactId>
-    <name>Notification Service</name>
-    <description>Notification Service</description>
+    <artifactId>restaurant-service</artifactId>
+    <name>Restaurant Service</name>
+    <description>Restaurant Service for Food Delivery Platform</description>
 
     <dependencies>
         <dependency>
@@ -144,3 +144,5 @@
         </plugins>
     </build>
 </project>
+
+

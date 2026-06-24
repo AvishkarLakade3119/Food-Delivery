@@ -1,6 +1,46 @@
-cat <<EOF > .gitignore
+$gitignoreContent = @"
+# === Maven ===
 target/
-*.jar
-*.war
+*.jar.original
 *.class
-EOF
+
+# === IDE ===
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+.factorypath
+
+# === Logs ===
+*/logs/
+**/logs/
+*.log
+*.log.*.gz
+
+# === Backups ===
+*.bak
+*.bak2
+*.bak3
+*.orig
+
+# === Slingshot AI tooling ===
+.slingshot/
+
+# === Worktree leakage inside target/ ===
+**/Users/avilakad/
+
+# === OS clutter ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Test reports ===
+**/surefire-reports/
+**/failsafe-reports/
+**/jacoco.exec
+"@
+
+Set-Content -Path ".gitignore" -Value $gitignoreContent -Encoding UTF8
+Write-Host "✅ .gitignore written" -ForegroundColor Green
