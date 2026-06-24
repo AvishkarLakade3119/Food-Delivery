@@ -1,8 +1,8 @@
-# ========================================
+﻿# ========================================
 # Order Service - Bootstrap Configuration
 # ========================================
-# Minimal configuration to connect to Config Server
-# All other properties are fetched from config-server
+# Minimal config to connect to Config Server.
+# Most properties fetched from config-server.
 
 server:
   port: 8083
@@ -15,41 +15,46 @@ spring:
   cloud:
     config:
       fail-fast: false
-      override-none: true
+      override-none: false
       allow-override: true
-      override-system-properties: false
+      override-system-properties: true
       retry:
         max-attempts: 6
         initial-interval: 1000
         multiplier: 1.1
         max-interval: 2000
-  
+
   # Fallback PostgreSQL Database Configuration
   datasource:
     url: jdbc:postgresql://localhost:5434/orderdb
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
-  
+
   # Fallback JPA Configuration
   jpa:
     hibernate:
       ddl-auto: update
     defer-datasource-initialization: true
     show-sql: true
-  
+
   # SQL Initialization
   sql:
     init:
       mode: never
-  
-  # RabbitMQ Configuration
+
+  # RabbitMQ Configuration with TRACING (Phase 6)
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
     connection-timeout: 5000
+    template:
+      observation-enabled: true        # Phase 6: Trace AMQP publishes
+    listener:
+      simple:
+        observation-enabled: true      # Phase 6: Trace AMQP consumes
 
 # JWT Configuration (MUST match user-service)
 jwt:
@@ -159,7 +164,7 @@ resilience4j:
         baseConfig: default
         maxConcurrentCalls: 5
 
-# ====================== ACTUATOR ======================
+# ====================== ACTUATOR + TRACING (Phase 6) ======================
 management:
   endpoints:
     web:
@@ -172,4 +177,16 @@ management:
     circuitbreakers:
       enabled: true
     ratelimiters:
+      enabled: true
+
+  # ===== Phase 6: Distributed Tracing =====
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0                 # 100% sampling for dev (use 0.1 in production)
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  observations:
+    annotations:
       enabled: true

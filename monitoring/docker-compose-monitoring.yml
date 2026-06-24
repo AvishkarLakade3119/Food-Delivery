@@ -132,6 +132,19 @@ services:
       - monitoring
     restart: unless-stopped
 
+  # ====================== ZIPKIN — DISTRIBUTED TRACING ======================
+  zipkin:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+    environment:
+      - STORAGE_TYPE=mem
+      - JAVA_OPTS=-Xms256m -Xmx512m
+    networks:
+      - monitoring
+    restart: unless-stopped
+    
 volumes:
   prometheus_data:
   grafana_data:

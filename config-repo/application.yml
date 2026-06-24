@@ -1,16 +1,7 @@
-
 # ========================================
 # Common Configuration for All Microservices
 # ========================================
-# This file contains shared properties that apply to ALL services
-# in the Food Delivery platform.
-
-# JWT Configuration (Shared across all services)
-jwt:
-  secret: a-very-long-secure-secret-key-that-is-at-least-256-bits-for-hs256-algorithm-food-delivery-platform-2026
-  expiration: 86400000  # 24 hours in milliseconds
-  header: Authorization
-  prefix: "Bearer "
+# Shared properties for ALL services in the Food Delivery platform.
 
 # Common Eureka Client Configuration
 eureka:
@@ -26,32 +17,29 @@ eureka:
     lease-expiration-duration-in-seconds: 30
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
-# Common Actuator Configuration (UPDATED)
+# Common Actuator + Tracing Configuration
 management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,prometheus,refresh,circuitbreakers,retries,bulkheads,timelimiters,ratelimiters,gateway,env,loggers,heapdump,threaddump,httpexchanges
+        include: health,info,metrics,prometheus,refresh,circuitbreakers,retries,bulkheads,timelimiters,ratelimiters,gateway
       base-path: /actuator
   endpoint:
     health:
-      show-details: always
+      show-details: when-authorized
       probes:
         enabled: true
-    prometheus:
+    refresh:
       enabled: true
   health:
     livenessState:
       enabled: true
     readinessState:
       enabled: true
-    circuitbreakers:
-      enabled: true
   metrics:
     export:
       prometheus:
         enabled: true
-        step: 10s
     tags:
       application: ${spring.application.name}
     distribution:
@@ -59,34 +47,29 @@ management:
         http.server.requests: true
       percentiles:
         http.server.requests: 0.5, 0.75, 0.95, 0.99
+  # ===== DISTRIBUTED TRACING (Phase 6) =====
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0   # 100% sampling for dev. Use 0.1 in production.
+    baggage:
+      remote-fields:
+        - x-correlation-id
+        - x-tenant-id
+      correlation:
+        enabled: true
+        fields:
+          - x-correlation-id
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
   observations:
     annotations:
       enabled: true
-  prometheus:
-    metrics:
-      export:
-        enabled: true
-        step: 10s
-
-# Common Logging Configuration
-logging:
-  level:
-    root: INFO
-    com.fooddelivery: DEBUG
-    org.springframework.web: INFO
-    org.springframework.cloud: INFO
-    org.hibernate: INFO
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
-    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
-  file:
-    name: logs/${spring.application.name}.log
-    max-size: 10MB
-    max-history: 30
 
 # Common Spring Configuration
 spring:
-  # JPA Common Settings (for services using JPA)
+  # JPA Common Settings
   jpa:
     show-sql: false
     open-in-view: false
@@ -98,7 +81,7 @@ spring:
           batch_size: 20
         order_inserts: true
         order_updates: true
-  
+
   # Jackson Configuration
   jackson:
     serialization:
@@ -108,36 +91,43 @@ spring:
       fail-on-unknown-properties: false
     default-property-inclusion: non_null
     time-zone: UTC
-  
+
   # Common HTTP Configuration
   mvc:
     throw-exception-if-no-handler-found: true
   web:
     resources:
       add-mappings: false
-  
-  # RabbitMQ Common Configuration
+
+  # ===== RABBITMQ TRACING (Phase 6) =====
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-    connection-timeout: 30000
     template:
-      retry:
-        enabled: true
-        initial-interval: 2000
-        max-attempts: 3
-        max-interval: 10000
-        multiplier: 2.0
+      observation-enabled: true
     listener:
       simple:
-        retry:
-          enabled: true
-          initial-interval: 2000
-          max-attempts: 3
-          max-interval: 10000
-          multiplier: 2.0
-        acknowledge-mode: auto
-        prefetch: 1
+        observation-enabled: true
 
+  # ===== OPENFEIGN TRACING (Phase 6) =====
+  cloud:
+    openfeign:
+      micrometer:
+        enabled: true
+
+# Common Logging Configuration WITH TRACE IDs (Phase 6)
+logging:
+  level:
+    root: INFO
+    com.fooddelivery: DEBUG
+    org.springframework.web: INFO
+    org.springframework.cloud: INFO
+    org.hibernate: INFO
+    io.micrometer.tracing: INFO
+    zipkin2: INFO
+  pattern:
+    correlation: "[${spring.application.name:},%X{traceId:-},%X{spanId:-}] "
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${PID:- } --- [%t] [%X{traceId:-},%X{spanId:-}] %-40.40logger{39} : %m%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${PID:- } --- [%t] [%X{traceId:-},%X{spanId:-}] %-40.40logger{39} : %m%n"
+  file:
+    name: logs/${spring.application.name}.log
+    max-size: 10MB
+    max-history: 30

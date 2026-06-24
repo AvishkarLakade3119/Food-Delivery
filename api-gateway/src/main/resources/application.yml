@@ -1,5 +1,13 @@
 server:
-  port: 8080
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:fooddelivery-keystore.p12
+    key-store-password: changeit
+    key-store-type: PKCS12
+    key-alias: fooddelivery
+    key-password: changeit
+    enabled-protocols: TLSv1.2,TLSv1.3
 
 spring:
   application:
@@ -18,10 +26,30 @@ spring:
         multiplier: 1.1
         max-interval: 2000
     gateway:
+      httpclient:
+        ssl:
+          useInsecureTrustManager: true
       discovery:
         locator:
           enabled: false
           lower-case-service-id: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "https://localhost:3000"
+              - "https://localhost:8443"
+              - "http://localhost:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+              - PATCH
+            allowedHeaders: "*"
+            allowCredentials: true
+            maxAge: 3600
       routes:
         - id: user-service
           uri: lb://user-service
@@ -84,6 +112,13 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
+  instance:
+    secure-port-enabled: true
+    secure-port: 8443
+    non-secure-port-enabled: false
+    status-page-url: https://localhost:8443/actuator/info
+    health-check-url: https://localhost:8443/actuator/health
+    home-page-url: https://localhost:8443/
 
 resilience4j:
   circuitbreaker:
@@ -128,10 +163,15 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,gateway,circuitbreakers
+        include: health,info,metrics,gateway,circuitbreakers,prometheus
   endpoint:
     health:
       show-details: always
+    prometheus:
+      enabled: true
   health:
     circuitbreakers:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
