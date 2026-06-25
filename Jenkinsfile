@@ -1,309 +1,193 @@
 pipeline {
-  agent any
+    agent any
 
-  options {
-    timestamps()
-    disableConcurrentBuilds()
-  }
-
-  triggers {
-    githubPush()
-  }
-z
-  environment {
-    DOCKERHUB_USER    = "avishkarlakade"
-    DOCKERHUB_CRED_ID = "DockerHubCred"
-    GITHUB_CRED_ID    = "GitHubCred"
-    NAMESPACE  = "food-delivery"
-    REPO_URL   = "https://github.com/AvishkarLakade3119/Food-Delivery.git"
-    BRANCH     = "main"
-    SERVICES   = "eureka-server api-gateway user-service restaurant-service order-service payment-service notification-service"
-    KUBECONFIG = "/var/lib/jenkins/.kube/config"
-  }
-
-  stages {
-
-    stage("Checkout") {
-      steps {
-        checkout([
-          $class: 'GitSCM',
-          branches: [[name: "*/${BRANCH}"]],
-          userRemoteConfigs: [[
-            url: "${REPO_URL}",
-            credentialsId: "${GITHUB_CRED_ID}"
-          ]]
-        ])
-      }
+    tools {
+        maven 'Maven-3.9.12'
+        jdk   'JDK-17'
     }
 
-    stage("Compute Image Tag") {
-      steps {
-        script {
-          env.GIT_SHA   = sh(script: "git rev-parse --short HEAD", returnStdout: true).trim()
-          env.IMAGE_TAG = "${env.BUILD_NUMBER}-${env.GIT_SHA}"
-          echo "Using IMAGE_TAG = ${env.IMAGE_TAG}"
-        }
-      }
+    environment {
+        DOCKER_HUB_USER = 'avishkarlakade'
+        IMAGE_TAG       = "${env.BUILD_NUMBER}"
+        K8S_NAMESPACE   = 'food-delivery'
+        SERVICES        = 'config-server eureka-server api-gateway user-service restaurant-service order-service payment-service notification-service'
     }
 
-    stage("Build JARs with Maven") {
-      steps {
-        sh '''#!/bin/bash
-          set -euo pipefail
-          for svc in ${SERVICES}; do
-            echo "=============================="
-            echo "Building service: $svc"
-            echo "=============================="
-            mvn -f $svc/pom.xml -DskipTests clean package
-          done
-        '''
-      }
+    options {
+        timestamps()
+        timeout(time: 90, unit: 'MINUTES')
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        disableConcurrentBuilds()
     }
 
-    stage("Run Tests") {
-      steps {
-        sh '''#!/bin/bash
-          set -euo pipefail
-          for svc in ${SERVICES}; do
-            echo "=============================="
-            echo "Running tests: $svc"
-            echo "=============================="
-            mvn -f $svc/pom.xml test || {
-              echo "WARNING: Tests failed for $svc, continuing..."
+    stages {
+
+        stage('1. Checkout') {
+            steps {
+                echo 'Stage 1: Checkout from GitHub'
+                checkout scm
+                bat 'git log -1 --oneline'
             }
-          done
-        '''
-      }
-    }
-
-    stage("Docker Login") {
-      steps {
-        withCredentials([usernamePassword(
-          credentialsId: "${DOCKERHUB_CRED_ID}",
-          usernameVariable: 'DH_USER',
-          passwordVariable: 'DH_PASS'
-        )]) {
-          sh '''#!/bin/bash
-            set -euo pipefail
-            echo "$DH_PASS" | docker login -u "$DH_USER" --password-stdin
-          '''
         }
-      }
+
+        stage('2. Pre-Flight Check') {
+            steps {
+                echo 'Stage 2: Verifying tools'
+                bat 'java -version'
+                bat 'mvn -version'
+                bat 'docker version --format "Client: {{.Client.Version}}"'
+                bat 'kubectl version --client'
+                bat 'minikube status'
+            }
+        }
+
+        stage('3. Maven Build') {
+            steps {
+                echo 'Stage 3: Building all services'
+                bat 'mvn -B -ntp clean package -DskipTests -T 1C'
+            }
+            post {
+                success {
+                    archiveArtifacts artifacts: '**/target/*.jar', excludes: '**/*.original', fingerprint: true, allowEmptyArchive: true
+                }
+            }
+        }
+
+        stage('4. Unit Tests') {
+            steps {
+                echo 'Stage 4: Running unit tests'
+                bat 'mvn -B -ntp test -fae || exit 0'
+            }
+            post {
+                always {
+                    junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
+                }
+            }
+        }
+
+        stage('5. Code Coverage') {
+            steps {
+                echo 'Stage 5: JaCoCo coverage'
+                bat 'mvn -B -ntp jacoco:report -fae || exit 0'
+            }
+            post {
+                always {
+                    jacoco execPattern: '**/target/jacoco.exec', classPattern: '**/target/classes', sourcePattern: '**/src/main/java', exclusionPattern: '**/test/**'
+                }
+            }
+        }
+
+        stage('6. Docker Login') {
+            steps {
+                echo 'Stage 6: Authenticating Docker Hub'
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DH_USER', passwordVariable: 'DH_PASS')]) {
+                    bat 'echo %DH_PASS%| docker login -u %DH_USER% --password-stdin'
+                }
+            }
+        }
+
+        stage('7. Docker Build') {
+            steps {
+                echo 'Stage 7: Building Docker images'
+                script {
+                    def svcs = env.SERVICES.split(' ')
+                    svcs.each { svc ->
+                        echo "Building image for ${svc}"
+                        bat "cd ${svc} && docker build -t ${env.DOCKER_HUB_USER}/${svc}:${env.IMAGE_TAG} -t ${env.DOCKER_HUB_USER}/${svc}:latest . && cd .."
+                    }
+                }
+            }
+        }
+
+        stage('8. Docker Push') {
+            steps {
+                echo 'Stage 8: Pushing images to Docker Hub'
+                script {
+                    def svcs = env.SERVICES.split(' ')
+                    svcs.each { svc ->
+                        echo "Pushing ${svc}"
+                        retry(3) {
+                            bat "docker push ${env.DOCKER_HUB_USER}/${svc}:${env.IMAGE_TAG}"
+                            bat "docker push ${env.DOCKER_HUB_USER}/${svc}:latest"
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('9. Deploy Infrastructure') {
+            steps {
+                echo 'Stage 9: Deploying Postgres, RabbitMQ, Zipkin'
+                bat 'kubectl apply -f k8s\\00-namespace.yaml'
+                bat 'kubectl apply -f k8s\\01-configmap.yaml'
+                bat 'kubectl apply -f k8s\\02-postgres.yaml'
+                bat 'kubectl apply -f k8s\\03-rabbitmq.yaml'
+                bat 'kubectl apply -f k8s\\04-zipkin.yaml'
+                bat 'kubectl rollout status deployment/postgres -n %K8S_NAMESPACE% --timeout=180s'
+                bat 'kubectl rollout status deployment/rabbitmq -n %K8S_NAMESPACE% --timeout=180s'
+                bat 'kubectl rollout status deployment/zipkin -n %K8S_NAMESPACE% --timeout=180s'
+            }
+        }
+
+        stage('10. Deploy Microservices') {
+            steps {
+                echo 'Stage 10: Deploying microservices in order'
+                bat 'kubectl apply -f k8s\\10-config-server.yaml'
+                bat 'kubectl rollout status deployment/config-server -n %K8S_NAMESPACE% --timeout=300s'
+                bat 'kubectl apply -f k8s\\11-eureka-server.yaml'
+                bat 'kubectl rollout status deployment/eureka-server -n %K8S_NAMESPACE% --timeout=300s'
+                bat 'kubectl apply -f k8s\\12-api-gateway.yaml'
+                bat 'kubectl apply -f k8s\\13-user-service.yaml'
+                bat 'kubectl apply -f k8s\\14-restaurant-service.yaml'
+                bat 'kubectl apply -f k8s\\15-order-service.yaml'
+                bat 'kubectl apply -f k8s\\16-payment-service.yaml'
+                bat 'kubectl apply -f k8s\\17-notification-service.yaml'
+                bat 'kubectl apply -f k8s\\99-nodeports.yaml'
+                script {
+                    def appSvcs = ['api-gateway', 'user-service', 'restaurant-service', 'order-service', 'payment-service', 'notification-service']
+                    appSvcs.each { svc ->
+                        bat "kubectl rollout status deployment/${svc} -n %K8S_NAMESPACE% --timeout=420s"
+                    }
+                }
+            }
+        }
+
+        stage('11. Smoke Tests') {
+            steps {
+                echo 'Stage 11: Post-deploy verification'
+                bat 'kubectl get pods -n %K8S_NAMESPACE% -o wide'
+                bat 'kubectl get svc -n %K8S_NAMESPACE%'
+                sleep(time: 30, unit: 'SECONDS')
+                bat 'kubectl get pods -n %K8S_NAMESPACE%'
+            }
+        }
+
+        stage('12. Expose URLs') {
+            steps {
+                echo 'Stage 12: Access URLs'
+                bat 'minikube ip'
+                bat 'echo Gateway HTTPS: https://MINIKUBE_IP:30443'
+                bat 'echo RabbitMQ UI: http://MINIKUBE_IP:30672 (guest/guest)'
+                bat 'echo Zipkin: http://MINIKUBE_IP:30411'
+            }
+        }
     }
 
-    stage("Build and Push Images") {
-      steps {
-        sh '''#!/bin/bash
-          set -euo pipefail
-          export DOCKER_CLIENT_TIMEOUT=300
-          export COMPOSE_HTTP_TIMEOUT=300
-
-          for svc in ${SERVICES}; do
-            echo "=============================="
-            echo "Docker build and push: $svc"
-            echo "=============================="
-            docker build \
-              -t ${DOCKERHUB_USER}/${svc}:${IMAGE_TAG} \
-              -t ${DOCKERHUB_USER}/${svc}:latest \
-              ./${svc}
-
-            for tag in ${IMAGE_TAG} latest; do
-              PUSHED=false
-              for attempt in 1 2 3; do
-                echo "Push attempt $attempt for ${svc}:${tag}..."
-                if docker push ${DOCKERHUB_USER}/${svc}:${tag}; then
-                  PUSHED=true
-                  break
-                fi
-                echo "Push failed, retrying in 15s..."
-                sleep 15
-              done
-              if [ "$PUSHED" = false ]; then
-                echo "ERROR: Failed to push ${svc}:${tag} after 3 attempts"
-                exit 1
-              fi
-            done
-          done
-        '''
-      }
+    post {
+        success {
+            echo 'PIPELINE SUCCESS - All 8 services deployed'
+        }
+        failure {
+            echo 'PIPELINE FAILED - Rolling back'
+            script {
+                def svcs = env.SERVICES.split(' ')
+                svcs.each { svc ->
+                    bat "kubectl rollout undo deployment/${svc} -n %K8S_NAMESPACE% || exit 0"
+                }
+            }
+        }
+        always {
+            bat 'docker logout || exit 0'
+        }
     }
-
-    stage("Kubernetes Cluster Check") {
-      steps {
-        sh '''#!/bin/bash
-          set -euo pipefail
-          export KUBECONFIG=${KUBECONFIG}
-
-          echo "Checking Kubernetes cluster connectivity..."
-          if ! kubectl cluster-info; then
-            echo "ERROR: Kubernetes cluster is not reachable!"
-            echo "Make sure minikube is running and kubeconfig is up to date."
-            exit 1
-          fi
-
-          echo "Cluster nodes:"
-          kubectl get nodes
-          echo "Cluster is reachable."
-        '''
-      }
-    }
-
-    stage("Kubernetes Deploy") {
-      steps {
-        sh '''#!/bin/bash
-          set -euo pipefail
-          export KUBECONFIG=${KUBECONFIG}
-
-          echo "Applying namespace..."
-          kubectl apply -f k8s/namespace.yaml || true
-
-          echo "Applying all k8s manifests..."
-          kubectl apply -n ${NAMESPACE} -f k8s/ || true
-
-          echo "Waiting for database pods to be ready first..."
-          for db in userdb restaurantdb orderdb paymentdb notificationdb; do
-            echo "Waiting for $db..."
-            kubectl -n ${NAMESPACE} rollout status deployment/${db} --timeout=300s || true
-          done
-          echo "All databases ready."
-
-          kubectl get pods -n ${NAMESPACE}
-          kubectl get svc  -n ${NAMESPACE}
-        '''
-      }
-    }
-
-    stage("Kubernetes Update Images") {
-      steps {
-        sh '''#!/bin/bash
-          set -euo pipefail
-          export KUBECONFIG=${KUBECONFIG}
-          echo "Updating deployments to new image tag: ${IMAGE_TAG}"
-          for svc in ${SERVICES}; do
-            echo "Updating $svc..."
-            kubectl -n ${NAMESPACE} set image deployment/${svc} ${svc}=${DOCKERHUB_USER}/${svc}:${IMAGE_TAG} || true
-          done
-        '''
-      }
-    }
-
-    stage("Rollout Verify") {
-      steps {
-        sh '''#!/bin/bash
-          set -euo pipefail
-          export KUBECONFIG=${KUBECONFIG}
-          FAILED=""
-          for svc in ${SERVICES}; do
-            echo "Waiting for $svc rollout..."
-            if ! kubectl -n ${NAMESPACE} rollout status deployment/${svc} --timeout=600s; then
-              echo "WARNING: $svc rollout timed out"
-              FAILED="${FAILED} ${svc}"
-            fi
-          done
-
-          if [ -n "$FAILED" ]; then
-            echo "WARNING: These services did not fully roll out:${FAILED}"
-            echo "Checking pod status..."
-            kubectl -n ${NAMESPACE} get pods -o wide
-            echo "Checking events..."
-            kubectl -n ${NAMESPACE} get events --sort-by=.metadata.creationTimestamp | tail -n 30
-          else
-            echo "SUCCESS: All services rolled out."
-          fi
-
-          kubectl -n ${NAMESPACE} get pods -o wide
-          kubectl -n ${NAMESPACE} get svc
-        '''
-      }
-    }
-
-    stage("Expose Services") {
-      steps {
-        sh '''#!/bin/bash
-          set +e
-          export KUBECONFIG=/var/lib/jenkins/.kube/config
-
-          echo "Waiting 30s for pods to fully stabilize..."
-          sleep 30
-
-          pkill -f "kubectl port-forward.*food-delivery" || true
-          sleep 3
-          for port in 8761 8081 8082 8083 8084 8085 8086; do
-            fuser -k ${port}/tcp 2>/dev/null || true
-          done
-          sleep 2
-
-          LOG_DIR=/var/lib/jenkins/pf-logs
-          mkdir -p ${LOG_DIR}
-          rm -f ${LOG_DIR}/*.log
-
-          JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward -n food-delivery svc/eureka-server 8761:8761 --address=0.0.0.0 > ${LOG_DIR}/eureka.log 2>&1 &
-          JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward -n food-delivery svc/api-gateway 8081:8081 --address=0.0.0.0 > ${LOG_DIR}/gateway.log 2>&1 &
-          JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward -n food-delivery svc/user-service 8082:8082 --address=0.0.0.0 > ${LOG_DIR}/user.log 2>&1 &
-          JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward -n food-delivery svc/restaurant-service 8083:8083 --address=0.0.0.0 > ${LOG_DIR}/restaurant.log 2>&1 &
-          JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward -n food-delivery svc/order-service 8084:8084 --address=0.0.0.0 > ${LOG_DIR}/order.log 2>&1 &
-          JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward -n food-delivery svc/payment-service 8085:8085 --address=0.0.0.0 > ${LOG_DIR}/payment.log 2>&1 &
-          JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward -n food-delivery svc/notification-service 8086:8086 --address=0.0.0.0 > ${LOG_DIR}/notification.log 2>&1 &
-
-          sleep 10
-
-          PF_COUNT=$(ps aux | grep "kubectl port-forward.*food-delivery" | grep -v grep | wc -l)
-          echo "Active port-forwards: ${PF_COUNT} / 7"
-
-          if [ "$PF_COUNT" -lt 7 ]; then
-            echo "Retrying failed port-forwards..."
-            sleep 5
-            for entry in eureka-server:8761 api-gateway:8081 user-service:8082 restaurant-service:8083 order-service:8084 payment-service:8085 notification-service:8086; do
-              svc=$(echo $entry | cut -d: -f1)
-              port=$(echo $entry | cut -d: -f2)
-              if ! ps aux | grep "kubectl port-forward.*svc/${svc}" | grep -v grep > /dev/null 2>&1; then
-                echo "Restarting port-forward for ${svc}..."
-                fuser -k ${port}/tcp 2>/dev/null || true
-                sleep 1
-                JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward -n food-delivery svc/${svc} ${port}:${port} --address=0.0.0.0 > ${LOG_DIR}/${svc}-retry.log 2>&1 &
-              fi
-            done
-            sleep 5
-          fi
-
-          FINAL_COUNT=$(ps aux | grep "kubectl port-forward.*food-delivery" | grep -v grep | wc -l)
-          echo "Final active port-forwards: ${FINAL_COUNT} / 7"
-
-          echo ""
-          echo "======================================================"
-          echo "  DEPLOYMENT COMPLETE - ACCESS URLS"
-          echo "======================================================"
-          echo "  Eureka Dashboard   : http://localhost:8761"
-          echo "  API Gateway        : http://localhost:8081"
-          echo "  User Service       : http://localhost:8081/user-service/api/users"
-          echo "  Restaurant Service : http://localhost:8081/restaurant-service/api/restaurants"
-          echo "  Order Service      : http://localhost:8081/order-service/api/orders"
-          echo "  Payment Service    : http://localhost:8081/payment-service/api/payments"
-          echo "  Notification Svc   : http://localhost:8081/notification-service/api/notifications"
-          echo "======================================================"
-        '''
-      }
-    }
-  }
-
-  post {
-    failure {
-      sh '''#!/bin/bash
-        set +e
-        export KUBECONFIG=/var/lib/jenkins/.kube/config
-        echo "---- DEBUG: Pods ----"
-        kubectl -n food-delivery get pods -o wide || true
-        echo "---- DEBUG: Events ----"
-        kubectl -n food-delivery get events --sort-by=.metadata.creationTimestamp | tail -n 50 || true
-        echo "---- DEBUG: Logs api-gateway ----"
-        kubectl -n food-delivery logs deploy/api-gateway --tail=200 || true
-        echo "---- DEBUG: Logs payment-service ----"
-        kubectl -n food-delivery logs deploy/payment-service --tail=200 || true
-      '''
-    }
-
-    always {
-      sh 'docker logout || true'
-    }
-  }
 }
