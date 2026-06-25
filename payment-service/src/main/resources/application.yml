@@ -115,6 +115,13 @@ management:
         include: health,info,metrics,prometheus,circuitbreakers,retries,bulkheads,timelimiters
   endpoint:
     health:
+      probes:
+        enabled: true
+      group:
+        readiness:
+          include: readinessState,diskSpace
+        liveness:
+          include: livenessState
       show-details: always
   health:
     circuitbreakers:

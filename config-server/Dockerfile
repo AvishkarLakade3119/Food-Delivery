@@ -1,34 +1,24 @@
-# Multi-stage Dockerfile for Spring Cloud Config Server
-
-# Stage 1: Build stage
-FROM maven:3.9.6-eclipse-temurin-17 AS build
-WORKDIR /app
-
-# Copy pom.xml and download dependencies (for better layer caching)
-COPY pom.xml .
-RUN mvn dependency:go-offline -B
-
-# Copy source code and build the application
-COPY src ./src
-RUN mvn clean package -DskipTests
-
-# Stage 2: Runtime stage
+# ===== config-server =====
 FROM eclipse-temurin:17-jre-alpine
+
 WORKDIR /app
 
-# Create non-root user for security
-RUN addgroup -S spring && adduser -S spring -G spring
+# Security: non-root user + tools
+RUN addgroup -S spring && adduser -S spring -G spring && \
+    apk add --no-cache curl wget
+
 USER spring:spring
 
-# Copy the built jar from build stage
-COPY --from=build /app/target/*.jar app.jar
+# Copy fat JAR built by Maven
+COPY --chown=spring:spring target/*.jar app.jar
 
-# Expose config server port
 EXPOSE 8888
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=60s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:8888/actuator/health || exit 1
+# Healthcheck
+HEALTHCHECK --interval=30s --timeout=5s --start-period=90s --retries=3 \
+  CMD curl -fs http://localhost:8888/actuator/health || exit 1
 
-# Run the application
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+# JVM tuning for containers
+ENV JAVA_OPTS="-XX:+UseG1GC -XX:MaxRAMPercentage=75 -Djava.security.egd=file:/dev/./urandom"
+
+ENTRYPOINT ["sh", "-c", "java \ -jar /app/app.jar"]

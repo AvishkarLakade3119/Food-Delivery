@@ -1,0 +1,27 @@
+# Source (not needed in runtime image - we only copy JAR)
+src/
+.mvn/
+mvnw
+mvnw.cmd
+pom.xml
+
+# Build artifacts to exclude
+target/*.original
+target/classes/
+target/generated-sources/
+target/maven-archiver/
+target/maven-status/
+target/surefire-reports/
+target/test-classes/
+target/jacoco.exec
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
