@@ -217,16 +217,22 @@ pipeline {
         }
         failure {
             echo '================================================'
-            echo '  PIPELINE FAILED - Attempting rollback'
+            echo '  PIPELINE FAILED'
             echo '================================================'
             script {
-                try {
-                    def svcs = env.SERVICES.split(' ')
-                    svcs.each { svc ->
-                        bat "kubectl rollout undo deployment/${svc} -n %K8S_NAMESPACE% || exit 0"
+                def clusterUp = bat(returnStatus: true, script: 'kubectl cluster-info > nul 2>&1') == 0
+                if (clusterUp) {
+                    echo 'Cluster reachable - attempting rollback'
+                    try {
+                        def svcs = env.SERVICES.split(' ')
+                        svcs.each { svc ->
+                            bat "kubectl rollout undo deployment/${svc} -n %K8S_NAMESPACE% || exit 0"
+                        }
+                    } catch (Exception e) {
+                        echo "Rollback error"
                     }
-                } catch (Exception e) {
-                    echo "Rollback skipped"
+                } else {
+                    echo 'Cluster unreachable - skipping rollback'
                 }
             }
         }
