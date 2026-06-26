@@ -10,6 +10,7 @@ pipeline {
         DOCKER_HUB_USER = 'avishkarlakade'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
         K8S_NAMESPACE = 'food-delivery'
+        KUBECONFIG = 'C:\\ProgramData\\Jenkins\\.jenkins\\.kube\\config'
         SERVICES = 'config-server eureka-server api-gateway user-service restaurant-service order-service payment-service notification-service'
     }
 
