@@ -10,7 +10,6 @@ pipeline {
         DOCKER_HUB_USER = 'avishkarlakade'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
         K8S_NAMESPACE = 'food-delivery'
-        KUBECONFIG = 'C:\\ProgramData\\Jenkins\\.jenkins\\.kube\\config'
         SERVICES = 'config-server eureka-server api-gateway user-service restaurant-service order-service payment-service notification-service'
     }
 
@@ -69,12 +68,14 @@ pipeline {
 
         stage('5. Code Coverage') {
             steps {
-                echo 'Stage 5: JaCoCo coverage'
-                bat 'mvn -B -ntp jacoco:report -fae || exit 0'
+                echo 'Stage 5: Archive JaCoCo execution data'
+                catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
+                    bat 'mvn -B -ntp org.jacoco:jacoco-maven-plugin:0.8.11:report -fae || exit 0'
+                }
             }
             post {
                 always {
-                    jacoco execPattern: '**/target/jacoco.exec', classPattern: '**/target/classes', sourcePattern: '**/src/main/java', exclusionPattern: '**/test/**'
+                    archiveArtifacts artifacts: '**/target/jacoco.exec, **/target/site/jacoco/**', allowEmptyArchive: true, fingerprint: false
                 }
             }
         }
@@ -222,8 +223,9 @@ pipeline {
             echo '================================================'
             script {
                 def clusterUp = bat(returnStatus: true, script: 'kubectl cluster-info > nul 2>&1') == 0
-                if (clusterUp) {
-                    echo 'Cluster reachable - attempting rollback'
+                def nsExists = bat(returnStatus: true, script: 'kubectl get namespace %K8S_NAMESPACE% > nul 2>&1') == 0
+                if (clusterUp && nsExists) {
+                    echo 'Cluster reachable and namespace exists - attempting rollback'
                     try {
                         def svcs = env.SERVICES.split(' ')
                         svcs.each { svc ->
@@ -233,7 +235,7 @@ pipeline {
                         echo "Rollback error"
                     }
                 } else {
-                    echo 'Cluster unreachable - skipping rollback'
+                    echo 'No deployments to rollback (cluster unreachable or namespace missing)'
                 }
             }
         }
