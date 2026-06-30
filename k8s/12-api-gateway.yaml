@@ -24,39 +24,30 @@ spec:
     spec:
       containers:
         - name: api-gateway
-          image: avishkarlakade3119/api-gateway:latest
-          imagePullPolicy: Always
+          image: avishkarlakade/api-gateway:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              value: "http://eureka-server:8761/eureka/"
+            - name: EUREKA_INSTANCE_PREFERIPADDRESS
+              value: "true"
+            - name: SPRING_CLOUD_CONFIG_URI
+              value: "http://config-server:8888"
+            - name: SPRING_CLOUD_CONFIG_FAIL_FAST
+              value: "false"          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+
           ports:
             - containerPort: 8443
               name: http
           envFrom:
             - configMapRef:
                 name: shared-config
-          resources:
-            requests:
-              memory: "384Mi"
-              cpu: "100m"
-            limits:
-              memory: "768Mi"
-              cpu: "500m"
-          readinessProbe:
-            httpGet:
-              path: /actuator/health
-              port: 8443
-              scheme: HTTPS
-            initialDelaySeconds: 120
-            periodSeconds: 15
-            timeoutSeconds: 5
-            failureThreshold: 6
-          livenessProbe:
-            httpGet:
-              path: /actuator/health
-              port: 8443
-              scheme: HTTPS
-            initialDelaySeconds: 180
-            periodSeconds: 30
-            timeoutSeconds: 5
-            failureThreshold: 3
 ---
 apiVersion: v1
 kind: Service
@@ -68,7 +59,14 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: api-gateway
+    app: api-gateway          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+
   ports:
     - port: 8443
       targetPort: 8443
