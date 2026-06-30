@@ -3,29 +3,22 @@ kind: Deployment
 metadata:
   name: restaurant-service
   namespace: food-delivery
-  labels:
-    app: restaurant-service
-    tier: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: restaurant-service
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 0
-      maxSurge: 1
   template:
     metadata:
       labels:
         app: restaurant-service
-        tier: backend
     spec:
       containers:
         - name: restaurant-service
           image: avishkarlakade/restaurant-service:latest
           imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8082
           env:
             - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
               value: "http://eureka-server:8761/eureka/"
@@ -34,46 +27,24 @@ spec:
             - name: SPRING_CLOUD_CONFIG_URI
               value: "http://config-server:8888"
             - name: SPRING_CLOUD_CONFIG_FAIL_FAST
-              value: "false"          resources:
+              value: "false"
+          resources:
             requests:
               memory: "256Mi"
               cpu: "100m"
             limits:
               memory: "1Gi"
               cpu: "1000m"
-
-          ports:
-            - containerPort: 8082
-              name: http
-          envFrom:
-            - configMapRef:
-                name: shared-config
-          env:
-            - name: SPRING_DATASOURCE_URL
-              value: "jdbc:postgresql://postgres:5432/restaurant_db"
-            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
-              value: "update"
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: restaurant-service
   namespace: food-delivery
-  labels:
-    app: restaurant-service
 spec:
   type: ClusterIP
   selector:
-    app: restaurant-service          resources:
-            requests:
-              memory: "256Mi"
-              cpu: "100m"
-            limits:
-              memory: "1Gi"
-              cpu: "1000m"
-
+    app: restaurant-service
   ports:
     - port: 8082
       targetPort: 8082
-      protocol: TCP
-      name: http

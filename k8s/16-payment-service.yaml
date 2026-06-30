@@ -3,29 +3,22 @@ kind: Deployment
 metadata:
   name: payment-service
   namespace: food-delivery
-  labels:
-    app: payment-service
-    tier: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: payment-service
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 0
-      maxSurge: 1
   template:
     metadata:
       labels:
         app: payment-service
-        tier: backend
     spec:
       containers:
         - name: payment-service
           image: avishkarlakade/payment-service:latest
           imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8084
           env:
             - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
               value: "http://eureka-server:8761/eureka/"
@@ -34,46 +27,24 @@ spec:
             - name: SPRING_CLOUD_CONFIG_URI
               value: "http://config-server:8888"
             - name: SPRING_CLOUD_CONFIG_FAIL_FAST
-              value: "false"          resources:
+              value: "false"
+          resources:
             requests:
               memory: "256Mi"
               cpu: "100m"
             limits:
               memory: "1Gi"
               cpu: "1000m"
-
-          ports:
-            - containerPort: 8084
-              name: http
-          envFrom:
-            - configMapRef:
-                name: shared-config
-          env:
-            - name: SPRING_DATASOURCE_URL
-              value: "jdbc:postgresql://postgres:5432/payment_db"
-            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
-              value: "update"
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: payment-service
   namespace: food-delivery
-  labels:
-    app: payment-service
 spec:
   type: ClusterIP
   selector:
-    app: payment-service          resources:
-            requests:
-              memory: "256Mi"
-              cpu: "100m"
-            limits:
-              memory: "1Gi"
-              cpu: "1000m"
-
+    app: payment-service
   ports:
     - port: 8084
       targetPort: 8084
-      protocol: TCP
-      name: http

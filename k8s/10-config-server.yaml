@@ -3,29 +3,22 @@ kind: Deployment
 metadata:
   name: config-server
   namespace: food-delivery
-  labels:
-    app: config-server
-    tier: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: config-server
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 0
-      maxSurge: 1
   template:
     metadata:
       labels:
         app: config-server
-        tier: backend
     spec:
       containers:
         - name: config-server
           image: avishkarlakade/config-server:latest
           imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8888
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: "native"
@@ -36,38 +29,24 @@ spec:
             - name: EUREKA_CLIENT_REGISTERWITHEUREKA
               value: "false"
             - name: EUREKA_CLIENT_FETCHREGISTRY
-              value: "false"          resources:
+              value: "false"
+          resources:
             requests:
               memory: "256Mi"
               cpu: "100m"
             limits:
               memory: "1Gi"
               cpu: "1000m"
-
-          ports:
-            - containerPort: 8888
-              name: http
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: config-server
   namespace: food-delivery
-  labels:
-    app: config-server
 spec:
   type: ClusterIP
   selector:
-    app: config-server          resources:
-            requests:
-              memory: "256Mi"
-              cpu: "100m"
-            limits:
-              memory: "1Gi"
-              cpu: "1000m"
-
+    app: config-server
   ports:
     - port: 8888
       targetPort: 8888
-      protocol: TCP
-      name: http
