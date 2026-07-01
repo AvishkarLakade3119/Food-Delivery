@@ -1,100 +1,96 @@
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
-  external_labels:
-    monitor: 'food-delivery-monitor'
 
 scrape_configs:
-  # ===== Business Microservices =====
-  - job_name: 'api-gateway'
-    scheme: https
-    tls_config:
-      insecure_skip_verify: true
-    metrics_path: '/actuator/prometheus'
+  - job_name: 'prometheus'
     static_configs:
-      - targets: ['host.docker.internal:8443']
-        labels:
-          application: 'api-gateway'
+      - targets: ['localhost:9090']
 
+  # ===== ALL MICROSERVICES via kubectl proxy =====
   - job_name: 'user-service'
-    metrics_path: '/actuator/prometheus'
+    metrics_path: '/api/v1/namespaces/food-delivery/services/user-service:8085/proxy/actuator/prometheus'
     static_configs:
-      - targets: ['host.docker.internal:8085']
+      - targets: ['host.docker.internal:8001']
         labels:
-          application: 'user-service'
+          application: user-service
 
   - job_name: 'restaurant-service'
-    metrics_path: '/actuator/prometheus'
+    metrics_path: '/api/v1/namespaces/food-delivery/services/restaurant-service:8082/proxy/actuator/prometheus'
     static_configs:
-      - targets: ['host.docker.internal:8082']
+      - targets: ['host.docker.internal:8001']
         labels:
-          application: 'restaurant-service'
+          application: restaurant-service
 
   - job_name: 'order-service'
-    metrics_path: '/actuator/prometheus'
+    metrics_path: '/api/v1/namespaces/food-delivery/services/order-service:8083/proxy/actuator/prometheus'
     static_configs:
-      - targets: ['host.docker.internal:8083']
+      - targets: ['host.docker.internal:8001']
         labels:
-          application: 'order-service'
+          application: order-service
 
   - job_name: 'payment-service'
-    metrics_path: '/actuator/prometheus'
+    metrics_path: '/api/v1/namespaces/food-delivery/services/payment-service:8084/proxy/actuator/prometheus'
     static_configs:
-      - targets: ['host.docker.internal:8084']
+      - targets: ['host.docker.internal:8001']
         labels:
-          application: 'payment-service'
+          application: payment-service
 
   - job_name: 'notification-service'
-    metrics_path: '/actuator/prometheus'
+    metrics_path: '/api/v1/namespaces/food-delivery/services/notification-service:8086/proxy/actuator/prometheus'
     static_configs:
-      - targets: ['host.docker.internal:8081']
+      - targets: ['host.docker.internal:8001']
         labels:
-          application: 'notification-service'
+          application: notification-service
 
-  # ===== PostgreSQL Exporters (5 databases) =====
-  - job_name: 'postgres-order'
+  - job_name: 'api-gateway'
+    metrics_path: '/api/v1/namespaces/food-delivery/services/https:api-gateway:8443/proxy/actuator/prometheus'
     static_configs:
-      - targets: ['postgres-exporter-order:9187']
+      - targets: ['host.docker.internal:8001']
         labels:
-          application: 'postgresql'
-          database: 'orderdb'
+          application: api-gateway
 
-  - job_name: 'postgres-payment'
+  - job_name: 'config-server'
+    metrics_path: '/api/v1/namespaces/food-delivery/services/config-server:8888/proxy/actuator/prometheus'
     static_configs:
-      - targets: ['postgres-exporter-payment:9187']
+      - targets: ['host.docker.internal:8001']
         labels:
-          application: 'postgresql'
-          database: 'paymentdb'
+          application: config-server
 
+  - job_name: 'eureka-server'
+    metrics_path: '/api/v1/namespaces/food-delivery/services/eureka-server:8761/proxy/actuator/prometheus'
+    static_configs:
+      - targets: ['host.docker.internal:8001']
+        labels:
+          application: eureka-server
+
+  # ===== POSTGRES EXPORTERS (unchanged - Docker network) =====
   - job_name: 'postgres-user'
     static_configs:
       - targets: ['postgres-exporter-user:9187']
-        labels:
-          application: 'postgresql'
-          database: 'userdb'
+        labels: {application: postgresql, database: userdb}
 
   - job_name: 'postgres-restaurant'
     static_configs:
       - targets: ['postgres-exporter-restaurant:9187']
-        labels:
-          application: 'postgresql'
-          database: 'restaurantdb'
+        labels: {application: postgresql, database: restaurantdb}
+
+  - job_name: 'postgres-order'
+    static_configs:
+      - targets: ['postgres-exporter-order:9187']
+        labels: {application: postgresql, database: orderdb}
+
+  - job_name: 'postgres-payment'
+    static_configs:
+      - targets: ['postgres-exporter-payment:9187']
+        labels: {application: postgresql, database: paymentdb}
 
   - job_name: 'postgres-notification'
     static_configs:
       - targets: ['postgres-exporter-notification:9187']
-        labels:
-          application: 'postgresql'
-          database: 'notificationdb'
+        labels: {application: postgresql, database: notificationdb}
 
-  # ===== RabbitMQ =====
   - job_name: 'rabbitmq'
     static_configs:
       - targets: ['rabbitmq-exporter:9419']
-        labels:
-          application: 'rabbitmq'
-
-  # ===== Prometheus Self-Monitoring =====
-  - job_name: 'prometheus'
-    static_configs:
-      - targets: ['localhost:9090']
+        labels: {application: rabbitmq}
