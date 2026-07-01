@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_HUB_USER = 'avishkarlakade'
+        DOCKER_HUB_USER = 'avishkarlakade' //For jenkins cred
         IMAGE_TAG = "${env.BUILD_NUMBER}"
         K8S_NAMESPACE = 'food-delivery'
         SERVICES = 'config-server eureka-server api-gateway user-service restaurant-service order-service payment-service notification-service'
