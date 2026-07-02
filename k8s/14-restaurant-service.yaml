@@ -44,6 +44,10 @@ spec:
               value: "guest"
             - name: SPRING_RABBITMQ_PASSWORD
               value: "guest"
+            - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+              value: "health,info,metrics,prometheus"
+            - name: MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED
+              value: "true"
             - name: SPRING_CLOUD_CONFIG_URI
               value: "http://config-server:8888"
             - name: SPRING_CLOUD_CONFIG_FAIL_FAST
