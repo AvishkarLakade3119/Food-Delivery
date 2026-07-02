@@ -61,6 +61,14 @@ eureka:
 
 # ===== Phase 8: K8s liveness/readiness probes =====
 management:
+  # ===== Distributed Tracing (Phase 6) =====
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
   endpoint:
     health:
       probes:
