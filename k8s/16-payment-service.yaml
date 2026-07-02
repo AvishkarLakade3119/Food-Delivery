@@ -24,6 +24,12 @@ spec:
               value: "http://eureka-server:8761/eureka/"
             - name: EUREKA_INSTANCE_PREFERIPADDRESS
               value: "true"
+            - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
+              value: "http://zipkin:9411/api/v2/spans"
+            - name: MANAGEMENT_TRACING_ENABLED
+              value: "true"
+            - name: MANAGEMENT_TRACING_SAMPLING_PROBABILITY
+              value: "1.0"
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:postgresql://postgres:5432/payment_db"
             - name: SPRING_DATASOURCE_USERNAME
