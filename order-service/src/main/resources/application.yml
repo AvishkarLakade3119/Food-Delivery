@@ -166,6 +166,15 @@ resilience4j:
 
 # ====================== ACTUATOR + TRACING (Phase 6) ======================
 management:
+  metrics:
+    tags:
+      application: order-service
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+        http.client.requests: true
+      percentiles:
+        http.server.requests: 0.5, 0.75, 0.95, 0.99
   endpoints:
     web:
       exposure:
@@ -197,3 +206,4 @@ management:
   observations:
     annotations:
       enabled: true
+

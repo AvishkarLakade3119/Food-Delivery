@@ -1,4 +1,4 @@
-# ========================================
+﻿# ========================================
 # Restaurant Service - Bootstrap Configuration
 # ========================================
 # Minimal configuration to connect to Config Server
@@ -69,6 +69,15 @@ eureka:
 
 # ===== Phase 8: K8s liveness/readiness probes =====
 management:
+  metrics:
+    tags:
+      application: restaurant-service
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+        http.client.requests: true
+      percentiles:
+        http.server.requests: 0.5, 0.75, 0.95, 0.99
   # ===== Distributed Tracing (Phase 6) =====
   tracing:
     enabled: true
@@ -87,3 +96,4 @@ management:
           include: readinessState,diskSpace
         liveness:
           include: livenessState
+
