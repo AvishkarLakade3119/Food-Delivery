@@ -1,4 +1,4 @@
-pipeline {
+﻿pipeline {
     agent any
 
     tools {
@@ -174,7 +174,17 @@ pipeline {
             }
         }
 
-        stage('13. Expose NodePorts') {
+
+        stage('13. Deploy Monitoring Stack') {
+            steps {
+                echo '📊 Deploying Prometheus + Grafana to Kubernetes...'
+                bat 'kubectl apply -f k8s/monitoring.yaml'
+                bat 'kubectl rollout status deployment/prometheus -n food-delivery --timeout=180s'
+                bat 'kubectl rollout status deployment/grafana    -n food-delivery --timeout=180s'
+                echo '✅ Monitoring stack deployed successfully'
+            }
+        }
+        stage('14. Expose NodePorts') {
             steps {
                 echo 'Stage 13: Creating NodePort services'
                 bat 'kubectl apply -f k8s/99-nodeports.yaml'
@@ -182,7 +192,7 @@ pipeline {
             }
         }
 
-        stage('14. Smoke Tests') {
+        stage('15. Smoke Tests') {
             steps {
                 echo 'Stage 14: Post-deploy verification'
                 bat 'kubectl get pods -n %K8S_NAMESPACE% -o wide'
@@ -194,7 +204,7 @@ pipeline {
             }
         }
 
-        stage('15. Report Access URLs') {
+        stage('16. Report Access URLs') {
             steps {
                 echo 'Stage 15: Deployment summary'
                 bat 'kubectl get nodes -o wide'
