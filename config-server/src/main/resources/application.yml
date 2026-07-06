@@ -54,31 +54,28 @@ eureka:
     lease-expiration-duration-in-seconds: 30
 
 # Actuator Configuration for Health Checks and Monitoring
+
 management:
   endpoints:
     web:
       exposure:
-        include: health,info,env,refresh,configprops,prometheus
+        include: health,info,prometheus,metrics
+      base-path: /actuator
   endpoint:
     health:
+      show-details: always
       probes:
         enabled: true
-      group:
-        readiness:
-          include: readinessState,diskSpace,prometheus
-        liveness:
-          include: livenessState,prometheus
-      show-details: always
-  health:
-    config:
-      enabled: true
+    prometheus:
+      access: unrestricted
+  metrics:
+    tags:
+      application: config-server
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
 
-# Logging Configuration
-logging:
-  level:
-    root: INFO
-    org.springframework.cloud.config: DEBUG
-    org.springframework.cloud.netflix.eureka: INFO
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
-    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
