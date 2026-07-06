@@ -175,16 +175,27 @@ pipeline {
         }
 
 
-        stage('13. Deploy Monitoring Stack') {
+        stage('13. Preload Monitoring Images') {
             steps {
-                echo '📊 Deploying Prometheus + Grafana to Kubernetes...'
+                echo 'Preloading Prometheus + Grafana images into Minikube to bypass corporate proxy'
+                bat 'docker pull prom/prometheus:v2.53.0 || exit 0'
+                bat 'docker pull grafana/grafana:11.1.0 || exit 0'
+                bat 'minikube image load prom/prometheus:v2.53.0 || exit 0'
+                bat 'minikube image load grafana/grafana:11.1.0 || exit 0'
+                bat 'minikube image ls | findstr /I "prometheus grafana" || exit 0'
+            }
+        }
+
+        stage('14. Deploy Monitoring Stack') {
+            steps {
+                echo 'ðŸ“Š Deploying Prometheus + Grafana to Kubernetes...'
                 bat 'kubectl apply -f k8s/monitoring.yaml'
                 bat 'kubectl rollout status deployment/prometheus -n food-delivery --timeout=180s'
                 bat 'kubectl rollout status deployment/grafana    -n food-delivery --timeout=180s'
-                echo '✅ Monitoring stack deployed successfully'
+                echo 'âœ… Monitoring stack deployed successfully'
             }
         }
-        stage('14. Expose NodePorts') {
+        stage('15. Expose NodePorts') {
             steps {
                 echo 'Stage 13: Creating NodePort services'
                 bat 'kubectl apply -f k8s/99-nodeports.yaml'
@@ -192,7 +203,7 @@ pipeline {
             }
         }
 
-        stage('15. Smoke Tests') {
+        stage('16. Smoke Tests') {
             steps {
                 echo 'Stage 14: Post-deploy verification'
                 bat 'kubectl get pods -n %K8S_NAMESPACE% -o wide'
@@ -204,7 +215,7 @@ pipeline {
             }
         }
 
-        stage('16. Report Access URLs') {
+        stage('17. Report Access URLs') {
             steps {
                 echo 'Stage 15: Deployment summary'
                 bat 'kubectl get nodes -o wide'
