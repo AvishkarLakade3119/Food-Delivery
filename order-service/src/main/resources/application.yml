@@ -1,4 +1,4 @@
-# ========================================
+﻿# ========================================
 # Order Service - Bootstrap Configuration
 # ========================================
 # Minimal config to connect to Config Server.
@@ -193,7 +193,7 @@ management:
       probability: 1.0                 # 100% sampling for dev (use 0.1 in production)
   zipkin:
     tracing:
-      endpoint: http://localhost:9411/api/v2/spans
+      endpoint: http://zipkin:9411/api/v2/spans
   observations:
     annotations:
       enabled: true
