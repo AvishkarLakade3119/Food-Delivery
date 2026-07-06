@@ -2,41 +2,79 @@
     "dashboard":  {
                       "schemaVersion":  39,
                       "id":  null,
+                      "templating":  {
+                                         "list":  [
+                                                      {
+                                                          "query":  "label_values(up{job!=\"prometheus\"}, application)",
+                                                          "datasource":  {
+                                                                             "type":  "prometheus",
+                                                                             "uid":  "dfr9x00oifvnkf"
+                                                                         },
+                                                          "includeAll":  true,
+                                                          "name":  "application",
+                                                          "type":  "query",
+                                                          "current":  {
+                                                                          "text":  "All",
+                                                                          "value":  "$__all"
+                                                                      },
+                                                          "multi":  true,
+                                                          "refresh":  1
+                                                      }
+                                                  ]
+                                     },
                       "version":  1,
                       "panels":  [
                                      {
-                                         "id":  1,
                                          "fieldConfig":  {
                                                              "defaults":  {
-                                                                              "unit":  "short",
-                                                                              "decimals":  0
+                                                                              "color":  {
+                                                                                            "mode":  "thresholds"
+                                                                                        },
+                                                                              "decimals":  0,
+                                                                              "thresholds":  {
+                                                                                                 "steps":  [
+                                                                                                               {
+                                                                                                                   "value":  null,
+                                                                                                                   "color":  "red"
+                                                                                                               },
+                                                                                                               {
+                                                                                                                   "value":  6,
+                                                                                                                   "color":  "green"
+                                                                                                               }
+                                                                                                           ]
+                                                                                             },
+                                                                              "unit":  "short"
                                                                           }
                                                          },
+                                         "id":  1,
                                          "gridPos":  {
                                                          "y":  0,
                                                          "w":  6,
                                                          "x":  0,
                                                          "h":  4
                                                      },
-                                         "targets":  [
-                                                         {
-                                                             "refId":  "A",
-                                                             "expr":  "sum(hikaricp_connections_active)"
-                                                         }
-                                                     ],
                                          "datasource":  {
                                                             "type":  "prometheus",
                                                             "uid":  "dfr9x00oifvnkf"
                                                         },
+                                         "title":  "Services UP",
+                                         "targets":  [
+                                                         {
+                                                             "refId":  "A",
+                                                             "expr":  "sum(up{application=~\"$application\"})"
+                                                         }
+                                                     ],
                                          "type":  "stat",
-                                         "title":  "Total Active Connections"
+                                         "options":  {
+                                                         "colorMode":  "background"
+                                                     }
                                      },
                                      {
                                          "id":  2,
                                          "fieldConfig":  {
                                                              "defaults":  {
-                                                                              "unit":  "short",
-                                                                              "decimals":  0
+                                                                              "unit":  "reqps",
+                                                                              "decimals":  2
                                                                           }
                                                          },
                                          "gridPos":  {
@@ -48,7 +86,7 @@
                                          "targets":  [
                                                          {
                                                              "refId":  "A",
-                                                             "expr":  "sum(hikaricp_connections_idle)"
+                                                             "expr":  "sum(rate(http_server_requests_seconds_count{application=~\"$application\"}[5m]))"
                                                          }
                                                      ],
                                          "datasource":  {
@@ -56,14 +94,14 @@
                                                             "uid":  "dfr9x00oifvnkf"
                                                         },
                                          "type":  "stat",
-                                         "title":  "Total Idle Connections"
+                                         "title":  "Total Requests/sec (5m)"
                                      },
                                      {
                                          "id":  3,
                                          "fieldConfig":  {
                                                              "defaults":  {
-                                                                              "unit":  "short",
-                                                                              "decimals":  0
+                                                                              "unit":  "s",
+                                                                              "decimals":  3
                                                                           }
                                                          },
                                          "gridPos":  {
@@ -75,7 +113,7 @@
                                          "targets":  [
                                                          {
                                                              "refId":  "A",
-                                                             "expr":  "sum(hikaricp_connections)"
+                                                             "expr":  "sum(rate(http_server_requests_seconds_sum{application=~\"$application\"}[5m])) / sum(rate(http_server_requests_seconds_count{application=~\"$application\"}[5m]))"
                                                          }
                                                      ],
                                          "datasource":  {
@@ -83,40 +121,58 @@
                                                             "uid":  "dfr9x00oifvnkf"
                                                         },
                                          "type":  "stat",
-                                         "title":  "Total Pool Size"
+                                         "title":  "Avg Response Time (5m)"
                                      },
                                      {
-                                         "id":  4,
                                          "fieldConfig":  {
                                                              "defaults":  {
-                                                                              "unit":  "short",
-                                                                              "decimals":  0
+                                                                              "color":  {
+                                                                                            "mode":  "thresholds"
+                                                                                        },
+                                                                              "decimals":  2,
+                                                                              "thresholds":  {
+                                                                                                 "steps":  [
+                                                                                                               {
+                                                                                                                   "value":  null,
+                                                                                                                   "color":  "green"
+                                                                                                               },
+                                                                                                               {
+                                                                                                                   "value":  0.1,
+                                                                                                                   "color":  "red"
+                                                                                                               }
+                                                                                                           ]
+                                                                                             },
+                                                                              "unit":  "reqps"
                                                                           }
                                                          },
+                                         "id":  4,
                                          "gridPos":  {
                                                          "y":  0,
                                                          "w":  6,
                                                          "x":  18,
                                                          "h":  4
                                                      },
-                                         "targets":  [
-                                                         {
-                                                             "refId":  "A",
-                                                             "expr":  "sum(hikaricp_connections_pending)"
-                                                         }
-                                                     ],
                                          "datasource":  {
                                                             "type":  "prometheus",
                                                             "uid":  "dfr9x00oifvnkf"
                                                         },
+                                         "title":  "5xx Error Rate (5m)",
+                                         "targets":  [
+                                                         {
+                                                             "refId":  "A",
+                                                             "expr":  "sum(rate(http_server_requests_seconds_count{application=~\"$application\",status=~\"5..\"}[5m]))"
+                                                         }
+                                                     ],
                                          "type":  "stat",
-                                         "title":  "Pending Threads"
+                                         "options":  {
+                                                         "colorMode":  "background"
+                                                     }
                                      },
                                      {
                                          "id":  5,
                                          "fieldConfig":  {
                                                              "defaults":  {
-                                                                              "unit":  "short"
+                                                                              "unit":  "reqps"
                                                                           }
                                                          },
                                          "gridPos":  {
@@ -128,7 +184,7 @@
                                          "targets":  [
                                                          {
                                                              "legendFormat":  "{{application}}",
-                                                             "expr":  "sum by (application) (hikaricp_connections_active)",
+                                                             "expr":  "sum by (application) (rate(http_server_requests_seconds_count{application=~\"$application\"}[1m]))",
                                                              "refId":  "A"
                                                          }
                                                      ],
@@ -137,13 +193,13 @@
                                                             "uid":  "dfr9x00oifvnkf"
                                                         },
                                          "type":  "timeseries",
-                                         "title":  "Active Connections per Service"
+                                         "title":  "Request Rate per Service"
                                      },
                                      {
                                          "id":  6,
                                          "fieldConfig":  {
                                                              "defaults":  {
-                                                                              "unit":  "short"
+                                                                              "unit":  "s"
                                                                           }
                                                          },
                                          "gridPos":  {
@@ -155,7 +211,7 @@
                                          "targets":  [
                                                          {
                                                              "legendFormat":  "{{application}}",
-                                                             "expr":  "sum by (application) (hikaricp_connections_idle)",
+                                                             "expr":  "histogram_quantile(0.95, sum by (application, le) (rate(http_server_requests_seconds_bucket{application=~\"$application\"}[5m])))",
                                                              "refId":  "A"
                                                          }
                                                      ],
@@ -164,13 +220,13 @@
                                                             "uid":  "dfr9x00oifvnkf"
                                                         },
                                          "type":  "timeseries",
-                                         "title":  "Idle Connections per Service"
+                                         "title":  "P95 Latency per Service"
                                      },
                                      {
                                          "id":  7,
                                          "fieldConfig":  {
                                                              "defaults":  {
-                                                                              "unit":  "short"
+                                                                              "unit":  "bytes"
                                                                           }
                                                          },
                                          "gridPos":  {
@@ -182,7 +238,7 @@
                                          "targets":  [
                                                          {
                                                              "legendFormat":  "{{application}}",
-                                                             "expr":  "sum by (application) (hikaricp_connections)",
+                                                             "expr":  "sum by (application) (jvm_memory_used_bytes{application=~\"$application\",area=\"heap\"})",
                                                              "refId":  "A"
                                                          }
                                                      ],
@@ -191,13 +247,13 @@
                                                             "uid":  "dfr9x00oifvnkf"
                                                         },
                                          "type":  "timeseries",
-                                         "title":  "Pool Total Size per Service"
+                                         "title":  "JVM Heap Used per Service"
                                      },
                                      {
                                          "id":  8,
                                          "fieldConfig":  {
                                                              "defaults":  {
-                                                                              "unit":  "short"
+                                                                              "unit":  "percentunit"
                                                                           }
                                                          },
                                          "gridPos":  {
@@ -209,7 +265,7 @@
                                          "targets":  [
                                                          {
                                                              "legendFormat":  "{{application}}",
-                                                             "expr":  "sum by (application) (hikaricp_connections_pending)",
+                                                             "expr":  "sum by (application) (process_cpu_usage{application=~\"$application\"})",
                                                              "refId":  "A"
                                                          }
                                                      ],
@@ -218,13 +274,13 @@
                                                             "uid":  "dfr9x00oifvnkf"
                                                         },
                                          "type":  "timeseries",
-                                         "title":  "Pending Threads per Service"
+                                         "title":  "CPU Usage per Service"
                                      },
                                      {
                                          "id":  9,
                                          "fieldConfig":  {
                                                              "defaults":  {
-                                                                              "unit":  "s"
+                                                                              "unit":  "short"
                                                                           }
                                                          },
                                          "gridPos":  {
@@ -236,7 +292,7 @@
                                          "targets":  [
                                                          {
                                                              "legendFormat":  "{{application}}",
-                                                             "expr":  "max by (application) (hikaricp_connections_acquire_seconds_max)",
+                                                             "expr":  "sum by (application) (jvm_threads_live_threads{application=~\"$application\"})",
                                                              "refId":  "A"
                                                          }
                                                      ],
@@ -245,13 +301,13 @@
                                                             "uid":  "dfr9x00oifvnkf"
                                                         },
                                          "type":  "timeseries",
-                                         "title":  "Connection Acquire Time (max) per Service"
+                                         "title":  "Live Threads per Service"
                                      },
                                      {
                                          "id":  10,
                                          "fieldConfig":  {
                                                              "defaults":  {
-                                                                              "unit":  "s"
+                                                                              "unit":  "reqps"
                                                                           }
                                                          },
                                          "gridPos":  {
@@ -262,8 +318,8 @@
                                                      },
                                          "targets":  [
                                                          {
-                                                             "legendFormat":  "{{application}}",
-                                                             "expr":  "sum by (application) (rate(hikaricp_connections_usage_seconds_sum[5m])) / sum by (application) (rate(hikaricp_connections_usage_seconds_count[5m]))",
+                                                             "legendFormat":  "{{application}} {{status}}",
+                                                             "expr":  "sum by (application, status) (rate(http_server_requests_seconds_count{application=~\"$application\"}[1m]))",
                                                              "refId":  "A"
                                                          }
                                                      ],
@@ -272,68 +328,12 @@
                                                             "uid":  "dfr9x00oifvnkf"
                                                         },
                                          "type":  "timeseries",
-                                         "title":  "Avg Connection Usage Time per Service"
-                                     },
-                                     {
-                                         "id":  11,
-                                         "fieldConfig":  {
-                                                             "defaults":  {
-                                                                              "unit":  "reqps"
-                                                                          }
-                                                         },
-                                         "gridPos":  {
-                                                         "y":  28,
-                                                         "w":  12,
-                                                         "x":  0,
-                                                         "h":  8
-                                                     },
-                                         "targets":  [
-                                                         {
-                                                             "legendFormat":  "{{application}}",
-                                                             "expr":  "sum by (application) (rate(hikaricp_connections_creation_seconds_count[5m]))",
-                                                             "refId":  "A"
-                                                         }
-                                                     ],
-                                         "datasource":  {
-                                                            "type":  "prometheus",
-                                                            "uid":  "dfr9x00oifvnkf"
-                                                        },
-                                         "type":  "timeseries",
-                                         "title":  "Connection Creation Rate per Service"
-                                     },
-                                     {
-                                         "id":  12,
-                                         "fieldConfig":  {
-                                                             "defaults":  {
-                                                                              "unit":  "reqps"
-                                                                          }
-                                                         },
-                                         "gridPos":  {
-                                                         "y":  28,
-                                                         "w":  12,
-                                                         "x":  12,
-                                                         "h":  8
-                                                     },
-                                         "targets":  [
-                                                         {
-                                                             "legendFormat":  "{{application}}",
-                                                             "expr":  "sum by (application) (rate(hikaricp_connections_timeout_total[5m]))",
-                                                             "refId":  "A"
-                                                         }
-                                                     ],
-                                         "datasource":  {
-                                                            "type":  "prometheus",
-                                                            "uid":  "dfr9x00oifvnkf"
-                                                        },
-                                         "type":  "timeseries",
-                                         "title":  "Connection Timeouts per Service"
+                                         "title":  "HTTP Status Codes per Service"
                                      }
                                  ],
                       "tags":  [
                                    "food-delivery",
-                                   "postgres",
-                                   "database",
-                                   "hikaricp"
+                                   "microservices"
                                ],
                       "time":  {
                                    "to":  "now",
@@ -341,8 +341,8 @@
                                },
                       "timezone":  "browser",
                       "refresh":  "10s",
-                      "title":  "Food Delivery - PostgreSQL (HikariCP)",
-                      "uid":  "food-delivery-postgres"
+                      "title":  "Food Delivery - Service Overview",
+                      "uid":  "food-delivery-overview"
                   },
     "overwrite":  true,
     "folderId":  0

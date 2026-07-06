@@ -1,106 +1,349 @@
 ﻿{
-  "annotations": {"list": []},
-  "editable": true,
-  "fiscalYearStartMonth": 0,
-  "graphTooltip": 0,
-  "id": null,
-  "links": [],
-  "liveNow": false,
-  "panels": [
-    {
-      "datasource": {"type": "prometheus", "uid": "PBFA97CFB590B2093"},
-      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
-      "gridPos": {"h": 4, "w": 6, "x": 0, "y": 0},
-      "id": 100,
-      "options": {"colorMode": "value", "graphMode": "area", "justifyMode": "auto", "orientation": "auto", "reduceOptions": {"calcs": ["lastNotNull"], "fields": "", "values": false}, "textMode": "auto", "wideLayout": true},
-      "pluginVersion": "10.0.0",
-      "targets": [{"expr": "rabbitmq_connections", "refId": "A"}],
-      "title": "Active Connections",
-      "type": "stat"
-    },
-    {
-      "datasource": {"type": "prometheus", "uid": "PBFA97CFB590B2093"},
-      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
-      "gridPos": {"h": 4, "w": 6, "x": 6, "y": 0},
-      "id": 101,
-      "options": {"colorMode": "value", "graphMode": "area", "justifyMode": "auto", "orientation": "auto", "reduceOptions": {"calcs": ["lastNotNull"], "fields": "", "values": false}, "textMode": "auto", "wideLayout": true},
-      "pluginVersion": "10.0.0",
-      "targets": [{"expr": "rabbitmq_channels", "refId": "A"}],
-      "title": "Active Channels",
-      "type": "stat"
-    },
-    {
-      "datasource": {"type": "prometheus", "uid": "PBFA97CFB590B2093"},
-      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
-      "gridPos": {"h": 4, "w": 6, "x": 12, "y": 0},
-      "id": 102,
-      "options": {"colorMode": "value", "graphMode": "area", "justifyMode": "auto", "orientation": "auto", "reduceOptions": {"calcs": ["lastNotNull"], "fields": "", "values": false}, "textMode": "auto", "wideLayout": true},
-      "pluginVersion": "10.0.0",
-      "targets": [{"expr": "sum(rabbitmq_queue_messages_ready)", "refId": "A"}],
-      "title": "Messages Ready (Total)",
-      "type": "stat"
-    },
-    {
-      "datasource": {"type": "prometheus", "uid": "PBFA97CFB590B2093"},
-      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
-      "gridPos": {"h": 4, "w": 6, "x": 18, "y": 0},
-      "id": 103,
-      "options": {"colorMode": "value", "graphMode": "area", "justifyMode": "auto", "orientation": "auto", "reduceOptions": {"calcs": ["lastNotNull"], "fields": "", "values": false}, "textMode": "auto", "wideLayout": true},
-      "pluginVersion": "10.0.0",
-      "targets": [{"expr": "sum(rabbitmq_queue_messages_unacknowledged)", "refId": "A"}],
-      "title": "Messages Unacked",
-      "type": "stat"
-    },
-    {
-      "datasource": {"type": "prometheus", "uid": "PBFA97CFB590B2093"},
-      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
-      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 4},
-      "id": 1,
-      "options": {"legend": {"displayMode": "list", "placement": "bottom", "showLegend": true}, "tooltip": {"mode": "multi", "sort": "desc"}},
-      "targets": [{"expr": "rabbitmq_queue_messages_ready", "legendFormat": "{{queue}}", "refId": "A"}],
-      "title": "Messages Ready per Queue",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {"type": "prometheus", "uid": "PBFA97CFB590B2093"},
-      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
-      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 4},
-      "id": 2,
-      "options": {"legend": {"displayMode": "list", "placement": "bottom", "showLegend": true}, "tooltip": {"mode": "multi", "sort": "desc"}},
-      "targets": [{"expr": "rabbitmq_queue_consumers", "legendFormat": "{{queue}}", "refId": "A"}],
-      "title": "Consumers per Queue",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {"type": "prometheus", "uid": "PBFA97CFB590B2093"},
-      "fieldConfig": {"defaults": {"unit": "ops"}, "overrides": []},
-      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 12},
-      "id": 3,
-      "options": {"legend": {"displayMode": "list", "placement": "bottom", "showLegend": true}, "tooltip": {"mode": "multi", "sort": "desc"}},
-      "targets": [{"expr": "rate(rabbitmq_queue_messages_published_total[1m])", "legendFormat": "{{queue}}", "refId": "A"}],
-      "title": "Publish Rate per Queue",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {"type": "prometheus", "uid": "PBFA97CFB590B2093"},
-      "fieldConfig": {"defaults": {"unit": "ops"}, "overrides": []},
-      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 12},
-      "id": 4,
-      "options": {"legend": {"displayMode": "list", "placement": "bottom", "showLegend": true}, "tooltip": {"mode": "multi", "sort": "desc"}},
-      "targets": [{"expr": "rate(rabbitmq_queue_messages_delivered_total[1m])", "legendFormat": "{{queue}}", "refId": "A"}],
-      "title": "Delivery Rate per Queue",
-      "type": "timeseries"
-    }
-  ],
-  "refresh": "10s",
-  "schemaVersion": 38,
-  "tags": ["food-delivery", "rabbitmq"],
-  "templating": {"list": []},
-  "time": {"from": "now-15m", "to": "now"},
-  "timepicker": {},
-  "timezone": "browser",
-  "title": "Food Delivery - RabbitMQ Dashboard",
-  "uid": "food-delivery-rabbitmq",
-  "version": 1,
-  "weekStart": ""
+    "dashboard":  {
+                      "schemaVersion":  39,
+                      "id":  null,
+                      "version":  1,
+                      "panels":  [
+                                     {
+                                         "id":  1,
+                                         "fieldConfig":  {
+                                                             "defaults":  {
+                                                                              "unit":  "short",
+                                                                              "decimals":  0
+                                                                          }
+                                                         },
+                                         "gridPos":  {
+                                                         "y":  0,
+                                                         "w":  6,
+                                                         "x":  0,
+                                                         "h":  4
+                                                     },
+                                         "targets":  [
+                                                         {
+                                                             "refId":  "A",
+                                                             "expr":  "sum(rabbitmq_connections)"
+                                                         }
+                                                     ],
+                                         "datasource":  {
+                                                            "type":  "prometheus",
+                                                            "uid":  "dfr9x00oifvnkf"
+                                                        },
+                                         "type":  "stat",
+                                         "title":  "Total Connections"
+                                     },
+                                     {
+                                         "id":  2,
+                                         "fieldConfig":  {
+                                                             "defaults":  {
+                                                                              "unit":  "short",
+                                                                              "decimals":  0
+                                                                          }
+                                                         },
+                                         "gridPos":  {
+                                                         "y":  0,
+                                                         "w":  6,
+                                                         "x":  6,
+                                                         "h":  4
+                                                     },
+                                         "targets":  [
+                                                         {
+                                                             "refId":  "A",
+                                                             "expr":  "sum(rabbitmq_channels)"
+                                                         }
+                                                     ],
+                                         "datasource":  {
+                                                            "type":  "prometheus",
+                                                            "uid":  "dfr9x00oifvnkf"
+                                                        },
+                                         "type":  "stat",
+                                         "title":  "Total Channels"
+                                     },
+                                     {
+                                         "id":  3,
+                                         "fieldConfig":  {
+                                                             "defaults":  {
+                                                                              "unit":  "reqps",
+                                                                              "decimals":  2
+                                                                          }
+                                                         },
+                                         "gridPos":  {
+                                                         "y":  0,
+                                                         "w":  6,
+                                                         "x":  12,
+                                                         "h":  4
+                                                     },
+                                         "targets":  [
+                                                         {
+                                                             "refId":  "A",
+                                                             "expr":  "sum(rate(rabbitmq_published_total[5m]))"
+                                                         }
+                                                     ],
+                                         "datasource":  {
+                                                            "type":  "prometheus",
+                                                            "uid":  "dfr9x00oifvnkf"
+                                                        },
+                                         "type":  "stat",
+                                         "title":  "Published/sec (5m)"
+                                     },
+                                     {
+                                         "id":  4,
+                                         "fieldConfig":  {
+                                                             "defaults":  {
+                                                                              "unit":  "reqps",
+                                                                              "decimals":  2
+                                                                          }
+                                                         },
+                                         "gridPos":  {
+                                                         "y":  0,
+                                                         "w":  6,
+                                                         "x":  18,
+                                                         "h":  4
+                                                     },
+                                         "targets":  [
+                                                         {
+                                                             "refId":  "A",
+                                                             "expr":  "sum(rate(rabbitmq_consumed_total[5m]))"
+                                                         }
+                                                     ],
+                                         "datasource":  {
+                                                            "type":  "prometheus",
+                                                            "uid":  "dfr9x00oifvnkf"
+                                                        },
+                                         "type":  "stat",
+                                         "title":  "Consumed/sec (5m)"
+                                     },
+                                     {
+                                         "id":  5,
+                                         "fieldConfig":  {
+                                                             "defaults":  {
+                                                                              "unit":  "reqps"
+                                                                          }
+                                                         },
+                                         "gridPos":  {
+                                                         "y":  4,
+                                                         "w":  12,
+                                                         "x":  0,
+                                                         "h":  8
+                                                     },
+                                         "targets":  [
+                                                         {
+                                                             "legendFormat":  "{{application}}",
+                                                             "expr":  "sum by (application) (rate(rabbitmq_published_total[1m]))",
+                                                             "refId":  "A"
+                                                         }
+                                                     ],
+                                         "datasource":  {
+                                                            "type":  "prometheus",
+                                                            "uid":  "dfr9x00oifvnkf"
+                                                        },
+                                         "type":  "timeseries",
+                                         "title":  "Publish Rate per Service"
+                                     },
+                                     {
+                                         "id":  6,
+                                         "fieldConfig":  {
+                                                             "defaults":  {
+                                                                              "unit":  "reqps"
+                                                                          }
+                                                         },
+                                         "gridPos":  {
+                                                         "y":  4,
+                                                         "w":  12,
+                                                         "x":  12,
+                                                         "h":  8
+                                                     },
+                                         "targets":  [
+                                                         {
+                                                             "legendFormat":  "{{application}}",
+                                                             "expr":  "sum by (application) (rate(rabbitmq_consumed_total[1m]))",
+                                                             "refId":  "A"
+                                                         }
+                                                     ],
+                                         "datasource":  {
+                                                            "type":  "prometheus",
+                                                            "uid":  "dfr9x00oifvnkf"
+                                                        },
+                                         "type":  "timeseries",
+                                         "title":  "Consume Rate per Service"
+                                     },
+                                     {
+                                         "id":  7,
+                                         "fieldConfig":  {
+                                                             "defaults":  {
+                                                                              "unit":  "reqps"
+                                                                          }
+                                                         },
+                                         "gridPos":  {
+                                                         "y":  12,
+                                                         "w":  12,
+                                                         "x":  0,
+                                                         "h":  8
+                                                     },
+                                         "targets":  [
+                                                         {
+                                                             "legendFormat":  "{{application}}",
+                                                             "expr":  "sum by (application) (rate(rabbitmq_acknowledged_total[1m]))",
+                                                             "refId":  "A"
+                                                         }
+                                                     ],
+                                         "datasource":  {
+                                                            "type":  "prometheus",
+                                                            "uid":  "dfr9x00oifvnkf"
+                                                        },
+                                         "type":  "timeseries",
+                                         "title":  "Acknowledged Rate per Service"
+                                     },
+                                     {
+                                         "id":  8,
+                                         "fieldConfig":  {
+                                                             "defaults":  {
+                                                                              "unit":  "reqps"
+                                                                          }
+                                                         },
+                                         "gridPos":  {
+                                                         "y":  12,
+                                                         "w":  12,
+                                                         "x":  12,
+                                                         "h":  8
+                                                     },
+                                         "targets":  [
+                                                         {
+                                                             "legendFormat":  "{{application}}",
+                                                             "expr":  "sum by (application) (rate(rabbitmq_rejected_total[1m])) + sum by (application) (rate(rabbitmq_failed_to_publish_total[1m]))",
+                                                             "refId":  "A"
+                                                         }
+                                                     ],
+                                         "datasource":  {
+                                                            "type":  "prometheus",
+                                                            "uid":  "dfr9x00oifvnkf"
+                                                        },
+                                         "type":  "timeseries",
+                                         "title":  "Rejected/Failed Rate per Service"
+                                     },
+                                     {
+                                         "id":  9,
+                                         "fieldConfig":  {
+                                                             "defaults":  {
+                                                                              "unit":  "short"
+                                                                          }
+                                                         },
+                                         "gridPos":  {
+                                                         "y":  20,
+                                                         "w":  12,
+                                                         "x":  0,
+                                                         "h":  8
+                                                     },
+                                         "targets":  [
+                                                         {
+                                                             "legendFormat":  "{{application}}",
+                                                             "expr":  "sum by (application) (rabbitmq_connections)",
+                                                             "refId":  "A"
+                                                         }
+                                                     ],
+                                         "datasource":  {
+                                                            "type":  "prometheus",
+                                                            "uid":  "dfr9x00oifvnkf"
+                                                        },
+                                         "type":  "timeseries",
+                                         "title":  "Connections per Service"
+                                     },
+                                     {
+                                         "id":  10,
+                                         "fieldConfig":  {
+                                                             "defaults":  {
+                                                                              "unit":  "short"
+                                                                          }
+                                                         },
+                                         "gridPos":  {
+                                                         "y":  20,
+                                                         "w":  12,
+                                                         "x":  12,
+                                                         "h":  8
+                                                     },
+                                         "targets":  [
+                                                         {
+                                                             "legendFormat":  "{{application}}",
+                                                             "expr":  "sum by (application) (rabbitmq_channels)",
+                                                             "refId":  "A"
+                                                         }
+                                                     ],
+                                         "datasource":  {
+                                                            "type":  "prometheus",
+                                                            "uid":  "dfr9x00oifvnkf"
+                                                        },
+                                         "type":  "timeseries",
+                                         "title":  "Channels per Service"
+                                     },
+                                     {
+                                         "id":  11,
+                                         "fieldConfig":  {
+                                                             "defaults":  {
+                                                                              "unit":  "reqps"
+                                                                          }
+                                                         },
+                                         "gridPos":  {
+                                                         "y":  28,
+                                                         "w":  12,
+                                                         "x":  0,
+                                                         "h":  8
+                                                     },
+                                         "targets":  [
+                                                         {
+                                                             "legendFormat":  "{{application}}",
+                                                             "expr":  "sum by (application) (rate(rabbitmq_unrouted_published_total[5m]))",
+                                                             "refId":  "A"
+                                                         }
+                                                     ],
+                                         "datasource":  {
+                                                            "type":  "prometheus",
+                                                            "uid":  "dfr9x00oifvnkf"
+                                                        },
+                                         "type":  "timeseries",
+                                         "title":  "Unrouted Messages per Service"
+                                     },
+                                     {
+                                         "id":  12,
+                                         "fieldConfig":  {
+                                                             "defaults":  {
+                                                                              "unit":  "reqps"
+                                                                          }
+                                                         },
+                                         "gridPos":  {
+                                                         "y":  28,
+                                                         "w":  12,
+                                                         "x":  12,
+                                                         "h":  8
+                                                     },
+                                         "targets":  [
+                                                         {
+                                                             "legendFormat":  "{{application}}",
+                                                             "expr":  "sum by (application) (rate(rabbitmq_acknowledged_published_total[1m]))",
+                                                             "refId":  "A"
+                                                         }
+                                                     ],
+                                         "datasource":  {
+                                                            "type":  "prometheus",
+                                                            "uid":  "dfr9x00oifvnkf"
+                                                        },
+                                         "type":  "timeseries",
+                                         "title":  "Ack of Published Rate per Service"
+                                     }
+                                 ],
+                      "tags":  [
+                                   "food-delivery",
+                                   "rabbitmq",
+                                   "messaging",
+                                   "amqp"
+                               ],
+                      "time":  {
+                                   "to":  "now",
+                                   "from":  "now-15m"
+                               },
+                      "timezone":  "browser",
+                      "refresh":  "10s",
+                      "title":  "Food Delivery - RabbitMQ (Spring AMQP)",
+                      "uid":  "food-delivery-rabbitmq"
+                  },
+    "overwrite":  true,
+    "folderId":  0
 }
