@@ -1,4 +1,4 @@
-﻿# ========================================
+# ========================================
 # Eureka Server - Bootstrap Configuration
 # ========================================
 # CRITICAL FIX: server.port MUST be set here to 8761
