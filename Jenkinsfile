@@ -96,7 +96,7 @@ pipeline {
                     def svcs = env.SERVICES.split(' ')
                     svcs.each { svc ->
                         echo "Building image: ${env.DOCKER_HUB_USER}/${svc}:${env.IMAGE_TAG}"
-                        bat "cd ${svc} && docker build -t ${env.DOCKER_HUB_USER}/${svc}:${env.IMAGE_TAG} -t ${env.DOCKER_HUB_USER}/${svc}:latest ."
+                        bat "cd ${svc} && docker build --no-cache -t ${env.DOCKER_HUB_USER}/${svc}:${env.IMAGE_TAG} -t ${env.DOCKER_HUB_USER}/${svc}:latest ."
                     }
                 }
             }
@@ -118,6 +118,18 @@ pipeline {
             }
         }
 
+        
+        stage('8.5. Load Images into Minikube') {
+            steps {
+                echo 'Loading fresh images into Minikube (bypasses Minikube Docker cache)'
+                script {
+                    def svcs = env.SERVICES.split(' ')
+                    svcs.each { svc ->
+                        bat "minikube image load ${env.DOCKER_HUB_USER}/${svc}:latest || exit 0"
+                    }
+                }
+            }
+        }
         stage('9. Create Namespace and Config') {
             steps {
                 echo 'Stage 9: Creating namespace and ConfigMaps'
@@ -188,11 +200,12 @@ pipeline {
 
         stage('14. Deploy Monitoring Stack') {
             steps {
-                echo 'ðŸ“Š Deploying Prometheus + Grafana to Kubernetes...'
+                echo 'Ã°Å¸â€œÅ  Deploying Prometheus + Grafana to Kubernetes...'
+                bat 'kubectl apply -f k8s/monitoring-dashboards.yaml'
                 bat 'kubectl apply -f k8s/monitoring.yaml'
                 bat 'kubectl rollout status deployment/prometheus -n food-delivery --timeout=180s'
                 bat 'kubectl rollout status deployment/grafana    -n food-delivery --timeout=180s'
-                echo 'âœ… Monitoring stack deployed successfully'
+                echo 'Ã¢Å“â€¦ Monitoring stack deployed successfully'
             }
         }
         stage('15. Expose NodePorts') {
