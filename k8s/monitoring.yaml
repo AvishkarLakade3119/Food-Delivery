@@ -127,6 +127,7 @@ data:
     apiVersion: 1
     datasources:
       - name: Prometheus
+        uid: prometheus-uid
         type: prometheus
         access: proxy
         url: http://prometheus:9090
@@ -179,7 +180,17 @@ spec:
             - name: GF_SECURITY_ADMIN_PASSWORD
               value: admin
             - name: GF_AUTH_ANONYMOUS_ENABLED
+              value: "true"
+            - name: GF_AUTH_ANONYMOUS_ORG_NAME
+              value: 'Main Org.'
+            - name: GF_AUTH_ANONYMOUS_ORG_ROLE
+              value: Admin
+            - name: GF_AUTH_DISABLE_LOGIN_FORM
               value: "false"
+            - name: GF_USERS_ALLOW_SIGN_UP
+              value: "false"
+            - name: GF_INSTALL_PLUGINS
+              value: ''
           volumeMounts:
             - name: data
               mountPath: /var/lib/grafana

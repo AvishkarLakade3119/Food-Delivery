@@ -1,349 +1,101 @@
-﻿{
-    "dashboard":  {
-                      "schemaVersion":  39,
-                      "id":  null,
-                      "templating":  {
-                                         "list":  [
-                                                      {
-                                                          "query":  "label_values(up{job!=\"prometheus\"}, application)",
-                                                          "datasource":  {
-                                                                             "type":  "prometheus",
-                                                                             "uid":  "dfr9x00oifvnkf"
-                                                                         },
-                                                          "includeAll":  true,
-                                                          "name":  "application",
-                                                          "type":  "query",
-                                                          "current":  {
-                                                                          "text":  "All",
-                                                                          "value":  "$__all"
-                                                                      },
-                                                          "multi":  true,
-                                                          "refresh":  1
-                                                      }
-                                                  ]
-                                     },
-                      "version":  1,
-                      "panels":  [
-                                     {
-                                         "fieldConfig":  {
-                                                             "defaults":  {
-                                                                              "color":  {
-                                                                                            "mode":  "thresholds"
-                                                                                        },
-                                                                              "decimals":  0,
-                                                                              "thresholds":  {
-                                                                                                 "steps":  [
-                                                                                                               {
-                                                                                                                   "value":  null,
-                                                                                                                   "color":  "red"
-                                                                                                               },
-                                                                                                               {
-                                                                                                                   "value":  6,
-                                                                                                                   "color":  "green"
-                                                                                                               }
-                                                                                                           ]
-                                                                                             },
-                                                                              "unit":  "short"
-                                                                          }
-                                                         },
-                                         "id":  1,
-                                         "gridPos":  {
-                                                         "y":  0,
-                                                         "w":  6,
-                                                         "x":  0,
-                                                         "h":  4
-                                                     },
-                                         "datasource":  {
-                                                            "type":  "prometheus",
-                                                            "uid":  "dfr9x00oifvnkf"
-                                                        },
-                                         "title":  "Services UP",
-                                         "targets":  [
-                                                         {
-                                                             "refId":  "A",
-                                                             "expr":  "sum(up{application=~\"$application\"})"
-                                                         }
-                                                     ],
-                                         "type":  "stat",
-                                         "options":  {
-                                                         "colorMode":  "background"
-                                                     }
-                                     },
-                                     {
-                                         "id":  2,
-                                         "fieldConfig":  {
-                                                             "defaults":  {
-                                                                              "unit":  "reqps",
-                                                                              "decimals":  2
-                                                                          }
-                                                         },
-                                         "gridPos":  {
-                                                         "y":  0,
-                                                         "w":  6,
-                                                         "x":  6,
-                                                         "h":  4
-                                                     },
-                                         "targets":  [
-                                                         {
-                                                             "refId":  "A",
-                                                             "expr":  "sum(rate(http_server_requests_seconds_count{application=~\"$application\"}[5m]))"
-                                                         }
-                                                     ],
-                                         "datasource":  {
-                                                            "type":  "prometheus",
-                                                            "uid":  "dfr9x00oifvnkf"
-                                                        },
-                                         "type":  "stat",
-                                         "title":  "Total Requests/sec (5m)"
-                                     },
-                                     {
-                                         "id":  3,
-                                         "fieldConfig":  {
-                                                             "defaults":  {
-                                                                              "unit":  "s",
-                                                                              "decimals":  3
-                                                                          }
-                                                         },
-                                         "gridPos":  {
-                                                         "y":  0,
-                                                         "w":  6,
-                                                         "x":  12,
-                                                         "h":  4
-                                                     },
-                                         "targets":  [
-                                                         {
-                                                             "refId":  "A",
-                                                             "expr":  "sum(rate(http_server_requests_seconds_sum{application=~\"$application\"}[5m])) / sum(rate(http_server_requests_seconds_count{application=~\"$application\"}[5m]))"
-                                                         }
-                                                     ],
-                                         "datasource":  {
-                                                            "type":  "prometheus",
-                                                            "uid":  "dfr9x00oifvnkf"
-                                                        },
-                                         "type":  "stat",
-                                         "title":  "Avg Response Time (5m)"
-                                     },
-                                     {
-                                         "fieldConfig":  {
-                                                             "defaults":  {
-                                                                              "color":  {
-                                                                                            "mode":  "thresholds"
-                                                                                        },
-                                                                              "decimals":  2,
-                                                                              "thresholds":  {
-                                                                                                 "steps":  [
-                                                                                                               {
-                                                                                                                   "value":  null,
-                                                                                                                   "color":  "green"
-                                                                                                               },
-                                                                                                               {
-                                                                                                                   "value":  0.1,
-                                                                                                                   "color":  "red"
-                                                                                                               }
-                                                                                                           ]
-                                                                                             },
-                                                                              "unit":  "reqps"
-                                                                          }
-                                                         },
-                                         "id":  4,
-                                         "gridPos":  {
-                                                         "y":  0,
-                                                         "w":  6,
-                                                         "x":  18,
-                                                         "h":  4
-                                                     },
-                                         "datasource":  {
-                                                            "type":  "prometheus",
-                                                            "uid":  "dfr9x00oifvnkf"
-                                                        },
-                                         "title":  "5xx Error Rate (5m)",
-                                         "targets":  [
-                                                         {
-                                                             "refId":  "A",
-                                                             "expr":  "sum(rate(http_server_requests_seconds_count{application=~\"$application\",status=~\"5..\"}[5m]))"
-                                                         }
-                                                     ],
-                                         "type":  "stat",
-                                         "options":  {
-                                                         "colorMode":  "background"
-                                                     }
-                                     },
-                                     {
-                                         "id":  5,
-                                         "fieldConfig":  {
-                                                             "defaults":  {
-                                                                              "unit":  "reqps"
-                                                                          }
-                                                         },
-                                         "gridPos":  {
-                                                         "y":  4,
-                                                         "w":  12,
-                                                         "x":  0,
-                                                         "h":  8
-                                                     },
-                                         "targets":  [
-                                                         {
-                                                             "legendFormat":  "{{application}}",
-                                                             "expr":  "sum by (application) (rate(http_server_requests_seconds_count{application=~\"$application\"}[1m]))",
-                                                             "refId":  "A"
-                                                         }
-                                                     ],
-                                         "datasource":  {
-                                                            "type":  "prometheus",
-                                                            "uid":  "dfr9x00oifvnkf"
-                                                        },
-                                         "type":  "timeseries",
-                                         "title":  "Request Rate per Service"
-                                     },
-                                     {
-                                         "id":  6,
-                                         "fieldConfig":  {
-                                                             "defaults":  {
-                                                                              "unit":  "s"
-                                                                          }
-                                                         },
-                                         "gridPos":  {
-                                                         "y":  4,
-                                                         "w":  12,
-                                                         "x":  12,
-                                                         "h":  8
-                                                     },
-                                         "targets":  [
-                                                         {
-                                                             "legendFormat":  "{{application}}",
-                                                             "expr":  "histogram_quantile(0.95, sum by (application, le) (rate(http_server_requests_seconds_bucket{application=~\"$application\"}[5m])))",
-                                                             "refId":  "A"
-                                                         }
-                                                     ],
-                                         "datasource":  {
-                                                            "type":  "prometheus",
-                                                            "uid":  "dfr9x00oifvnkf"
-                                                        },
-                                         "type":  "timeseries",
-                                         "title":  "P95 Latency per Service"
-                                     },
-                                     {
-                                         "id":  7,
-                                         "fieldConfig":  {
-                                                             "defaults":  {
-                                                                              "unit":  "bytes"
-                                                                          }
-                                                         },
-                                         "gridPos":  {
-                                                         "y":  12,
-                                                         "w":  12,
-                                                         "x":  0,
-                                                         "h":  8
-                                                     },
-                                         "targets":  [
-                                                         {
-                                                             "legendFormat":  "{{application}}",
-                                                             "expr":  "sum by (application) (jvm_memory_used_bytes{application=~\"$application\",area=\"heap\"})",
-                                                             "refId":  "A"
-                                                         }
-                                                     ],
-                                         "datasource":  {
-                                                            "type":  "prometheus",
-                                                            "uid":  "dfr9x00oifvnkf"
-                                                        },
-                                         "type":  "timeseries",
-                                         "title":  "JVM Heap Used per Service"
-                                     },
-                                     {
-                                         "id":  8,
-                                         "fieldConfig":  {
-                                                             "defaults":  {
-                                                                              "unit":  "percentunit"
-                                                                          }
-                                                         },
-                                         "gridPos":  {
-                                                         "y":  12,
-                                                         "w":  12,
-                                                         "x":  12,
-                                                         "h":  8
-                                                     },
-                                         "targets":  [
-                                                         {
-                                                             "legendFormat":  "{{application}}",
-                                                             "expr":  "sum by (application) (process_cpu_usage{application=~\"$application\"})",
-                                                             "refId":  "A"
-                                                         }
-                                                     ],
-                                         "datasource":  {
-                                                            "type":  "prometheus",
-                                                            "uid":  "dfr9x00oifvnkf"
-                                                        },
-                                         "type":  "timeseries",
-                                         "title":  "CPU Usage per Service"
-                                     },
-                                     {
-                                         "id":  9,
-                                         "fieldConfig":  {
-                                                             "defaults":  {
-                                                                              "unit":  "short"
-                                                                          }
-                                                         },
-                                         "gridPos":  {
-                                                         "y":  20,
-                                                         "w":  12,
-                                                         "x":  0,
-                                                         "h":  8
-                                                     },
-                                         "targets":  [
-                                                         {
-                                                             "legendFormat":  "{{application}}",
-                                                             "expr":  "sum by (application) (jvm_threads_live_threads{application=~\"$application\"})",
-                                                             "refId":  "A"
-                                                         }
-                                                     ],
-                                         "datasource":  {
-                                                            "type":  "prometheus",
-                                                            "uid":  "dfr9x00oifvnkf"
-                                                        },
-                                         "type":  "timeseries",
-                                         "title":  "Live Threads per Service"
-                                     },
-                                     {
-                                         "id":  10,
-                                         "fieldConfig":  {
-                                                             "defaults":  {
-                                                                              "unit":  "reqps"
-                                                                          }
-                                                         },
-                                         "gridPos":  {
-                                                         "y":  20,
-                                                         "w":  12,
-                                                         "x":  12,
-                                                         "h":  8
-                                                     },
-                                         "targets":  [
-                                                         {
-                                                             "legendFormat":  "{{application}} {{status}}",
-                                                             "expr":  "sum by (application, status) (rate(http_server_requests_seconds_count{application=~\"$application\"}[1m]))",
-                                                             "refId":  "A"
-                                                         }
-                                                     ],
-                                         "datasource":  {
-                                                            "type":  "prometheus",
-                                                            "uid":  "dfr9x00oifvnkf"
-                                                        },
-                                         "type":  "timeseries",
-                                         "title":  "HTTP Status Codes per Service"
-                                     }
-                                 ],
-                      "tags":  [
-                                   "food-delivery",
-                                   "microservices"
-                               ],
-                      "time":  {
-                                   "to":  "now",
-                                   "from":  "now-15m"
-                               },
-                      "timezone":  "browser",
-                      "refresh":  "10s",
-                      "title":  "Food Delivery - Service Overview",
-                      "uid":  "food-delivery-overview"
-                  },
-    "overwrite":  true,
-    "folderId":  0
+{
+  "id": null,
+  "uid": "food-delivery-overview",
+  "title": "Food Delivery - Service Overview",
+  "tags": ["food-delivery","microservices"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "10s",
+  "time": {"from": "now-15m", "to": "now"},
+  "panels": [
+    {
+      "id": 1,
+      "title": "Services UP",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 6, "x": 0, "y": 0},
+      "datasource": {"type": "prometheus", "uid": "prometheus-uid"},
+      "targets": [{"expr": "count(up{job!=\"prometheus\"} == 1)", "refId": "A", "datasource": {"type": "prometheus", "uid": "prometheus-uid"}}]
+    },
+    {
+      "id": 2,
+      "title": "Total Requests/sec (5m)",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 6, "x": 6, "y": 0},
+      "datasource": {"type": "prometheus", "uid": "prometheus-uid"},
+      "targets": [{"expr": "sum(rate(http_server_requests_seconds_count[5m]))", "refId": "A", "datasource": {"type": "prometheus", "uid": "prometheus-uid"}}],
+      "fieldConfig": {"defaults": {"unit": "reqps", "decimals": 2}}
+    },
+    {
+      "id": 3,
+      "title": "Avg Response Time (5m)",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 6, "x": 12, "y": 0},
+      "datasource": {"type": "prometheus", "uid": "prometheus-uid"},
+      "targets": [{"expr": "sum(rate(http_server_requests_seconds_sum[5m])) / sum(rate(http_server_requests_seconds_count[5m]))", "refId": "A", "datasource": {"type": "prometheus", "uid": "prometheus-uid"}}],
+      "fieldConfig": {"defaults": {"unit": "s", "decimals": 3}}
+    },
+    {
+      "id": 4,
+      "title": "5xx Error Rate (5m)",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 6, "x": 18, "y": 0},
+      "datasource": {"type": "prometheus", "uid": "prometheus-uid"},
+      "targets": [{"expr": "sum(rate(http_server_requests_seconds_count{status=~\"5..\"}[5m]))", "refId": "A", "datasource": {"type": "prometheus", "uid": "prometheus-uid"}}],
+      "fieldConfig": {"defaults": {"unit": "reqps", "decimals": 2}}
+    },
+    {
+      "id": 5,
+      "title": "Request Rate per Service",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 4},
+      "datasource": {"type": "prometheus", "uid": "prometheus-uid"},
+      "targets": [{"expr": "sum by (application) (rate(http_server_requests_seconds_count[1m]))", "legendFormat": "{{application}}", "refId": "A", "datasource": {"type": "prometheus", "uid": "prometheus-uid"}}],
+      "fieldConfig": {"defaults": {"unit": "reqps"}}
+    },
+    {
+      "id": 6,
+      "title": "P95 Latency per Service",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 4},
+      "datasource": {"type": "prometheus", "uid": "prometheus-uid"},
+      "targets": [{"expr": "histogram_quantile(0.95, sum by (application, le) (rate(http_server_requests_seconds_bucket[5m])))", "legendFormat": "{{application}}", "refId": "A", "datasource": {"type": "prometheus", "uid": "prometheus-uid"}}],
+      "fieldConfig": {"defaults": {"unit": "s"}}
+    },
+    {
+      "id": 7,
+      "title": "JVM Heap Used per Service",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 12},
+      "datasource": {"type": "prometheus", "uid": "prometheus-uid"},
+      "targets": [{"expr": "sum by (application) (jvm_memory_used_bytes{area=\"heap\"})", "legendFormat": "{{application}}", "refId": "A", "datasource": {"type": "prometheus", "uid": "prometheus-uid"}}],
+      "fieldConfig": {"defaults": {"unit": "bytes"}}
+    },
+    {
+      "id": 8,
+      "title": "CPU Usage per Service",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 12},
+      "datasource": {"type": "prometheus", "uid": "prometheus-uid"},
+      "targets": [{"expr": "sum by (application) (process_cpu_usage)", "legendFormat": "{{application}}", "refId": "A", "datasource": {"type": "prometheus", "uid": "prometheus-uid"}}],
+      "fieldConfig": {"defaults": {"unit": "percentunit"}}
+    },
+    {
+      "id": 9,
+      "title": "Live Threads per Service",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 20},
+      "datasource": {"type": "prometheus", "uid": "prometheus-uid"},
+      "targets": [{"expr": "sum by (application) (jvm_threads_live_threads)", "legendFormat": "{{application}}", "refId": "A", "datasource": {"type": "prometheus", "uid": "prometheus-uid"}}]
+    },
+    {
+      "id": 10,
+      "title": "HTTP Status Codes per Service",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 20},
+      "datasource": {"type": "prometheus", "uid": "prometheus-uid"},
+      "targets": [{"expr": "sum by (application, status) (rate(http_server_requests_seconds_count[1m]))", "legendFormat": "{{application}} {{status}}", "refId": "A", "datasource": {"type": "prometheus", "uid": "prometheus-uid"}}],
+      "fieldConfig": {"defaults": {"unit": "reqps"}}
+    }
+  ]
 }
