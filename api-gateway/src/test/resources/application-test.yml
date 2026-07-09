@@ -1,0 +1,21 @@
+server:
+  port: 0
+
+management:
+  server:
+    port: -1
+
+spring:
+  cloud:
+    config:
+      enabled: false
+    discovery:
+      enabled: false
+    gateway:
+      routes: []
+  config:
+    import: "optional:configserver:"
+
+eureka:
+  client:
+    enabled: false
