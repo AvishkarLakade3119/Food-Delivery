@@ -19,6 +19,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8443
+            - containerPort: 8444
           env:
             - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
               value: "http://eureka-server:8761/eureka/"
@@ -54,3 +55,7 @@ spec:
   ports:
     - port: 8443
       targetPort: 8443
+      name: https
+    - port: 8444
+      targetPort: 8444
+      name: management
