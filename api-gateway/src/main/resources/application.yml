@@ -1,4 +1,4 @@
-﻿server:
+server:
   port: 8443
   ssl:
     enabled: true
@@ -160,6 +160,8 @@ resilience4j:
         baseConfig: default
 
 management:
+  server:
+    port: 8444
   # ===== Distributed Tracing (Phase 6) =====
   tracing:
     enabled: true
