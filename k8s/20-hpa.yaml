@@ -9,7 +9,7 @@ spec:
     kind: Deployment
     name: order-service
   minReplicas: 1
-  maxReplicas: 5
+  maxReplicas: 2
   metrics:
     - type: Resource
       resource:
@@ -87,7 +87,7 @@ spec:
     kind: Deployment
     name: restaurant-service
   minReplicas: 1
-  maxReplicas: 3
+  maxReplicas: 2
   metrics:
     - type: Resource
       resource:
@@ -126,7 +126,7 @@ spec:
     kind: Deployment
     name: user-service
   minReplicas: 1
-  maxReplicas: 3
+  maxReplicas: 2
   metrics:
     - type: Resource
       resource:
@@ -165,7 +165,7 @@ spec:
     kind: Deployment
     name: api-gateway
   minReplicas: 1
-  maxReplicas: 5
+  maxReplicas: 2
   metrics:
     - type: Resource
       resource:
@@ -204,7 +204,7 @@ spec:
     kind: Deployment
     name: payment-service
   minReplicas: 1
-  maxReplicas: 3
+  maxReplicas: 2
   metrics:
     - type: Resource
       resource:
