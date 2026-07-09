@@ -12,14 +12,6 @@ data:
       - job_name: 'prometheus'
         static_configs:
           - targets: ['localhost:9090']
-      - job_name: 'api-gateway'
-        metrics_path: /actuator/prometheus
-        scheme: https
-        tls_config:
-          insecure_skip_verify: true
-        static_configs:
-          - targets: ['api-gateway:8443']
-            labels: { application: 'api-gateway' }
       - job_name: 'config-server'
         metrics_path: /actuator/prometheus
         static_configs:
@@ -86,16 +78,6 @@ spec:
               mountPath: /etc/prometheus
             - name: data
               mountPath: /prometheus
-          readinessProbe:
-            httpGet:
-              path: /-/ready
-              port: 9090
-            initialDelaySeconds: 15
-          livenessProbe:
-            httpGet:
-              path: /-/healthy
-              port: 9090
-            initialDelaySeconds: 30
       volumes:
         - name: config
           configMap:
@@ -185,12 +167,8 @@ spec:
               value: 'Main Org.'
             - name: GF_AUTH_ANONYMOUS_ORG_ROLE
               value: Admin
-            - name: GF_AUTH_DISABLE_LOGIN_FORM
-              value: "false"
             - name: GF_USERS_ALLOW_SIGN_UP
               value: "false"
-            - name: GF_INSTALL_PLUGINS
-              value: ''
           volumeMounts:
             - name: data
               mountPath: /var/lib/grafana
@@ -200,16 +178,6 @@ spec:
               mountPath: /etc/grafana/provisioning/dashboards
             - name: dashboards
               mountPath: /var/lib/grafana/dashboards
-          readinessProbe:
-            httpGet:
-              path: /api/health
-              port: 3000
-            initialDelaySeconds: 20
-          livenessProbe:
-            httpGet:
-              path: /api/health
-              port: 3000
-            initialDelaySeconds: 40
       volumes:
         - name: data
           emptyDir: {}
