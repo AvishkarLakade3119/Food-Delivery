@@ -1,6 +1,5 @@
-﻿# start-monitoring.ps1 — Persistent port-forward daemon
-# Auto-restarts port-forwards if they die
-# Auto-waits for namespace/pods to be ready (survives Jenkins rebuilds)
+# start-monitoring.ps1 - Persistent port-forward daemon
+# Auto-restarts port-forwards when they die or when pods change
 
 $ErrorActionPreference = "Continue"
 $logFile = "$PSScriptRoot\port-forward.log"
@@ -13,16 +12,16 @@ function Write-Log {
 }
 
 $forwards = @(
-    @{ N = "prometheus";   S = "prometheus";   L = 9090;  R = 9090  },
-    @{ N = "grafana";      S = "grafana";      L = 3000;  R = 3000  },
-    @{ N = "zipkin";       S = "zipkin";       L = 9411;  R = 9411  },
-    @{ N = "rabbitmq";     S = "rabbitmq";     L = 15672; R = 15672 },
-    @{ N = "api-gateway";  S = "api-gateway";  L = 8443;  R = 8443  }
+    @{ N = "prometheus";  S = "prometheus";  L = 9090;  R = 9090  },
+    @{ N = "grafana";     S = "grafana";     L = 3000;  R = 3000  },
+    @{ N = "zipkin";      S = "zipkin";      L = 9411;  R = 9411  },
+    @{ N = "rabbitmq";    S = "rabbitmq";    L = 15672; R = 15672 },
+    @{ N = "api-gateway"; S = "api-gateway"; L = 8443;  R = 8443  }
 )
 
 Write-Log "=== PORT-FORWARD DAEMON STARTING ===" "Cyan"
 
-# Wait until minikube + namespace are ready
+# Wait for minikube ready
 Write-Log "Waiting for minikube..." "Yellow"
 $maxWait = 300
 $waited = 0
@@ -49,9 +48,8 @@ while ($waited -lt $maxWait) {
     $waited += 5
 }
 
-# Main loop: monitor + restart port-forwards forever
+# Main monitor loop
 Write-Log "=== ENTERING MONITOR LOOP ===" "Cyan"
-$jobs = @{}
 
 while ($true) {
     foreach ($f in $forwards) {
@@ -63,24 +61,24 @@ while ($true) {
         # Check if service exists
         $svcCheck = & kubectl get svc -n food-delivery $svcName 2>&1 | Out-String
         if ($svcCheck -notmatch $svcName) {
-            continue  # service not yet deployed, skip this cycle
+            continue
         }
 
-        # Check existing job
+        # Check existing job health
         $existingJob = Get-Job -Name $jobName -ErrorAction SilentlyContinue
 
         if ($existingJob -and $existingJob.State -eq "Running") {
             # Verify port actually responds
             $portCheck = Test-NetConnection -ComputerName localhost -Port $localPort -InformationLevel Quiet -WarningAction SilentlyContinue -ErrorAction SilentlyContinue
             if ($portCheck) {
-                continue  # healthy
+                continue
             } else {
                 Write-Log "Port $localPort not responding, restarting $jobName" "Yellow"
-                Stop-Job $existingJob
-                Remove-Job $existingJob -Force
+                Stop-Job $existingJob -ErrorAction SilentlyContinue
+                Remove-Job $existingJob -Force -ErrorAction SilentlyContinue
             }
         } elseif ($existingJob) {
-            Remove-Job $existingJob -Force
+            Remove-Job $existingJob -Force -ErrorAction SilentlyContinue
         }
 
         # Start fresh port-forward
