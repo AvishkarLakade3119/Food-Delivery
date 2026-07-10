@@ -1,8 +1,8 @@
-$gitignoreContent = @"
 # === Maven ===
 target/
 *.jar.original
 *.class
+build/
 
 # === IDE ===
 .idea/
@@ -18,29 +18,36 @@ target/
 **/logs/
 *.log
 *.log.*.gz
+test-output.log
 
-# === Backups ===
+# === Backup files ===
 *.bak
 *.bak2
-*.bak3
+*.old
 *.orig
+*.rej
+*.zipkin.bak
 
-# === Slingshot AI tooling ===
-.slingshot/
-
-# === Worktree leakage inside target/ ===
-**/Users/avilakad/
-
-# === OS clutter ===
+# === OS ===
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# === Test reports ===
-**/surefire-reports/
-**/failsafe-reports/
-**/jacoco.exec
-"@
+# === Docker ===
+*.tar
 
-Set-Content -Path ".gitignore" -Value $gitignoreContent -Encoding UTF8
-Write-Host "✅ .gitignore written" -ForegroundColor Green
+# === Temporary ===
+*.tmp
+temp/
+tmp/
+
+# === Environment ===
+.env
+.env.local
+.env.*.local
+
+# === Node ===
+node_modules/
+
+# === Test outputs ===
+surefire-reports/
